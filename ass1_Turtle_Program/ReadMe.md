@@ -3,7 +3,8 @@ Turtle Program
 
 A TurtleProgram is a set of instructions directing the on-screen turtle to draw graphics. To draw a square, one would execute:
 
-Forward 10 Right 90 Forward 10 Right 90 Forward 10 Right 90 Forward 10 Right 90 
+`Forward 10 Right 90 Forward 10 Right 90 Forward 10 Right 90 Forward 10 Right 90 `
+
 To practice dynamically allocated arrays and operator overloading, create a TurtleProgram class that supports the following functionality. For simplicity, use “F” instead of “Forward” and “R” instead of “Right”.
 
 Constructors and destructor
