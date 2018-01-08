@@ -5,19 +5,14 @@ A TurtleProgram is a set of instructions directing the on-screen turtle to draw 
 
 `Forward 10 Right 90 Forward 10 Right 90 Forward 10 Right 90 Forward 10 Right 90 `
 
-To practice dynamically allocated arrays and operator overloading, create a TurtleProgram class that supports the following functionality. For simplicity, use “F” instead of “Forward” and “R” instead of “Right”.
+To practice dynamically allocated arrays and operator overloading, create a `TurtleProgram` class that supports the following functionality. For simplicity, use “F” instead of “Forward” and “R” instead of “Right”.
 
-Constructors and destructor
-
-Overload <<, so programs can be printed as below
-
-Overload equality and inequality operators: operator== and operator!=. Two programs are == if all their instructions are the same.
-
-Overload the following operators: operator=, operator+ and operator+=. Adding 2 programs creates a longer program.
-
-Multiplying a program with an integer creates a larger program where the same program is repeated that many times. Write the * and *= operators. Multiplying by 0 or negative numbers is not defined. You can silently ignore the operation, throw an error or handle it in a different way. Similarly, multiplying two TurtleProgram’s is not defined.
-
-Index 0 of a program is defined as the first string in the program (i.e. for program [F 10] index 0 is "F". Implement getLength,  getIndex and setIndex so the program can be modified.
+1) Constructors and destructor
+2) Overload <<, so programs can be printed as below
+3) Overload equality and inequality operators: operator== and operator!=. Two programs are == if all their instructions are the same.
+4) Overload the following operators: operator=, operator+ and operator+=. Adding 2 programs creates a longer program.
+5) Multiplying a program with an integer creates a larger program where the same program is repeated that many times. Write the * and *= operators. Multiplying by 0 or negative numbers is not defined. You can silently ignore the operation, throw an error or handle it in a different way. Similarly, multiplying two TurtleProgram’s is not defined.
+6) Index 0 of a program is defined as the first string in the program (i.e. for program [F 10] index 0 is "F". Implement getLength,  getIndex and setIndex so the program can be modified.
 
 The data for the TurtleProgram must be in a private dynamically allocated array of just the right size. Normally, we would allocate a much larger array, but for this exercise, we are practicing dynamically resizing our data array.
 ```
