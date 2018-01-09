@@ -14,8 +14,9 @@ To practice dynamically allocated arrays and operator overloading, create a `Tur
 5) Multiplying a program with an integer creates a larger program where the same program is repeated that many times. Write the `*` and `*=` operators. Multiplying by 0 or negative numbers is not defined. You can silently ignore the operation, throw an error or handle it in a different way. Similarly, multiplying two `TurtleProgram`’s is not defined.
 6) Index 0 of a program is defined as the first string in the program (i.e. for program `[F 10]` index 0 is `"F"`. Implement `getLength`, ` getIndex` and `setIndex` so the program can be modified.
 
-The data for the TurtleProgram must be in a private dynamically allocated array of just the right size. Normally, we would allocate a much larger array, but for this exercise, we are practicing dynamically resizing our data array.
-```
+The data for the TurtleProgram must be in a *private dynamically allocated array* of just the right size. Normally, we would allocate a much larger array, but for this exercise, we are practicing dynamically resizing our data array.
+
+```C++
 int main()
 {
     TurtleProgram tp1;
