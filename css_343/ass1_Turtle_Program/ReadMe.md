@@ -1,7 +1,4 @@
-
----
-title: "Ass 1"
-output: html_document
+Assignment 1: turtleprogram
 ---
 
 **Due:**  11pm, 14 Jan (end of week 2)
