@@ -26,7 +26,7 @@ To practice dynamically allocated arrays and operator overloading, create a `Tur
 
 6. Index 0 of a program is defined as the first string in the program (i.e. for program `[F 10]` index 0 is `"F"`. Implement `getLength`, `getIndex` and `setIndex` so the program can be modified.
 
-**As explained in class: getLength() returns the number of strings in the program. getLength() for `[F 10]` would be 2 **
+__As explained in class: getLength() returns the number of strings in the program. getLength() for `[F 10]` would be 2__
 
 The data for the TurtleProgram must be in a *private dynamically allocated array* of just the right size. Normally, we would allocate a much larger array, but for this exercise, we are practicing dynamically resizing our data array.
 
