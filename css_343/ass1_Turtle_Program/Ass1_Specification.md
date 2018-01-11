@@ -8,7 +8,7 @@ output: html_document
 
 ### Turtle Program
 
-[Turtle Graphics](https://en.wikipedia.org/wiki/Turtle_graphics) as part of [Logo](https://en.wikipedia.org/wiki/Logo_(programming_language) was one of the first languages explicitly designed for teaching beginning programming.
+[Turtle Graphics](https://en.wikipedia.org/wiki/Turtle_graphics) as part of [Logo](https://en.wikipedia.org/wiki/Logo_(programming_language)) was one of the first languages explicitly designed for teaching beginning programming.
 
 A `TurtleProgram` is a set of instructions directing the on-screen *turtle* to draw graphics. To draw a square, one would execute:
 ```
