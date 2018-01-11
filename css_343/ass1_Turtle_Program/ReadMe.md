@@ -31,7 +31,7 @@ __As explained in class: getLength() returns the number of strings in the progra
 The data for the TurtleProgram must be in a *private dynamically allocated array* of just the right size. Normally, we would allocate a much larger array, but for this exercise, we are practicing dynamically resizing our data array.
 
 
-```C
+```C++
 int main()
 {
     TurtleProgram tp1;
