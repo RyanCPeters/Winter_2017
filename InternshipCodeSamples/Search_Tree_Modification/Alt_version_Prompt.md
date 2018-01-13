@@ -1,4 +1,4 @@
-  <div aria-label="Question Content" class="challenge-text hrx-version ck_table-wrap fadeinContent" style="min-height:100px;"><h3>Background</h3>
+<h3>Background</h3>
 
 <p>Imagine you are writing a program that understands a limited subset of CSS, and you want to be able to parse color values in either of the following two formats:</p>
 
