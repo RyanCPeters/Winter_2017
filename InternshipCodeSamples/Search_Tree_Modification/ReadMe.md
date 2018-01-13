@@ -1,3 +1,5 @@
+Parse CSS Colors
+---
 <h3>Background</h3>
 
 <p>Imagine you are writing a program that understands a limited subset of CSS, and you want to be able to parse color values in either of the following two formats:</p>
@@ -11,7 +13,7 @@
 
 <h3>Your task</h3>
 
-<p>Write a function that accepts a string as input and returns the color that it represents, as a 32-bit integer where the red component is stored in the&nbsp;<em>lowest</em>&nbsp;byte, the green component is stored in the&nbsp;<em>second-lowest</em>&nbsp;byte, and the blue component is stored in the&nbsp;<em>third-lowest</em>&nbsp;byte. If the string does <strong>not</strong> match either the short or the long format, your function should throw an exception. If you are using a programming language that does not have exceptions, such as C, you should use a negative&nbsp;return value&nbsp;to indicate an error.</p>
+<p>Write a function that accepts a string as input and returns the color that it represents, as a 32-bit integer where the red component is stored in the <em>lowest</em> byte, the green component is stored in the <em>second-lowest</em> byte, and the blue component is stored in the <em>third-lowest</em> byte. If the string does <strong>not</strong> match either the short or the long format, your function should throw an exception. If you are using a programming language that does not have exceptions, such as C, you should use a negative return value to indicate an error.</p>
 
 <p>Assume that your function will be called very frequently, so try to avoid unnecessary inefficiencies in your code.</p>
 
@@ -25,10 +27,10 @@
 
 <h3>Examples</h3>
 
-<p><span style="font-family:courier new,courier,monospace;">"#F00" &nbsp; &nbsp;-&gt; 255 &nbsp; &nbsp; &nbsp;</span>(red)</p>
+<p><span style="font-family:courier new,courier,monospace;">"#F00"    -&gt; 255      </span>(red)</p>
 
-<p><span style="font-family:courier new,courier,monospace;">"#800080" -&gt; 8388736 &nbsp;</span>(purple)</p>
+<p><span style="font-family:courier new,courier,monospace;">"#800080" -&gt; 8388736  </span>(purple)</p>
 
-<p><span style="font-family:courier new,courier,monospace;">"#ffa500" -&gt; 42495 &nbsp; &nbsp;</span>(orange)</p>
+<p><span style="font-family:courier new,courier,monospace;">"#ffa500" -&gt; 42495    </span>(orange)</p>
 
-<p><span style="font-family:courier new,courier,monospace;">"oops"</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -&gt; &nbsp;error!</p>
+<p><span style="font-family:courier new,courier,monospace;">"oops"</span>          -&gt;  error!</p>
