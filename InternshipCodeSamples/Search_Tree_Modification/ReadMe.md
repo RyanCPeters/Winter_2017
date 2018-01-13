@@ -1,12 +1,8 @@
-<div class="container--inner">
-    
-      <div aria-label="Question Content" class="challenge-text hrx-version ck_table-wrap fadeinContent" style="min-height:100px;"><p><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em">Implement insert and delete in a</span><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em"> modified-binary search tree of integers. This search tree is much like a binary </span><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em">search</span><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em"> tree, but with three child nodes for each parent instead of two -- with the left node being values less than the parent, the right node values greater than the parent, and the middle nodes values equal to the parent. Delete only one node per delete method call.</span></p>
+<p><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em">Implement insert and delete in a</span><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em"> modified-binary search tree of integers. This search tree is much like a binary </span><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em">search</span><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em"> tree, but with three child nodes for each parent instead of two -- with the left node being values less than the parent, the right node values greater than the parent, and the middle nodes values equal to the parent. Delete only one node per delete method call.</span></p>
 
-<p> </p>
 
 <p>Deleting the single remaining value in the tree should set the root node to null. Being asked to delete a value not in the tree should do nothing. Please do not throw exceptions.</p>
 
-<p> </p>
 
 <p><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em">For example, suppose I added the following nodes to the tree in this order: 5, 4, 9, 5, 7, 2, 2. The resulting tree would look like this: </span></p>
 
@@ -18,11 +14,10 @@
   |<br>
   2 </span></p>
 
-<p> </p>
 
 <p><span style="font-family: 'Whitney SSm A', 'Whitney SSm B', verdana, 'Lucida Grande', sans-serif; font-size: 1em; line-height: 1.5em;">If you would like to write your own custom test cases to run your code against, an example test case is:</span></p>
 
-<p> </p>
+
 
 <p>insert 1,2,3</p>
 
