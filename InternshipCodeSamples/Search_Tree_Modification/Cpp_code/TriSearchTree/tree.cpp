@@ -96,8 +96,10 @@ void Tree::remove(int val) {
 				return;
 			}
 			else if (seekPtr->left == nullptr && seekPtr->right == nullptr) {
+				if(direction == 1)prevPtr->right = nullptr;
+				else if(direction == -1)prevPtr->left = nullptr;
 				prevPtr = nullptr;
-				delete[](prevPtr);
+				delete[] prevPtr;
 				delete[] seekPtr;
 				return;
 			}
@@ -125,9 +127,12 @@ void Tree::remove(int val) {
 						prevPtr2->left = seekPtr2->right;
 					}
 				}
-				seekPtr2->left = seekPtr->left;
-				seekPtr2->right = seekPtr->right;
-				prevPtr = seekPtr;
+				seekPtr2->left = (seekPtr->left != seekPtr2)?seekPtr->left : nullptr;
+				seekPtr2->right = (seekPtr->right != seekPtr2)? seekPtr->right : nullptr;
+				seekPtr2->mid = (seekPtr->mid != seekPtr2)? seekPtr->mid : nullptr;
+				if(direction == 1)prevPtr->right = seekPtr2;
+				else if(direction == 0) prevPtr->mid = seekPtr2;
+				else if(direction == -1) prevPtr->left = seekPtr2;
 				seekPtr2 = prevPtr2 = prevPtr = seekPtr->left = seekPtr->right = nullptr;
 				
 				delete[] prevPtr;

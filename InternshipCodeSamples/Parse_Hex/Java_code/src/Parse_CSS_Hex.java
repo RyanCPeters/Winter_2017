@@ -131,27 +131,14 @@ public class Parse_CSS_Hex {
 				ret = 00000000 00000000 01011010 11111111
 	*/
 
-        if (red > 0) {
-            ret |= red << bitPos;
-            bitPos += 8;
 
-            ret |= green << bitPos;
-            bitPos += 8;
+        ret |= red << bitPos;
+        bitPos += 8;
 
-            ret |= blue << bitPos;
-            bitPos += 8;
+        ret |= green << bitPos;
+        bitPos += 8;
 
-        } else if (green > 0) {
-            ret |= green << bitPos;
-            bitPos += 8;
-
-            ret |= blue << bitPos;
-            bitPos += 8;
-
-        } else {
-            ret |= blue << bitPos;
-            bitPos += 8;
-        }
+        ret |= blue << bitPos;
         return ret;
 
 

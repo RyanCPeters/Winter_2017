@@ -10,8 +10,8 @@ import java.util.List;
  */
 public class MainFunc {
     public static void main(String[] args) {
-        ArrayList<String> test_strings = new ArrayList<>(List.of("#800080", "#F00", "#ffa500","oops", "#000000", "#000"));
-        ArrayList<Integer> test_answers = new ArrayList<>(List.of(8388736, 255, 42495, -1, 0, 0 ));
+        ArrayList<String> test_strings = new ArrayList<>(List.of("#800080", "#F00", "#ffa500","oops", "#000000", "#000", "#00f000"));
+        ArrayList<Integer> test_answers = new ArrayList<>(List.of(8388736, 255, 42495, -1, 0, 0, 61440 ));
 
         for (int i = 0; i < test_strings.size(); ++i) {
             try{
