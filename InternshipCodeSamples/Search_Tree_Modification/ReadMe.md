@@ -31,6 +31,7 @@ Modified Binary Search Tree
 
 <p> </p>
 
-<p>This test is equivalent to creating an empty tree, inserting 1, then inserting 2, then inserting 3, then deleting 2, then deleting 1, and finally inserting 4.<br>
-The output, for a correct tree will be 3,4 -- this representation is the sorted list of remaining values in the tree. **You do not have to write any code to print out this sorted list representation of a tree. The representation is merely to help with visualizing the contents of the tree (but not the structure).**</p>
+This test is equivalent to creating an empty tree, inserting 1, then inserting 2, then inserting 3, then deleting 2, then deleting 1, and finally inserting 4.
+
+The output, for a correct tree will be 3,4 -- this representation is the sorted list of remaining values in the tree. **You do not have to write any code to print out this sorted list representation of a tree. The representation is merely to help with visualizing the contents of the tree (but not the structure).**
 
