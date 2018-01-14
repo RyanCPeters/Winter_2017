@@ -1,0 +1,2 @@
+insert 7,10,10
+delete 10
