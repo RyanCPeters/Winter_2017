@@ -26,11 +26,11 @@ Node * Tree::getRoot() { return root; }
 * Implement the methods below.
 */
 Tree::Tree() {
-	
+	root = new Node();
 }
 
 void Tree::insert(int val) {
-
+	if(root == nullptr)
 }
 
 void Tree::remove(int val) {

@@ -1,6 +1,6 @@
 Modified Binary Search Tree
 ---
-<p><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em">Implement insert and delete in a</span><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em"> modified-binary search tree of integers. This search tree is much like a binary </span><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em">search</span><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em"> tree, but with three child nodes for each parent instead of two -- with the left node being values less than the parent, the right node values greater than the parent, and the middle nodes values equal to the parent. Delete only one node per delete method call.</span></p>
+Implement `insert` and `delete` in a modified-binary search tree of integers. This search tree is much like a binary search tree, but with three child nodes for each parent instead of two -- with the left node being values less than the parent, the right node values greater than the parent, and the middle nodes values equal to the parent. Delete only one node per delete method call.
 
 
 <p>Deleting the single remaining value in the tree should set the root node to null. Being asked to delete a value not in the tree should do nothing. Please do not throw exceptions.</p>
@@ -21,15 +21,11 @@ Modified Binary Search Tree
 
 <p><span style="font-family: 'Whitney SSm A', 'Whitney SSm B', verdana, 'Lucida Grande', sans-serif; font-size: 1em; line-height: 1.5em;">If you would like to write your own custom test cases to run your code against, an example test case is:</span></p>
 
-
-
 <p>insert 1,2,3</p>
 
 <p>delete 2,1</p>
 
 <p>insert 4</p>
-
-<p> </p>
 
 This test is equivalent to creating an empty tree, inserting 1, then inserting 2, then inserting 3, then deleting 2, then deleting 1, and finally inserting 4.
 
