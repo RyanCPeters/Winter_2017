@@ -6,7 +6,7 @@
 
 <p><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em">For example, suppose I added the following nodes to the tree in this order: 5, 4, 9, 5, 7, 2, 2. The resulting tree would look like this: </span></p>
 
-<p><span style="font-family:courier new,courier,monospace">    
+```  
        5 
      / | \
     4  5  9 
@@ -14,7 +14,7 @@
   2     7 
   |
   2 
-</span></p>
+```
 
 
 <p><span style="font-family: 'Whitney SSm A', 'Whitney SSm B', verdana, 'Lucida Grande', sans-serif; font-size: 1em; line-height: 1.5em;">If you would like to write your own custom test cases to run your code against, an example test case is:</span></p>
