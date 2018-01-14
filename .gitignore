@@ -34,6 +34,10 @@ $RECYCLE.BIN/
 *.userosscache
 *.sln.docstates
 *.sln
+*.filters
+*.rc
+[Rr][Cc]*.*
+*.vcxproj
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
