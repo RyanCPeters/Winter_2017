@@ -1,3 +1,5 @@
+Modified Binary Search Tree
+---
 <p><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em">Implement insert and delete in a</span><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em"> modified-binary search tree of integers. This search tree is much like a binary </span><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em">search</span><span style="font-family:whitney ssm a,whitney ssm b,verdana,lucida grande,sans-serif; font-size:1em; line-height:1.5em"> tree, but with three child nodes for each parent instead of two -- with the left node being values less than the parent, the right node values greater than the parent, and the middle nodes values equal to the parent. Delete only one node per delete method call.</span></p>
 
 
