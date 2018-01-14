@@ -1,24 +1,8 @@
 
 // The following definitions of Tree and Node are provided.
+#include "tree.h"
 
 using namespace std;
-
-struct Node {
-	int val;
-	Node *left, *mid, *right;
-	Node(int val) : left(0), mid(0), right(0), val(val) {}
-};
-
-class Tree {
-	public:
-	Tree();
-	void insert(int val);
-	void remove(int val);
-	Node * getRoot();
-	protected:
-	Node *root;
-};
-
 
 Node * Tree::getRoot() { return root; }
 
@@ -102,9 +86,11 @@ void Tree::remove(int val) {
 		if (val == seekPtr->val) {
 			if(seekPtr->mid != nullptr){
 				direction = 0;
-				while (seekPtr->mid != nullptr)seekPtr = seekPtr->mid;	
-				delete[](seekPtr->mid);
-				seekPtr = prevPtr = nullptr;
+				while (seekPtr->mid != nullptr){
+					prevPtr = seekPtr;
+					seekPtr = seekPtr->mid;	
+				}
+				prevPtr = prevPtr->mid = nullptr; 
 				delete[] seekPtr;
 				delete[] prevPtr;
 				return;
