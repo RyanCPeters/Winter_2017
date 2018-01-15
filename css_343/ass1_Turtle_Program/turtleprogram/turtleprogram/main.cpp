@@ -41,7 +41,7 @@ int main() {
 	collect_output << "Done." << endl << endl;
 
 	collect_output << expectedOut << endl << endl;
-	delete tpPtr;
+	delete[] tpPtr;
 
 	collect_output.close();
 	return 0;
