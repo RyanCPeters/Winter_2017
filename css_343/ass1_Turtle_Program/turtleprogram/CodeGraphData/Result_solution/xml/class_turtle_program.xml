@@ -1,0 +1,545 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_turtle_program" kind="class" prot="public">
+    <compoundname>TurtleProgram</compoundname>
+    <includes refid="turtleprogram_8h" local="no">turtleprogram.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int TurtleProgram::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="42" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="class_turtle_program_1a9b640673b65a2127bb36c6ab667c7150" compoundref="turtleprogram_8cpp" startline="137" endline="139">getLength</referencedby>
+        <referencedby refid="class_turtle_program_1aa40f4f470affca5710969c0988e82114" compoundref="turtleprogram_8cpp" startline="23" endline="33">makeString</referencedby>
+        <referencedby refid="class_turtle_program_1a9c8e8c49300830cc5408c2dcd134f0fd" compoundref="turtleprogram_8cpp" startline="114" endline="130">operator*=</referencedby>
+        <referencedby refid="class_turtle_program_1af21f7bf8d8078d384439a2eee5b44946" compoundref="turtleprogram_8cpp" startline="80" endline="97">operator+=</referencedby>
+        <referencedby refid="class_turtle_program_1a04932b0afe04746a9c5838a14be6e44c" compoundref="turtleprogram_8cpp" startline="48" endline="55">operator=</referencedby>
+        <referencedby refid="class_turtle_program_1a5f733af64665b3ebaf7bc1bc0b6c8887" compoundref="turtleprogram_8cpp" startline="35" endline="42">operator==</referencedby>
+        <referencedby refid="class_turtle_program_1ab1d78201b78eeb38320c33bdfe2291cc" compoundref="turtleprogram_8cpp" startline="9" endline="15">TurtleProgram</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" prot="private" static="no" mutable="no">
+        <type>std::string *</type>
+        <definition>std::string* TurtleProgram::dirLenArr</definition>
+        <argsstring></argsstring>
+        <name>dirLenArr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="43" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="class_turtle_program_1aedf345ee7c721ade3968fb19871ced58" compoundref="turtleprogram_8cpp" startline="141" endline="144">getIndex</referencedby>
+        <referencedby refid="class_turtle_program_1aa40f4f470affca5710969c0988e82114" compoundref="turtleprogram_8cpp" startline="23" endline="33">makeString</referencedby>
+        <referencedby refid="class_turtle_program_1a9c8e8c49300830cc5408c2dcd134f0fd" compoundref="turtleprogram_8cpp" startline="114" endline="130">operator*=</referencedby>
+        <referencedby refid="class_turtle_program_1af21f7bf8d8078d384439a2eee5b44946" compoundref="turtleprogram_8cpp" startline="80" endline="97">operator+=</referencedby>
+        <referencedby refid="class_turtle_program_1a04932b0afe04746a9c5838a14be6e44c" compoundref="turtleprogram_8cpp" startline="48" endline="55">operator=</referencedby>
+        <referencedby refid="class_turtle_program_1a5f733af64665b3ebaf7bc1bc0b6c8887" compoundref="turtleprogram_8cpp" startline="35" endline="42">operator==</referencedby>
+        <referencedby refid="class_turtle_program_1aa3731af7b31bb71d116fcabd80f395a4" compoundref="turtleprogram_8cpp" startline="150" endline="154">setIndex</referencedby>
+        <referencedby refid="class_turtle_program_1ab1d78201b78eeb38320c33bdfe2291cc" compoundref="turtleprogram_8cpp" startline="9" endline="15">TurtleProgram</referencedby>
+        <referencedby refid="class_turtle_program_1a6e6afa3fbf17b9b34ef9c6ae636d8eb3" compoundref="turtleprogram_8cpp" startline="19" endline="21">~TurtleProgram</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_turtle_program_1afb8c0b76c2077a7387d942f0ea03f500" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TurtleProgram::TurtleProgram</definition>
+        <argsstring>()</argsstring>
+        <name>TurtleProgram</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="8" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="7" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1ab1d78201b78eeb38320c33bdfe2291cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TurtleProgram::TurtleProgram</definition>
+        <argsstring>(const TurtleProgram &amp;tp)</argsstring>
+        <name>TurtleProgram</name>
+        <param>
+          <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+          <declname>tp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="9" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="9" bodyend="15"/>
+        <references refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" compoundref="turtleprogram_8h" startline="43">dirLenArr</references>
+        <references refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" compoundref="turtleprogram_8h" startline="42">size</references>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1a551e4cb06833ef15140bbe262a3f5f3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TurtleProgram::TurtleProgram</definition>
+        <argsstring>(const std::string &amp;dir, const std::string &amp;len)</argsstring>
+        <name>TurtleProgram</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="10" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1a6e6afa3fbf17b9b34ef9c6ae636d8eb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TurtleProgram::~TurtleProgram</definition>
+        <argsstring>()</argsstring>
+        <name>~TurtleProgram</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="11" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="19" bodyend="21"/>
+        <references refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" compoundref="turtleprogram_8h" startline="43">dirLenArr</references>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1aa40f4f470affca5710969c0988e82114" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string TurtleProgram::makeString</definition>
+        <argsstring>() const </argsstring>
+        <name>makeString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="14" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="23" bodyend="33"/>
+        <references refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" compoundref="turtleprogram_8h" startline="43">dirLenArr</references>
+        <references refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" compoundref="turtleprogram_8h" startline="42">size</references>
+        <referencedby refid="turtleprogram_8cpp_1a2d352d5d1e09cbc0941c00ffbce22951" compoundref="turtleprogram_8cpp" startline="160" endline="163">operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1a5f733af64665b3ebaf7bc1bc0b6c8887" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TurtleProgram::operator==</definition>
+        <argsstring>(const TurtleProgram &amp;rhs)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="18" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="35" bodyend="42"/>
+        <references refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" compoundref="turtleprogram_8h" startline="43">dirLenArr</references>
+        <references refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" compoundref="turtleprogram_8h" startline="42">size</references>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1ad4dba2e854c37a30cd8050073bd2a715" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TurtleProgram::operator!=</definition>
+        <argsstring>(const TurtleProgram &amp;rhs)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="19" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="44" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1a04932b0afe04746a9c5838a14be6e44c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+        <definition>TurtleProgram &amp; TurtleProgram::operator=</definition>
+        <argsstring>(const TurtleProgram &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="21" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="48" bodyend="55"/>
+        <references refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" compoundref="turtleprogram_8h" startline="43">dirLenArr</references>
+        <references refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" compoundref="turtleprogram_8h" startline="42">size</references>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1a1f30402f9ad8ba3042fc0aa8c4e72a5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+        <definition>TurtleProgram &amp; TurtleProgram::operator=</definition>
+        <argsstring>(const TurtleProgram *const rhs)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> *const</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="22" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="57" bodyend="66"/>
+        <references refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" compoundref="turtleprogram_8h" startline="43">dirLenArr</references>
+        <references refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" compoundref="turtleprogram_8h" startline="42">size</references>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1a6f692c68799563e6214df39ae743b39b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref></type>
+        <definition>const TurtleProgram TurtleProgram::operator+</definition>
+        <argsstring>(const TurtleProgram &amp;rhs) const </argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="24" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="68" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1a4431684b5d63965b49e68980d52f229e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref></type>
+        <definition>const TurtleProgram TurtleProgram::operator+</definition>
+        <argsstring>(const TurtleProgram *const rhs) const </argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> *const</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="25" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="74" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1af21f7bf8d8078d384439a2eee5b44946" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+        <definition>TurtleProgram &amp; TurtleProgram::operator+=</definition>
+        <argsstring>(const TurtleProgram &amp;rhs)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="26" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="80" bodyend="97"/>
+        <references refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" compoundref="turtleprogram_8h" startline="43">dirLenArr</references>
+        <references refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" compoundref="turtleprogram_8h" startline="42">size</references>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1a5ff15003948ecab345e46c1c9157d5f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+        <definition>TurtleProgram &amp; TurtleProgram::operator+=</definition>
+        <argsstring>(const TurtleProgram *const rhs)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> *const</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="27" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1ad98baa7dcc88740238165101b0dd936d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref></type>
+        <definition>const TurtleProgram TurtleProgram::operator*</definition>
+        <argsstring>(const int &amp;rhs) const </argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="29" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="104" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1a9395759af1cb5c1eb1172e10949be572" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref></type>
+        <definition>const TurtleProgram TurtleProgram::operator*</definition>
+        <argsstring>(const int *const rhs) const </argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const int *const</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="30" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="110" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1a9c8e8c49300830cc5408c2dcd134f0fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+        <definition>TurtleProgram &amp; TurtleProgram::operator*=</definition>
+        <argsstring>(const int &amp;rhs)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="31" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="114" bodyend="130"/>
+        <references refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" compoundref="turtleprogram_8h" startline="43">dirLenArr</references>
+        <references refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" compoundref="turtleprogram_8h" startline="42">size</references>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1a667c60f64b3e93143052ef98dd997645" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+        <definition>TurtleProgram &amp; TurtleProgram::operator*=</definition>
+        <argsstring>(const int *const rhs)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const int *const</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="32" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1a9b640673b65a2127bb36c6ab667c7150" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int</type>
+        <definition>const int TurtleProgram::getLength</definition>
+        <argsstring>() const </argsstring>
+        <name>getLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="34" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="137" bodyend="139"/>
+        <references refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" compoundref="turtleprogram_8h" startline="42">size</references>
+        <referencedby refid="class_turtle_program_1aedf345ee7c721ade3968fb19871ced58" compoundref="turtleprogram_8cpp" startline="141" endline="144">getIndex</referencedby>
+        <referencedby refid="class_turtle_program_1aa3731af7b31bb71d116fcabd80f395a4" compoundref="turtleprogram_8cpp" startline="150" endline="154">setIndex</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1aedf345ee7c721ade3968fb19871ced58" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string &amp;</type>
+        <definition>std::string &amp; TurtleProgram::getIndex</definition>
+        <argsstring>(const int &amp;pos) const </argsstring>
+        <name>getIndex</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="35" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="141" bodyend="144"/>
+        <references refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" compoundref="turtleprogram_8h" startline="43">dirLenArr</references>
+        <references refid="class_turtle_program_1a9b640673b65a2127bb36c6ab667c7150" compoundref="turtleprogram_8cpp" startline="137" endline="139">getLength</references>
+        <referencedby refid="class_turtle_program_1a3e947ad766f8cd9c1142b3da77d9248b" compoundref="turtleprogram_8cpp" startline="146" endline="148">getIndex</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="6" endline="31">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1a3e947ad766f8cd9c1142b3da77d9248b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string &amp;</type>
+        <definition>std::string &amp; TurtleProgram::getIndex</definition>
+        <argsstring>(const int *const pos) const </argsstring>
+        <name>getIndex</name>
+        <param>
+          <type>const int *const</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="36" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="146" bodyend="148"/>
+        <references refid="class_turtle_program_1aedf345ee7c721ade3968fb19871ced58" compoundref="turtleprogram_8cpp" startline="141" endline="144">getIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1aa3731af7b31bb71d116fcabd80f395a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TurtleProgram::setIndex</definition>
+        <argsstring>(const int &amp;pos, const std::string &amp;val)</argsstring>
+        <name>setIndex</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="37" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="150" bodyend="154"/>
+        <references refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" compoundref="turtleprogram_8h" startline="43">dirLenArr</references>
+        <references refid="class_turtle_program_1a9b640673b65a2127bb36c6ab667c7150" compoundref="turtleprogram_8cpp" startline="137" endline="139">getLength</references>
+        <referencedby refid="class_turtle_program_1ab66a1a67f9842a50de7b49c1e273ff4c" compoundref="turtleprogram_8cpp" startline="156" endline="158">setIndex</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_turtle_program_1ab66a1a67f9842a50de7b49c1e273ff4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TurtleProgram::setIndex</definition>
+        <argsstring>(const int &amp;pos, std::string *const val)</argsstring>
+        <name>setIndex</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>std::string *const</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="38" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="156" bodyend="158"/>
+        <references refid="class_turtle_program_1aa3731af7b31bb71d116fcabd80f395a4" compoundref="turtleprogram_8cpp" startline="150" endline="154">setIndex</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_turtle_program_1a2d352d5d1e09cbc0941c00ffbce22951" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const TurtleProgram &amp;tp)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+          <declname>tp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="15" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="160" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_turtle_program_1aa6566858fd6572bd5831ec895411b512" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const TurtleProgram *const tp)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> *const</type>
+          <declname>tp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="16" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="165" bodyend="168"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>TurtleProgram</label>
+        <link refid="class_turtle_program"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>dirLenArr</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" line="6" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h" bodystart="6" bodyend="44"/>
+    <listofallmembers>
+      <member refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" prot="private" virt="non-virtual"><scope>TurtleProgram</scope><name>dirLenArr</name></member>
+      <member refid="class_turtle_program_1aedf345ee7c721ade3968fb19871ced58" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>getIndex</name></member>
+      <member refid="class_turtle_program_1a3e947ad766f8cd9c1142b3da77d9248b" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>getIndex</name></member>
+      <member refid="class_turtle_program_1a9b640673b65a2127bb36c6ab667c7150" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>getLength</name></member>
+      <member refid="class_turtle_program_1aa40f4f470affca5710969c0988e82114" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>makeString</name></member>
+      <member refid="class_turtle_program_1ad4dba2e854c37a30cd8050073bd2a715" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator!=</name></member>
+      <member refid="class_turtle_program_1ad98baa7dcc88740238165101b0dd936d" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator*</name></member>
+      <member refid="class_turtle_program_1a9395759af1cb5c1eb1172e10949be572" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator*</name></member>
+      <member refid="class_turtle_program_1a9c8e8c49300830cc5408c2dcd134f0fd" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator*=</name></member>
+      <member refid="class_turtle_program_1a667c60f64b3e93143052ef98dd997645" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator*=</name></member>
+      <member refid="class_turtle_program_1a6f692c68799563e6214df39ae743b39b" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator+</name></member>
+      <member refid="class_turtle_program_1a4431684b5d63965b49e68980d52f229e" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator+</name></member>
+      <member refid="class_turtle_program_1af21f7bf8d8078d384439a2eee5b44946" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator+=</name></member>
+      <member refid="class_turtle_program_1a5ff15003948ecab345e46c1c9157d5f4" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator+=</name></member>
+      <member refid="class_turtle_program_1a2d352d5d1e09cbc0941c00ffbce22951" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator&lt;&lt;</name></member>
+      <member refid="class_turtle_program_1aa6566858fd6572bd5831ec895411b512" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator&lt;&lt;</name></member>
+      <member refid="class_turtle_program_1a04932b0afe04746a9c5838a14be6e44c" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator=</name></member>
+      <member refid="class_turtle_program_1a1f30402f9ad8ba3042fc0aa8c4e72a5c" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator=</name></member>
+      <member refid="class_turtle_program_1a5f733af64665b3ebaf7bc1bc0b6c8887" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>operator==</name></member>
+      <member refid="class_turtle_program_1aa3731af7b31bb71d116fcabd80f395a4" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>setIndex</name></member>
+      <member refid="class_turtle_program_1ab66a1a67f9842a50de7b49c1e273ff4c" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>setIndex</name></member>
+      <member refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" prot="private" virt="non-virtual"><scope>TurtleProgram</scope><name>size</name></member>
+      <member refid="class_turtle_program_1afb8c0b76c2077a7387d942f0ea03f500" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>TurtleProgram</name></member>
+      <member refid="class_turtle_program_1ab1d78201b78eeb38320c33bdfe2291cc" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>TurtleProgram</name></member>
+      <member refid="class_turtle_program_1a551e4cb06833ef15140bbe262a3f5f3e" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>TurtleProgram</name></member>
+      <member refid="class_turtle_program_1a6e6afa3fbf17b9b34ef9c6ae636d8eb3" prot="public" virt="non-virtual"><scope>TurtleProgram</scope><name>~TurtleProgram</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

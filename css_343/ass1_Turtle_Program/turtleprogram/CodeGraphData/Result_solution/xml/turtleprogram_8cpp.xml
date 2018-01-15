@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="turtleprogram_8cpp" kind="file">
+    <compoundname>turtleprogram.cpp</compoundname>
+    <includes refid="turtleprogram_8h" local="yes">turtleprogram.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">algorithm</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp</label>
+        <link refid="turtleprogram.cpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>turtleprogram.h</label>
+        <link refid="turtleprogram_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>sstream</label>
+      </node>
+      <node id="8">
+        <label>iosfwd</label>
+      </node>
+      <node id="10">
+        <label>iostream</label>
+      </node>
+      <node id="12">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="turtleprogram_8cpp_1a3d1af40879c9b54e4d582eab8dd4651f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>size</definition>
+        <argsstring>(2)</argsstring>
+        <name>size</name>
+        <param>
+          <type>2</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" line="17" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="turtleprogram_8cpp_1a2d352d5d1e09cbc0941c00ffbce22951" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const TurtleProgram &amp;tp)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> &amp;</type>
+          <declname>tp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" line="160" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="160" bodyend="163"/>
+        <references refid="class_turtle_program_1aa40f4f470affca5710969c0988e82114" compoundref="turtleprogram_8cpp" startline="23" endline="33">TurtleProgram::makeString</references>
+      </memberdef>
+      <memberdef kind="function" id="turtleprogram_8cpp_1aa6566858fd6572bd5831ec895411b512" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const TurtleProgram *const tp)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref> *const</type>
+          <declname>tp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" line="165" column="1" bodyfile="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp" bodystart="165" bodyend="168"/>
+        <references refid="class_turtle_program_1aa40f4f470affca5710969c0988e82114" compoundref="turtleprogram_8cpp" startline="23" endline="33">TurtleProgram::makeString</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="turtleprogram_8h" kindref="compound">turtleprogram.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="class_turtle_program_1afb8c0b76c2077a7387d942f0ea03f500" refkind="member"><highlight class="normal"><ref refid="class_turtle_program_1afb8c0b76c2077a7387d942f0ea03f500" kindref="member">TurtleProgram::TurtleProgram</ref>()<sp/>:dirLenArr(0),<sp/><ref refid="turtleprogram_8cpp_1a3d1af40879c9b54e4d582eab8dd4651f" kindref="member">size</ref>(0)<sp/>{}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="class_turtle_program_1ab1d78201b78eeb38320c33bdfe2291cc" refkind="member"><highlight class="normal"><ref refid="class_turtle_program_1afb8c0b76c2077a7387d942f0ea03f500" kindref="member">TurtleProgram::TurtleProgram</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>&amp;<sp/>tp)<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref><sp/>=<sp/>tp.<ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>std::string[<ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>];</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[i]<sp/>=<sp/>tp.<ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[i];</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="turtleprogram_8cpp_1a3d1af40879c9b54e4d582eab8dd4651f" refkind="member"><highlight class="normal"><ref refid="class_turtle_program_1afb8c0b76c2077a7387d942f0ea03f500" kindref="member">TurtleProgram::TurtleProgram</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;dir,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;len)<sp/>:dirLenArr(new<sp/>std::string[2]{dir,len}),<sp/><ref refid="turtleprogram_8cpp_1a3d1af40879c9b54e4d582eab8dd4651f" kindref="member">size</ref>(2)<sp/>{}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="class_turtle_program_1a6e6afa3fbf17b9b34ef9c6ae636d8eb3" refkind="member"><highlight class="normal"><ref refid="class_turtle_program_1a6e6afa3fbf17b9b34ef9c6ae636d8eb3" kindref="member">TurtleProgram::~TurtleProgram</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_turtle_program_1aa40f4f470affca5710969c0988e82114" refkind="member"><highlight class="normal">std::string<sp/><ref refid="class_turtle_program_1aa40f4f470affca5710969c0988e82114" kindref="member">TurtleProgram::makeString</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>std::stringstream<sp/>ss(</highlight><highlight class="stringliteral">&quot;\n[\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>ss<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[0];</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>%<sp/>2<sp/>==<sp/>0)ss<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n\t&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>ss<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ss<sp/>&lt;&lt;<sp/>dirLenArr[i];</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>ss<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n]\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ss.str();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_turtle_program_1a5f733af64665b3ebaf7bc1bc0b6c8887" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program_1a5f733af64665b3ebaf7bc1bc0b6c8887" kindref="member">TurtleProgram::operator==</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>&amp;<sp/>rhs)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref><sp/>!=<sp/>rhs.<ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>)</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isEqual<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>isEqual<sp/>&amp;&amp;<sp/>i<sp/>&lt;<sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isEqual<sp/>=<sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[i]<sp/>==<sp/>rhs.<ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[i];</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>isEqual;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="class_turtle_program_1ad4dba2e854c37a30cd8050073bd2a715" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program_1ad4dba2e854c37a30cd8050073bd2a715" kindref="member">TurtleProgram::operator!=</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>&amp;<sp/>rhs)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>rhs);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="class_turtle_program_1a04932b0afe04746a9c5838a14be6e44c" refkind="member"><highlight class="normal"><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>&amp;<sp/><ref refid="class_turtle_program_1a04932b0afe04746a9c5838a14be6e44c" kindref="member">TurtleProgram::operator=</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>&amp;<sp/>rhs)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>&amp;rhs)</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref><sp/>=<sp/>rhs.<ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>std::string[<ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>];</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>;<sp/>++i)<ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[i]<sp/>=<sp/>rhs.<ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[i];</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="class_turtle_program_1a1f30402f9ad8ba3042fc0aa8c4e72a5c" refkind="member"><highlight class="normal"><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref>&amp;<sp/><ref refid="class_turtle_program_1a04932b0afe04746a9c5838a14be6e44c" kindref="member">TurtleProgram::operator=</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>rhs)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>rhs)</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref><sp/>=<sp/>rhs-&gt;<ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>std::string[<ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>];</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>;<sp/>++i)<ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[i]<sp/>=<sp/>rhs-&gt;<ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[i];</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="class_turtle_program_1a6f692c68799563e6214df39ae743b39b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/><ref refid="class_turtle_program_1a6f692c68799563e6214df39ae743b39b" kindref="member">TurtleProgram::operator+</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>&amp;rhs)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>tmp(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp<sp/>+=<sp/>rhs;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tmp;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="class_turtle_program_1a4431684b5d63965b49e68980d52f229e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/><ref refid="class_turtle_program_1a6f692c68799563e6214df39ae743b39b" kindref="member">TurtleProgram::operator+</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>rhs)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>tmp(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp<sp/>+=<sp/>*rhs;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tmp;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="class_turtle_program_1af21f7bf8d8078d384439a2eee5b44946" refkind="member"><highlight class="normal"><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>&amp;<sp/><ref refid="class_turtle_program_1af21f7bf8d8078d384439a2eee5b44946" kindref="member">TurtleProgram::operator+=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>&amp;<sp/>rhs)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newSize<sp/>=<sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref><sp/>+<sp/>rhs.<ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>*tmpArrPtr<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>std::string[newSize];</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>newSize;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmpArrPtr[i]<sp/>=<sp/>(i<sp/>&lt;<sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>)<sp/>?<sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[i]<sp/>:<sp/>rhs.<ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[i<sp/>-<sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>];</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>clear<sp/>out<sp/>the<sp/>old<sp/>data<sp/>now<sp/>that<sp/>it&apos;s<sp/>copied</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>update<sp/>internal<sp/>values<sp/>to<sp/>the<sp/>new<sp/>ones</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref><sp/>=<sp/>newSize;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref><sp/>=<sp/>tmpArrPtr;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>delete<sp/>the<sp/>temp<sp/>pointers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>tmpArrPtr<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>tmpArrPtr;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="class_turtle_program_1a5ff15003948ecab345e46c1c9157d5f4" refkind="member"><highlight class="normal"><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref>&amp;<sp/><ref refid="class_turtle_program_1af21f7bf8d8078d384439a2eee5b44946" kindref="member">TurtleProgram::operator+=</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>rhs)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>+=<sp/>*rhs;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="class_turtle_program_1ad98baa7dcc88740238165101b0dd936d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/><ref refid="class_turtle_program_1ad98baa7dcc88740238165101b0dd936d" kindref="member">TurtleProgram::operator*</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>tmp(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp<sp/>*=<sp/>rhs;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tmp;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="class_turtle_program_1a9395759af1cb5c1eb1172e10949be572" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/><ref refid="class_turtle_program_1ad98baa7dcc88740238165101b0dd936d" kindref="member">TurtleProgram::operator*</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>rhs)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(this-&gt;</highlight><highlight class="keyword">operator</highlight><highlight class="normal">*(*rhs));</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="class_turtle_program_1a9c8e8c49300830cc5408c2dcd134f0fd" refkind="member"><highlight class="normal"><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>&amp;<sp/><ref refid="class_turtle_program_1a9c8e8c49300830cc5408c2dcd134f0fd" kindref="member">TurtleProgram::operator*=</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;<sp/>rhs)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newSize<sp/>=<sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref><sp/>*<sp/>rhs;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>*dest<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>std::string[newSize];</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mult<sp/>=<sp/>0;<sp/>mult<sp/>&lt;<sp/>rhs;<sp/>++mult)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref><sp/>*<sp/>mult,<sp/>source<sp/>=<sp/>0;<sp/>source<sp/>&lt;<sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>;<sp/>++i,<sp/>++source)<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dest[i]<sp/>=<sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[source];</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref><sp/>=<sp/>dest;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref><sp/>=<sp/>newSize;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>dest<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>dest;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="class_turtle_program_1a667c60f64b3e93143052ef98dd997645" refkind="member"><highlight class="normal"><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref>&amp;<sp/><ref refid="class_turtle_program_1a9c8e8c49300830cc5408c2dcd134f0fd" kindref="member">TurtleProgram::operator*=</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>rhs)<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>*=<sp/>*rhs;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="class_turtle_program_1a9b640673b65a2127bb36c6ab667c7150" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program_1a9b640673b65a2127bb36c6ab667c7150" kindref="member">TurtleProgram::getLength</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program_1a13c5b71ec6dee1690940fc1faf0958a5" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="class_turtle_program_1aedf345ee7c721ade3968fb19871ced58" refkind="member"><highlight class="normal">std::string&amp;<sp/><ref refid="class_turtle_program_1aedf345ee7c721ade3968fb19871ced58" kindref="member">TurtleProgram::getIndex</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;<sp/>pos)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>nll<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;NULL&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((pos<sp/>&lt;<sp/><ref refid="class_turtle_program_1a9b640673b65a2127bb36c6ab667c7150" kindref="member">getLength</ref>()<sp/>&amp;&amp;<sp/>pos<sp/>&gt;=<sp/>0)?<sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[pos]<sp/>:<sp/>nll);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="class_turtle_program_1a3e947ad766f8cd9c1142b3da77d9248b" refkind="member"><highlight class="normal">std::string&amp;<sp/><ref refid="class_turtle_program_1aedf345ee7c721ade3968fb19871ced58" kindref="member">TurtleProgram::getIndex</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pos)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program_1aedf345ee7c721ade3968fb19871ced58" kindref="member">getIndex</ref>(*pos);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="class_turtle_program_1aa3731af7b31bb71d116fcabd80f395a4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program_1aa3731af7b31bb71d116fcabd80f395a4" kindref="member">TurtleProgram::setIndex</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;pos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;val)<sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pos<sp/>&gt;<sp/><ref refid="class_turtle_program_1a9b640673b65a2127bb36c6ab667c7150" kindref="member">getLength</ref>()<sp/>||<sp/>pos<sp/>&lt;<sp/>0)</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_turtle_program_1a4d1a725d7c8ba1e02952dc876173b615" kindref="member">dirLenArr</ref>[pos]<sp/>=<sp/>val;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="class_turtle_program_1ab66a1a67f9842a50de7b49c1e273ff4c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program_1aa3731af7b31bb71d116fcabd80f395a4" kindref="member">TurtleProgram::setIndex</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;pos,<sp/>std::string*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>val)<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program_1aa3731af7b31bb71d116fcabd80f395a4" kindref="member">setIndex</ref>(pos,*val);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="turtleprogram_8cpp_1a2d352d5d1e09cbc0941c00ffbce22951" refkind="member"><highlight class="normal">std::ostream<sp/>&amp;<sp/><ref refid="turtleprogram_8cpp_1a2d352d5d1e09cbc0941c00ffbce22951" kindref="member">operator&lt;&lt;</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>&amp;<sp/>tp)<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>tp.<ref refid="class_turtle_program_1aa40f4f470affca5710969c0988e82114" kindref="member">makeString</ref>();</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="turtleprogram_8cpp_1aa6566858fd6572bd5831ec895411b512" refkind="member"><highlight class="normal">std::ostream<sp/>&amp;<sp/><ref refid="turtleprogram_8cpp_1a2d352d5d1e09cbc0941c00ffbce22951" kindref="member">operator&lt;&lt;</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_turtle_program" kindref="compound">TurtleProgram</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tp)<sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>tp-&gt;<ref refid="class_turtle_program_1aa40f4f470affca5710969c0988e82114" kindref="member">makeString</ref>();</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp"/>
+  </compounddef>
+</doxygen>
