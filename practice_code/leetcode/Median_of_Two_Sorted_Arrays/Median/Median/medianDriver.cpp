@@ -14,5 +14,15 @@ int main() {
 	cout << endl;
 	for (int i = 0; i < v2.size(); ++i) cout << v2.at(i) << " ";
 	cout << endl;
+
+	vector<int> vMerged;
+	vMerged.assign(v1.begin(), v1.end());
+	vMerged.emplace_back(v2.begin(), v2.end());
+
+	for (int i = 0; i < vMerged.size(); ++i) cout << vMerged.at(i) << " ";
+	cout << endl;
+
+	
+
 	
 }

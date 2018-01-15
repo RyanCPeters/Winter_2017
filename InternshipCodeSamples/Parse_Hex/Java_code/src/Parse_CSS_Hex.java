@@ -4,8 +4,6 @@ import java.security.InvalidParameterException;
  * @author Ryan Peters on 1/13/2018.
  */
 
-
-
 public class Parse_CSS_Hex {
 
     private static int convertToInt(char charAtPosI) {
@@ -63,6 +61,7 @@ public class Parse_CSS_Hex {
             throw new Exception("Error");
         }
 
+        // implicit in using a charArr of length 6 is that I'm dropping the '#' character from the front.
         int charArrSize = 6;
         char charArr[] = new char[charArrSize];
         int red = 0, blue = 0, green = 0, ret = 0;
