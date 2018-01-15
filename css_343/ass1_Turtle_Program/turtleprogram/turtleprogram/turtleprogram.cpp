@@ -16,7 +16,7 @@
 /** TurtleProgram::TurtleProgram() :dirLenArr(0), size(0) {}
  * The default empty constructor for the turtleprogram class
  */
-TurtleProgram::TurtleProgram() :dirLenArr(0), size(0) {}
+TurtleProgram::TurtleProgram() :dirLenArr(new std::string[0]{}), size(0) {}
 
 
 /** TurtleProgram::TurtleProgram(const TurtleProgram & tp) {
@@ -119,6 +119,18 @@ TurtleProgram& TurtleProgram::operator=( const TurtleProgram * const rhs) {
 }
 
 /**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  *
  * @param rhs
  * @return
