@@ -17,6 +17,9 @@ Parse CSS Colors
 
 <p>Assume that your function will be called very frequently, so try to avoid unnecessary inefficiencies in your code.</p>
 
+#### Example
+if "#F00" is the input string, convert the string into an array of char and remember that the conversion for a 4 character sequence
+
 <h3>Restrictions</h3>
 
 <ul>
