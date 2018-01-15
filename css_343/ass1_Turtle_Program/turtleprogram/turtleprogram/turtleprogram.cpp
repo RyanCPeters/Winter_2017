@@ -43,6 +43,7 @@ TurtleProgram::TurtleProgram(const std::string &dir, const std::string &len) :di
  */
 TurtleProgram::~TurtleProgram() {
 	delete[] dirLenArr;
+	dirLenArr = nullptr;
 }
 
 /** std::string TurtleProgram::makeString() const {
