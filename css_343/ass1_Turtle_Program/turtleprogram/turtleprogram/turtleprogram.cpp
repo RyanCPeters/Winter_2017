@@ -36,14 +36,19 @@ TurtleProgram::TurtleProgram(const TurtleProgram & tp) {
  * @param dir a string representation of the direction to go, should be "F"(forward) or "R"
  * @param len a string representation of the number of pixels to travel or the number of degrees to turn
  */
-TurtleProgram::TurtleProgram(const std::string &dir, const std::string &len) :dirLenArr(new std::string[2]{dir,len}), size(2) {}
+TurtleProgram::TurtleProgram(const std::string &dir, const std::string &len) {
+	dirLenArr = new std::string[2];
+	dirLenArr[0] = dir;
+	dirLenArr[1] = len;
+	size = 2;
+}
 
 /** TurtleProgram::~TurtleProgram() {
  * The destructor for this class needs only to delete the string array that stores the programs directions.
  */
 TurtleProgram::~TurtleProgram() {
 	delete[] dirLenArr;
-	dirLenArr = nullptr;
+//	dirLenArr = nullptr;
 }
 
 /** std::string TurtleProgram::makeString() const {
