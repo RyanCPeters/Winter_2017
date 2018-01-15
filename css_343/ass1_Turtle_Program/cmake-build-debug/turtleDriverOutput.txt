@@ -1,0 +1,142 @@
+tp1: []
+tp2: [F 10]
+tp1 now as tp2+tp3: [F 10 R 90]
+tp1 now as tp2 * 3: [F 10 F 10 F 10]
+tp4 is a copy of tp1: [F 10 F 10 F 10]
+tp5: [F 10]
+tp2 and tp5 are == to each other: true
+tp2 and tp3 are != to each other: true
+index 0 of tp2 is F
+tp2 after 2 calls to setIndex: [R 90]
+tp2 and tp3 are == to each other: true
+Done.
+
+Expected Output
+tp1: []
+tp2: [F 10]
+tp1 now as tp2+tp3: [F 10 R 90]
+tp1 now as tp2 * 3: [F 10 F 10 F 10]
+tp4 is a copy of tp1: [F 10 F 10 F 10]
+tp5: [F 10]
+tp2 and tp5 are == to each other: true
+tp2 and tp3 are != to each other: true
+index 0 of tp2 is F
+tp2 after 2 calls to setIndex: [R 90]
+tp2 and tp3 are == to each other: true
+Done.
+
+tp1: []
+tp2: [F 10]
+tp1 now as tp2+tp3: [F 10 R 90]
+tp1 now as tp2 * 3: [F 10 F 10 F 10]
+tp4 is a copy of tp1: [F 10 F 10 F 10]
+tp5: [F 10]
+tp2 and tp5 are == to each other: true
+tp2 and tp3 are != to each other: true
+index 0 of tp2 is F
+tp2 after 2 calls to setIndex: [R 90]
+tp2 and tp3 are == to each other: true
+tpPtr is constructed, and looks like this: []
+tpPtr is at memory address: 0x2d817e0
+*tpPtr = tp1; tp1 = [F 10 F 10 F 10]; *tpPtr = [F 10 F 10 F 10];
+tpPtr = &tp2; tp2 = [R 90]; *tpPtr = [R 90];
+Done.
+
+Expected Output
+tp1: []
+tp2: [F 10]
+tp1 now as tp2+tp3: [F 10 R 90]
+tp1 now as tp2 * 3: [F 10 F 10 F 10]
+tp4 is a copy of tp1: [F 10 F 10 F 10]
+tp5: [F 10]
+tp2 and tp5 are == to each other: true
+tp2 and tp3 are != to each other: true
+index 0 of tp2 is F
+tp2 after 2 calls to setIndex: [R 90]
+tp2 and tp3 are == to each other: true
+Done.
+
+tp1: []
+tp2: [F 10]
+tp1 now as tp2+tp3: [F 10 R 90]
+tp1 now as tp2 * 3: [F 10 F 10 F 10]
+tp4 is a copy of tp1: [F 10 F 10 F 10]
+tp5: [F 10]
+tp2 and tp5 are == to each other: true
+tp2 and tp3 are != to each other: true
+index 0 of tp2 is F
+tp2 after 2 calls to setIndex: [R 90]
+tp2 and tp3 are == to each other: true
+tpPtr is constructed, and looks like this: []
+tpPtr is at memory address: 0x2eb17e0
+*tpPtr = tp1; tp1 = [F 10 F 10 F 10]; *tpPtr = [F 10 F 10 F 10];
+tpPtr = &tp2; tp2 = [R 90]; *tpPtr = [R 90];
+Done.
+
+Expected Output
+tp1: []
+tp2: [F 10]
+tp1 now as tp2+tp3: [F 10 R 90]
+tp1 now as tp2 * 3: [F 10 F 10 F 10]
+tp4 is a copy of tp1: [F 10 F 10 F 10]
+tp5: [F 10]
+tp2 and tp5 are == to each other: true
+tp2 and tp3 are != to each other: true
+index 0 of tp2 is F
+tp2 after 2 calls to setIndex: [R 90]
+tp2 and tp3 are == to each other: true
+Done.
+
+tp1: []
+tp2: [F 10]
+tp1 now as tp2+tp3: [F 10 R 90]
+tp1 now as tp2 * 3: [F 10 F 10 F 10]
+tp4 is a copy of tp1: [F 10 F 10 F 10]
+tp5: [F 10]
+tp2 and tp5 are == to each other: true
+tp2 and tp3 are != to each other: true
+index 0 of tp2 is F
+tp2 after 2 calls to setIndex: [R 90]
+tp2 and tp3 are == to each other: true
+tpPtr is constructed, and looks like this: []
+tpPtr is at memory address: 0x30417e0
+*tpPtr = tp1; tp1 = [F 10 F 10 F 10]; *tpPtr = [F 10 F 10 F 10];
+tpPtr = &tp2; tp2 = [R 90]; *tpPtr = [R 90];
+Done.
+
+Expected Output
+tp1: []
+tp2: [F 10]
+tp1 now as tp2+tp3: [F 10 R 90]
+tp1 now as tp2 * 3: [F 10 F 10 F 10]
+tp4 is a copy of tp1: [F 10 F 10 F 10]
+tp5: [F 10]
+tp2 and tp5 are == to each other: true
+tp2 and tp3 are != to each other: true
+index 0 of tp2 is F
+tp2 after 2 calls to setIndex: [R 90]
+tp2 and tp3 are == to each other: true
+Done.
+
+tp1: []
+tp2: [F 10]
+tp1 now as tp2+tp3: [F 10 R 90]
+tp1 now as tp2 * 3: [F 10 F 10 F 10]
+tp4 is a copy of tp1: [F 10 F 10 F 10]
+tp5: [F 10]
+tp2 and tp5 are == to each other: true
+tp2 and tp3 are != to each other: true
+index 0 of tp2 is F
+tp2 after 2 calls to setIndex: [R 90]
+tp2 and tp3 are == to each other: true
+tp1: []
+tp2: [F 10]
+tp1 now as tp2+tp3: [F 10 R 90]
+tp1 now as tp2 * 3: [F 10 F 10 F 10]
+tp4 is a copy of tp1: [F 10 F 10 F 10]
+tp5: [F 10]
+tp2 and tp5 are == to each other: true
+tp2 and tp3 are != to each other: true
+index 0 of tp2 is F
+tp2 after 2 calls to setIndex: [R 90]
+tp2 and tp3 are == to each other: true

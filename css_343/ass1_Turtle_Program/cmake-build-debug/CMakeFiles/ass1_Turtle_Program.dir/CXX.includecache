@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/main.cpp
+turtleprogram.h
+C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h
+iostream
+-
+fstream
+-
+
+C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.cpp
+turtleprogram.h
+C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h
+iostream
+-
+sstream
+-
+algorithm
+-
+
+C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/turtleprogram/turtleprogram/turtleprogram.h
+iosfwd
+-
+string
+-
+
