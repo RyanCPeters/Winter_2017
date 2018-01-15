@@ -119,7 +119,7 @@ TurtleProgram& TurtleProgram::operator=( const TurtleProgram * const rhs) {
 }
 
 /**
- * 
+ *
  * @param rhs
  * @return
  */
@@ -192,7 +192,7 @@ TurtleProgram& TurtleProgram::operator*=( const int * const rhs) {
 	return *this;
 }
 
-const int TurtleProgram::getLength() const {
+int TurtleProgram::getLength() const {
 	return size;
 }
 

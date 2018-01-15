@@ -31,7 +31,7 @@ public:
 	TurtleProgram& operator*=( const int &rhs);
 	TurtleProgram& operator*=( const int * const rhs);
 
-	const int getLength() const;
+	int getLength() const;
 	std::string& getIndex(const int &pos)const;
 	std::string& getIndex(const int* const pos)const;
 	bool setIndex(const int &pos, const std::string &val);
