@@ -30,18 +30,23 @@ int main() {
 	tp2.setIndex(1, "90");
 	collect_output << "tp2 after 2 calls to setIndex: " << tp2 << endl;
 	collect_output << "tp2 and tp3 are == to each other: " << (tp2 == tp3) << endl;
+	
+	
 	// need to write additional tests for += *=
-	TurtleProgram * tpPtr = new TurtleProgram();
-	collect_output << "tpPtr is constructed, and looks like this: " << *tpPtr << endl;
-	collect_output << "tpPtr is at memory address: " << tpPtr << endl;
-	*tpPtr = tp1;
-	collect_output << "*tpPtr = tp1; tp1 = " << tp1 << "; *tpPtr = " << *tpPtr << ";\n";
-	tpPtr = &tp2;
-	collect_output << "tpPtr = &tp2; tp2 = " << tp2 << "; *tpPtr = " << *tpPtr << ";\n";
-	collect_output << "Done." << endl << endl;
-
-	collect_output << expectedOut << endl << endl;
-	delete[] tpPtr;
+	// += and *= are actually tested and showcased in the use of the basic operator* and operator+ overloads.
+	
+	
+//	TurtleProgram * tpPtr = new TurtleProgram();
+//	collect_output << "tpPtr is constructed, and looks like this: " << *tpPtr << endl;
+//	collect_output << "tpPtr is at memory address: " << tpPtr << endl;
+//	*tpPtr = tp1;
+//	collect_output << "*tpPtr = tp1; tp1 = " << tp1 << "; *tpPtr = " << *tpPtr << ";\n";
+//	tpPtr = &tp2;
+//	collect_output << "tpPtr = &tp2; tp2 = " << tp2 << "; *tpPtr = " << *tpPtr << ";\n";
+//	collect_output << "Done." << endl << endl;
+//
+//	collect_output << expectedOut << endl << endl;
+//	delete(tpPtr);
 
 	collect_output.close();
 	return 0;
