@@ -64,6 +64,7 @@ int main() {
 	D.setCoeff(50, 0);                        // set x^0 coeff to 50
 	D.setCoeff(50, 20000);                    // set x^20000 coeff to 50
 	cout << "D =" << D << endl << endl;
-
+	cin.get();
+	cin.get();
 	return 0;
 }

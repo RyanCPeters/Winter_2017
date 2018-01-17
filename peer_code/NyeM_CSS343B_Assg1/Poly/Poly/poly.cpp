@@ -84,26 +84,6 @@ Poly Poly::operator+(const Poly & p) const
 	return combined;
 }
 
-//-------------------------operator- ------------------------
-// Description: Uses the -= operator to subtract polynomials.
-//-----------------------------------------------------------
-Poly Poly::operator-(const Poly & p) const
-{
-	Poly combined = *this;
-	combined -= p;
-	return combined;
-}
-
-//-------------------------operator- ------------------------
-// Description: Uses the -= operator to subtract an int.
-//-----------------------------------------------------------
-Poly Poly::operator-(const int & subtract) const
-{
-	Poly combined = *this;
-	combined -= subtract;
-	return combined;
-}
-
 //-------------------------operator*-------------------------
 // Description: Uses the *= operator to multiply polynomials.
 //-----------------------------------------------------------
@@ -153,6 +133,24 @@ Poly & Poly::operator+=(const Poly & p)
 	return *this;
 }
 
+//-------------------------operator- ------------------------
+// Description: Uses the -= operator to subtract an int.
+//-----------------------------------------------------------
+Poly Poly::operator-(const int & subtract) const {
+	Poly combined = *this;
+	combined -= subtract;
+	return combined;
+}
+
+//-------------------------operator- ------------------------
+// Description: Uses the -= operator to subtract polynomials.
+//-----------------------------------------------------------
+Poly Poly::operator-(const Poly & p) const {
+	Poly combined = *this;
+	combined -= p;
+	return combined;
+}
+
 //-------------------------operator-=------------------------
 // Description: Subtracts two polynomials and returns the
 //				result.
@@ -162,7 +160,7 @@ Poly & Poly::operator-=(const Poly & p)
 	//See if array size needs to be changed
 	if (power >= p.power)
 	{
-		for (int i = 0; i <= p.power; i++)
+		for (int i = 0; i <= p.power; ++i)
 		{
 			coefficients[i] -= p.coefficients[i];
 		}
@@ -171,21 +169,12 @@ Poly & Poly::operator-=(const Poly & p)
 	{
 		//Copy original poly into larger array
 		int * copy = new int[p.power + 1];
-		for (int i = 0; i <= power; i++)
-		{
-			copy[i] = coefficients[i];
-		}
 
-		//Fill extra space with subtracted 2nd poly values
-		for (int i = power + 1; i <= p.power; i++)
-		{
-			copy[i] = p.coefficients[i] * -1;
+		for (int i = 0; i <= power; ++i) {
+			copy[i] = coefficients[i] - p.coefficients[i];
 		}
-
-		//Subtract second poly's values from beginning part
-		for (int i = 0; i <= power; i++)
-		{
-			copy[i] -= p.coefficients[i];
+		for (int justPPow = power + 1; justPPow <= p.power; ++justPPow) {
+			copy[justPPow] = -p.coefficients[justPPow];
 		}
 
 		power = p.power;
@@ -194,6 +183,7 @@ Poly & Poly::operator-=(const Poly & p)
 	}
 	return *this;
 }
+
 
 //-------------------------operator-=------------------------
 // Description: Subtracts an integer from poly and returns
@@ -250,15 +240,15 @@ Poly & Poly::operator=(const Poly & p)
 	//Check to see if there needs to be resizing or not
 	if (power == p.power)
 	{
-		for (int i = 0; i <= power; i++)
+		for (int i = 0; i <= power; ++i)
 		{
 			coefficients[i] = p.coefficients[i];
 		}
 	}
-	else
+	else 
 	{
 		int * copy = new int[p.power + 1];
-		for (int i = 0; i <= p.power; i++)
+		for (int i = 0; i <= p.power; ++i)
 		{
 			copy[i] = p.coefficients[i];
 		}
@@ -325,7 +315,7 @@ bool Poly::operator!=(const Poly & p) const
 	if (power > p.power)
 	{
 		//Check to see if the extra values are zeros or not.
-		for (int i = p.power; i <= power; i++)
+		for (int i = p.power; i <= power; ++i)
 		{
 			if (coefficients[i] != 0)
 				return true;
@@ -341,7 +331,7 @@ bool Poly::operator!=(const Poly & p) const
 	else if (power < p.power)
 	{
 		//Check to see if the extra values are zeros or not.
-		for (int i = power; i <= p.power; i++)
+		for (int i = power; i <= p.power; ++i)
 		{
 			if (p.coefficients[i] != 0)
 				return true;
@@ -356,7 +346,7 @@ bool Poly::operator!=(const Poly & p) const
 	}
 	else //They are the same size.
 	{
-		for (int i = 0; i <= power; i++)
+		for (int i = 0; i <= power; ++i)
 		{
 			if (coefficients[i] != p.coefficients[i])
 				return true;
@@ -412,16 +402,18 @@ int Poly::getCoeff(int pow) const
 //-----------------------------------------------------------
 std::ostream & operator<<(std::ostream & os, const Poly & poly)
 {
-	int max = 0; //Used to see if entire array is 0
+	bool allZeros = true; //Used to see if entire array is 0
 	//Iterate backwards to print largest powers first
-	for (int i = poly.power; i >= 0; i--)
+	for (int i = poly.power; i >= 0; --i)
 	{
-		if (poly.coefficients[i] >= max) {
-			max = poly.coefficients[i];
-		}
+		
 		//Don't want to print out 0's
 		if (poly.coefficients[i] != 0)
 		{
+			if (allZeros && poly.coefficients[i] > 0) {
+				allZeros = false;
+			}
+
 			if (i > 1)
 			{
 				//showpos toggles the sign for the cout object
@@ -459,7 +451,7 @@ std::ostream & operator<<(std::ostream & os, const Poly & poly)
 			}
 		}
 	}
-	if (max == 0) //All that was in the array is 0's
+	if (allZeros) //All that was in the array is 0's
 		os << noshowpos << " " << 0;
 	return os;
 }
@@ -490,6 +482,6 @@ std::istream & operator>>(std::istream & is, Poly & poly)
 			poly.setCoeff(pow, 0);
 			poly.setCoeff(coeff, 1); 
 		}
-	} while (coeff != -1 && pow != -1);
+	} while (!(coeff == -1 && pow == -1));
 	return is;
 }
