@@ -44,7 +44,7 @@ Poly::Poly(int coeff, int pow)
 	power = pow;
 	coefficients = new int[power + 1];
 
-	for (int i = 0; i < power; i++)
+	for (int i = 0; i < power; ++i)
 	{
 		coefficients[i] = 0;
 	}
@@ -60,7 +60,7 @@ Poly::Poly(const Poly & copy)
 	power = copy.power;
 	coefficients = new int[power + 1];
 
-	for (int i = 0; i < copy.power + 1; i++)
+	for (int i = 0; i < copy.power + 1; ++i)
 	{
 		coefficients[i] = copy.coefficients[i];
 	}
@@ -123,7 +123,7 @@ Poly & Poly::operator+=(const Poly & p)
 	//See if array size needs to be changed
 	if (power >= p.power)
 	{
-		for (int i = 0; i <= p.power; i++)
+		for (int i = 0; i <= p.power; ++i)
 		{
 			coefficients[i] += p.coefficients[i];
 		}
@@ -132,17 +132,17 @@ Poly & Poly::operator+=(const Poly & p)
 	{
 		//Copy original poly and zero-out free space
 		int * copy = new int[p.power + 1];
-		for (int i = 0; i <= power; i++)
+		for (int i = 0; i <= power; ++i)
 		{
 			copy[i] = coefficients[i];
 		}
-		for (int i = power + 1; i <= p.power; i++)
+		for (int i = power + 1; i <= p.power; ++i)
 		{
 			copy[i] = 0;
 		}
 
 		//Add second poly to first
-		for (int i = 0; i <= p.power; i++) 
+		for (int i = 0; i <= p.power; ++i) 
 		{
 			copy[i] += p.coefficients[i];
 		}
@@ -162,7 +162,7 @@ Poly & Poly::operator-=(const Poly & p)
 	//See if array size needs to be changed
 	if (power >= p.power)
 	{
-		for (int i = 0; i <= p.power; i++)
+		for (int i = 0; i <= p.power; ++i)
 		{
 			coefficients[i] -= p.coefficients[i];
 		}
@@ -171,21 +171,16 @@ Poly & Poly::operator-=(const Poly & p)
 	{
 		//Copy original poly into larger array
 		int * copy = new int[p.power + 1];
+
 		for (int i = 0; i <= power; ++i)
 		{
 			copy[i] = coefficients[i] - p.coefficients[i];
 		}
 
-		//Fill the rest of the array with zeros
-		for (int i = power + 1; i <= p.power; ++i)
-		{
-			copy[i] = 0;
-		}
-
 		//Subtract second poly's values
 		for (int i = power + 1; i <= p.power; ++i)
 		{
-			copy[i] -= p.coefficients[i];
+			copy[i] = -p.coefficients[i];
 		}
 
 		power = p.power;
@@ -215,11 +210,11 @@ Poly & Poly::operator*=(const Poly & p)
 		int newArrayPower = p.power + power;
 		int * newArray = new int[newArrayPower + 1];
 
-		for (int i = 0; i <= newArrayPower; i++) {
+		for (int i = 0; i <= newArrayPower; ++i) {
 			newArray[i] = 0;
 		}
 
-		for (int i = 0; i <= power; i++)
+		for (int i = 0; i <= power; ++i)
 		{
 			for (int j = 0; j <= p.power; j++)
 			{
@@ -245,7 +240,7 @@ Poly & Poly::operator=(const Poly & p)
 	//Check to see if there needs to be resizing or not
 	if (power == p.power)
 	{
-		for (int i = 0; i <= power; i++)
+		for (int i = 0; i <= power; ++i)
 		{
 			coefficients[i] = p.coefficients[i];
 		}
@@ -253,7 +248,7 @@ Poly & Poly::operator=(const Poly & p)
 	else
 	{
 		int * copy = new int[p.power + 1];
-		for (int i = 0; i <= p.power; i++)
+		for (int i = 0; i <= p.power; ++i)
 		{
 			copy[i] = p.coefficients[i];
 		}
@@ -272,13 +267,13 @@ bool Poly::operator==(const Poly & p) const
 	if (power > p.power)
 	{
 		//Check to see if the extra values are zeros or not.
-		for (int i = p.power; i <= power; i++)
+		for (int i = p.power; i <= power; ++i)
 		{
 			if (coefficients[i] != 0)
 				return false;
 		}
 		//Compare the part that is the same length
-		for (int i = 0; i <= p.power; i++)
+		for (int i = 0; i <= p.power; ++i)
 		{
 			if (coefficients[i] != p.coefficients[i])
 				return false;
@@ -288,13 +283,13 @@ bool Poly::operator==(const Poly & p) const
 	else if (power < p.power)
 	{
 		//Check to see if the extra values are zeros or not.
-		for (int i = power; i <= p.power; i++)
+		for (int i = power; i <= p.power; ++i)
 		{
 			if (p.coefficients[i] != 0)
 				return false;
 		}
 		//Compare the part that is the same length
-		for (int i = 0; i <= power; i++)
+		for (int i = 0; i <= power; ++i)
 		{
 			if (coefficients[i] != p.coefficients[i])
 				return false;
@@ -303,7 +298,7 @@ bool Poly::operator==(const Poly & p) const
 	}
 	else //They are the same size.
 	{
-		for (int i = 0; i <= power; i++)
+		for (int i = 0; i <= power; ++i)
 		{
 			if (coefficients[i] != p.coefficients[i])
 				return false;
@@ -320,13 +315,13 @@ bool Poly::operator!=(const Poly & p) const
 	if (power > p.power)
 	{
 		//Check to see if the extra values are zeros or not.
-		for (int i = p.power; i <= power; i++)
+		for (int i = p.power; i <= power; ++i)
 		{
 			if (coefficients[i] != 0)
 				return true;
 		}
 		//Compare the part that is the same length
-		for (int i = 0; i <= p.power; i++)
+		for (int i = 0; i <= p.power; ++i)
 		{
 			if (coefficients[i] != p.coefficients[i])
 				return true;
@@ -336,13 +331,13 @@ bool Poly::operator!=(const Poly & p) const
 	else if (power < p.power)
 	{
 		//Check to see if the extra values are zeros or not.
-		for (int i = power; i <= p.power; i++)
+		for (int i = power; i <= p.power; ++i)
 		{
 			if (p.coefficients[i] != 0)
 				return true;
 		}
 		//Compare the part that is the same length
-		for (int i = 0; i <= power; i++)
+		for (int i = 0; i <= power; ++i)
 		{
 			if (coefficients[i] != p.coefficients[i])
 				return true;
@@ -351,7 +346,7 @@ bool Poly::operator!=(const Poly & p) const
 	}
 	else //They are the same size.
 	{
-		for (int i = 0; i <= power; i++)
+		for (int i = 0; i <= power; ++i)
 		{
 			if (coefficients[i] != p.coefficients[i])
 				return true;
@@ -372,13 +367,13 @@ void Poly::setCoeff(int coeff, int pow)
 	{
 		int * copy = new int[pow + 1];
 		//Copy until old power level
-		for (int i = 0; i <= power; i++) 
+		for (int i = 0; i <= power; ++i) 
 		{
 			copy[i] = coefficients[i];
 		}
 
 		//Set new "in-between" values to 0
-		for (int i = power + 1; i < pow; i++) 
+		for (int i = power + 1; i < pow; ++i) 
 		{
 			copy[i] = 0;
 		}
