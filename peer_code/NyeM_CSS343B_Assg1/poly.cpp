@@ -176,14 +176,8 @@ Poly & Poly::operator-=(const Poly & p)
 			copy[i] = coefficients[i];
 		}
 
-		//Fill extra space with subtracted 2nd poly values
-		for (int i = power + 1; i <= p.power; i++)
-		{
-			copy[i] = p.coefficients[i] * -1;
-		}
-
-		//Subtract second poly's values from beginning part
-		for (int i = 0; i <= power; i++)
+		//Subtract second poly's values
+		for (int i = 0; i <= p.power; i++)
 		{
 			copy[i] -= p.coefficients[i];
 		}
@@ -242,11 +236,6 @@ Poly & Poly::operator*=(const Poly & p)
 //-----------------------------------------------------------
 Poly & Poly::operator=(const Poly & p)
 {
-	// Initial check to see if memory addresses are the same
-	// if they are the same, we don't need to waste time copying,
-	// and we don't want to destroy any data or we risk losing it.
-	if (this == &p)return *this;
-
 	//Check to see if there needs to be resizing or not
 	if (power == p.power)
 	{
@@ -412,16 +401,17 @@ int Poly::getCoeff(int pow) const
 //-----------------------------------------------------------
 std::ostream & operator<<(std::ostream & os, const Poly & poly)
 {
-	int max = 0; //Used to see if entire array is 0
+	bool allZeros = true; //Used to see if entire array is 0
 	//Iterate backwards to print largest powers first
 	for (int i = poly.power; i >= 0; i--)
 	{
-		if (poly.coefficients[i] >= max) {
-			max = poly.coefficients[i];
-		}
-		//Don't want to print out 0's
 		if (poly.coefficients[i] != 0)
 		{
+			//Don't want to print out 0's
+			if (!allZeros && poly.coefficients[i] > 0) {
+				allZeros = false;
+			}
+
 			if (i > 1)
 			{
 				//showpos toggles the sign for the cout object
@@ -454,12 +444,15 @@ std::ostream & operator<<(std::ostream & os, const Poly & poly)
 			}
 			else if (i == 0) //Don't want to show x or power
 			{
-				os << " " << showpos << poly.coefficients[i];
-				os.flush();
+				if (poly.coefficients[i] != 0)
+				{
+					os << " " << showpos << poly.coefficients[i];
+					os.flush();
+				}
 			}
 		}
 	}
-	if (max == 0) //All that was in the array is 0's
+	if (allZeros == 0) //All that was in the array is 0's
 		os << noshowpos << " " << 0;
 	return os;
 }
@@ -490,6 +483,6 @@ std::istream & operator>>(std::istream & is, Poly & poly)
 			poly.setCoeff(pow, 0);
 			poly.setCoeff(coeff, 1); 
 		}
-	} while (coeff != -1 && pow != -1);
+	} while (!(coeff == -1 && pow == -1));
 	return is;
 }
