@@ -176,16 +176,10 @@ Poly & Poly::operator-=(const Poly & p)
 			copy[i] = coefficients[i] - p.coefficients[i];
 		}
 
-		//Fill the rest of the array with zeros
-		for (int i = power + 1; i <= p.power; ++i)
-		{
-			copy[i] = 0;
-		}
-
 		//Subtract second poly's values
 		for (int i = power + 1; i <= p.power; ++i)
 		{
-			copy[i] -= p.coefficients[i];
+			copy[i] = -p.coefficients[i];
 		}
 
 		power = p.power;
