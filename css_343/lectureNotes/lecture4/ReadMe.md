@@ -39,7 +39,7 @@ Binary Heaps & Graphs
 [14]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#graphs---searching
 [15]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#graphs---group-exercise
 [16]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#after-class
-[17]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#toc
+[17]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#toc "Back To ToC"
 
 [Overview][17]
 ===
