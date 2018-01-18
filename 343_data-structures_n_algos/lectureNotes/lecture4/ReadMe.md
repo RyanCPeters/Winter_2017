@@ -4,6 +4,11 @@ Created by: Yusuf Pisan
 
 Formatted for GitHub Markdown syntax by Ryan Peters
 
+## Be sure to check the other lectures out after you finish this one!
+[Next lecture](https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture2/)
+
+---
+
 #### ToC
 
 - [overview](#Overview)

@@ -4,8 +4,12 @@ Created By: Yusuf Pisan
 ---
 formatted to Github Markdown syntax by Ryan Peters
 
-<div class=" slidy_toc hidden">
-  <div class=" toc-heading"><h5>Table of Contents</h5></div>
+## Be sure to check the other lectures out after you finish this one!
+[Next lecture](https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture2/)
+
+---
+
+### Table of Contents
 
 - [Huffman Coding](#huffman-coding)
 - [Overview ](#overview)
@@ -340,4 +344,4 @@ How much wood would a woodchuck chuck if a woodchuck could chuck wood?
 - Grader: Thomas Kercheval kercht@uw.edu
   - Available for questions on Friday Jan 12, 1-2pm in front of UW1-260Q
     
-[1]:#table-of-contents
+[1]:#table-of-contents "Back to Table of Contents"
