@@ -217,7 +217,7 @@ Start with array [25 30 20 80 40 60]
 Graphs
 ============
 
-![](../images/ch20-3-graph.png)
+![](./ch20-3-graph.png)
 
 + Directed/Undirected graphs
 
@@ -226,11 +226,11 @@ Graphs - Implementing
 
 + Adjacency Matrix
 
-![](../images/ch20-7-graph-adjacency.png)
+![](./ch20-7-graph-adjacency.png)
 
 + Adjacency List
 
-![](../images/ch20-10-graph-adjacency-list.png)
+![](./ch20-10-graph-adjacency-list.png)
 
 
 Graphs - Searching
@@ -268,7 +268,7 @@ bfs(v: Vertex) {
 
 Graphs - Group Exercise
 ============
-![](../images/ch20-12-graph.png)
+![](./ch20-12-graph.png)
 
 1. DFS, start at i, looking for e, mark all nodes visited
 
