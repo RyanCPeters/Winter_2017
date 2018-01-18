@@ -278,7 +278,7 @@ dfs(v: Vertex) {
               Mark u as visited
 }
 ```
-}
+
 + BFS - Breadth-First Search
 ```C++
 bfs(v: Vertex) {
@@ -293,7 +293,7 @@ bfs(v: Vertex) {
 }
 ```
 
-[Graphs - Group Exercise][17]
+[Graphs - Group Exercise][1]
 ============
 ![](./images/ch20-12-graph.png)
 
@@ -301,7 +301,7 @@ bfs(v: Vertex) {
 
 2. BFS, start at i, looking for e, mark all nodes visited
 
-[After Class][17]
+[After Class][1]
 =============
 
 + Read: Chapter 20.1-3 (if you have not already)
