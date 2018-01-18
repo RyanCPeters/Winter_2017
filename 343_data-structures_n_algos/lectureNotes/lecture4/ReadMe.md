@@ -6,44 +6,28 @@ Formatted for GitHub Markdown syntax by Ryan Peters
 
 #### ToC
 
-- [overview](https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#Overview)
-  - [const](https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#const)
-  - [Runtime polymorphism - virtual + override][1]
-  - [Decision Trees][2]
-- [Heap][3]
-  - [Heap - Array Based Implementation][4]
-  - [Heap - Array into a Heap][5]
-  - [Heap - Add][6]
-  - [Heap - Remove][7]
-  - [Implementing Priority Queue as a Heap][8]
-  - [BST vs Heap in Implementing Priority Queue][9]
-  - [Heap Sort - Sort an Arry Using Heap][10]
-  - [Group Exercise][11]
-- [Graphs][12]
-  - [Graphs - Implementing][13]
-  - [Graphs - Searching][14]
-  - [Graphs - Group Exercise][15]
-- [After Class][16]
+- [overview](#Overview)
+  - [const](#const)
+  - [Runtime polymorphism - virtual + override](#runtime-polymorphism---virtual--overrid)
+  - [Decision Trees](#decision-trees)
+- [Heap](#heap)
+  - [Heap - Array Based Implementation](#heap---array-based-implementation)
+  - [Heap - Array into a Heap](#heap---array-into-a-heap)
+  - [Heap - Add](#heap---add)
+  - [Heap - Remove](#heap---remove)
+  - [Implementing Priority Queue as a Heap](#implementing-priority-queue-as-a-heap)
+  - [BST vs Heap in Implementing Priority Queue](#bst-vs-heap-in-implementing-priority-queue)
+  - [Heap Sort - Sort an Arry Using Heap](#heap-sort---sort-an-arry-using-heap)
+  - [Group Exercise](#group-exercise)
+- [Graphs](#graphs)
+  - [Graphs - Implementing](#graphs---implementing)
+  - [Graphs - Searching](#graphs---searching)
+  - [Graphs - Group Exercise](#graphs---group-exercise)
+- [After Class](#after-class)
 
-[1]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#runtime-polymorphism---virtual--overrid
-[2]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#decision-trees
-[3]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#heap
-[4]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#heap---array-based-implementation
-[5]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#heap---array-into-a-heap
-[6]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#heap---add
-[7]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#heap---remove
-[8]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#implementing-priority-queue-as-a-heap
-[9]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#bst-vs-heap-in-implementing-priority-queue
-[10]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#heap-sort---sort-an-arry-using-heap
-[11]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#group-exercise
-[12]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#graphs
-[13]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#graphs---implementing
-[14]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#graphs---searching
-[15]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#graphs---group-exercise
-[16]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#after-class
-[17]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#toc "Back To ToC"
+[1]:#toc "Back To ToC"
 
-[Overview][17]
+[Overview][1]
 ===
 <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
 
@@ -59,7 +43,7 @@ Formatted for GitHub Markdown syntax by Ryan Peters
 
 + Graphs
 
-[const][17]
+[const][1]
 ===============
 
 + const to indicate that variable value does not change
@@ -95,7 +79,7 @@ const int * ptr;
 
 https://isocpp.org/wiki/faq/const-correctness
 
-[Runtime polymorphism - virtual + override][17]
+[Runtime polymorphism - virtual + override][1]
 ==========
 
 + Games: Bunch of different `graphical object`s
@@ -112,12 +96,12 @@ https://isocpp.org/wiki/faq/const-correctness
 http://www.cplusplus.com/doc/tutorial/polymorphism/
 
 
-[Decision Trees][17]
+[Decision Trees][1]
 ===============
 ![](./images/decision-tree-knee.png?raw=true)
 
 
-[Heap][17]
+[Heap][1]
 =======
 
 MaxHeap: Complete binary tree whose root is greater than its children
@@ -128,7 +112,7 @@ Not a binary search tree!
 
 ![](./images/maxheap-minheap.png?raw=true)
 
-[Heap - Array Based Implementation][17]
+[Heap - Array Based Implementation][1]
 =======
 
 - Heap has to be complete, filled from left to right
@@ -144,7 +128,7 @@ Not a binary search tree!
 
 Keep track of `itemcount` and `maxItems`
 
-[Heap - Array into a Heap][17]
+[Heap - Array into a Heap][1]
 =======
 
 + Start from rightmost leaf up to root, call heapRebuild
@@ -179,7 +163,7 @@ void heapRebuild(const int subTreeNodeIndex)
 }  // end heapRebuild
 ```
 
-[Heap - Add][17]
+[Heap - Add][1]
 =======
 
 ![](./images/heap-add.png?raw=true)
@@ -190,7 +174,7 @@ void heapRebuild(const int subTreeNodeIndex)
 
 - Group Exercise: Add 50, Add 10
 
-[Heap - Remove][17]
+[Heap - Remove][1]
 =======
 
 ![](./images/heap-remove.png?raw=true)
@@ -203,7 +187,7 @@ void heapRebuild(const int subTreeNodeIndex)
 
 - Group Exercise: Add 50, Add 10, Remove 5, Remove 6
 
-[Implementing Priority Queue as a Heap][17]
+[Implementing Priority Queue as a Heap][1]
 =======
 
 Highest priority is at the root of MaxHeap
@@ -212,7 +196,7 @@ Highest priority is at the root of MaxHeap
 
 ![](./images/uml-heap.png?raw=true)
 
-[BST vs Heap in Implementing Priority Queue][17]
+[BST vs Heap in Implementing Priority Queue][1]
 =======
 
 If we know the maximum number of items in priority queue, heap is better
@@ -223,7 +207,7 @@ If multiple items have the same priority, we can maintain a list at the node
 
 When last item in the list deleted, node is deleted
 
-[Heap Sort - Sort an Arry Using Heap][17]
+[Heap Sort - Sort an Arry Using Heap][1]
 =======
 
 - Make the array into a heap
@@ -243,7 +227,7 @@ When last item in the list deleted, node is deleted
 ![](./images/heap-sort3.png?raw=true)
 
 
-[Group Exercise][17]
+[Group Exercise][1]
 =======
 
 Start with array [25 30 20 80 40 60]
@@ -256,14 +240,14 @@ Start with array [25 30 20 80 40 60]
 + Given a maxHeap, if one of the values in the heap changes, how do you restore the heap?
 
 
-[Graphs][17]
+[Graphs][1]
 ============
 
 ![](./images/ch20-3-graph.png?raw=true)
 
 + Directed/Undirected graphs
 
-[Graphs - Implementing][17]
+[Graphs - Implementing][1]
 ============
 
 + Adjacency Matrix
@@ -275,7 +259,7 @@ Start with array [25 30 20 80 40 60]
 ![](./images/ch20-10-graph-adjacency-list.png?raw=true)
 
 
-[Graphs - Searching][17]
+[Graphs - Searching][1]
 ============
 
 + DFS - Depth-First Search
