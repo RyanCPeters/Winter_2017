@@ -8,7 +8,7 @@ formatted to Github Markdown syntax by Ryan Peters
 
 ## Be sure to check the other lectures out after you finish this one!
 
-[Next lecture](https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture3/)
+[Previous lecture][2]<------------------------------------------------------------------------>[Next lecture][3]
 
 ---
 
@@ -348,3 +348,5 @@ How much wood would a woodchuck chuck if a woodchuck could chuck wood?
   - Available for questions on Friday Jan 12, 1-2pm in front of UW1-260Q
     
 [1]:#table-of-contents "Back to Table of Contents"
+[2]:https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture1/
+[3]:https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture3/
