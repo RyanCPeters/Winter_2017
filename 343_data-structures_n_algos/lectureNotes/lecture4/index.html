@@ -193,13 +193,13 @@ const int * ptr;
   <li>Start from rightmost leaf up to root, call heapRebuild</li>
 </ul>
 <pre><code class="language-C++">void heapCreate()
-  {
+{
    // can simplify as itemCount / 2
    for (int index = itemCount - 1; index &gt;= 0; index--)
    {
       heapRebuild(index);  
    }
-  }  // end heapCreate
+}  // end heapCreate
 </code></pre>
   
 
