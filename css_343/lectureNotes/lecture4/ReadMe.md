@@ -73,7 +73,7 @@ http://www.cplusplus.com/doc/tutorial/polymorphism/
 
 Decision Trees
 ===============
-![](../images/decision-tree-knee.png)
+![](../images/decision-tree-knee.png?raw=true)
 
 
 Heap
@@ -85,7 +85,7 @@ MinHeap: ...
 
 Not a binary search tree!
 
-![](../images/maxheap-minheap.png)
+![](../images/maxheap-minheap.png?raw=true)
 
 Heap - Array Based Implementation
 =======
@@ -98,7 +98,7 @@ Heap - Array Based Implementation
       - parent: (i - 1) / 2
     
     
-![](../images/heap-as-array.png)
+![](../images/heap-as-array.png?raw=true)
 
 Keep track of `itemcount` and `maxItems`
 
@@ -140,7 +140,7 @@ void heapRebuild(const int subTreeNodeIndex)
 Heap - Add
 =======
 
-![tree_Image](../images/heap-add.png)
+![](./heap-add.png?raw=true)
 
 - Add the new node to the next available spot
 
@@ -151,7 +151,7 @@ Heap - Add
 Heap - Remove
 =======
 
-![](../images/heap-remove.png)
+![](./heap-remove.png?raw=true)
 
 - Remove the node, we now have 2 semiheaps
 
