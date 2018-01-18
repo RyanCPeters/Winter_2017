@@ -139,7 +139,7 @@ Implementation choices
 [Group Exercise: Prove][1]
 ===
 
-Prove: A full binary tree of height â‰¥ 0 has 2<sup>h</sup> - 1 nodes
+Prove: A full binary tree of height ≥ 0 has 2<sup>h</sup> - 1 nodes
 
 ![](./images/ch16-16-bst-full.png)
 
@@ -317,7 +317,7 @@ https://stackoverflow.com/questions/20762094/how-are-zlib-gzip-and-zip-related-w
 
 - Demo: `wood`
 
-```
+```UML
 Group Exercise: Free Beer
 ```
 
@@ -328,7 +328,7 @@ Group Exercise: Free Beer
  3. Write out the code (not unique)
 
 Extra:
-```
+```UML
 How much wood would a woodchuck chuck if a woodchuck could chuck wood?
 ```
 
