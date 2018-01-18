@@ -1,0 +1,381 @@
+Computing and Software Systems
+http://www.uwb.edu/css
+
+
+
+
+CSS 360: Software Engineering
+
+                Dr. Arnold (Arnie) Lund
+                         Winter 2017
+Topics 3 and 4: System Failure to Development
+                    Process
+PUZZLED?
+& UPDATES
+
+ • Moving due date for system
+   high level architecture
+   comparison from Wed to Frid of
+   next week
+ • Adopting a company
+     o Interesting dimensions that
+       shape their organization and
+       processes
+     o Hint: Think where can learn the
+       most, but also where can get
+       the data
+     o Imagining a future product they
+       might offer for future exercises
+                Today…
+
+• Sources of System Failure
+• Software Development LifeCycle (SDLC)
+
+
+
+
+                                          3
+        Discussion: No Silver Bullet
+• Do you agree with Brooks’ classification of problems (i.e.
+  essential vs. accidental)?
+• Do you agree with his argument that there is no silver bullet?
+  Why not?
+• 20 years later, might there be a silver bullet on the horizon? Do
+  they attack essential or accidental problems?
+
+
+
+
+                                                                  4
+SOFTWARE ERROR EXAMPLES
+
+
+
+
+  https://www.youtube.com/watch?v=AGI371ht1N8
+  https://www.tricentis.com/resource-assets/software-fail-watch-2016/
+
+                                                                        5
+What interesting examples did
+YOU find?
+
+
+
+
+                                6
+7
+             Why is it difficult to get
+          error free software systems?
+
+• Four essential problems
+   –   Complexity
+   –   Conformity
+   –   Invisibility
+   –   Changeability
+• And a bunch of accidental ones, for example:
+   –   Human error
+   –   Poor interfaces
+   –   Inadequate abstractions
+   –   Lack of solid mathematical/engineering foundation
+
+
+                                                           8
+                     COMPLEXITY
+
+• Complexity grows non-linearly with size
+  – Scaling-up is necessarily an increase in the number of
+    different elements
+  – Interaction between elements varies
+• No two software parts are alike
+  – If they are, they would be unified into one
+  – Compare to buildings and automobiles
+
+
+
+
+                                                             9
+10
+11
+“Nathan’s 1st law of software… Software is a gas! It expands to fit the
+container it is in.” - Nathan P. Myhrvold, 1997
+                                                                          12
+                  CONFORMITY
+Software must conform to the existing environment
+  – Hardware and Software Platforms
+  – Existing Systems
+  – Regulations and Standards (e.g., ISO, ADA, HIPAA)
+  – Corporate Standards
+
+
+
+
+                                                        13
+                          INVISIBILITY
+• Software is invisible and unvisualizable
+                                                                        n t
+                                      it on
+• Compare with floor plan of a building
+                                                           a        m e
+                                                     l i z     lo p
+                                                s  a
+                                                  u ev       e
+                                            V i          D
+                                         g n ta      l
+                                  e  s i     e  n
+                              d D em
+                          a n         c r
+                       e          I n
+                  t ur        n d
+              e c         g a
+         h i t      p i n
+      r c ty
+    A
+• Software   t ois not inherently embedded in space
+       P r o
+• Communicating concepts about the software
+   is more difficult                                                      14
+            CHANGEABILITY
+
+• Manufactured items are infrequently
+  changed
+  – Cars, computers are superseded by later
+    models
+  – Buildings, bridges have a high cost of change
+• All successful software gets
+  changed/evolves
+  – Users want additional functionality
+  – Software survives beyond the normal life of
+    the machine for which it was written
+  – It is changing faster and faster
+                                                    15
+https://vimeo.com/1130828
+                    16
+INTRODUCTION TO SDLC
+                       17
+THE SOFTWARE PROCESS (Sommerville)
+ A structured set of activities required to develop a software
+ system. Many different processes, but all involve:
+
+
+Business Case       Defining the product and market
+
+
+Specification (v)   Defining what the system should do
+Design and          Defining the organization of the system and
+Implementation      implementing the system
+Validation          Checking that it does what the customer wants
+                    Changing the system in response to changing customer
+Evolution
+                    needs
+
+
+
+                                                                           18
+19
+LIFE CYCLE OVERVIEW
+Requirements Analysis     Find out what the customer wants and decide what
+and Specification         will be developed
+Architecture and Design   Plan how to build the system to meet requirements
+
+Implementation            Execute your plan
+Testing/QA and            Check if you conformed to your plan (verification) and
+Validation                if you met customer expectations (validation)
+Deployment and
+                          Ongoing changes to the system
+Maintenance
+                             Repeat (Evolution)
+
+
+
+
+                                                                              20
+DESIGN THINKING PROCESS
+
+
+
+
+       Requirements   Design   Develop
+BENEFITS OF A LIFECYCLE APPROACH
+  • It provides a structure for organizing work
+  • It forces thinking about the “big picture” and
+    following steps to reach it without glaring
+    deficiencies
+  • It helps avoid local optimization (individually on
+    target, but collectively misdirected)
+  • It is a management tool
+
+  Cons
+  • Change happens
+
+   “…I have always found that plans are useless, but planning is
+   indispensable.” – D. D. Eisenhower
+
+                                                                   22
+IMPACT OF LITTLE ATTENTION TO PROCESS
+IMPACT OF EARLY FOCUS ON PROCESS
+IT STARTS WITH
+A VIABLE, FEASIBLE, AND DESIRABLE VISION
+USER AND PRODUCT REQUIREMENTS
+TO SYSTEM SPECIFICATIONS
+ 4+1 MODEL OF ARCHITECTURE
+
+
+                             Shows how the
+            Shows key
+                             software is
+abstractions as objects
+                             decomposed for
+     or object classes.
+                             development.
+
+
+
+
+                             Shows the system
+                             hardware and how
+   Shows how, at run-
+                             software components
+   time, the system is
+                             are distributed across
+         composed of
+                             the processors in the
+interacting processes.
+                             system.
+MS IT EXAMPLE (logical)
+GE PREDIX ARCHITECTURE EXAMPLE
+(hybrid, high level)
+ENABLING SERVICE ARCHITECTURES
+SYSTEM DESIGN
+MODULES (or components)
+  • Design modules before coding
+     o Module interfaces specified: functions that are to
+       be called
+     o Relationship between modules
+     o Include pre-conditions and post-conditions
+  • Modular design principles
+     o Re-use
+     o Loosely coupled
+     o More (to be discussed later…)
+IMPLEMENTATION (aka Coding) NOTES
+• Coding is a relatively minor (but still critical) “phase” of
+  the end-to-end cycle (esp. since it is reasonably well
+  defined)
+• Good coding style and appropriate comments reduce
+  possible errors and make modification easier
+                                        I S
+                                     TH
+   o Use descriptive variable names
+   o Use proper indentation in the loop and if-then interiors
+                          OW
+   o Insert blank lines between distinct functions, between code
+     blocks, etc.
+                  K     N
+                U
+   o Remove redundant code
+         YO
+   o Use functions for identifiable and recurring tasks
+   o Avoid tricky codes
+   o Adhere to consistent coding style
+See the linked Webinar on your own…
+TEST PLANS
+AND STAKEHOLDERS
+What are the biggest drivers of system
+development cost? At what part of the
+cycle?
+COSTS ACROSS THE PROCESS
+PROCESS AND RESULT IMPROVEMENT MODEL
+
+
+
+
+           See Six Sigma Black belt Certification
+INTRO TO
+PROCESS TYPES
+SDLC PROCESS MODELS
+   •   Code-and-Fix (or Build-and-Fix)
+   •   Waterfall Model
+   •   Sashimi
+   •   Kanban
+   •   Staged delivery              A software life cycle model is a
+   •   Spiral Model                       high level process
+       – Spiral into waterfall
+   •   Evolutionary prototyping
+   •   eXtreme Programming (XP)
+   •   SCRUM
+   •   Lean
+   •   Unified Process or Rational Unified Process
+   •   DSDM
+   •   Etc.
+MODEL CATEGORIES
+
+ • Prescriptive Models (e.g., Waterfall) – “heavyweight”
+    – Aka “planned” approach
+    – An ordered approach to the software process with a
+      defined structure and expected set of activities and work
+      products
+    – Promote controls that improve project acceptance,
+      decision making, and project management
+ • Agile Models – “lightweight”
+    –   Simpler to learn
+    –   Adaptive software processes
+    –   Emphasize unique aspects of software development
+    –   Underlying social values or constructs
+PLAN-DRIVEN vs. AGILE
+        Analysis of SDLC Models
+• Prescriptive Models         • Agile Models
+  o   Waterfall Model           o   Extreme Programming (XP)
+  o   Spiral Model              o   Scrum
+  o   Sashimi                   o   Kanban
+  o   Spiral into waterfall     o   DSDM
+  o   Staged delivery           o   Lean
+
+
+                              • Uncategorized
+                                o Code-and-Fix
+                                o Evolutionary Prototyping
+                                o UP or RUP
+                                                             44
+SDLC METHOD ADOPTION
+
+
+                       *2013: Agile, 74%
+46
+NEXT CLASS/WEEK
+
+
+     • Company Comparison (this Friday)
+     • Holiday (Yay!) – time to breathe and do good works
+     • Topics
+        o Plan-driven and Agile Methods
+     • Assignments
+        o Reading
+             o Sommerville Ch. 3
+        o Due
+             o FoR3 – Reflections on Reading
+             o Activity #1: System Comparison Visual and
+                SDLC Preferences
+
+
+
+
+                                                            47
+ARCHITECTURE EXERCISE
+Activity #1 (Due Next Week)
+Description:
+
+1. iLearn and Canvas Comparison - A Digital Learning Environment for Schools
+
+  1.a Read Section 1.3.4 (A Digital Learning Environment for Schools) on Sommerville
+      pp.24-25.
+  1.b Compare and contrast this iLearn system with the UW Canvas. i.e. identify and
+      describe 3 similarities and 3 differences between iLearn and UW Canvas.
+        3 Similarities
+        3 Differences
+  1.c Complete the visual diagram of the UW Canvas architecture, in a similar form
+      given in Sommerville Figure 1.8
+
+2. SDLC Preferences (based on adopted company) – think about the unique
+      characteristics of your company that drive its software engineering culture,
+      and the product space you’d like to explore (pot. bonus points for thinking
+      out of the box)
+
