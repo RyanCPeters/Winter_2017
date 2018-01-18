@@ -1,6 +1,7 @@
-Binary Heaps & Graphs
+Lecture 4: Binary Heaps & Graphs
+===
+Created by: Yusuf Pisan
 ---
-### author: Yusuf Pisan
 
 Formatted for GitHub Markdown syntax by Ryan Peters
 
