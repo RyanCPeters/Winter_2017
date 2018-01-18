@@ -4,10 +4,9 @@ Created By: Yusuf Pisan
 ---
 formatted to Github Markdown syntax by Ryan Peters
 
-<div class=" slidy_toc hidden">
-  <div class=" toc-heading"><h5>Table of Contents</h5></div>
+### Table of Contents
   
-  1. <a href="#(1)" class=" titleslide">Introduction &amp; Trees</a><br>
+  1. Introduction and Trees
   2. [Overview](#overview)
   3. [342 Review](#342-review)
   4. [Reading Code (1)](#reading-code-1)
@@ -20,7 +19,9 @@ formatted to Github Markdown syntax by Ryan Peters
   11. [Binary Search Tree](#binary-search-tree)
   12. [After Class](#after-class)
 
-[Overview](#table-of-contents) 
+[1]:#table-of-contents "Back to Table of Contents"
+
+[Overview][1]
 ===
 
 http://courses.washington.edu/css343/pisan/
@@ -37,7 +38,7 @@ http://courses.washington.edu/css343/pisan/
 + Readings before class
 
 
-[342 Review](#table-of-contents)
+[342 Review][1]
 ===
 
 - Searching & Sorting
@@ -51,7 +52,7 @@ http://courses.washington.edu/css343/pisan/
 Order them based on your level of comfort  
 https://pollev.com/pisan
 
-[Reading Code (1)](#table-of-contents)
+[Reading Code (1)][1]
 ===
 Somebody forgot to write comments! 
 
@@ -67,7 +68,7 @@ int foo(int n)
 
 What is its complexity? Why?
 
-[Reading Code (2)](#table-of-contents)
+[Reading Code (2)][1]
 ===
   
 ```C++
@@ -93,7 +94,7 @@ int mystery(const int anArray[], int first, int last, int target)
 
 What is its complexity? Why?
 
-[Reading Code (3)](#table-of-contents)
+[Reading Code (3)][1]
 =======
   
 ```C++
@@ -114,7 +115,7 @@ bool Grouch<ItemType>::mumble(const ItemType& newEntry)
 
 What is its complexity? Why?
 
-[Reading Code (4)](#table-of-contents)
+[Reading Code (4)][1]
 ===========
 SomeInterface, but what?
   
@@ -132,7 +133,7 @@ public:
 ```
 
 
-[Reading Code (5)](#table-of-contents)
+[Reading Code (5)][1]
 ==========================
   
 ```C++
@@ -162,7 +163,7 @@ void someSort(ItemType theArray[], int n)
 
 What is its complexity? Why?
 
-[Trees](#table-of-contents)
+[Trees][1]
 ===
 ![](./images/ch15-2-organization-tree.png)
 
@@ -175,7 +176,7 @@ What is its complexity? Why?
 
 
 
-[Algebraic Expression](#table-of-contents)
+[Algebraic Expression][1]
 ====
 ![Algebraic Expression](./images/ch15-3-algebraic-tree.png)
 
@@ -191,7 +192,7 @@ Let's try different traversals.
 Group Exercise: `((a + b) * (c + d)) / (e * f) - g`
 
 
-[Binary Search Tree](#table-of-contents)
+[Binary Search Tree][1]
 ===============
 
 ```C++
@@ -211,7 +212,7 @@ What is the worst case complexity for a badly constructed tree?
 Create a balanced BST for A, B, C, D, E, F
 
 
-[After Class](#table-of-contents)
+[After Class][1]
 =============
 
 Explore the Resources on course pages

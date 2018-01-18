@@ -4,8 +4,7 @@ Created By: Yusuf Pisan
 ---
 formatted to Github Markdown syntax by Ryan Peters
 
-<div class=" slidy_toc hidden">
-  <div class=" toc-heading"><h5>Table of Contents</h5></div>
+### Table of Contents
   
 1. [Overview](#overview)
 2. [TurtleProgram Grading Rubric](#turtleprogram-grading-rubric)
@@ -440,4 +439,4 @@ Number of nodes: 8
 - Grader: Thomas Kercheval kercht@uw.edu
   - Available for questions on Friday Jan 12, 1-2pm in front of UW1-260Q
 
-[1]:#table-of-contents
+[1]:#table-of-contents "Back to Table of Contents"
