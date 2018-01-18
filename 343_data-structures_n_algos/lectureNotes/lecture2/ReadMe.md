@@ -4,8 +4,6 @@ Created By: Yusuf Pisan
 ---
 formatted to Github Markdown syntax by Ryan Peters
 
-[1]:#Table-of-content
-
 <div class=" slidy_toc hidden">
   <div class=" toc-heading"><h5>Table of Contents</h5></div>
 
@@ -341,3 +339,4 @@ How much wood would a woodchuck chuck if a woodchuck could chuck wood?
 - Grader: Thomas Kercheval kercht@uw.edu
     - Available for questions on Friday Jan 12, 1-2pm in front of UW1-260Q
     
+[1]:#table-of-contents
