@@ -1,4 +1,4 @@
-Introduction & Trees
+Lecture 1 notes: Introduction & Trees
 ===
 By: Yusuf Pisan
 ---
@@ -19,8 +19,8 @@ By: Yusuf Pisan
   11. [Binary Search Tree](#binary-search-tree)
   12. [After Class](#after-class)
 
-[Overview](#table-of-contents) <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
-========================================================
+[Overview](#table-of-contents) 
+===
 
 http://courses.washington.edu/css343/pisan/
 
@@ -37,7 +37,7 @@ http://courses.washington.edu/css343/pisan/
 
 
 [342 Review](#table-of-contents)
-========================================================
+===
 
 - Searching & Sorting
 - Recursion
@@ -51,10 +51,10 @@ Order them based on your level of comfort
 https://pollev.com/pisan
 
 [Reading Code (1)](#table-of-contents)
-========================================================
+===
 Somebody forgot to write comments! 
 
-```C
+```C++++
 int foo(int n)
 {
    if (n == 0)
@@ -67,9 +67,9 @@ int foo(int n)
 What is its complexity? Why?
 
 [Reading Code (2)](#table-of-contents)
-========================================================
-<font size="6">  
-```C
+===
+  
+```C++
 int mystery(const int anArray[], int first, int last, int target)
 {
    int index;
@@ -88,14 +88,14 @@ int mystery(const int anArray[], int first, int last, int target)
    return index;
 }
 ```
- </font>
+
 
 What is its complexity? Why?
 
 [Reading Code (3)](#table-of-contents)
 =======
-<font size="6">  
-```C
+  
+```C++
 template<class ItemType>
 bool Grouch<ItemType>::mumble(const ItemType& newEntry)
 {
@@ -109,15 +109,15 @@ bool Grouch<ItemType>::mumble(const ItemType& newEntry)
    return true;
 }  // end add
 ```
-</font>
+
 
 What is its complexity? Why?
 
 [Reading Code (4)](#table-of-contents)
 ===========
 SomeInterface, but what?
-<font size="6">  
-```C
+  
+```C++
 template<class ItemType>
 class SomeInterface
 {
@@ -129,12 +129,12 @@ public:
    virtual ~SomeInterface() {  }
 };
 ```
-</font>
+
 
 [Reading Code (5)](#table-of-contents)
 ==========================
-<font size="6">  
-```C
+  
+```C++
 template<class ItemType>
 void someSort(ItemType theArray[], int n)
 {
@@ -157,13 +157,13 @@ void someSort(ItemType theArray[], int n)
    }  // end while
 }  // end someSort
 ```
-</font>
+
 
 What is its complexity? Why?
 
 [Trees](#table-of-contents)
-========================================================
-![](../images/ch15-2-organization-tree.png)
+===
+![](./images/ch15-2-organization-tree.png)
 
 + Single root, hierarchical - more than one immediate successor
 + nodes, edges
@@ -176,7 +176,7 @@ What is its complexity? Why?
 
 [Algebraic Expression](#table-of-contents)
 ====
-![Algebraic Expression](../images/ch15-3-algebraic-tree.png)
+![Algebraic Expression](./images/ch15-3-algebraic-tree.png)
 
 Representing ``` (a - b) x c```
 
@@ -193,7 +193,7 @@ Group Exercise: `((a + b) * (c + d)) / (e * f) - g`
 [Binary Search Tree](#table-of-contents)
 ===============
 
-```C
+```C++
 search(BST, target)
   if (BST is empy)
     item not found
