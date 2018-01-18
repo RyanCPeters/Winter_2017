@@ -5,8 +5,8 @@ Binary Heaps & Graphs
 #### ToC
 
 - overview
-- const
-- Runtime polymorphism - virtual + override
+- [const](https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#const)
+- [Runtime polymorphism - virtual + override](https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#ToC)
 - Decision Trees
 - Heap
  - Heap - Array Based Implementation
