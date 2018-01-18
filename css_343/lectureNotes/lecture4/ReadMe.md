@@ -23,7 +23,9 @@ Binary Heaps & Graphs
  - Graphs - Group Exercise     
 - After Class
 
-Overview <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
+Overview 
+===
+<meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
 
 + Review: Ass1, rebalancing tree during inserts, decision trees, const, priority queues, abstraction(?)
 
