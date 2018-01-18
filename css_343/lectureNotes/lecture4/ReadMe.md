@@ -4,24 +4,42 @@ Binary Heaps & Graphs
 
 #### ToC
 
-- overview
-- [const](https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#const)
-- [Runtime polymorphism - virtual + override](https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#ToC)
-- Decision Trees
-- Heap
- - Heap - Array Based Implementation
- - Heap - Array into a Heap
- - Heap - Add
- - Heap - Remove
- - Implementing Priority Queue as a Heap
- - BST vs Heap in Implementing Priority Queue
- - Heap Sort - Sort an Arry Using Heap
+- [overview](https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#Overview)
+  - [const](https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#const)
+  - [Runtime polymorphism - virtual + override][1]
+  - [Decision Trees][2]
+- [Heap][3]
+  - Heap - Array Based Implementation
+  - Heap - Array into a Heap
+  - Heap - Add
+  - Heap - Remove
+  - Implementing Priority Queue as a Heap
+  - BST vs Heap in Implementing Priority Queue
+  - Heap Sort - Sort an Arry Using Heap
   - Group Exercise           
 - Graphs
- - Graphs - Implementing
- - Graphs - Searching
- - Graphs - Group Exercise     
+  - Graphs - Implementing
+  - Graphs - Searching
+  - Graphs - Group Exercise     
 - After Class
+
+[1]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#runtime-polymorphism---virtual--overrid
+[2]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#decision-trees
+[3]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#heap
+[4]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#heap---array-based-implementation
+[5]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#heap---array-into-a-heap
+[6]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#heap---add
+[7]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#heap---remove
+[8]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#implementing-priority-queue-as-a-heap
+[9]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#bst-vs-heap-in-implementing-priority-queue
+[10]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#heap-sort---sort-an-arry-using-heap
+[11]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#group-exercise
+[12]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#graphs
+[13]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#graphs---implementing
+[14]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#graphs---searching
+[15]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#graphs---group-exercise
+[16]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#after-class
+[17]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#toc
 
 Overview 
 ===
