@@ -4,7 +4,7 @@ By: Yusuf Pisan
 ---
 
 <div class=" slidy_toc hidden">
-  <div class=" toc-heading">Table of Contents</div>
+  <div class=" toc-heading"><h5>Table of Contents</h5></div>
   
   1. <a href="#(1)" class=" titleslide">Introduction &amp; Trees</a><br>
   2. [Overview](#overview)
@@ -19,7 +19,7 @@ By: Yusuf Pisan
   11. [Binary Search Tree](#binary-search-tree)
   12. [After Class](#after-class)
 
-Overview <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
+[Overview](#table-of-contents) <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
 ========================================================
 
 http://courses.washington.edu/css343/pisan/
@@ -36,7 +36,7 @@ http://courses.washington.edu/css343/pisan/
 + Readings before class
 
 
-342 Review
+[342 Review](#table-of-contents)
 ========================================================
 
 - Searching & Sorting
@@ -50,7 +50,7 @@ http://courses.washington.edu/css343/pisan/
 Order them based on your level of comfort  
 https://pollev.com/pisan
 
-Reading Code (1)
+[Reading Code (1)](#table-of-contents)
 ========================================================
 Somebody forgot to write comments! 
 
@@ -66,7 +66,7 @@ int foo(int n)
 
 What is its complexity? Why?
 
-Reading Code (2)
+[Reading Code (2)](#table-of-contents)
 ========================================================
 <font size="6">  
 ```C
@@ -92,7 +92,7 @@ int mystery(const int anArray[], int first, int last, int target)
 
 What is its complexity? Why?
 
-Reading Code (3)
+[Reading Code (3)](#table-of-contents)
 =======
 <font size="6">  
 ```C
@@ -113,7 +113,7 @@ bool Grouch<ItemType>::mumble(const ItemType& newEntry)
 
 What is its complexity? Why?
 
-Reading Code (4)
+[Reading Code (4)](#table-of-contents)
 ===========
 SomeInterface, but what?
 <font size="6">  
@@ -131,7 +131,7 @@ public:
 ```
 </font>
 
-Reading Code (5)
+[Reading Code (5)](#table-of-contents)
 ==========================
 <font size="6">  
 ```C
@@ -161,7 +161,7 @@ void someSort(ItemType theArray[], int n)
 
 What is its complexity? Why?
 
-Trees
+[Trees](#table-of-contents)
 ========================================================
 ![](../images/ch15-2-organization-tree.png)
 
@@ -174,7 +174,7 @@ Trees
 
 
 
-Algebraic Expression
+[Algebraic Expression](#table-of-contents)
 ====
 ![Algebraic Expression](../images/ch15-3-algebraic-tree.png)
 
@@ -190,7 +190,7 @@ Let's try different traversals.
 Group Exercise: `((a + b) * (c + d)) / (e * f) - g`
 
 
-Binary Search Tree
+[Binary Search Tree](#table-of-contents)
 ===============
 
 ```C
@@ -210,7 +210,7 @@ What is the worst case complexity for a badly constructed tree?
 Create a balanced BST for A, B, C, D, E, F
 
 
-After Class
+[After Class](#table-of-contents)
 =============
 
 Explore the Resources on course pages
