@@ -73,7 +73,7 @@ http://www.cplusplus.com/doc/tutorial/polymorphism/
 
 Decision Trees
 ===============
-![](../images/decision-tree-knee.png?raw=true)
+![](./decision-tree-knee.png?raw=true)
 
 
 Heap
@@ -85,7 +85,7 @@ MinHeap: ...
 
 Not a binary search tree!
 
-![](../images/maxheap-minheap.png?raw=true)
+![](./maxheap-minheap.png?raw=true)
 
 Heap - Array Based Implementation
 =======
@@ -98,7 +98,7 @@ Heap - Array Based Implementation
       - parent: (i - 1) / 2
     
     
-![](../images/heap-as-array.png?raw=true)
+![](./heap-as-array.png?raw=true)
 
 Keep track of `itemcount` and `maxItems`
 
@@ -166,9 +166,9 @@ Implementing Priority Queue as a Heap
 
 Highest priority is at the root of MaxHeap
 
-![](../images/uml-adt-priorityqueue.png)
+![](./uml-adt-priorityqueue.png)
 
-![](../images/uml-heap.png)
+![](./uml-heap.png)
 
 BST vs Heap in Implementing Priority Queue
 =======
@@ -194,11 +194,11 @@ Heap Sort - Sort an Arry Using Heap
 
 - Keep removing until Heap is empty
 
-![](../images/heap-sort1.png)
+![](./heap-sort1.png)
 
-![](../images/heap-sort2.png)
+![](./heap-sort2.png)
 
-![](../images/heap-sort3.png)
+![](./heap-sort3.png)
 
 
 Group Exercise
