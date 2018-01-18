@@ -19,7 +19,7 @@ formatted to Github Markdown syntax by Ryan Peters
 - [Assignment 1: TurtleProgram](#assignment-1-turtleprogram)
 - [Common Programming Mistakes](#common-programming-mistakes)
 - [Binary Search Tree - Definition](#binary-search-tree---definition)
-  - [Binary Search Tree](#binar-search-tree)
+  - [Binary Search Tree](#binary-search-tree)
   - [UML for Binary Tree](#uml-for-binary-tree)
   - [Why Trees?](#Why-Trees)
     - [Group Exercise: Prove](#Group-Exercise-Prove)
