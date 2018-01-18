@@ -73,7 +73,7 @@ http://www.cplusplus.com/doc/tutorial/polymorphism/
 
 Decision Trees
 ===============
-![](./decision-tree-knee.png?raw=true)
+![](./images/decision-tree-knee.png?raw=true)
 
 
 Heap
@@ -85,7 +85,7 @@ MinHeap: ...
 
 Not a binary search tree!
 
-![](./maxheap-minheap.png?raw=true)
+![](./images/maxheap-minheap.png?raw=true)
 
 Heap - Array Based Implementation
 =======
@@ -99,7 +99,7 @@ Heap - Array Based Implementation
       - parent: (i - 1) / 2
     
     
-![](./heap-as-array.png?raw=true)
+![](./images/heap-as-array.png?raw=true)
 
 Keep track of `itemcount` and `maxItems`
 
@@ -141,7 +141,7 @@ void heapRebuild(const int subTreeNodeIndex)
 Heap - Add
 =======
 
-![](./heap-add.png?raw=true)
+![](./images/heap-add.png?raw=true)
 
 - Add the new node to the next available spot
 
@@ -152,7 +152,7 @@ Heap - Add
 Heap - Remove
 =======
 
-![](./heap-remove.png?raw=true)
+![](./images/heap-remove.png?raw=true)
 
 - Remove the node, we now have 2 semiheaps
 
@@ -167,9 +167,9 @@ Implementing Priority Queue as a Heap
 
 Highest priority is at the root of MaxHeap
 
-![](./uml-adt-priorityqueue.png?raw=true)
+![](./images/uml-adt-priorityqueue.png?raw=true)
 
-![](./uml-heap.png?raw=true)
+![](./images/uml-heap.png?raw=true)
 
 BST vs Heap in Implementing Priority Queue
 =======
@@ -195,11 +195,11 @@ Heap Sort - Sort an Arry Using Heap
 
 - Keep removing until Heap is empty
 
-![](./heap-sort1.png?raw=true)
+![](./images/heap-sort1.png?raw=true)
 
-![](./heap-sort2.png?raw=true)
+![](./images/heap-sort2.png?raw=true)
 
-![](./heap-sort3.png?raw=true)
+![](./images/heap-sort3.png?raw=true)
 
 
 Group Exercise
@@ -218,7 +218,7 @@ Start with array [25 30 20 80 40 60]
 Graphs
 ============
 
-![](./ch20-3-graph.png?raw=true)
+![](./images/ch20-3-graph.png?raw=true)
 
 + Directed/Undirected graphs
 
@@ -227,11 +227,11 @@ Graphs - Implementing
 
 + Adjacency Matrix
 
-![](./ch20-7-graph-adjacency.png?raw=true)
+![](./images/ch20-7-graph-adjacency.png?raw=true)
 
 + Adjacency List
 
-![](./ch20-10-graph-adjacency-list.png?raw=true)
+![](./images/ch20-10-graph-adjacency-list.png?raw=true)
 
 
 Graphs - Searching
@@ -269,7 +269,7 @@ bfs(v: Vertex) {
 
 Graphs - Group Exercise
 ============
-![](./ch20-12-graph.png)
+![](./images/ch20-12-graph.png)
 
 1. DFS, start at i, looking for e, mark all nodes visited
 
