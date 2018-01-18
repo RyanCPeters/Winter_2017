@@ -27,7 +27,7 @@ formatted to Github Markdown syntax by Ryan Peters
 18. [Huffman Coding - Algorithm](#huffman-coding---algorithm)
 19. [After Class](#after-class)
 
-[Overview][1] <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
+[Overview][1]<meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /><meta name="duration" content="120" />
 ===
 
 + Review - Ass1, BST, Complexity Analysis (worksheet later)
