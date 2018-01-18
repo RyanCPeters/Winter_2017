@@ -159,11 +159,11 @@ __*Proof by induction*__
 We must show that a full binary tree of height h has 2^(h)^ – 1 nodes
 
 Let’s look at a tree with height `h - 1`.
-By the inductive hypothesis, T~L~ and T~R~ each have 2^(h-1)^ – 1 nodes.
+By the inductive hypothesis, T<sub>L</sub> and T<sub>R</sub> each have 2^(h-1)^ – 1 nodes.
 The number of nodes in T is
 
 <font size="5" style="font-family:courier;">
-1 (for root) + (number of nodes in T~L~) + (number of nodes in T~R~)
+1 (for root) + (number of nodes in T<sub>L</sub>) + (number of nodes in T<sub>R</sub>)
 = 1 + (2^(h-1)^ – 1) + (2^(h-1)^ – 1)
 = 1 + 2 x (2^(h-1)^ – 1)
 = 1 + 2^h^ - 2
