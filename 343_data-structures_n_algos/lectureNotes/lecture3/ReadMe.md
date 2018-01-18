@@ -10,24 +10,24 @@ formatted to Github Markdown syntax by Ryan Peters
 1. BST Add - Remove - Save
 2. TurtleProgram Grading Rubric
 3. UML Class Diagrams
-  - UML Class Diagrams (2)
+    - UML Class Diagrams (2)
 4. Huffman Coding
 5. Binary Search Tree (BST)
-  - Add - Binary Search Tree
-    - Recursive Solution
-    - Iterative Solution
-  - Remove - Binary Search Tree
-    - Group Exercise: Removing Nodes
-  - When to use Different Traversals
-  - Saving BST to File or Array
-  - Tree Sort
-  - Re-Balancing a Binary Tree
+    - Add - Binary Search Tree
+      - Recursive Solution
+      - Iterative Solution
+    - Remove - Binary Search Tree
+      - Group Exercise: Removing Nodes
+    - When to use Different Traversals
+    - Saving BST to File or Array
+    - Tree Sort
+    - Re-Balancing a Binary Tree
 6. Queue
-  - Priority Queue
+    - Priority Queue
 7. Heap
-  - Heap - Array Based Implementation
-  - Heap - Add
-  - Heap - Remove
+    - Heap - Array Based Implementation
+    - Heap - Add
+    - Heap - Remove
 8. Implementing Priority Queue as a Heap
 9. BST vs Heap in Implementing Priority Queue
 10. Heap Sort
