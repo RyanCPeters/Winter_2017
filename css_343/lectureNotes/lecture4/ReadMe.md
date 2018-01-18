@@ -166,9 +166,9 @@ Implementing Priority Queue as a Heap
 
 Highest priority is at the root of MaxHeap
 
-![](./uml-adt-priorityqueue.png)
+![](./uml-adt-priorityqueue.png?raw=true)
 
-![](./uml-heap.png)
+![](./uml-heap.png?raw=true)
 
 BST vs Heap in Implementing Priority Queue
 =======
@@ -194,11 +194,11 @@ Heap Sort - Sort an Arry Using Heap
 
 - Keep removing until Heap is empty
 
-![](./heap-sort1.png)
+![](./heap-sort1.png?raw=true)
 
-![](./heap-sort2.png)
+![](./heap-sort2.png?raw=true)
 
-![](./heap-sort3.png)
+![](./heap-sort3.png?raw=true)
 
 
 Group Exercise
@@ -217,7 +217,7 @@ Start with array [25 30 20 80 40 60]
 Graphs
 ============
 
-![](./ch20-3-graph.png)
+![](./ch20-3-graph.png?raw=true)
 
 + Directed/Undirected graphs
 
@@ -226,11 +226,11 @@ Graphs - Implementing
 
 + Adjacency Matrix
 
-![](./ch20-7-graph-adjacency.png)
+![](./ch20-7-graph-adjacency.png?raw=true)
 
 + Adjacency List
 
-![](./ch20-10-graph-adjacency-list.png)
+![](./ch20-10-graph-adjacency-list.png?raw=true)
 
 
 Graphs - Searching
