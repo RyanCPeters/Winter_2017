@@ -4,7 +4,7 @@ By: Yusuf Pisan
 ---
 
 <div class=" slidy_toc hidden">
-  <div class=" toc-heading">Table of Contents</div>
+  <div class=" toc-heading"><h5>Table of Contents</h5></div>
   
   1. <a href="#(1)" class=" titleslide">Introduction &amp; Trees</a><br>
   2. [Overview](#overview)
