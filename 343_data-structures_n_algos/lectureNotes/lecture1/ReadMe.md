@@ -7,17 +7,17 @@ By: Yusuf Pisan
   <div class=" toc-heading">Table of Contents</div>
   
   1. <a href="#(1)" class=" titleslide">Introduction &amp; Trees</a><br>
-  2. <a href="#(2)">Overview  </a><br>
-  3. <a href="#(3)">342 Review</a><br>
-  4. <a href="#(4)">Reading Code (1)</a><br>
-  5. <a href="#(5)">Reading Code (2)</a><br>
-  6. <a href="#(6)">Reading Code (3)</a><br>
-  7. <a href="#(7)">Reading Code (4)</a><br>
-  8. <a href="#(8)">Reading Code (5)</a><br>
-  9. <a href="#(9)">Trees</a><br>
-  10. <a href="#(10)">Algebraic Expression</a><br>
-  11. <a href="#(11)">Binary Search Tree</a><br>
-  12. <a href="#(12)">After Class</a></div>
+  2. [Overview](#overview)
+  3. [342 Review](#342-review)
+  4. [Reading Code (1)](#reading-code-1)
+  5. [Reading Code (2)](#reading-code-2)
+  6. [Reading Code (3)](#reading-code-3)
+  7. [Reading Code (4)](#reading-code-4)
+  8. [Reading Code (5)](#reading-code-5)
+  9. [Trees](#trees)
+  10. [Algebraic Expression](#algebraic-expression)
+  11. [Binary Search Tree](#binary-search-tree)
+  12. [After Class](#after-class)
 
 Overview <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
 ========================================================
