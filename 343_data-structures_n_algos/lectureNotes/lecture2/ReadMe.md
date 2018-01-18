@@ -2,7 +2,7 @@ Lecture 2: Huffman Coding
 ===
 Created By: Yusuf Pisan
 ---
-formatted to Github Markdown syntax by Ryan Peters
+formatted to Github Markdown syntax by Ryan Peters...
 [1]:#Table-of-content
 
 <div class=" slidy_toc hidden">
