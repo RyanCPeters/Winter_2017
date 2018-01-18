@@ -146,28 +146,28 @@ Prove: A full binary tree of height â‰¥ 0 has 2^h^âˆ’ 1 nodes
 [Group Exercise: Prove - Solution][1]
 ===
 
-Prove: A full binary tree of height â‰¥ 0 has 2^h^âˆ’ 1 nodes
+_Prove:_ A full binary tree of height ≥ 0  has 2^(h)^ - 1 nodes
 
-Proof by induction
+__*Proof by induction*__
 
-**Basis:** When h = 0, the full binary tree is empty, and it contains 0 = 2^0^ â€“ 1 nodes
+**Basis:**  When h = 0, the full binary tree is empty, and it contains 0 = 2^(0)^ – 1 nodes
 
-**Inductive hypothesis:** Assume that a full binary tree of height k has 2^k^ â€“ 1 nodes when 0 â‰¤ k < h.
+**Inductive hypothesis:** Assume that a full binary tree of height k has 2^(h)^ – 1 nodes when 0 ≤ k < h.
 
-**Inductive conclusion**
+**_Inductive conclusion_**
 
-We must show that a full binary tree of height h has 2^h^ â€“ 1 nodes
+We must show that a full binary tree of height h has 2^(h)^ – 1 nodes
 
-Let's look at a tree with height `h - 1`.  
-By the inductive hypothesis, T~L~ and T~R~ each have 2^h-1^ â€“ 1 nodes.  
+Let’s look at a tree with height `h - 1`.
+By the inductive hypothesis, T~L~ and T~R~ each have 2^(h-1)^ – 1 nodes.
 The number of nodes in T is
 
 <font size="5" style="font-family:courier;">
-1 (for root) + (number of nodes in T~L~) + (number of nodes in T~R~)  
-= 1 + (2^h-1^ â€“ 1) + (2^h-1^ â€“ 1)  
-= 1 + 2 x (2^h-1^ â€“ 1)  
-= 1 + 2^h^ - 2  
-= 2^h^ - 1  
+1 (for root) + (number of nodes in T~L~) + (number of nodes in T~R~)
+= 1 + (2^(h-1)^ – 1) + (2^(h-1)^ – 1)
+= 1 + 2 x (2^(h-1)^ – 1)
+= 1 + 2^h^ - 2
+= 2^h^ - 1 
 </font>
 
 [Group Exercise: Insert Elements][1]
