@@ -2,6 +2,8 @@ Binary Heaps & Graphs
 ---
 ### author: Yusuf Pisan
 
+Formatted for GitHub Markdown syntax by Ryan Peters
+
 #### ToC
 
 - [overview](https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#Overview)
