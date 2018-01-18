@@ -190,8 +190,9 @@ const int * ptr;
 <h3 id="heap---array-into-a-heap"><a href="https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture4/#toc" title="Back To ToC">Heap - Array into a Heap</a></h3>
 
 <ul>
-  <li>Start from rightmost leaf up to root, call heapRebuild
-    <pre><code class="language-C++">void heapCreate()
+  <li>Start from rightmost leaf up to root, call heapRebuild</li>
+</ul>
+<pre><code class="language-C++">void heapCreate()
   {
    // can simplify as itemCount / 2
    for (int index = itemCount - 1; index &gt;= 0; index--)
@@ -200,8 +201,8 @@ const int * ptr;
    }
   }  // end heapCreate
 </code></pre>
-  </li>
-</ul>
+  
+
 
 <pre><code class="language-C++">void heapRebuild(const int subTreeNodeIndex)
 {
