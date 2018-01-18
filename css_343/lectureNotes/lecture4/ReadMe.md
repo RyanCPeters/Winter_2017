@@ -106,7 +106,7 @@ Heap - Array into a Heap
 =======
 
 + Start from rightmost leaf up to root, call heapRebuild
-```C
+```C++
 void heapCreate()
 {
    // can simplify as itemCount / 2
@@ -117,7 +117,7 @@ void heapCreate()
 }  // end heapCreate
 ```
 
-```C
+```C++
 void heapRebuild(const int subTreeNodeIndex)
 {
    if (!isLeaf(subTreeNodeIndex))
@@ -140,7 +140,7 @@ void heapRebuild(const int subTreeNodeIndex)
 Heap - Add
 =======
 
-![](../images/heap-add.png)
+![tree_Image](../images/heap-add.png)
 
 - Add the new node to the next available spot
 
