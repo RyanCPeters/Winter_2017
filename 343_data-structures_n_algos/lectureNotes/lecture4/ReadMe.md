@@ -318,7 +318,7 @@ bfs(v: Vertex) {
 
 ### [Graphs - Group Exercise][1]
 
-![](./images/ch20-12-grap.png)
+![](./images/ch20-12-graph.png)
 
 1. DFS, start at i, looking for e, mark all nodes visited
 2. BFS, start at i, looking for e, mark all nodes visited
