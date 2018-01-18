@@ -1,11 +1,35 @@
+Lecture 2: Huffman Coding
+===
+Created By: Yusuf Pisan
 ---
-title: "Huffman Coding"
-author: Yusuf Pisan
-output: slidy_presentation
----
+formatted to Github Markdown syntax by Ryan Peters
+[1]:#Table-of-content
 
-Overview <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
-========================================================
+<div class=" slidy_toc hidden">
+  <div class=" toc-heading"><h5>Table of Contents</h5></div>
+
+1. [Huffman Coding](#huffman-coding)
+2. [Overview ](#overview)
+3. [Assignment 1: TurtleProgram](#assignment-1:-turtleprogram)
+4. [Common Programming Mistakes](#common-programming-mistakes)
+5. [Binary Search Tree - Definition](#binary-search-tree---definition)
+6. [Binary Search Tree](#binar-search-tree)
+7. [UML for Binary Tree](#uml-for-binary-tree)
+8. [Why Trees?](#Why-Trees?)
+9. [Group Exercise: Prove](#Group-Exercise:-Prove)
+10. [Group Exercise: Prove - Solution](#group-exercise:-prove-solution)
+11. [Group Exercise: Insert Elements](#Group-Exercise:-Insert-Elements)
+12. [Tree as Array](#Tree-as-Array)
+13. [Group Exercise: Array Representation](#Group-Exercise:-Array-Representation)
+14. [Tree as Linked Nodes](#tree-as-linked-nodes)
+15. [Smart Pointers](#smart-pointers)
+16. [Group Exercise: Order of Inserts](#group-exercise:-order-of-inserts)
+17. [Huffman Coding](#huffman-coding)
+18. [Huffman Coding - Algorithm](#huffman-coding---algorithm)
+19. [After Class](#after-class)
+
+[Overview][1] <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
+===
 
 + Review - Ass1, BST, Complexity Analysis (worksheet later)
 
@@ -17,8 +41,8 @@ Overview <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://cou
 
 + See IDE Tips, email me tips!
 
-Assignment 1: TurtleProgram
-=================
+[Assignment 1: TurtleProgram][1]
+===
 
 Each program is a series of strings (comes as 2 strings at a time)
 
@@ -35,15 +59,15 @@ Remember to dynamically allocate the array to be just the right size (not `strin
 - Optional: Smart pointers
     - Use unique_ptr for arrays, shared_ptr most other times
 
-Common Programming Mistakes
-===============
+[Common Programming Mistakes][1]
+===
 
 Use compiler flags `-Wall -Wextra -Wpedantic -Weffc++` and even `-Werror`
 
 Review code examples: http://faculty.washington.edu/pisan/cpp/snippets.html
 
-Binary Search Tree - Definition
-===============
+[Binary Search Tree - Definition][1]
+===
 
 + Left child value less than parent
 
@@ -61,8 +85,8 @@ Use the code from textbook. Generalize it to take any data type, to have proper 
 
 Assignment #2 will use Trees.
 
-Binary Search Tree
-===============
+[Binary Search Tree][1]
+===
 
 ```C
 search(BST, target)
@@ -82,18 +106,18 @@ Create a balanced BST for A, B, C, D, E, F
 
 What does it mean for a tree to be balanced, full, complete?
 
-UML for BinaryTree
+[UML for Binary Tree][1]
 ====
 
-![UML for BinaryTree](../images/ch15-12-uml-binary-tree.png)
+![UML for BinaryTree](./images/ch15-12-uml-binary-tree.png)
 
 Implementation choices
 
 - Arrays
 - Link-Based
 
-Why Trees?
-===============
+[Why Trees?][1]
+===
 
 + Good for searching when there is both add/delete operations. Used internally for libraries
 
@@ -113,15 +137,15 @@ Why Trees?
 
 + Directory structures, web pages, anything hierarchical
 
-Group Exercise: Prove
-================
+[Group Exercise: Prove][1]
+===
 
 Prove: A full binary tree of height â‰¥ 0 has 2^h^âˆ’ 1 nodes
 
-![](../images/ch16-16-bst-full.png)
+![](./images/ch16-16-bst-full.png)
 
-Group Exercise: Prove - Solution
-================
+[Group Exercise: Prove - Solution][1]
+===
 
 Prove: A full binary tree of height â‰¥ 0 has 2^h^âˆ’ 1 nodes
 
@@ -147,8 +171,8 @@ The number of nodes in T is
 = 2^h^ - 1  
 </font>
 
-Group Exercise: Insert Elements
-================
+[Group Exercise: Insert Elements][1]
+===
 
 Insert the letters in "Huffman Coding" to create a binary search tree
 
@@ -160,8 +184,8 @@ Insert the letters in "Huffman Coding" to create a binary search tree
 
 - Can you reduce its height if it is a general tree and not a BST?
 
-Tree as Array
-=============
+[Tree as Array][1]
+===
 
 Not the most natural or common, but important
 
@@ -180,19 +204,19 @@ private:
    int      rightChild;  // Index to right child
 ```
 
-![](../images/ch16-1-array.png)
+![](./images/ch16-1-array.png)
 
-Group Exercise: Array Representation
-=============
+[Group Exercise: Array Representation][1]
+===
 
 Represent "Huffman Coding" tree as an array
 
 - Assume insertion order is as before H, u, f, ...
 
-Tree as Linked Nodes
-=============
+[Tree as Linked Nodes][1]
+===
 
-![](../images/ch16-2-link-based.png)
+![](./images/ch16-2-link-based.png)
 ```C
 class BinaryNode
 {
@@ -224,8 +248,8 @@ private:
 
 
 
-Smart Pointers
-==============
+[Smart Pointers][1]
+===
 
 shared_ptr - shared object, does reference counting, similar to regular pointer
 
@@ -247,16 +271,16 @@ Using smart pointers is optional
 
 **Do not** mix smart pointers and regular pointers
 
-Group Exercise: Order of Inserts
-=============
+[Group Exercise: Order of Inserts][1]
+===
 
-![](../images/ch15-18-bintree.png)
+![](./images/ch15-18-bintree.png)
 
 If this is our final binary search tree, find at least 2 possible insertion orders.
 
 
-Huffman Coding
-=============
+[Huffman Coding][1]
+===
 
 Used for compression (part of the gzip, jpeg and many other algorithm)
 
@@ -277,8 +301,8 @@ Extra: Details of gzip using LZ77 and Huffman at http://www.gzip.org/algorithm.t
 and more from Mark Adler (co-author of zlib and gzip)  
 https://stackoverflow.com/questions/20762094/how-are-zlib-gzip-and-zip-related-what-do-they-have-in-common-and-how-are-they
 
-Huffman Coding - Algorithm
-=============
+[Huffman Coding - Algorithm][1]
+===
 
 - Each letter is a single node tree and has weight (w) based on its frequency
 
@@ -294,19 +318,19 @@ Huffman Coding - Algorithm
 Group Exercise: Free Beer
 ```
 
-1. Calculate number of times each letter appears
+ 1. Calculate number of times each letter appears
 
-2. Create the Huffman Tree
+ 2. Create the Huffman Tree
 
-3. Write out the code (not unique)
+ 3. Write out the code (not unique)
 
 Extra:
 ```
 How much wood would a woodchuck chuck if a woodchuck could chuck wood?
 ```
 
-After Class
-=============
+[After Class][1]
+===
 
 - Post to slack about some technical knowledge you are proud of
 - Post tips or problems with CSS Linux Lab
