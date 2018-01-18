@@ -9,6 +9,7 @@ Binary Heaps & Graphs
 - Runtime polymorphism - virtual + override
 - Decision Trees
 - Heap
+
       - Heap - Array Based Implementation
       - Heap - Array into a Heap
       - Heap - Add
@@ -16,11 +17,15 @@ Binary Heaps & Graphs
       - Implementing Priority Queue as a Heap
       - BST vs Heap in Implementing Priority Queue
       - Heap Sort - Sort an Arry Using Heap
+      
             - Group Exercise
+            
 - Graphs
+
       - Graphs - Implementing
       - Graphs - Searching
       - Graphs - Group Exercise
+      
 - After Class
 
 Overview <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
