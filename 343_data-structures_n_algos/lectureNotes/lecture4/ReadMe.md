@@ -8,7 +8,7 @@ Formatted for GitHub Markdown syntax by Ryan Peters
 
 ## Be sure to check the other lectures out after you finish this one!
 
-[Next lecture](https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture2/)
+[Previous Lecture][2]<-----------------------------------------------------------------------------------------------
 
 ---
 
@@ -42,15 +42,10 @@ Formatted for GitHub Markdown syntax by Ryan Peters
 <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
 
 + Review: Ass1, rebalancing tree during inserts, decision trees, const, priority queues, abstraction(?)
-
 + JollyFeedback - automated tests
-
 + Ass2: BinarySearchTree
-
 + Big O Reading - Resources: Cracking the Coding Interview - VI Big O
-
 + Binary Heaps
-
 + Graphs
 
 
@@ -97,13 +92,9 @@ https://isocpp.org/wiki/faq/const-correctness
 ### [Runtime polymorphism - virtual + override][1]
 
 + Games: Bunch of different `graphical object`s
-
 + All classes of objects have their own `draw()` function
-
 + Base class defines it as `virtual void draw() const`
-
 + Derived classes define it as `void draw() const override`
-
 + So, we can have an array of pointers of type `graphical object` and use `go->draw()` to get the correct draw function
 
 
@@ -136,7 +127,6 @@ Not a binary search tree!
 ### [Heap - Array Based Implementation][1]
 
 - Heap has to be complete, filled from left to right
-
 - We know the index of each node based on level i
 
       - left: 2 * i + 1
@@ -193,9 +183,7 @@ void heapRebuild(const int subTreeNodeIndex)
 ![](./images/heap-add.png?raw=true)
 
 - Add the new node to the next available spot
-
 - Bubble up, swapping values with parent until Heap property restored
-
 - Group Exercise: Add 50, Add 10
 
 
@@ -206,11 +194,8 @@ void heapRebuild(const int subTreeNodeIndex)
 ![](./images/heap-remove.png?raw=true)
 
 - Remove the node, we now have 2 semiheaps
-
 - Last node that was added to the heap, becomes root
-
 - Trickle down, swapping root value with child value (while child value larger)
-
 - Group Exercise: Add 50, Add 10, Remove 5, Remove 6
 
 
@@ -243,13 +228,9 @@ When last item in the list deleted, node is deleted
 ### [Heap Sort - Sort an Arry Using Heap][1]
 
 - Make the array into a heap
-
 - Partition the array into Heap and Sorted parts
-
 - Remove the root of the Heap, transfer it to Sorted
-
 - Heap is smaller and has to be rebuilt. Sorted now has one more element
-
 - Keep removing until Heap is empty
 
 ![](./images/heap-sort1.png?raw=true)
@@ -267,7 +248,6 @@ When last item in the list deleted, node is deleted
 Start with array [25 30 20 80 40 60]
 
 1. Turn the given array into a heap
-
 2. Sort the array by removing root at each turn - draw the array after each swap and heapRebuild
 
 
@@ -289,11 +269,9 @@ Start with array [25 30 20 80 40 60]
 ### [Graphs - Implementing][1]
 
 + Adjacency Matrix
-
 ![](./images/ch20-7-graph-adjacency.png?raw=true)
 
 + Adjacency List
-
 ![](./images/ch20-10-graph-adjacency-list.png?raw=true)
 
 
@@ -339,7 +317,6 @@ bfs(v: Vertex) {
 ![](./images/ch20-12-graph.png)
 
 1. DFS, start at i, looking for e, mark all nodes visited
-
 2. BFS, start at i, looking for e, mark all nodes visited
 
 
@@ -348,7 +325,9 @@ bfs(v: Vertex) {
 ### [After Class][1]
 
 + Read: Chapter 20.1-3 (if you have not already)
-
 + Read: Resources: Cracking the Coding Interview - VI Big O
-
 + Start Ass-2, fix your Ass-1 if you have any memory leaks or not passing JollyFeedback with flying colors!
+
+
+[2]:https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture2/
+[3]:https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture4/
