@@ -139,20 +139,20 @@ Implementation choices
 [Group Exercise: Prove][1]
 ===
 
-Prove: A full binary tree of height â‰¥ 0 has 2^h^âˆ’ 1 nodes
+Prove: A full binary tree of height â‰¥ 0 has 2<sup>h</sup> - 1 nodes
 
 ![](./images/ch16-16-bst-full.png)
 
 [Group Exercise: Prove - Solution][1]
 ===
 
-_Prove:_ A full binary tree of height ≥ 0  has 2^(h)^ - 1 nodes
+_Prove:_ A full binary tree of height ≥ 0  has 2<sup>h</sup> - 1 nodes
 
 __*Proof by induction*__
 
-**Basis:**  When h = 0, the full binary tree is empty, and it contains 0 = 2^(0)^ – 1 nodes
+**Basis:**  When h = 0, the full binary tree is empty, and it contains 0 = 2<sup>0</sup> – 1 nodes
 
-**Inductive hypothesis:** Assume that a full binary tree of height k has 2^(h)^ – 1 nodes when 0 ≤ k < h.
+**Inductive hypothesis:** Assume that a full binary tree of height k has 2<sup>h</sup> – 1 nodes when 0 ≤ k < h.
 
 **_Inductive conclusion_**
 
