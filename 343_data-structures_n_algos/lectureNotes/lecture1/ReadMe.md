@@ -29,8 +29,11 @@ formatted to Github Markdown syntax by Ryan Peters
 
 [1]:#table-of-contents "Back to Table of Contents"
 
-[Overview][1]
-===
+
+---
+
+### [Overview][1]
+
 
 http://courses.washington.edu/css343/pisan/
 
@@ -46,8 +49,11 @@ http://courses.washington.edu/css343/pisan/
 + Readings before class
 
 
-[342 Review][1]
-===
+
+---
+
+### [342 Review][1]
+
 
 - Searching & Sorting
 - Recursion
@@ -60,14 +66,17 @@ http://courses.washington.edu/css343/pisan/
 Order them based on your level of comfort  
 https://pollev.com/pisan
 
-[Reading Code (1)][1]
-===
+
+---
+
+### [Reading Code (1)][1]
+
 Somebody forgot to write comments! 
 
 ```C++++
 int foo(int n)
 {
-   if (n == 0)
+   if (n  0)
       return 1;
    else
       return n * foo(n - 1);
@@ -76,8 +85,11 @@ int foo(int n)
 
 What is its complexity? Why?
 
-[Reading Code (2)][1]
-===
+
+---
+
+### [Reading Code (2)][1]
+
   
 ```C++
 int mystery(const int anArray[], int first, int last, int target)
@@ -88,7 +100,7 @@ int mystery(const int anArray[], int first, int last, int target)
    else
    {
       int mid = first + (last - first) / 2;
-      if (target == anArray[mid])
+      if (target  anArray[mid])
          index = mid;
       else if (target < anArray[mid])
          index = mystery(anArray, first, mid - 1, target);
@@ -102,8 +114,11 @@ int mystery(const int anArray[], int first, int last, int target)
 
 What is its complexity? Why?
 
-[Reading Code (3)][1]
-=======
+
+---
+
+### [Reading Code (3)][1]
+
   
 ```C++
 template<class ItemType>
@@ -123,8 +138,11 @@ bool Grouch<ItemType>::mumble(const ItemType& newEntry)
 
 What is its complexity? Why?
 
-[Reading Code (4)][1]
-===========
+
+---
+
+### [Reading Code (4)][1]
+
 SomeInterface, but what?
   
 ```C++
@@ -141,8 +159,11 @@ public:
 ```
 
 
-[Reading Code (5)][1]
-==========================
+
+---
+
+### [Reading Code (5)][1]
+
   
 ```C++
 template<class ItemType>
@@ -171,8 +192,11 @@ void someSort(ItemType theArray[], int n)
 
 What is its complexity? Why?
 
-[Trees][1]
-===
+
+---
+
+### [Trees][1]
+
 ![](./images/ch15-2-organization-tree.png)
 
 + Single root, hierarchical - more than one immediate successor
@@ -184,8 +208,11 @@ What is its complexity? Why?
 
 
 
-[Algebraic Expression][1]
-====
+
+---
+
+### [Algebraic Expression][1]
+
 ![Algebraic Expression](./images/ch15-3-algebraic-tree.png)
 
 Representing ``` (a - b) x c```
@@ -200,14 +227,17 @@ Let's try different traversals.
 Group Exercise: `((a + b) * (c + d)) / (e * f) - g`
 
 
-[Binary Search Tree][1]
-===============
+
+---
+
+### [Binary Search Tree][1]
+
 
 ```C++
 search(BST, target)
   if (BST is empy)
     item not found
-  else if target == data in BST
+  else if target  data in BST
     item found
   else if target < data
     search(left subtree, target)
@@ -220,8 +250,11 @@ What is the worst case complexity for a badly constructed tree?
 Create a balanced BST for A, B, C, D, E, F
 
 
-[After Class][1]
-=============
+
+---
+
+### [After Class][1]
+
 
 Explore the Resources on course pages
 

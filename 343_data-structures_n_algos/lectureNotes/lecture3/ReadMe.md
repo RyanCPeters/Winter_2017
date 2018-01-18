@@ -44,7 +44,9 @@ formatted to Github Markdown syntax by Ryan Peters
 ---
 
 ### [Overview][1]
-<meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http:/][1]/courses.washington.edu/css343/"/><meta name="duration"content="120"/>
+
+<meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http:/][1]
+/courses.washington.edu/css343/"/><meta name="duration"content="120"/>
 
 + Review - UML, Huffman Coding, Induction (skip)
 + Technical knowledge
@@ -56,6 +58,7 @@ formatted to Github Markdown syntax by Ryan Peters
 ---
 
 ### [TurtleProgram Grading Rubric][1]
+
 Automated tests Wednesday 10pm and Friday 10pm
 
 Make sure `getLength()` is defined (number of strings in array)
@@ -87,6 +90,7 @@ Automated tests on Wednesday 10pm and Friday 10pm from â€œJollyFeedbackâ€
 ---
 
 ### [UML Class Diagrams][1]
+
 ![UML for BinaryTree](./images/ch15-12-uml-binary-tree.png)
 
 ![UML ADT Queue](./images/uml-adt-queue.png)
@@ -96,6 +100,7 @@ Automated tests on Wednesday 10pm and Friday 10pm from â€œJollyFeedbackâ€
 ---
 
 ### [UML Class Diagrams (2)][1]
+
 From https://www.ibm.com/developerworks/rational/library/content/RationalEdge/sep04/bell/index.html
 ![](./images/Class-Diagram-ATM-system-750x660.png) 
 
@@ -108,6 +113,7 @@ Account and ATM Transactions classes know each other
 ---
 
 ### [Huffman Coding][1]
+
 See example at http://courses.washington.edu/css343/zander/NotesProbs/huffmanexamples
 
 Also some good BST information on http://courses.washington.edu/css343/zander/notes.html
@@ -122,6 +128,7 @@ d:4, r:6, s:6, h:6, i:7, n:7, a:8, t:9, o:8, e:13,
 ---
 
 ### [Add - Binary Search Tree - Recursive Solution][1]
+
 `add` calls private function `placeNode`
 
 ```C++
@@ -150,6 +157,7 @@ placeNode(subTreePtr, newNodePtr)
 ---
 
 ### [Add - Binary Search Tree - Iterative Solution][1]
+
 If visiting all tree nodes, recursion is probably needed.
 
 Add should not visit all tree nodes!
@@ -174,6 +182,7 @@ Add should not visit all tree nodes!
 ---
 
 ### [Remove - Binary Search Tree][1]
+
 Find the item and if found remove it and return `true`, else return `false`
 
 There are 3 cases to consider when removing N
@@ -201,6 +210,7 @@ All the items in N's right subtree are greater than the item in N. Where is the 
 ---
 
 ### [Group Exercise: Removing Nodes][1]
+
 ![](./images/ch15-18-bintree.png)
 
 For each exercise below, start with the original tree above
@@ -214,6 +224,7 @@ For each exercise below, start with the original tree above
 ---
 
 ### [When to use Different Traversals][1]
+
 Inorder: sorted values
 
 Preorder: clone tree, count nodes, prefix algebraic expression
@@ -223,6 +234,7 @@ Postorder: postfix algebraic notation, deleting tree
 ---
 
 ### [Saving BST to File or Array][1]
+
 Save the BST using inorder traversal, we get a sorted list of items, smallest to largest.
 
 Reading it back, we want the middle item to be the root, so
@@ -236,6 +248,7 @@ If n is even, one subtree needs to have one extra element.
 ---
 
 ### [Tree Sort][1]
+
 Add an array's entries to BST.  
 
 Traverse BST in inorder, copy the values back to array
@@ -248,6 +261,7 @@ tree sort: average case O(n x log n), worst case O(n^2^)
 ---
 
 ### [Re-Balancing a Binary Tree][1]
+
 What does it mean to be balanced?
 
 AVL Trees - balanced binary search tree
@@ -261,6 +275,7 @@ We'll get to them later!
 ---
 
 ### [Queue][1]
+
 ![](./images/uml-adt-queue.png)
 
 FIFO - first in, first out (lunch queue, printer queue, ...)
@@ -278,6 +293,7 @@ More advanced version - circular array
 ---
 
 ### [Priority Queue][1]
+
 ![UML ADT Priority Queue](./images/uml-adt-priorityqueue.png)
 
 TODO Lists, Simulations
@@ -289,6 +305,7 @@ Implementation: Linked list
 ---
 
 ### [Heap][1]
+
 MaxHeap: Complete binary tree whose root is greater than its children
 
 MinHeap: ...
@@ -302,6 +319,7 @@ Not a binary search tree!
 ---
 
 ### [Heap - Array Based Implementation][1]
+
 
 - Heap has to be complete, filled from left to right
 - We know the index of each node based on level i
@@ -317,6 +335,7 @@ Keep track of `itemcount` and `maxItems`
 ---
 
 ### [Heap - Add][1]
+
 ![](./images/heap-add.png)
 
 - Add the new node to the next available spot
@@ -326,6 +345,7 @@ Keep track of `itemcount` and `maxItems`
 ---
 
 ### [Heap - Remove][1]
+
 ![](./images/heap-remove.png)
 
 - Remove the node, we now have 2 semiheaps
@@ -335,6 +355,7 @@ Keep track of `itemcount` and `maxItems`
 ---
 
 ### [Implementing Priority Queue as a Heap][1]
+
 Highest priority is at the root of MaxHeap
 
 ![](./images/uml-adt-priorityqueue.png)
@@ -343,6 +364,7 @@ Highest priority is at the root of MaxHeap
 ---
 
 ### [BST vs Heap in Implementing Priority Queue][1]
+
 If we know the maximum number of items in priority queue, heap is better
 
 Heap is blanced, BST can become unbalanced degrading performance
@@ -354,6 +376,7 @@ When last item in the list deleted, node is deleted
 ---
 
 ### [Heap Sort][1]
+
 
 - Partition the array into Heap and Sorted parts
 - Remove the root of the Heap, transfer it to Sorted
@@ -367,6 +390,7 @@ When last item in the list deleted, node is deleted
 ---
 
 ### [Ass-2: Binary Search Tree][1]
+
 Implement a BST
 
 - add, contains, inorderTraverse, getHeight, getNumberOfNodes, rebalance

@@ -39,6 +39,7 @@ Formatted for GitHub Markdown syntax by Ryan Peters
 ---
 
 ### [Overview][1]
+
 <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
 
 + Review: Ass1, rebalancing tree during inserts, decision trees, const, priority queues, abstraction(?)
@@ -105,6 +106,7 @@ http://www.cplusplus.com/doc/tutorial/polymorphism/
 ---
 
 ### [Decision Trees][1]
+
 ![](./images/decision-tree-knee.png?raw=true)
 
 
@@ -203,6 +205,7 @@ void heapRebuild(const int subTreeNodeIndex)
 
 ### [Implementing Priority Queue as a Heap][1]
 
+
 Highest priority is at the root of MaxHeap
 
 ![](./images/uml-adt-priorityqueue.png?raw=true)
@@ -243,7 +246,7 @@ When last item in the list deleted, node is deleted
 
 ---
 
-### [Group Exercise][1]=
+### [Group Exercise][1]
 
 Start with array [25 30 20 80 40 60]
 
@@ -314,6 +317,7 @@ bfs(v: Vertex) {
 ---
 
 ### [Graphs - Group Exercise][1]
+
 ![](./images/ch20-12-graph.png)
 
 1. DFS, start at i, looking for e, mark all nodes visited

@@ -37,6 +37,7 @@ formatted to Github Markdown syntax by Ryan Peters
 ---
     
 ### [Overview][1]<meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /><meta name="duration" content="120" />
+
 + Review - Ass1, BST, Complexity Analysis (worksheet later)
 
 + Common programming mistakes
@@ -50,6 +51,7 @@ formatted to Github Markdown syntax by Ryan Peters
 ---
 
 ### [Assignment 1: TurtleProgram][1]
+
 Each program is a series of strings (comes as 2 strings at a time)
 
 Draw the UML Class Diagram - public functions, private variables
@@ -68,6 +70,7 @@ Remember to dynamically allocate the array to be just the right size (not `strin
 ---
     
 ### [Common Programming Mistakes][1]
+
 Use compiler flags `-Wall -Wextra -Wpedantic -Weffc++` and even `-Werror`
 
 Review code examples: http://faculty.washington.edu/pisan/cpp/snippets.html
@@ -75,6 +78,7 @@ Review code examples: http://faculty.washington.edu/pisan/cpp/snippets.html
 ---
     
 ### [Binary Search Tree - Definition][1]
+
 + Left child value less than parent
 
 + Right child value greater than parent
@@ -94,6 +98,7 @@ Assignment #2 will use Trees.
 ---
     
 ### [Binary Search Tree][1]
+
 ```C++
 search(BST, target)
   if (BST is empy)
@@ -115,6 +120,7 @@ What does it mean for a tree to be balanced, full, complete?
 ---
     
 ### [UML for Binary Tree][1]
+
 ![UML for BinaryTree](./images/ch15-12-uml-binary-tree.png)
 
 Implementation choices
@@ -125,6 +131,7 @@ Implementation choices
 ---
     
 ### [Why Trees?][1]
+
 + Good for searching when there is both add/delete operations. Used internally for libraries
 
 + Games use Binary Space Partition, render only what is visible from front to back
@@ -146,6 +153,7 @@ Implementation choices
 ---
     
 ### [Group Exercise: Prove][1]
+
 Prove: A full binary tree of height ≥ 0 has 2<sup>h</sup> - 1 nodes
 
 ![](./images/ch16-16-bst-full.png)
@@ -153,6 +161,7 @@ Prove: A full binary tree of height ≥ 0 has 2<sup>h</sup> - 1 nodes
 ---
     
 ### [Group Exercise: Prove - Solution][1]
+
 _Prove:_ A full binary tree of height ≥ 0  has 2<sup>h</sup> - 1 nodes
 
 __*Proof by induction*__
@@ -180,6 +189,7 @@ The number of nodes in T is
 ---
     
 ### [Group Exercise: Insert Elements][1]
+
 Insert the letters in "Huffman Coding" to create a binary search tree
 
 - Skip duplicates, treat all letters as lowercase
@@ -193,6 +203,7 @@ Insert the letters in "Huffman Coding" to create a binary search tree
 ---
     
 ### [Tree as Array][1]
+
 Not the most natural or common, but important
 
 ```C++
@@ -216,6 +227,7 @@ private:
 ---
     
 ### [Group Exercise: Array Representation][1]
+
 Represent "Huffman Coding" tree as an array
 
 - Assume insertion order is as before H, u, f, ...
@@ -223,6 +235,7 @@ Represent "Huffman Coding" tree as an array
 ---
     
 ### [Tree as Linked Nodes][1]
+
 ![](./images/ch16-2-link-based.png)
 ```C++
 class BinaryNode
@@ -259,6 +272,7 @@ private:
 ---
     
 ### [Smart Pointers][1]
+
 shared_ptr - shared object, does reference counting, similar to regular pointer
 
 unique_ptr - unique ownership, nobody else can reference it
@@ -282,6 +296,7 @@ Using smart pointers is optional
 ---
     
 ### [Group Exercise: Order of Inserts][1]
+
 ![](./images/ch15-18-bintree.png)
 
 If this is our final binary search tree, find at least 2 possible insertion orders.
@@ -289,6 +304,7 @@ If this is our final binary search tree, find at least 2 possible insertion orde
 ---
 
 ### [Huffman Coding][1]
+
 Used for compression (part of the gzip, jpeg and many other algorithm)
 
 Take advantage of repetitions
@@ -311,6 +327,7 @@ https://stackoverflow.com/questions/20762094/how-are-zlib-gzip-and-zip-related-w
 ---
 
 ### [Huffman Coding - Algorithm][1]
+
 - Each letter is a single node tree and has weight (w) based on its frequency
 
 - Combine the trees with lowest weights, the weight of the new tree is sum of the subtrees
@@ -339,6 +356,7 @@ How much wood would a woodchuck chuck if a woodchuck could chuck wood?
 ---
 
 ### [After Class][1]
+
 - Post to slack about some technical knowledge you are proud of
 - Post tips or problems with CSS Linux Lab
 - Work on Assignment-1
