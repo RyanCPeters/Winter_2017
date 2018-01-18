@@ -8,7 +8,7 @@ formatted to Github Markdown syntax by Ryan Peters
 
 ## Be sure to check the other lectures out after you finish this one!
 
-[Next lecture](https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture2/)
+----------------------------------------------------------------------------------------------->[Next lecture][3]
 
 ---
 
@@ -237,3 +237,6 @@ Assignment 1: TurtleProgram
   - Ask questions - but you have to debug your own code
 
 Start programming 
+
+[2]:https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture2/
+[3]:https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture4/
