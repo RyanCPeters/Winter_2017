@@ -140,7 +140,7 @@ void heapRebuild(const int subTreeNodeIndex)
 Heap - Add
 =======
 
-![tree_Image](../images/heap-add.png)
+[add_tree_Image](./heap-add.png)
 
 - Add the new node to the next available spot
 
@@ -151,7 +151,7 @@ Heap - Add
 Heap - Remove
 =======
 
-![](../images/heap-remove.png)
+[remove_tree_image](./heap-remove.png)
 
 - Remove the node, we now have 2 semiheaps
 
