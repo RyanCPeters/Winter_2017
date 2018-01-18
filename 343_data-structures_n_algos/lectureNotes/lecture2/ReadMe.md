@@ -57,16 +57,20 @@ Remember to dynamically allocate the array to be just the right size (not `strin
 
 - Optional: Smart pointers
     - Use unique_ptr for arrays, shared_ptr most other times
-
+    
+---
+    
 [Common Programming Mistakes][1]
-===
+---
 
 Use compiler flags `-Wall -Wextra -Wpedantic -Weffc++` and even `-Werror`
 
 Review code examples: http://faculty.washington.edu/pisan/cpp/snippets.html
-
+    
+---
+    
 [Binary Search Tree - Definition][1]
-===
+---
 
 + Left child value less than parent
 
@@ -83,9 +87,11 @@ Write a BST for `int` in the simplest way possible with only single constructor 
 Use the code from textbook. Generalize it to take any data type, to have proper getters/setters.
 
 Assignment #2 will use Trees.
-
+    
+---
+    
 [Binary Search Tree][1]
-===
+---
 
 ```C++
 search(BST, target)
@@ -104,9 +110,11 @@ What is the worst case complexity for a badly constructed tree?
 Create a balanced BST for A, B, C, D, E, F
 
 What does it mean for a tree to be balanced, full, complete?
-
+    
+---
+    
 [UML for Binary Tree][1]
-====
+---
 
 ![UML for BinaryTree](./images/ch15-12-uml-binary-tree.png)
 
@@ -114,9 +122,11 @@ Implementation choices
 
 - Arrays
 - Link-Based
-
+    
+---
+    
 [Why Trees?][1]
-===
+---
 
 + Good for searching when there is both add/delete operations. Used internally for libraries
 
@@ -135,16 +145,20 @@ Implementation choices
 + B-Tree for databases
 
 + Directory structures, web pages, anything hierarchical
-
+    
+---
+    
 [Group Exercise: Prove][1]
-===
+---
 
 Prove: A full binary tree of height ≥ 0 has 2<sup>h</sup> - 1 nodes
 
 ![](./images/ch16-16-bst-full.png)
-
+    
+---
+    
 [Group Exercise: Prove - Solution][1]
-===
+---
 
 _Prove:_ A full binary tree of height ≥ 0  has 2<sup>h</sup> - 1 nodes
 
@@ -169,9 +183,11 @@ The number of nodes in T is
 = 1 + 2<sup>h</sup> - 2
 = 2<sup>h</sup> - 1 
 </font>
-
+    
+---
+    
 [Group Exercise: Insert Elements][1]
-===
+---
 
 Insert the letters in "Huffman Coding" to create a binary search tree
 
@@ -182,9 +198,11 @@ Insert the letters in "Huffman Coding" to create a binary search tree
 - What is the height of the tree (single root node = 1)
 
 - Can you reduce its height if it is a general tree and not a BST?
-
+    
+---
+    
 [Tree as Array][1]
-===
+---
 
 Not the most natural or common, but important
 
@@ -205,16 +223,20 @@ private:
 ```
 
 ![](./images/ch16-1-array.png)
-
+    
+---
+    
 [Group Exercise: Array Representation][1]
-===
+---
 
 Represent "Huffman Coding" tree as an array
 
 - Assume insertion order is as before H, u, f, ...
-
+    
+---
+    
 [Tree as Linked Nodes][1]
-===
+---
 
 ![](./images/ch16-2-link-based.png)
 ```C++
@@ -249,10 +271,10 @@ private:
 }
 ```
 
-
-
+---
+    
 [Smart Pointers][1]
-===
+---
 
 shared_ptr - shared object, does reference counting, similar to regular pointer
 
@@ -273,9 +295,11 @@ If interested, read C++ Interlude 4
 Using smart pointers is optional
 
 **Do not** mix smart pointers and regular pointers
-
+    
+---
+    
 [Group Exercise: Order of Inserts][1]
-===
+---
 
 ![](./images/ch15-18-bintree.png)
 
