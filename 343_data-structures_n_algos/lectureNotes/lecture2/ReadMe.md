@@ -21,7 +21,7 @@ formatted to Github Markdown syntax by Ryan Peters
 - [Binary Search Tree - Definition](#binary-search-tree---definition)
   - [Binary Search Tree](#binary-search-tree)
   - [UML for Binary Tree](#uml-for-binary-tree)
-  - [Why Trees?](#Why-Trees)
+  - [Why Trees?](#why-trees)
     - [Group Exercise: Prove](#Group-Exercise-Prove)
     - [Group Exercise: Prove - Solution](#group-exercise-prove---solution)
     - [Group Exercise: Insert Elements](#Group-Exercise-Insert-Elements)
