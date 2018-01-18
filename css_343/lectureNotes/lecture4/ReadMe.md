@@ -9,19 +9,19 @@ Binary Heaps & Graphs
   - [Runtime polymorphism - virtual + override][1]
   - [Decision Trees][2]
 - [Heap][3]
-  - Heap - Array Based Implementation
-  - Heap - Array into a Heap
-  - Heap - Add
-  - Heap - Remove
-  - Implementing Priority Queue as a Heap
-  - BST vs Heap in Implementing Priority Queue
-  - Heap Sort - Sort an Arry Using Heap
-  - Group Exercise           
-- Graphs
-  - Graphs - Implementing
-  - Graphs - Searching
-  - Graphs - Group Exercise     
-- After Class
+  - [Heap - Array Based Implementation][4]
+  - [Heap - Array into a Heap][5]
+  - [Heap - Add][6]
+  - [Heap - Remove][7]
+  - [Implementing Priority Queue as a Heap][8]
+  - [BST vs Heap in Implementing Priority Queue][9]
+  - [Heap Sort - Sort an Arry Using Heap][10]
+  - [Group Exercise][11]
+- [Graphs][12]
+  - [Graphs - Implementing][13]
+  - [Graphs - Searching][14]
+  - [Graphs - Group Exercise][15]
+- [After Class][16]
 
 [1]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#runtime-polymorphism---virtual--overrid
 [2]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#decision-trees
@@ -41,7 +41,7 @@ Binary Heaps & Graphs
 [16]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#after-class
 [17]:https://github.com/RyanCPeters/Winter_UWB_2017/blob/master/css_343/lectureNotes/lecture4/ReadMe.md#toc
 
-Overview 
+[Overview][17]
 ===
 <meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /> <meta name="duration" content="120" />
 
@@ -57,7 +57,7 @@ Overview
 
 + Graphs
 
-const
+[const][17]
 ===============
 
 + const to indicate that variable value does not change
@@ -93,7 +93,7 @@ const int * ptr;
 
 https://isocpp.org/wiki/faq/const-correctness
 
-Runtime polymorphism - virtual + override
+[Runtime polymorphism - virtual + override][17]
 ==========
 
 + Games: Bunch of different `graphical object`s
@@ -110,12 +110,12 @@ Runtime polymorphism - virtual + override
 http://www.cplusplus.com/doc/tutorial/polymorphism/
 
 
-Decision Trees
+[Decision Trees][17]
 ===============
 ![](./images/decision-tree-knee.png?raw=true)
 
 
-Heap
+[Heap][17]
 =======
 
 MaxHeap: Complete binary tree whose root is greater than its children
@@ -126,7 +126,7 @@ Not a binary search tree!
 
 ![](./images/maxheap-minheap.png?raw=true)
 
-Heap - Array Based Implementation
+[Heap - Array Based Implementation][17]
 =======
 
 - Heap has to be complete, filled from left to right
@@ -142,7 +142,7 @@ Heap - Array Based Implementation
 
 Keep track of `itemcount` and `maxItems`
 
-Heap - Array into a Heap
+[Heap - Array into a Heap][17]
 =======
 
 + Start from rightmost leaf up to root, call heapRebuild
@@ -177,7 +177,7 @@ void heapRebuild(const int subTreeNodeIndex)
 }  // end heapRebuild
 ```
 
-Heap - Add
+[Heap - Add][17]
 =======
 
 ![](./images/heap-add.png?raw=true)
@@ -188,7 +188,7 @@ Heap - Add
 
 - Group Exercise: Add 50, Add 10
 
-Heap - Remove
+[Heap - Remove][17]
 =======
 
 ![](./images/heap-remove.png?raw=true)
@@ -201,7 +201,7 @@ Heap - Remove
 
 - Group Exercise: Add 50, Add 10, Remove 5, Remove 6
 
-Implementing Priority Queue as a Heap
+[Implementing Priority Queue as a Heap][17]
 =======
 
 Highest priority is at the root of MaxHeap
@@ -210,7 +210,7 @@ Highest priority is at the root of MaxHeap
 
 ![](./images/uml-heap.png?raw=true)
 
-BST vs Heap in Implementing Priority Queue
+[BST vs Heap in Implementing Priority Queue][17]
 =======
 
 If we know the maximum number of items in priority queue, heap is better
@@ -221,7 +221,7 @@ If multiple items have the same priority, we can maintain a list at the node
 
 When last item in the list deleted, node is deleted
 
-Heap Sort - Sort an Arry Using Heap
+[Heap Sort - Sort an Arry Using Heap][17]
 =======
 
 - Make the array into a heap
@@ -241,7 +241,7 @@ Heap Sort - Sort an Arry Using Heap
 ![](./images/heap-sort3.png?raw=true)
 
 
-Group Exercise
+[Group Exercise][17]
 =======
 
 Start with array [25 30 20 80 40 60]
@@ -254,14 +254,14 @@ Start with array [25 30 20 80 40 60]
 + Given a maxHeap, if one of the values in the heap changes, how do you restore the heap?
 
 
-Graphs
+[Graphs][17]
 ============
 
 ![](./images/ch20-3-graph.png?raw=true)
 
 + Directed/Undirected graphs
 
-Graphs - Implementing
+[Graphs - Implementing][17]
 ============
 
 + Adjacency Matrix
@@ -273,7 +273,7 @@ Graphs - Implementing
 ![](./images/ch20-10-graph-adjacency-list.png?raw=true)
 
 
-Graphs - Searching
+[Graphs - Searching][17]
 ============
 
 + DFS - Depth-First Search
@@ -306,7 +306,7 @@ bfs(v: Vertex) {
 }
 ```
 
-Graphs - Group Exercise
+[Graphs - Group Exercise][17]
 ============
 ![](./images/ch20-12-graph.png)
 
@@ -314,7 +314,7 @@ Graphs - Group Exercise
 
 2. BFS, start at i, looking for e, mark all nodes visited
 
-After Class
+[After Class][17]
 =============
 
 + Read: Chapter 20.1-3 (if you have not already)
