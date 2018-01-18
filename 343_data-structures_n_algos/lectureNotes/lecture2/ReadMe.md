@@ -7,25 +7,25 @@ formatted to Github Markdown syntax by Ryan Peters
 <div class=" slidy_toc hidden">
   <div class=" toc-heading"><h5>Table of Contents</h5></div>
 
-1. [Huffman Coding](#huffman-coding)
-2. [Overview ](#overview)
-3. [Assignment 1: TurtleProgram](#assignment-1-turtleprogram)
-4. [Common Programming Mistakes](#common-programming-mistakes)
-5. [Binary Search Tree - Definition](#binary-search-tree---definition)
+- [Huffman Coding](#huffman-coding)
+- [Overview ](#overview)
+- [Assignment 1: TurtleProgram](#assignment-1-turtleprogram)
+- [Common Programming Mistakes](#common-programming-mistakes)
+- [Binary Search Tree - Definition](#binary-search-tree---definition)
   - [Binary Search Tree](#binar-search-tree)
   - [UML for Binary Tree](#uml-for-binary-tree)
   - [Why Trees?](#Why-Trees)
     - [Group Exercise: Prove](#Group-Exercise-Prove)
     - [Group Exercise: Prove - Solution](#group-exercise-prove---solution)
     - [Group Exercise: Insert Elements](#Group-Exercise-Insert-Elements)
-12. [Tree as Array](#Tree-as-Array)
+- [Tree as Array](#Tree-as-Array)
   - [Group Exercise: Array Representation](#Group-Exercise-Array-Representation)
-14. [Tree as Linked Nodes](#tree-as-linked-nodes)
-15. [Smart Pointers](#smart-pointers)
+- [Tree as Linked Nodes](#tree-as-linked-nodes)
+- [Smart Pointers](#smart-pointers)
   - [Group Exercise: Order of Inserts](#group-exercise-order-of-inserts)
-17. [Huffman Coding](#huffman-coding)
+- [Huffman Coding](#huffman-coding)
   - [Huffman Coding - Algorithm](#huffman-coding---algorithm)
-19. [After Class](#after-class)
+- [After Class](#after-class)
 
 [Overview][1]<meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /><meta name="duration" content="120" />
 ===
