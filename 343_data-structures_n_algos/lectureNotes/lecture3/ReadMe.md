@@ -103,7 +103,7 @@ See example at http://courses.washington.edu/css343/zander/NotesProbs/huffmanexa
 Also some good BST information on http://courses.washington.edu/css343/zander/notes.html
 
 Let's do an example
-```C
+```C++
 d:4, r:6, s:6, h:6, i:7, n:7, a:8, t:9, o:8, e:13, 
 ```
 
@@ -114,7 +114,7 @@ d:4, r:6, s:6, h:6, i:7, n:7, a:8, t:9, o:8, e:13,
 ### [Add - Binary Search Tree - Recursive Solution][1]
 `add` calls private function `placeNode`
 
-```C
+```C++
 placeNode(subTreePtr, newNodePtr)
   Search tree for newNodePtr
   if search terminates at the left subtree of the parentNode
@@ -124,7 +124,7 @@ placeNode(subTreePtr, newNodePtr)
 ```
 
 refining it (see textbook)
-```C
+```C++
 placeNode(subTreePtr, newNodePtr)
   if subTreePtr is nullptr
     return newNodePtr
@@ -144,7 +144,7 @@ If visiting all tree nodes, recursion is probably needed.
 
 Add should not visit all tree nodes!
 
-```C
+```C++
   if the rootPtr is nullptr
     set rootPtr, return
   else
