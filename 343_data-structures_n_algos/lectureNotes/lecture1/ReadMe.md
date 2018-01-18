@@ -1,7 +1,8 @@
 Lecture 1 notes: Introduction & Trees
 ===
-By: Yusuf Pisan
+Created By: Yusuf Pisan
 ---
+formatted to Github Markdown syntax by Ryan Peters
 
 <div class=" slidy_toc hidden">
   <div class=" toc-heading"><h5>Table of Contents</h5></div>
