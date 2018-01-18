@@ -10,31 +10,34 @@ formatted to Github Markdown syntax by Ryan Peters
 1. BST Add - Remove - Save
 2. TurtleProgram Grading Rubric
 3. UML Class Diagrams
-4. UML Class Diagrams (2)
-5. Huffman Coding
-6. Add - Binary Search Tree - Recursive Solution
-7. Add - Binary Search Tree - Iterative Solution
-8. Remove - Binary Search Tree
-9. Group Exercise: Removing Nodes
-10. When to use Different Traversals
-11. Saving BST to File or Array
-12. Tree Sort
-13. Re-Balancing a Binary Tree
-14. Queue
-15. Priority Queue
-16. Heap
-17. Heap - Array Based Implementation
-18. Heap - Add
-19. Heap - Remove
-20. Implementing Priority Queue as a Heap
-21. BST vs Heap in Implementing Priority Queue
-22. Heap Sort
-23. Ass-2: Binary Search Tree
-24. After Class
+  - UML Class Diagrams (2)
+4. Huffman Coding
+5. Binary Search Tree (BST)
+  - Add - Binary Search Tree
+    - Recursive Solution
+    - Iterative Solution
+  - Remove - Binary Search Tree
+    - Group Exercise: Removing Nodes
+  - When to use Different Traversals
+  - Saving BST to File or Array
+  - Tree Sort
+  - Re-Balancing a Binary Tree
+6. Queue
+  - Priority Queue
+7. Heap
+  - Heap - Array Based Implementation
+  - Heap - Add
+  - Heap - Remove
+8. Implementing Priority Queue as a Heap
+9. BST vs Heap in Implementing Priority Queue
+10. Heap Sort
+11. Ass-2: Binary Search Tree
+12. After Class
 
 ---
 
-### [Overview<meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http:/][1]/courses.washington.edu/css343/" /><meta name="duration" content="120"/>
+### [Overview
+<meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http:/][1]/courses.washington.edu/css343/"/><meta name="duration"content="120"/>
 
 + Review - UML, Huffman Coding, Induction (skip)
 + Technical knowledge
