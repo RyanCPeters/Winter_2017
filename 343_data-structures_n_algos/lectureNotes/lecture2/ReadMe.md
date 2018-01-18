@@ -26,9 +26,12 @@ formatted to Github Markdown syntax by Ryan Peters
 - [Huffman Coding](#huffman-coding)
   - [Huffman Coding - Algorithm](#huffman-coding---algorithm)
 - [After Class](#after-class)
-
-[Overview][1]<meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /><meta name="duration" content="120" />
-===
+    
+---
+    
+### [Overview][1]<meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /><meta name="duration" content="120" />
+    
+---
 
 + Review - Ass1, BST, Complexity Analysis (worksheet later)
 
@@ -39,9 +42,13 @@ formatted to Github Markdown syntax by Ryan Peters
 + Huffman Coding
 
 + See IDE Tips, email me tips!
+    
+---
 
-[Assignment 1: TurtleProgram][1]
-===
+### [Assignment 1: TurtleProgram][1]
+    
+---
+    
 
 Each program is a series of strings (comes as 2 strings at a time)
 
@@ -60,8 +67,10 @@ Remember to dynamically allocate the array to be just the right size (not `strin
     
 ---
     
-[Common Programming Mistakes][1]
+### [Common Programming Mistakes][1]
+    
 ---
+    
 
 Use compiler flags `-Wall -Wextra -Wpedantic -Weffc++` and even `-Werror`
 
@@ -69,7 +78,8 @@ Review code examples: http://faculty.washington.edu/pisan/cpp/snippets.html
     
 ---
     
-[Binary Search Tree - Definition][1]
+### [Binary Search Tree - Definition][1]
+    
 ---
 
 + Left child value less than parent
@@ -90,7 +100,8 @@ Assignment #2 will use Trees.
     
 ---
     
-[Binary Search Tree][1]
+### [Binary Search Tree][1]
+    
 ---
 
 ```C++
@@ -113,7 +124,8 @@ What does it mean for a tree to be balanced, full, complete?
     
 ---
     
-[UML for Binary Tree][1]
+### [UML for Binary Tree][1]
+
 ---
 
 ![UML for BinaryTree](./images/ch15-12-uml-binary-tree.png)
@@ -125,7 +137,8 @@ Implementation choices
     
 ---
     
-[Why Trees?][1]
+### [Why Trees?][1]
+    
 ---
 
 + Good for searching when there is both add/delete operations. Used internally for libraries
@@ -148,7 +161,8 @@ Implementation choices
     
 ---
     
-[Group Exercise: Prove][1]
+### [Group Exercise: Prove][1]
+    
 ---
 
 Prove: A full binary tree of height ≥ 0 has 2<sup>h</sup> - 1 nodes
@@ -157,7 +171,8 @@ Prove: A full binary tree of height ≥ 0 has 2<sup>h</sup> - 1 nodes
     
 ---
     
-[Group Exercise: Prove - Solution][1]
+### [Group Exercise: Prove - Solution][1]
+
 ---
 
 _Prove:_ A full binary tree of height ≥ 0  has 2<sup>h</sup> - 1 nodes
@@ -186,7 +201,8 @@ The number of nodes in T is
     
 ---
     
-[Group Exercise: Insert Elements][1]
+### [Group Exercise: Insert Elements][1]
+
 ---
 
 Insert the letters in "Huffman Coding" to create a binary search tree
@@ -201,7 +217,8 @@ Insert the letters in "Huffman Coding" to create a binary search tree
     
 ---
     
-[Tree as Array][1]
+### [Tree as Array][1]
+
 ---
 
 Not the most natural or common, but important
@@ -226,7 +243,8 @@ private:
     
 ---
     
-[Group Exercise: Array Representation][1]
+### [Group Exercise: Array Representation][1]
+
 ---
 
 Represent "Huffman Coding" tree as an array
@@ -235,7 +253,8 @@ Represent "Huffman Coding" tree as an array
     
 ---
     
-[Tree as Linked Nodes][1]
+### [Tree as Linked Nodes][1]
+
 ---
 
 ![](./images/ch16-2-link-based.png)
@@ -273,7 +292,8 @@ private:
 
 ---
     
-[Smart Pointers][1]
+### [Smart Pointers][1]
+
 ---
 
 shared_ptr - shared object, does reference counting, similar to regular pointer
@@ -298,16 +318,19 @@ Using smart pointers is optional
     
 ---
     
-[Group Exercise: Order of Inserts][1]
+### [Group Exercise: Order of Inserts][1]
+
 ---
 
 ![](./images/ch15-18-bintree.png)
 
 If this is our final binary search tree, find at least 2 possible insertion orders.
+    
+---
 
+### [Huffman Coding][1]
 
-[Huffman Coding][1]
-===
+---
 
 Used for compression (part of the gzip, jpeg and many other algorithm)
 
@@ -327,9 +350,12 @@ Extra: Details of gzip using LZ77 and Huffman at http://www.gzip.org/algorithm.t
 
 and more from Mark Adler (co-author of zlib and gzip)  
 https://stackoverflow.com/questions/20762094/how-are-zlib-gzip-and-zip-related-what-do-they-have-in-common-and-how-are-they
+    
+---
 
-[Huffman Coding - Algorithm][1]
-===
+### [Huffman Coding - Algorithm][1]
+    
+---
 
 - Each letter is a single node tree and has weight (w) based on its frequency
 
@@ -355,9 +381,12 @@ Extra:
 ```UML
 How much wood would a woodchuck chuck if a woodchuck could chuck wood?
 ```
+    
+---
 
-[After Class][1]
-===
+### [After Class][1]
+    
+---
 
 - Post to slack about some technical knowledge you are proud of
 - Post tips or problems with CSS Linux Lab
