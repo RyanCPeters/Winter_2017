@@ -140,7 +140,7 @@ void heapRebuild(const int subTreeNodeIndex)
 Heap - Add
 =======
 
-![](../images/heap-add.png)
+![tree_Image](../images/heap-add.png)
 
 - Add the new node to the next available spot
 
