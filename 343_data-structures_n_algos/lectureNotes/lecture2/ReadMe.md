@@ -12,19 +12,19 @@ formatted to Github Markdown syntax by Ryan Peters
 3. [Assignment 1: TurtleProgram](#assignment-1-turtleprogram)
 4. [Common Programming Mistakes](#common-programming-mistakes)
 5. [Binary Search Tree - Definition](#binary-search-tree---definition)
-6. [Binary Search Tree](#binar-search-tree)
-7. [UML for Binary Tree](#uml-for-binary-tree)
-8. [Why Trees?](#Why-Trees?)
-9. [Group Exercise: Prove](#Group-Exercise-Prove)
-10. [Group Exercise: Prove - Solution](#group-exercise-prove---solution)
-11. [Group Exercise: Insert Elements](#Group-Exercise-Insert-Elements)
+  - [Binary Search Tree](#binar-search-tree)
+  - [UML for Binary Tree](#uml-for-binary-tree)
+  - [Why Trees?](#Why-Trees)
+    - [Group Exercise: Prove](#Group-Exercise-Prove)
+    - [Group Exercise: Prove - Solution](#group-exercise-prove---solution)
+    - [Group Exercise: Insert Elements](#Group-Exercise-Insert-Elements)
 12. [Tree as Array](#Tree-as-Array)
-13. [Group Exercise: Array Representation](#Group-Exercise-Array-Representation)
+  - [Group Exercise: Array Representation](#Group-Exercise-Array-Representation)
 14. [Tree as Linked Nodes](#tree-as-linked-nodes)
 15. [Smart Pointers](#smart-pointers)
-16. [Group Exercise: Order of Inserts](#group-exercise-order-of-inserts)
+  - [Group Exercise: Order of Inserts](#group-exercise-order-of-inserts)
 17. [Huffman Coding](#huffman-coding)
-18. [Huffman Coding - Algorithm](#huffman-coding---algorithm)
+  - [Huffman Coding - Algorithm](#huffman-coding---algorithm)
 19. [After Class](#after-class)
 
 [Overview][1]<meta name="copyright" content="Yusuf Pisan | pisan@uw.edu | http://courses.washington.edu/css343/" /><meta name="duration" content="120" />
@@ -87,7 +87,7 @@ Assignment #2 will use Trees.
 [Binary Search Tree][1]
 ===
 
-```C
+```C++
 search(BST, target)
   if (BST is empy)
     item not found
@@ -188,19 +188,20 @@ Insert the letters in "Huffman Coding" to create a binary search tree
 
 Not the most natural or common, but important
 
-```C
+```C++
 TreeNode<ItemType> tree[MAX_NODES]; // array of nodes
 int root; // index of root
 int free; // index of free list
 ```
 
-```C
+```C++
 class TreeNode
 {   
 private:
    ItemType item;        // Data portion
    int      leftChild;   // Index to left child
    int      rightChild;  // Index to right child
+}
 ```
 
 ![](./images/ch16-1-array.png)
@@ -216,16 +217,17 @@ Represent "Huffman Coding" tree as an array
 ===
 
 ![](./images/ch16-2-link-based.png)
-```C
+```C++
 class BinaryNode
 {
 private:
    int          item;          // Data portion
    BinaryNode * leftChildPtr;  // Pointer to left child
    BinaryNode * rightChildPtr; // Pointer to right child
+}
 ```
 
-```C
+```C++
 template<class ItemType>
 class BinaryNode
 {
@@ -233,9 +235,10 @@ private:
    ItemType                              item;          // Data portion
    BinaryNode<ItemType> * leftChildPtr;  // Pointer to left child
    BinaryNode<ItemType> * rightChildPtr; // Pointer to right child
+}
 ```
 
-```C
+```C++
 template<class ItemType>
 class BinaryNode
 {
@@ -243,6 +246,7 @@ private:
    ItemType                              item;          // Data portion
    shared_ptr<BinaryNode<ItemType>> leftChildPtr;  // Pointer to left child
    shared_ptr<BinaryNode<ItemType>> rightChildPtr; // Pointer to right child
+}
 ```
 
 
@@ -256,7 +260,7 @@ unique_ptr - unique ownership, nobody else can reference it
 
 weak_ptr - observer of the object, cannot be used to delete, does not add to reference count
 
-```C
+```C++
 Box<string> myptr = new Box<string>();
 shared_ptr<Box<string>> mysharedptr(new Box<string>());
 ...
@@ -335,8 +339,8 @@ How much wood would a woodchuck chuck if a woodchuck could chuck wood?
 - Post tips or problems with CSS Linux Lab
 - Work on Assignment-1
 - Work on creating Binary Search Trees
-    - Start simple
+  - Start simple
 - Grader: Thomas Kercheval kercht@uw.edu
-    - Available for questions on Friday Jan 12, 1-2pm in front of UW1-260Q
+  - Available for questions on Friday Jan 12, 1-2pm in front of UW1-260Q
     
 [1]:#table-of-contents
