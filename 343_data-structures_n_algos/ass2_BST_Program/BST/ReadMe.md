@@ -102,17 +102,12 @@ file. See the sample program on Assignments on how to properly document your cod
 ---
 ## Submission
 
-```
-Submit your assignment early to get automated feedback from Jolly.
+- Submit your assignment early to get automated feedback from Jolly.
+- Your submission must be named ass2.zip
+- Your submission must create a directory called ass2 and place all the files in that directory when it is unzipped.
+- DO NOT include unnecessary files, only submit what is required. DO NOT zip up your Debug directory, your project directory, etc.
+- Canvas will automatically rename your zip file ass2-2.zip, ass2-3.zip, etc depending on how many times you submit it. *This is fine*. Do not change your zip file name.
 
-Your submission must be named ass2.zip
-
-Your submission must create a directory called ass2 and place all the files in that directory when it is unzipped.
-
-DO NOT include unnecessary files, only submit what is required. DO NOT zip up your Debug directory, your project directory, etc.
-
-Canvas will automatically rename your zip file ass2-2.zip, ass2-3.zip, etc depending on how many times you submit it. *This is fine*. Do not change your zip file name.
-```
 
 ---
 ---
