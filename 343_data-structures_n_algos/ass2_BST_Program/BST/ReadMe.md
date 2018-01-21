@@ -4,13 +4,19 @@ Assignment 2: BinarySearchTree Program
 **Due:**  11pm, 28 Jan (end of week 4)
 ---
 
-### BinarySearchTree Program
+## BinarySearchTree Program
+
+---
+#### Requirements 
 
 Implement a BinarySearchTree based on the template below. 
 
 - BinarySearchTree must be able to handle different types of data; the provided sample ass2.cpp tests it using `string` and `int`
 - BinaryNode is already provided and should not be modified.
 - All the public functions of `BinarySearchTree` must be implemented
+
+---
+#### Source code to start from
 
 [binarysearchtree.h](./provided_code/binarysearchtree.h)  
 [binarysearchtree.cpp](./provided_code/binarysearchtree.cpp)  -- stub file to help compile
@@ -21,28 +27,34 @@ Implement a BinarySearchTree based on the template below.
 [binarynode.cpp](./provided_code/binarynode.cpp)
 
 
-Sample ass2.cpp file, expand it to suit your needs. Automated test will not run your ass2.cpp since it requires keyboard interaction.
+For the sample ass2.cpp file, expand it to suit your needs. Automated test will not run your ass2.cpp since it requires keyboard interaction.
 
 [ass2.cpp](./provided_code/ass2.cpp)
 
+---
+#### Assignment expecations
 
-As always expected when programming, comment clearly and
-thoroughly. Clearly state any assumptions you make in the beginning
-comment block of the appropriate place, e.g., the class
-definition. Comments in the class definition file should describe the
-ADT, all functionality, and assumptions so someone could use the class
-and understand behavior and restrictions. Pre and post conditions are
-fine, but not required. See the example on Assignments page for a well-documented program.
+- As always expected when programming, comment clearly and thoroughly. 
+- Clearly state any assumptions you make in the beginning comment block of the appropriate place, e.g., the class definition. 
+  - Comments in the class definition file should describe:
+    - the ADT 
+    - all functionality, 
+    - your assumptions 
+      - so someone could use the class and understand behavior and restrictions. 
+    - Pre and post conditions are fine, but not required. 
 
-You do NOT need to handle data type errors due to bad input.
+See the example on Assignments page for a well-documented program.
 
-I will run my own main to test your code. The `main` function provided
-doesn't test your program fully, so you need to supplement it.
+---
+#### Suggestions
 
-Write one function at a time. Test it before moving on to the next
-function. I suggest starting with `add` Use `valgrind` to check
-for memory leaks as you develop the program. Much easier to fix things
-early on.
+- You do NOT need to handle data type errors due to bad input.
+- Pisan will run his own `main` cuntion to test your code. The `main` function provided doesn't test your program fully, so **_you need to supplement it_**.
+- Write one function at a time. Test it before moving on to the next function. 
+  - Pisan suggests starting with `add`. Also, use `valgrind` to check for memory leaks as you develop the program. It's much easier to fix things early on.
+
+---
+#### Submission specifications
 
 Submit a single zip file, `ass2.zip` with the following files:
 
