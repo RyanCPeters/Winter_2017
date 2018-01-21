@@ -4,11 +4,9 @@ Repository pages:
 
 - CSS 337
 - CSS 343
-  - Lectures
-    - [1](https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture1/)
-    - [2](https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture2/)
-    - [3](https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture3/)
-    - [4](https://ryancpeters.github.io/Winter_UWB_2017/343_data-structures_n_algos/lectureNotes/lecture4/)
+  - [343_Lectures](https://ryancpeters.github.io/Educational_Resources/)
+  - [Assignments](https://github.com/RyanCPeters/Winter_UWB_2017/tree/master/343_data-structures_n_algos)
+  
 - CSS 360
 
 
