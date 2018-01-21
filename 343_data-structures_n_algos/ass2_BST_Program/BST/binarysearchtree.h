@@ -29,7 +29,10 @@
 #define BINARYSEARCHTREE_H
 
 
-
+#include <iostream> 
+#include <functional>
+#include <stack>
+#include <queue> 
 #include "binarynode.h"
 
 using namespace std;
@@ -74,13 +77,13 @@ public:
 	bool readTree(ItemType arr[], int n);
 	// trees are equal if they have the same structure
 	// AND the same item values at all the nodes
-	bool operator==(const BinarySearchTree<ItemType> &) const;
+	bool operator==(const BinarySearchTree<ItemType> &rhs) const;
 	// not == to each other
-	bool operator!=(const BinarySearchTree<ItemType> &) const;
+	bool operator!=(const BinarySearchTree<ItemType> &rhs) const;
 	// dispaly a sideways ascii representation of tree
 	void displaySideways() const;
 private:
-	int rootHeight, numElems;
+	int treeHeight, numElems;
 	// root of the tree
 	BinaryNode<ItemType>* rootPtr{ nullptr };
 	// add a new node, helper function for add
@@ -90,6 +93,8 @@ private:
 	// helper function for displaySideways to work recursively
 	void sideways(BinaryNode<ItemType>* current, int level) const;
 	// other functions....
+	
+	bool matchyFunk(BinaryNode<ItemType>* local, BinaryNode<ItemType>* remote) const;
 };
 
 #include "binarysearchtree.cpp"
