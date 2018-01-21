@@ -54,17 +54,17 @@ See the example on Assignments page for a well-documented program.
   - Pisan suggests starting with `add`. Also, use `valgrind` to check for memory leaks as you develop the program. It's much easier to fix things early on.
 
 ---
-#### Submission specifications
+#### Submittable file check list and specifications
 
 Submit a single zip file, `ass2.zip` with the following files:
 
 **Class names start with capital letters, but file names are all lowercase for compatibility** 
 
-`binarysearchtree.h`  
-`binarysearchtree.cpp`  
-`ass2.cpp`  -- your own testing functions and main  
-`output.txt` - the script file, as defined in [Connecting and compiling files on linux labs](http://faculty.washington.edu/pisan/cpp/linux-labs.html)  
-`comments.txt` - your comments.  Includes several bits of information
+[]`binarysearchtree.h`  
+[]`binarysearchtree.cpp`  
+[]`ass2.cpp`  -- your own testing functions and main  
+[]`output.txt` - the script file, as defined in [Connecting and compiling files on linux labs](http://faculty.washington.edu/pisan/cpp/linux-labs.html)  
+[]`comments.txt` - your comments.  Includes several bits of information
 
 1. "Hours: XX" where XX is approximate number of hours it took you to complete this assignment
 
@@ -85,6 +85,8 @@ the linux machines (you have been testing incrementally and using
 `valgrind`, right?). See [Connecting and compiling files on linux
 labs](http://faculty.washington.edu/pisan/cpp/linux-labs.html)
 
+##### Recomended command set for linux testing
+
 Under unix, compile your code using
 ```
 g++ -std=c++14 -g -Wall -Wextra ass2.cpp -o ass2
@@ -96,6 +98,8 @@ See [Creating a zip file](http://faculty.washington.edu/pisan/cpp/creating-zip.h
 [Assignments](assignments.html) on how to create and test your zip
 file. See the sample program on Assignments on how to properly document your code.
 
+---
+---
 ## Submission
 
 ```
@@ -110,9 +114,11 @@ DO NOT include unnecessary files, only submit what is required. DO NOT zip up yo
 Canvas will automatically rename your zip file ass2-2.zip, ass2-3.zip, etc depending on how many times you submit it. *This is fine*. Do not change your zip file name.
 ```
 
+---
+---
 ## Grading Rubric
 
-I will run automated tests on Wednesday 10pm and Friday 10pm. If you submit your assignment before that you will get an email from "JollyFeedback" The tests are not exhaustive, but should help you.
+Pisan will run automated tests on Wednesday 10pm and Friday 10pm. If you submit your assignment before that you will get an email from "JollyFeedback" The tests are not exhaustive, but should help you.
 
 Multiple criteria. -5 for partially correct, -10 for not working or missing 
 ```
