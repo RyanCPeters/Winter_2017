@@ -49,7 +49,7 @@ See the example on Assignments page for a well-documented program.
 #### Suggestions
 
 - You do NOT need to handle data type errors due to bad input.
-- Pisan will run his own `main` cuntion to test your code. The `main` function provided doesn't test your program fully, so **_you need to supplement it_**.
+- Pisan will run his own `main` funtion to test your code. The `main` function provided doesn't test your program fully, so **_you need to supplement it_**.
 - Write one function at a time. Test it before moving on to the next function. 
   - Pisan suggests starting with `add`. Also, use `valgrind` to check for memory leaks as you develop the program. It's much easier to fix things early on.
 
