@@ -6,7 +6,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-
+#include <climits>
 #include "binarysearchtree.h"
 #include "binarynode.h"
 
@@ -24,6 +24,7 @@ string getString() {
 }
 
 vector<string> getStrings() {
+
 	string longString;
 	cout << "Enter multiple strings: ";
 	cin.clear();
@@ -150,5 +151,7 @@ int main() {
 	cout << (bst1.add("g") ? "ERR" : "OK") << ": adding g second time returns false" << endl;
 	treeMenuString();
 	// treeMenuInt();
+	cin.get();
+	cin.get();
 	return 0;
 }

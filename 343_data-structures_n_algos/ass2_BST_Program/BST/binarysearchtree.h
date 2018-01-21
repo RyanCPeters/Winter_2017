@@ -1,5 +1,3 @@
-#pragma once
-
 // Yusuf Pisan pisan@uw.edu
 // 15 Jan 2018
 
@@ -9,6 +7,27 @@
 // Uses templates to store any type of data
 // binarysearchtreee.cpp file is included at the bottom of the .h file
 // binarysearchtreee.cpp is part of the template, cannot be compiled separately
+
+/* modified by Ryan Peters
+ * 19 Jan 2018
+ * 
+ * for assignment 2: Binary Search Tree
+ *
+ *
+ *
+ *
+ *
+ *  
+ * 
+ * 
+ *  
+ *        
+ *        
+ */
+
+#ifndef BINARYSEARCHTREE_H
+#define BINARYSEARCHTREE_H
+
 
 
 #include "binarynode.h"
@@ -22,6 +41,8 @@ public:
 	BinarySearchTree();
 	// constructor, tree with root
 	BinarySearchTree(const ItemType& rootItem);
+	// copy consturctor
+	BinarySearchTree(const BinarySearchTree<ItemType>& bst);
 	// destructor
 	virtual ~BinarySearchTree();
 	// true if no nodes
@@ -59,6 +80,7 @@ public:
 	// dispaly a sideways ascii representation of tree
 	void displaySideways() const;
 private:
+	int rootHeight, numElems;
 	// root of the tree
 	BinaryNode<ItemType>* rootPtr{ nullptr };
 	// add a new node, helper function for add
@@ -72,6 +94,5 @@ private:
 
 #include "binarysearchtree.cpp"
 
-
-
+#endif // BINARYSEARCHTREE_H
 

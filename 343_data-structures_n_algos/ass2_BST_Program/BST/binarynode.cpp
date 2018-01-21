@@ -1,19 +1,3 @@
-// Yusuf Pisan pisan@uw.edu
-// 15 Jan 2018
-
-// DO NOT compile this file
-// This file is included in the binarynode.h file via #include statement
-// Allows us to keep the templated class header and implementation separate
-
-// BinaryNode to help with BinarySearchTree class
-// Uses template so that ItemType can be any type
-// getLeftChildPtr and setLeftChildPtr used to get/set child nodes
-// getItem/setItem used to set the data stored in this node
-// BinarySearchTree requires <, > relationships to be defined for ItemType
-// << for  BinaryNode is defined to print the ItemType as [BN: item ]
-// binarynode.cpp file is included at the bottom of the .h file
-// binarynode.cpp is part of the template, cannot be compiled separately
-
 
 // default constructor, children set to nullptr as default
 // item contained is undefined
@@ -27,6 +11,10 @@ template<class ItemType>
 BinaryNode<ItemType>::~BinaryNode() {
 	// If suffering from memory leaks, uncomment next line
 	// std::cout << "Deleting " << *this << std::endl;
+	rightPtr = leftPtr = nullptr;
+	delete(leftPtr);
+	delete(rightPtr);
+	delete[] this;
 }
 
 // constructor setting item

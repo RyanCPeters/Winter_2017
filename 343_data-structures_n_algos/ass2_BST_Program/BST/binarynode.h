@@ -26,21 +26,21 @@ class BinaryNode {
 	}
 public:
 	// default constructor
-	BinaryNode();
+	BinaryNode<ItemType>();
 	// constructor setting the data to be stored
-	BinaryNode(const ItemType& item);
+	explicit BinaryNode<ItemType>(const ItemType& item);
 	// destructor to cleanup
-	virtual ~BinaryNode();
+	virtual ~BinaryNode<ItemType>();
 	// true if no children, both left and right child ptrs are nullptr
 	bool isLeaf() const;
 	// get left child, possibly nullptr
-	BinaryNode* getLeftChildPtr() const;
+	BinaryNode<ItemType>* getLeftChildPtr() const;
 	// set the left child ptr
-	void setLeftChildPtr(BinaryNode* childPtr);
+	void setLeftChildPtr(BinaryNode<ItemType>* childPtr);
 	// get right child, possibly nullptr
-	BinaryNode* getRightChildPtr() const;
+	BinaryNode<ItemType>* getRightChildPtr() const;
 	// set the right child ptr
-	void setRightChildPtr(BinaryNode* childPtr);
+	void setRightChildPtr(BinaryNode<ItemType>* childPtr);
 	// return the item stored
 	ItemType getItem() const;
 	// set the item stored to a new value
@@ -49,9 +49,9 @@ private:
 	// the data that will be stored
 	ItemType item;
 	// left child
-	BinaryNode* leftPtr{ nullptr };
+	BinaryNode<ItemType>* leftPtr{ nullptr };
 	// right child
-	BinaryNode* rightPtr{ nullptr };
+	BinaryNode<ItemType>* rightPtr{ nullptr };
 };
 
 #include "binarynode.cpp"
