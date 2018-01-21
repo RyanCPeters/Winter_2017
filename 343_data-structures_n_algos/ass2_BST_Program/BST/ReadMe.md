@@ -12,18 +12,18 @@ Implement a BinarySearchTree based on the template below.
 - BinaryNode is already provided and should not be modified.
 - All the public functions of `BinarySearchTree` must be implemented
 
-[binarysearchtree.h](code/binarysearchtreeh.html)  
-[binarysearchtree.cpp](code/binarysearchtreecpp.html)  -- stub file to help compile
+[binarysearchtree.h](./provided_code/binarysearchtree.h)  
+[binarysearchtree.cpp](./provided_code/binarysearchtree.cpp)  -- stub file to help compile
 
 `BinaryNode` -- use as provided. Do not modify. No need to comment further
 
-[binarynode.h](code/binarynodeh.html)  
-[binarynode.cpp](code/binarynodecpp.html)
+[binarynode.h](./provided_code/binarynode.h)  
+[binarynode.cpp](./provided_code/binarynode.cpp)
 
 
 Sample ass2.cpp file, expand it to suit your needs. Automated test will not run your ass2.cpp since it requires keyboard interaction.
 
-[ass2.cpp](code/ass2cpp.html)
+[ass2.cpp](./provided_code/ass2.cpp)
 
 
 As always expected when programming, comment clearly and
