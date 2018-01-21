@@ -43,7 +43,7 @@ For the sample ass2.cpp file, expand it to suit your needs. Automated test will 
       - so someone could use the class and understand behavior and restrictions. 
     - Pre and post conditions are fine, but not required. 
 
-See the example on Assignments page for a well-documented program.
+See the example on [Assignments page](http://courses.washington.edu/css343/pisan/assignments.html) for a well-documented program.
 
 ---
 #### Suggestions
