@@ -60,11 +60,11 @@ Submit a single zip file, `ass2.zip` with the following files:
 
 **Class names start with capital letters, but file names are all lowercase for compatibility** 
 
-[]`binarysearchtree.h`  
-[]`binarysearchtree.cpp`  
-[]`ass2.cpp`  -- your own testing functions and main  
-[]`output.txt` - the script file, as defined in [Connecting and compiling files on linux labs](http://faculty.washington.edu/pisan/cpp/linux-labs.html)  
-[]`comments.txt` - your comments.  Includes several bits of information
+- [ ] `binarysearchtree.h`  
+- [ ] `binarysearchtree.cpp`  
+- [ ] `ass2.cpp`  -- your own testing functions and main  
+- [ ] `output.txt` - the script file, as defined in [Connecting and compiling files on linux labs](http://faculty.washington.edu/pisan/cpp/linux-labs.html)  
+- [ ] `comments.txt` - your comments.  Includes several bits of information
 
 1. "Hours: XX" where XX is approximate number of hours it took you to complete this assignment
 
