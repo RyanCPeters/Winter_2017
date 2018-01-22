@@ -31,12 +31,14 @@ vector<string> getStrings() {
 	cin.ignore(INT_MAX, '\n');
 	getline(cin, longString);
 	vector<string> v;
-	for ( auto i = 0, j = 0; i < longString.size ( ); ++i ) {
-		if ( longString.at ( i ) == ' ' ) {
-			if ( i>j ) {
-				v.push_back((longString.substr( j, i - j )));
-			}
-			j = i+1;
+	
+	for( int subStrt = 0, subStp = 0; subStrt < longString.size(); ) {
+		if( longString.at(subStrt) != ' ' ) {
+			for( subStp = subStrt; subStp < longString.size() && longString.at(subStp) != ' '; ++subStp );
+			v.push_back(longString.substr(subStrt, subStp-subStrt));
+			subStrt = subStp;
+		} else {
+			++subStrt;
 		}
 	}
 

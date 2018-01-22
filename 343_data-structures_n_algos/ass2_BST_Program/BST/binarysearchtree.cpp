@@ -18,6 +18,7 @@ BinarySearchTree<ItemType>::~BinarySearchTree()
 {
 	//dtor
 	this->clear();
+	delete(rootPtr);
 	//delete[] this;
 }
 
@@ -173,7 +174,7 @@ template<class ItemType>
 void BinarySearchTree<ItemType>::clear() 
 {
 	chainDeletion(rootPtr);
-	rootPtr = nullptr;
+	rootPtr = new BinaryNode<ItemType>();
 	treeHeight = numElems = 0;
 }
 
@@ -196,7 +197,7 @@ bool BinarySearchTree<ItemType>::contains(const ItemType& item) const
 	}
 	itm = seekPtr->getItem();
 	seekPtr = nullptr;
-	delete[] seekPtr;
+	delete(seekPtr);
 	return itm == item;
 }
 
