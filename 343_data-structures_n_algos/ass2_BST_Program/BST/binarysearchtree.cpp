@@ -226,7 +226,7 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>*
 }  // end findNode
 
 template<class ItemType>
-void BinarySearchTree<ItemType>::inorderTraverse(void visit(ItemType&)) const
+void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType&)) const
 {
 	stack<BinaryNode<ItemType>*> stk;
 	auto growLeft = [&stk]() {
@@ -236,14 +236,14 @@ void BinarySearchTree<ItemType>::inorderTraverse(void visit(ItemType&)) const
 	while( !(stk.empty()) ) {
 		growLeft();
 		while( !(stk.empty()) && stk.top()->getRightChildPtr() == nullptr ) {
-			visit((stk.top()->getItem()));
+			visit(static_cast<ItemType>(stk.top()->getItem()));
 			stk.pop();
 		}
 		if( !(stk.empty()) && stk.top()->getRightChildPtr() != nullptr ) {
 			BinaryNode<ItemType>* tmp = stk.top();
 			stk.pop();
 			stk.push(tmp->getRightChildPtr());
-			visit(tmp->getItem());
+			visit(static_cast<ItemType>(tmp->getItem()));
 			tmp = nullptr;
 			delete(tmp);
 		}
@@ -256,7 +256,12 @@ void BinarySearchTree<ItemType>::rebalance()
 
 template<class ItemType>
 bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n)
-{ return true; }
+{ 
+	BinarySearchTree<ItemType> bst = new BinarySearchTree<ItemType>(arr[0]);
+	for( int i = 1; i < n; ++i )bst.add(arr[i]);
+	bst.rebalance();
+	return true; 
+}
 
 
 template<class ItemType>

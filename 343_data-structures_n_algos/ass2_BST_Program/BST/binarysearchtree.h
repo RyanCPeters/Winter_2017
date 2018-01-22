@@ -65,7 +65,7 @@ public:
 	// takes a function that takes a single parameter of ItemType
 	// the function can modify the data in tree, but the
 	// tree structure is not changed
-	void inorderTraverse(void visit(ItemType&)) const;
+	void inorderTraverse(void visit(const ItemType&)) const;
 	// create dynamic array, copy all the items to the array
 	// and then read the array to re-create this tree
 	void rebalance();

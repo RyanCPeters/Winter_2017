@@ -12,7 +12,7 @@
 
 using namespace std;
 
-void itemDisplay(string& anItem) {
+void itemDisplay(const string& anItem) {
 	cout << anItem << " ";
 }
 
