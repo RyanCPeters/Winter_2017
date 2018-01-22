@@ -234,7 +234,7 @@ void BinarySearchTree<ItemType>::inorderTraverse(void visit(ItemType&)) const
 		while( stk.top()->getLeftChildPtr() != nullptr )stk.push(stk.top()->getLeftChildPtr()); 
 	};
 	stk.push(rootPtr);
-	while(!stk.empty()){
+	while( !(stk.empty()) ) {
 		growLeft();		
 		while( !(stk.empty()) && stk.top()->getRightChildPtr() == nullptr ) {
 			visit((stk.top()->getItem()));
