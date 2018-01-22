@@ -68,22 +68,18 @@ BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& b
 	qwayway.push(bst.rootPtr);
 	qwayway.push(earMark);
 
-	using front = qwayway.front();
-	using notEmpty = !(qwayway.empty());
-	using notLeaf = !(qwayway.front()->isLeaf());
-
-	while (notEmpty) {
-		if (front == earMark) {
+	while( !(qwayway.empty()) ) {
+		if (qwayway.front() == earMark) {
 			++treeHeight;
 			qwayway.pop();
 			if (qwayway.empty())break;
 			qwayway.push(earMark);
 		} else {
-			if (notLeaf) {
-				if (front->leftPtr != nullptr)qwayway.push(front->leftPtr);
-				if (front->rightPtr != nullptr)qwayway.push(front->rightPtr);
+			if( !(qwayway.front()->isLeaf()) ) {
+				if ( qwayway.front()->getLeftChildPtr() != nullptr)qwayway.push(qwayway.front()->getLeftChildPtr());
+				if ( qwayway.front()->getRightChildPtr() != nullptr)qwayway.push(qwayway.front()->getRightChildPtr());
 			}
-			add(front->getItem());
+			add(qwayway.front()->getItem());
 			++numElems;
 			qwayway.pop();
 		}
@@ -206,11 +202,10 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::placeNode(BinaryNode<ItemType>
 	                                                        BinaryNode<ItemType>* newNodePtr) 
 {
 	subTreePtr = findNode(subTreePtr, newNodePtr->getItem());
-	using sItem = subTreePtr->getItem();
-	using nItem = newNodePtr->getItem();
-	if (sItem == nItem)return subTreePtr;
-	if (sItem > nItem) return subTreePtr->setRightChildPtr(newNodePtr);
-	if (sItem < nItem) return subTreePtr->setLeftChildPtr(newNodePtr);
+
+	if (subTreePtr->getItem() == newNodePtr->getItem())return subTreePtr;
+	if (subTreePtr->getItem() > newNodePtr->getItem()) return subTreePtr->setRightChildPtr(newNodePtr);
+	if (subTreePtr->getItem() < newNodePtr->getItem()) return subTreePtr->setLeftChildPtr(newNodePtr);
 	return nullptr;
 }  // end placeNode
 
@@ -235,23 +230,25 @@ template<class ItemType>
 void BinarySearchTree<ItemType>::inorderTraverse(void visit(ItemType&)) const 
 {
 	stack<BinaryNode<ItemType>*> stk;
+	auto growLeft = [&stk]() { 
+		while( stk.top()->getLeftChildPtr() != nullptr )stk.push(stk.top()->getLeftChildPtr()); 
+	};
 	stk.push(rootPtr);
 	while(!stk.empty()){
-		if (stk.top()->getLeftChildPtr() != nullptr)stk.push(stk.top()->getLeftChildPtr());
-		else {
-			visit(stk.top()->getItem());
-			if (stk.top()->getRightChildPtr() != nullptr) {
-				BinaryNode<ItemType>* tmp = stk.top();
-				stk.pop();
-				stk.push(tmp->getRightChildPtr());
-				tmp = nullptr;
-				delete[] tmp;
-			} else {
-				stk.pop();
-			}
+		growLeft();		
+		while( !(stk.empty()) && stk.top()->getRightChildPtr() == nullptr ) {
+			visit((stk.top()->getItem()));
+			stk.pop();
 		}
+		if ( !(stk.empty()) && stk.top()->getRightChildPtr() != nullptr) {
+			BinaryNode<ItemType>* tmp = stk.top();
+			stk.pop();
+			stk.push(tmp->getRightChildPtr());
+			visit(tmp->getItem());
+			tmp = nullptr;
+			delete(tmp);
+		}		
 	}
-
 }  // end inorder
 
 template<class ItemType>

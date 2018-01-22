@@ -83,9 +83,11 @@ public:
 	// dispaly a sideways ascii representation of tree
 	void displaySideways() const;
 private:
-	int treeHeight, numElems;
+
 	// root of the tree
-	BinaryNode<ItemType>* rootPtr{ nullptr };
+	BinaryNode<ItemType>* rootPtr/*{ nullptr }*/;
+	// member variables for tracking element count and tree height
+	int treeHeight, numElems;
 	// add a new node, helper function for add
 	BinaryNode<ItemType>* placeNode(BinaryNode<ItemType>* subTreePtr, BinaryNode<ItemType>* newNodePtr);
 	// find the node with given vale, helper function for contains

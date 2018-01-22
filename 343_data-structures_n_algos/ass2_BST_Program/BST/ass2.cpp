@@ -32,7 +32,7 @@ vector<string> getStrings() {
 	getline(cin, longString);
 	vector<string> v;
 	
-	for( int subStrt = 0, subStp = 0; subStrt < longString.size(); ) {
+	for( unsigned int subStrt = 0, subStp = 0; subStrt < longString.size(); ) {
 		if( longString.at(subStrt) != ' ' ) {
 			for( subStp = subStrt; subStp < longString.size() && longString.at(subStp) != ' '; ++subStp );
 			v.push_back(longString.substr(subStrt, subStp-subStrt));
@@ -156,7 +156,6 @@ int main() {
 	cout << (bst1.add("g") ? "ERR" : "OK") << ": adding g second time returns false" << endl;
 	treeMenuString();
 	//treeMenuInt();
-	cin.get();
 	cin.get();
 	return 0;
 }
