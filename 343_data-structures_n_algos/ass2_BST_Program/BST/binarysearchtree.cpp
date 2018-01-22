@@ -7,21 +7,24 @@ using namespace std;
 
 
 template<class ItemType>
-BinarySearchTree<ItemType>::BinarySearchTree() :rootPtr(new BinaryNode<ItemType>()), treeHeight(0), numElems(0) {
+BinarySearchTree<ItemType>::BinarySearchTree() 
+	:rootPtr(new BinaryNode<ItemType>()), treeHeight(0), numElems(0) 
+{
 	//ctor
 }
 
 template<class ItemType>
-BinarySearchTree<ItemType>::~BinarySearchTree() {
+BinarySearchTree<ItemType>::~BinarySearchTree() 
+{
 	//dtor
-	treeHeight = numElems = 0;
 	this->clear();
-	delete[] this->rootPtr;
-	delete[] this;
+	//delete[] this;
 }
 
 template<class ItemType>
-BinarySearchTree<ItemType>::BinarySearchTree(const ItemType& rootItem): rootPtr(rootItem),treeHeight(1), numElems(1) {}
+BinarySearchTree<ItemType>::BinarySearchTree(const ItemType& rootItem)
+	:rootPtr(rootItem),treeHeight(1), numElems(1) 
+{}
 
 // BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& bst) 
 // The copy constructor creates a 1-for-1 copy of the reference pointer bst.
@@ -29,7 +32,8 @@ BinarySearchTree<ItemType>::BinarySearchTree(const ItemType& rootItem): rootPtr(
 // If bst is an empty tree, then we create a basic empty tree in this constructor as well.
 // 
 template<class ItemType>
-BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& bst) {
+BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& bst)
+{
 	// if the root node of the other tree is nullptr, then we need only instanciate our own
 	// empty tree to effectively copy the bst reference.
 	if (bst.rootPtr == nullptr) {
@@ -88,21 +92,25 @@ BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& b
 } // end copy constructor
 
 template<class ItemType>
-bool BinarySearchTree<ItemType>::isEmpty() const { return numElems == 0; }
+bool BinarySearchTree<ItemType>::isEmpty() const 
+{ return numElems == 0; }
 
 template<class ItemType>
-int BinarySearchTree<ItemType>::getHeight() const {
+int BinarySearchTree<ItemType>::getHeight() const 
+{
 	return treeHeight;
 }
 
 
 template<class ItemType>
-int BinarySearchTree<ItemType>::getNumberOfNodes() const {
+int BinarySearchTree<ItemType>::getNumberOfNodes() const 
+{
 	return numElems;
 }
 
 template<class ItemType>
-bool BinarySearchTree<ItemType>::add(const ItemType& item) {
+bool BinarySearchTree<ItemType>::add(const ItemType& item)
+{
 	if (numElems == 0) {
 		treeHeight = numElems = 1;
 		rootPtr->setItem(item);
@@ -153,22 +161,27 @@ bool BinarySearchTree<ItemType>::add(const ItemType& item) {
 }
 
 template<class ItemType>
-void chainDeletion(BinaryNode<ItemType>* del) {
+void chainDeletion(BinaryNode<ItemType>* del) 
+{
 	if (del->getLeftChildPtr() != nullptr) chainDeletion(del->getLeftChildPtr());
 	if (del->getRightChildPtr() != nullptr) chainDeletion(del->getRightChildPtr());
-	delete(del);
+	delete del;
 }
 
 
 template<class ItemType>
-void BinarySearchTree<ItemType>::clear() {
+void BinarySearchTree<ItemType>::clear() 
+{
 	chainDeletion(rootPtr);
+	rootPtr = nullptr;
+	treeHeight = numElems = 0;
 }
 
 
 
 template<class ItemType>
-bool BinarySearchTree<ItemType>::contains(const ItemType& item) const {
+bool BinarySearchTree<ItemType>::contains(const ItemType& item) const
+{
 	BinaryNode<ItemType>* seekPtr = rootPtr;
 	ItemType itm;
 	bool ret = true;
@@ -188,7 +201,9 @@ bool BinarySearchTree<ItemType>::contains(const ItemType& item) const {
 }
 
 template<class ItemType>
-BinaryNode<ItemType>* BinarySearchTree<ItemType>::placeNode(BinaryNode<ItemType>* subTreePtr, BinaryNode<ItemType>* newNodePtr) {
+BinaryNode<ItemType>* BinarySearchTree<ItemType>::placeNode(BinaryNode<ItemType>* subTreePtr, 
+	                                                        BinaryNode<ItemType>* newNodePtr) 
+{
 	subTreePtr = findNode(subTreePtr, newNodePtr->getItem());
 	using sItem = subTreePtr->getItem();
 	using nItem = newNodePtr->getItem();
@@ -201,7 +216,9 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::placeNode(BinaryNode<ItemType>
 // BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>* subTreePtr, const ItemType& target) const
 // return nullptr if can't find a node containing the given value.
 template<class ItemType>
-BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>* subTreePtr, const ItemType& target) const {
+BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>* subTreePtr,
+	                                                       const ItemType& target) const
+{
 	if (target == subTreePtr->getItem())return subTreePtr;
 	else if (target > subTreePtr->getItem()) {
 		if(subTreePtr->getRightChildPtr() != nullptr) return findNode(subTreePtr->getRightChildPtr());
@@ -214,13 +231,14 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>*
 }  // end findNode
 
 template<class ItemType>
-void BinarySearchTree<ItemType>::inorderTraverse(void visit(ItemType&)) const {
+void BinarySearchTree<ItemType>::inorderTraverse(void visit(ItemType&)) const 
+{
 	stack<BinaryNode<ItemType>*> stk;
 	stk.push(rootPtr);
 	while(!stk.empty()){
 		if (stk.top()->getLeftChildPtr() != nullptr)stk.push(stk.top()->getLeftChildPtr());
 		else {
-			cout << " " << stk.top()->getItem();
+			visit(stk.top()->getItem());
 			if (stk.top()->getRightChildPtr() != nullptr) {
 				BinaryNode<ItemType>* tmp = stk.top();
 				stk.pop();
@@ -236,37 +254,45 @@ void BinarySearchTree<ItemType>::inorderTraverse(void visit(ItemType&)) const {
 }  // end inorder
 
 template<class ItemType>
-void BinarySearchTree<ItemType>::rebalance() {}
+void BinarySearchTree<ItemType>::rebalance() 
+{}
 
 template<class ItemType>
-bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n) {
-	return true;
-}
+bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n) 
+{ return true; }
 
 
 template<class ItemType>
-void BinarySearchTree<ItemType>::displaySideways() const {
-	sideways(rootPtr, 0);
-}
+void BinarySearchTree<ItemType>::displaySideways() const 
+{ sideways(rootPtr, 0); }
 
 template<class ItemType>
-void BinarySearchTree<ItemType>::sideways(BinaryNode<ItemType>* current, int level) const {
+void BinarySearchTree<ItemType>::sideways(BinaryNode<ItemType>* current, int level) const 
+{
 	if (current != nullptr) {
 		++level;
-		sideways(current->getRightChildPtr(), level);
-
+		
+		if(current->getRightChildPtr() != nullptr ) {
+			sideways(current->getRightChildPtr(), level);
+		}
+		
 		// indent for readability, 4 spaces per depth level
 		for (int i = level; i >= 0; --i) {
 			cout << "    ";
 		}
 
 		cout << current->getItem() << endl;        // display information of object
-		sideways(current->getLeftChildPtr(), level);
+		if ( current->getLeftChildPtr() != nullptr ) {
+			sideways ( current->getLeftChildPtr ( ), level );
+		}
+		
+		
 	}
 }
 
 template<class ItemType>
-bool BinarySearchTree<ItemType>::operator==(const BinarySearchTree<ItemType>& other) const {	
+bool BinarySearchTree<ItemType>::operator==(const BinarySearchTree<ItemType>& other) const 
+{	
 	if(this == &other || this->rootPtr == other.rootPtr)return true;
 	return matchyFunk((this->rootPtr), (other.rootPtr));
 }
@@ -275,7 +301,9 @@ bool BinarySearchTree<ItemType>::operator==(const BinarySearchTree<ItemType>& ot
 // Helper function the performs tail-recursion in search for dissimilarities between this and the
 // other parameter that was passed into the operator== overload.
 template<class ItemType>
-bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local, BinaryNode<ItemType>* remote) const{
+bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local, 
+	                                        BinaryNode<ItemType>* remote) const
+{
 	// the only way for either of the pointers to == nullptr and result in an equal state is if
 	// both pointers are == nullptr; any other way and it's a false;
 	if ((local == nullptr  ^ remote == nullptr)) {
@@ -299,6 +327,5 @@ bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local, BinaryN
 }
 
 template<class ItemType>
-bool BinarySearchTree<ItemType>::operator!=(const BinarySearchTree<ItemType>& other) const {
-	return !(*this == other);
-}
+bool BinarySearchTree<ItemType>::operator!=(const BinarySearchTree<ItemType>& other) const
+{ return !(*this == other); }

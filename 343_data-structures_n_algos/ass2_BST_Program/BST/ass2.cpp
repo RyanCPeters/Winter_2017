@@ -30,13 +30,16 @@ vector<string> getStrings() {
 	cin.clear();
 	cin.ignore(INT_MAX, '\n');
 	getline(cin, longString);
-	stringstream ss;
-	ss << longString;
 	vector<string> v;
-	string str;
-	while (getline(ss, str, ' ')) {
-		v.push_back(str);
+	for ( auto i = 0, j = 0; i < longString.size ( ); ++i ) {
+		if ( longString.at ( i ) == ' ' ) {
+			if ( i>j ) {
+				v.push_back((longString.substr( j, i - j )));
+			}
+			j = i+1;
+		}
 	}
+
 	return v;
 }
 
@@ -150,7 +153,7 @@ int main() {
 	cout << (bst1.contains("x") ? "ERR" : "OK") << ": bst1 does not contain x" << endl;
 	cout << (bst1.add("g") ? "ERR" : "OK") << ": adding g second time returns false" << endl;
 	treeMenuString();
-	// treeMenuInt();
+	//treeMenuInt();
 	cin.get();
 	cin.get();
 	return 0;
