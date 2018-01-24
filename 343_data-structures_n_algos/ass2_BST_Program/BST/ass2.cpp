@@ -93,6 +93,8 @@ void treeMenuString() {
 					bst.clear();
 					vector<string> v{ getStrings() };
 					bst.readTree(&v[0], v.size());
+					cout << "Height: " << bst.getHeight() << endl;
+					cout << "Number of nodes: " << bst.getNumberOfNodes() << endl;
 					break;
 				}
 			case 10:

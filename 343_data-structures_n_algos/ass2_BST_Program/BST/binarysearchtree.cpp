@@ -224,6 +224,10 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>*
 	}
 }  // end findNode
 
+//
+//
+//
+//
 template<class ItemType>
 void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType&)) const
 {
@@ -249,86 +253,101 @@ void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType&)) co
 	}
 }  // end inorder
 
+   //
+   //
+   //
+   //
+template<class ItemType>
+void BinarySearchTree<ItemType>::inorderTraverse(std::function<void(const ItemType& itm)> func) const
+{
+	stack<BinaryNode<ItemType>*> stk;
+	auto growLeft = [&stk]() {
+		while( stk.top()->getLeftChildPtr() != nullptr )stk.push(stk.top()->getLeftChildPtr());
+	};
+	stk.push(rootPtr);
+	while( !(stk.empty()) ) {
+		growLeft();
+		while( !(stk.empty()) && stk.top()->getRightChildPtr() == nullptr ) {
+			func(static_cast<ItemType>(stk.top()->getItem()));
+			stk.pop();
+		}
+		if( !(stk.empty()) && stk.top()->getRightChildPtr() != nullptr ) {
+			BinaryNode<ItemType>* tmp = stk.top();
+			stk.pop();
+			stk.push(tmp->getRightChildPtr());
+			func(static_cast<ItemType>(tmp->getItem()));
+			tmp = nullptr;
+			delete(tmp);
+		}
+	}
+}  // end inorder
+
+//
+//  
+//
+// 
 template<class ItemType>
 void BinarySearchTree<ItemType>::rebalance()
-{ }
+{
+	ItemType* arr = new ItemType[numElems];
+	int hiBound = numElems,pos = 0;
+	auto func = [&](const ItemType& itm) {arr[pos++] = itm; };
+	this->inorderTraverse(func);
+	this->clear();
+	this->buildBalancedTree(hiBound, arr);
+}
+
+//
+//  
+//
+// 
+template<class ItemType>
+void BinarySearchTree<ItemType>::buildBalancedTree( const int &hiBound, ItemType arr[]) {
+	
+	int mid = hiBound/2, step = mid/2;
+	this->add(arr[mid]);
+
+	while( step > 1 ) {
+		for( unsigned int loidx = mid - step; loidx >= 0 && loidx < mid; loidx -= step ){
+			this->add(arr[loidx]);
+		}
+
+		for( unsigned int hidx = mid + step; hidx < hiBound; hidx += step ) {
+			this->add(arr[hidx]);
+		}
+		step /=2;
+	}
+	step = 2;
+	for( unsigned int loidx = mid - 1; loidx >= 0 && loidx < mid; loidx -= step )this->add(arr[loidx]);
+	for( unsigned int hidx = mid + 1; hidx < hiBound; hidx += step )this->add(arr[hidx]);
+	
+	
+	
+}
 
 // bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n)
 // 
 // 
 // 
 template<class ItemType>
-bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n)
-{ 
-	// i will be used to check if the parameter 'arr' has been passed in
-	// the correct ordering to satisfy an array based BST
-	//
-	// if 'arr' fails to prove itself ordered as a BST, i will exit the
-	// test loop at a value greater than 0. This saves us from having to
-	// create a bool variable to track things.
-	int i = n - 1;
-
-	// Appologies for the bit-shifting black-magic vudu in the following
-	// for loop here...
-	// 
-	// A special note on the expression: 
-	//                 i/2 - (((i << 31) >> 31) ^ 1)
-	// where (i << 31) >> 31) is bit-shifting the 32-bit int, i, 
-	// so as to purge all bit data except the 2^0 bit, thus giving us
-	// the odd or even state for that bit with less overhead than if we
-	// were to use i%2
-	// 
-	// The use of the XOR operator `^` is a low cost means to ensure that
-	// we only subtract 1 from i if i is even. 
-	// 
-	// We do this because we want to check each index in arr, from n-1 to 1, 
-	// against its parrent value (assuming arr is an array based binary tree)
-	//
-	// for example: 
-	//              The left child node of index position 3 in an array is at
-	//              index position: 3*2+1 = 7
-	//              And the right child noe is at: 3*2+2 = 8
-	//
-	//              If we want to traverse the tree in reverse order, we need to
-	//              first divide by 2, then if idx is even we need to subtract 1;
-	//              the expression will look like this:
-	//              left child seeking parent: 7/2 - 0 = 3;
-	//              right child seeking parent: 8/2 - 1 = 3;
-	// 
-	// This works, in part, due to integer division trunkating any remainder to 0
-	for( ; i > 0; --i ) {
-		if( ((i << 31) >> 31) ^ 1 ) {
-			// right child node should be greater than parent
-			if( arr[(i / 2) - 1] > arr[i] )break;// if parent greater than right child, break out of for loop early
-		} else {
-			// left child node should be less than parent
-			if( arr[i / 2] < arr[i] )break;// if parent is less than left child node, break out of for loop early
-		}
-	}
-
-	// now, based upon state of 'i', we decide if arr needs to be re-ordered, or if we can go ahead and create 
-	// the node based BST.
-	if( i > 0 ) { // 'arr' isn't ordered as an array-based BST
-		int idx = 0; // a pointer for tracking our position in arr as we update it in proper BST order
-		auto filterDownLamb = [&](ItemType& itm) {arr[idx] = itm; ++idx; };
-		auto perkolateUpLamb = [&](ItemType& itm) { };
-	}
-	else { // joy, all we have to do is start adding values to our tree from arr, in order from 0 to n-1
-		this->clear();
-		for( int k = 0; k < n; ++k )this->add(arr[k]);
-	}
-
-	
-
-	
+bool BinarySearchTree<ItemType>::readTree(ItemType arr[], const int& n)
+{ 	
+	buildBalancedTree(n, arr);
 	return true; 
 }
 
-
+//
+//  
+//
+// 
 template<class ItemType>
 void BinarySearchTree<ItemType>::displaySideways() const
 { sideways(rootPtr, 0); }
 
+//
+//  
+//
+// 
 template<class ItemType>
 void BinarySearchTree<ItemType>::sideways(BinaryNode<ItemType>* current, int level) const
 {
@@ -353,6 +372,10 @@ void BinarySearchTree<ItemType>::sideways(BinaryNode<ItemType>* current, int lev
 	}
 }
 
+//
+//  
+//
+// 
 template<class ItemType>
 bool BinarySearchTree<ItemType>::operator==(const BinarySearchTree<ItemType>& other) const
 {
@@ -390,6 +413,10 @@ bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local,
 		matchyFunk(local->getRightChildPtr(), remote->getRightChildPtr());
 }
 
+//
+//  
+//
+// 
 template<class ItemType>
 bool BinarySearchTree<ItemType>::operator!=(const BinarySearchTree<ItemType>& other) const
 { return !(*this == other); }

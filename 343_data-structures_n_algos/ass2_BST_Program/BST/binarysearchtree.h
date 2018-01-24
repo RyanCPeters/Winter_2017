@@ -86,7 +86,7 @@ public:
 	// given an array of length n
 	// create this tree to have all items in that array
 	// with the minimum height
-	bool readTree(ItemType arr[], int n);
+	bool readTree(ItemType arr[], const int& n);
 
 	// trees are equal if they have the same structure
 	// AND the same item values at all the nodes
@@ -105,6 +105,9 @@ private:
 	// member variables for tracking element count and tree height
 	int treeHeight, numElems;
 
+	// a private version of inorderTraverse that accepts lambdas
+	void inorderTraverse(std::function<void(const ItemType& itm)> func) const;
+
 	// add a new node, helper function for add
 	BinaryNode<ItemType>* placeNode(BinaryNode<ItemType>* subTreePtr, BinaryNode<ItemType>* newNodePtr);
 
@@ -119,6 +122,8 @@ private:
 	// Helper function the performs tail-recursion in search for dissimilarities between this and the
 	// other parameter that was passed into the operator== overload.
 	bool matchyFunk(BinaryNode<ItemType>* local, BinaryNode<ItemType>* remote) const;
+
+	void buildBalancedTree(const int &hiBound, ItemType arr[]);
 };
 
 #include "binarysearchtree.cpp"
