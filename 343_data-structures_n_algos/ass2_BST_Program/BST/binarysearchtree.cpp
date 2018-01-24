@@ -19,12 +19,11 @@ BinarySearchTree<ItemType>::~BinarySearchTree()
 	//dtor
 	this->clear();
 	delete(rootPtr);
-	//delete[] this;
 }
 
 template<class ItemType>
 BinarySearchTree<ItemType>::BinarySearchTree(const ItemType& rootItem)
-	:rootPtr(rootItem), treeHeight(1), numElems(1)
+	:rootPtr(new BinaryNode<ItemType>(rootItem)), treeHeight(1), numElems(1)
 {
 }
 
@@ -39,7 +38,7 @@ BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& b
 	// if the root node of the other tree is nullptr, then we need only instanciate our own
 	// empty tree to effectively copy the bst reference.
 	if( bst.rootPtr == nullptr ) {
-		this = new BinarySearchTree();
+		this->rootPtr = nullptr;
 		return;
 	}
 	treeHeight = numElems = 0;
@@ -185,8 +184,8 @@ bool BinarySearchTree<ItemType>::contains(const ItemType& item) const
 	while( ret && seekPtr->getItem() != item ) {
 		if( seekPtr->getItem() < item )   seekPtr = seekPtr->getRightChildPtr();
 		else if( seekPtr->getItem() > item )seekPtr = seekPtr->getLeftChildPtr();
-		ret = seekPtr != nullptr;
-	}
+		ret = (seekPtr != nullptr);
+	} // end while-loop
 	if( !ret ) {
 		delete[] seekPtr;
 		return false;
@@ -225,8 +224,43 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>*
 	}
 }  // end findNode
 
+// void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType&)) const
+//
+//	This function simply traverses the BinarySearchTree belonging to `this` and 
+//	passes the nodes into the parameter visit (a function reference) which will then
+//	perform some black box action on the value passed into it.
+//
 template<class ItemType>
-void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType&)) const
+void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType& itm)) const
+{
+	stack<BinaryNode<ItemType>*> trackingStk;
+	auto growLeft = [&trackingStk]() {
+		while( trackingStk.top()->getLeftChildPtr() != nullptr )trackingStk.push(trackingStk.top()->getLeftChildPtr());
+	};
+	trackingStk.push(rootPtr);
+	while( !(trackingStk.empty()) ) {
+		growLeft();
+		while( !(trackingStk.empty()) && trackingStk.top()->getRightChildPtr() == nullptr ) {
+			visit(static_cast<ItemType>(trackingStk.top()->getItem()));
+			trackingStk.pop();
+		}
+		if( !(trackingStk.empty()) && trackingStk.top()->getRightChildPtr() != nullptr ) {
+			BinaryNode<ItemType>* tmp = trackingStk.top();
+			trackingStk.pop();
+			trackingStk.push(tmp->getRightChildPtr());
+			visit(static_cast<ItemType>(tmp->getItem()));
+			tmp = nullptr;
+			delete(tmp);
+		}
+	}
+}  // end inorder
+
+   //
+   //
+   //
+   //
+template<class ItemType>
+void BinarySearchTree<ItemType>::inorderTraverse(std::function<void(const ItemType& itm)> func) const
 {
 	stack<BinaryNode<ItemType>*> stk;
 	auto growLeft = [&stk]() {
@@ -236,38 +270,86 @@ void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType&)) co
 	while( !(stk.empty()) ) {
 		growLeft();
 		while( !(stk.empty()) && stk.top()->getRightChildPtr() == nullptr ) {
-			visit(static_cast<ItemType>(stk.top()->getItem()));
+			func(static_cast<ItemType>(stk.top()->getItem()));
 			stk.pop();
 		}
 		if( !(stk.empty()) && stk.top()->getRightChildPtr() != nullptr ) {
 			BinaryNode<ItemType>* tmp = stk.top();
 			stk.pop();
 			stk.push(tmp->getRightChildPtr());
-			visit(static_cast<ItemType>(tmp->getItem()));
+			func(static_cast<ItemType>(tmp->getItem()));
 			tmp = nullptr;
 			delete(tmp);
 		}
 	}
 }  // end inorder
 
+//
+//  
+//
+// 
 template<class ItemType>
 void BinarySearchTree<ItemType>::rebalance()
-{ }
+{
+	ItemType* arr = new ItemType[numElems];
+	int hiBound = numElems,pos = 0;
+	auto func = [&](const ItemType& itm) {arr[pos++] = itm; };
+	this->inorderTraverse(func);
+	this->clear();
+	this->buildBalancedTree(hiBound, arr);
+}
 
+//
+//  
+//
+// 
 template<class ItemType>
-bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n)
-{ 
-	BinarySearchTree<ItemType> bst = new BinarySearchTree<ItemType>(arr[0]);
-	for( int i = 1; i < n; ++i )bst.add(arr[i]);
-	bst.rebalance();
+void BinarySearchTree<ItemType>::buildBalancedTree( const int &hiBound, ItemType arr[]) {
+	
+	int mid = hiBound/2, step = mid/2;
+	this->add(arr[mid]);
+
+	while( step > 1 ) {
+		for( unsigned int loidx = mid - step; loidx >= 0 && loidx < mid; loidx -= step ){
+			this->add(arr[loidx]);
+		}
+
+		for( unsigned int hidx = mid + step; hidx < hiBound; hidx += step ) {
+			this->add(arr[hidx]);
+		}
+		step /=2;
+	}
+	step = 2;
+	for( unsigned int loidx = mid - 1; loidx >= 0 && loidx < mid; loidx -= step )this->add(arr[loidx]);
+	for( unsigned int hidx = mid + 1; hidx < hiBound; hidx += step )this->add(arr[hidx]);
+	
+	
+	
+}
+
+// bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n)
+// 
+// 
+// 
+template<class ItemType>
+bool BinarySearchTree<ItemType>::readTree(ItemType arr[], const int& n)
+{ 	
+	buildBalancedTree(n, arr);
 	return true; 
 }
 
-
+//
+//  
+//
+// 
 template<class ItemType>
 void BinarySearchTree<ItemType>::displaySideways() const
 { sideways(rootPtr, 0); }
 
+//
+//  
+//
+// 
 template<class ItemType>
 void BinarySearchTree<ItemType>::sideways(BinaryNode<ItemType>* current, int level) const
 {
@@ -292,6 +374,10 @@ void BinarySearchTree<ItemType>::sideways(BinaryNode<ItemType>* current, int lev
 	}
 }
 
+//
+//  
+//
+// 
 template<class ItemType>
 bool BinarySearchTree<ItemType>::operator==(const BinarySearchTree<ItemType>& other) const
 {
@@ -300,6 +386,7 @@ bool BinarySearchTree<ItemType>::operator==(const BinarySearchTree<ItemType>& ot
 }
 
 // bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local, BinaryNode<ItemType>* remote)
+// 
 // Helper function the performs tail-recursion in search for dissimilarities between this and the
 // other parameter that was passed into the operator== overload.
 template<class ItemType>
@@ -308,7 +395,7 @@ bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local,
 {
 	// the only way for either of the pointers to == nullptr and result in an equal state is if
 	// both pointers are == nullptr; any other way and it's a false;
-	if( (local == nullptr  ^ remote == nullptr) ) {
+	if( (local == nullptr) ^ (remote == nullptr) ) {
 		// We're here because:
 		// 
 		//   ( NOT ( local == nullptr XOR remote == nullptr )) came out to 0
@@ -328,6 +415,10 @@ bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local,
 		matchyFunk(local->getRightChildPtr(), remote->getRightChildPtr());
 }
 
+//
+//  
+//
+// 
 template<class ItemType>
 bool BinarySearchTree<ItemType>::operator!=(const BinarySearchTree<ItemType>& other) const
 { return !(*this == other); }

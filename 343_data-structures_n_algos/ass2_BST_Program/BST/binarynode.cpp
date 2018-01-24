@@ -11,10 +11,6 @@ template<class ItemType>
 BinaryNode<ItemType>::~BinaryNode() {
 	// If suffering from memory leaks, uncomment next line
 	// std::cout << "Deleting " << *this << std::endl;
-	rightPtr = leftPtr = nullptr;
-	delete(leftPtr);
-	delete(rightPtr);
-	//delete[] this;
 }
 
 // constructor setting item
