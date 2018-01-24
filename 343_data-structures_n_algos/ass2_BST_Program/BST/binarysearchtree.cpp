@@ -19,12 +19,11 @@ BinarySearchTree<ItemType>::~BinarySearchTree()
 	//dtor
 	this->clear();
 	delete(rootPtr);
-	//delete[] this;
 }
 
 template<class ItemType>
 BinarySearchTree<ItemType>::BinarySearchTree(const ItemType& rootItem)
-	:rootPtr(rootItem), treeHeight(1), numElems(1)
+	:rootPtr(new BinaryNode<ItemType>(rootItem)), treeHeight(1), numElems(1)
 {
 }
 
@@ -39,7 +38,7 @@ BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& b
 	// if the root node of the other tree is nullptr, then we need only instanciate our own
 	// empty tree to effectively copy the bst reference.
 	if( bst.rootPtr == nullptr ) {
-		this = new BinarySearchTree();
+		this->rootPtr = nullptr;
 		return;
 	}
 	treeHeight = numElems = 0;
@@ -185,8 +184,8 @@ bool BinarySearchTree<ItemType>::contains(const ItemType& item) const
 	while( ret && seekPtr->getItem() != item ) {
 		if( seekPtr->getItem() < item )   seekPtr = seekPtr->getRightChildPtr();
 		else if( seekPtr->getItem() > item )seekPtr = seekPtr->getLeftChildPtr();
-		ret = seekPtr != nullptr;
-	}
+		ret = (seekPtr != nullptr);
+	} // end while-loop
 	if( !ret ) {
 		delete[] seekPtr;
 		return false;
@@ -254,12 +253,74 @@ template<class ItemType>
 void BinarySearchTree<ItemType>::rebalance()
 { }
 
+// bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n)
+// 
+// 
+// 
 template<class ItemType>
 bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n)
 { 
-	BinarySearchTree<ItemType> bst = new BinarySearchTree<ItemType>(arr[0]);
-	for( int i = 1; i < n; ++i )bst.add(arr[i]);
-	bst.rebalance();
+	// i will be used to check if the parameter 'arr' has been passed in
+	// the correct ordering to satisfy an array based BST
+	//
+	// if 'arr' fails to prove itself ordered as a BST, i will exit the
+	// test loop at a value greater than 0. This saves us from having to
+	// create a bool variable to track things.
+	int i = n - 1;
+
+	// Appologies for the bit-shifting black-magic vudu in the following
+	// for loop here...
+	// 
+	// A special note on the expression: 
+	//                 i/2 - (((i << 31) >> 31) ^ 1)
+	// where (i << 31) >> 31) is bit-shifting the 32-bit int, i, 
+	// so as to purge all bit data except the 2^0 bit, thus giving us
+	// the odd or even state for that bit with less overhead than if we
+	// were to use i%2
+	// 
+	// The use of the XOR operator `^` is a low cost means to ensure that
+	// we only subtract 1 from i if i is even. 
+	// 
+	// We do this because we want to check each index in arr, from n-1 to 1, 
+	// against its parrent value (assuming arr is an array based binary tree)
+	//
+	// for example: 
+	//              The left child node of index position 3 in an array is at
+	//              index position: 3*2+1 = 7
+	//              And the right child noe is at: 3*2+2 = 8
+	//
+	//              If we want to traverse the tree in reverse order, we need to
+	//              first divide by 2, then if idx is even we need to subtract 1;
+	//              the expression will look like this:
+	//              left child seeking parent: 7/2 - 0 = 3;
+	//              right child seeking parent: 8/2 - 1 = 3;
+	// 
+	// This works, in part, due to integer division trunkating any remainder to 0
+	for( ; i > 0; --i ) {
+		if( ((i << 31) >> 31) ^ 1 ) {
+			// right child node should be greater than parent
+			if( arr[(i / 2) - 1] > arr[i] )break;// if parent greater than right child, break out of for loop early
+		} else {
+			// left child node should be less than parent
+			if( arr[i / 2] < arr[i] )break;// if parent is less than left child node, break out of for loop early
+		}
+	}
+
+	// now, based upon state of 'i', we decide if arr needs to be re-ordered, or if we can go ahead and create 
+	// the node based BST.
+	if( i > 0 ) { // 'arr' isn't ordered as an array-based BST
+		int idx = 0; // a pointer for tracking our position in arr as we update it in proper BST order
+		auto filterDownLamb = [&](ItemType& itm) {arr[idx] = itm; ++idx; };
+		auto perkolateUpLamb = [&](ItemType& itm) { };
+	}
+	else { // joy, all we have to do is start adding values to our tree from arr, in order from 0 to n-1
+		this->clear();
+		for( int k = 0; k < n; ++k )this->add(arr[k]);
+	}
+
+	
+
+	
 	return true; 
 }
 
@@ -300,6 +361,7 @@ bool BinarySearchTree<ItemType>::operator==(const BinarySearchTree<ItemType>& ot
 }
 
 // bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local, BinaryNode<ItemType>* remote)
+// 
 // Helper function the performs tail-recursion in search for dissimilarities between this and the
 // other parameter that was passed into the operator== overload.
 template<class ItemType>
@@ -308,7 +370,7 @@ bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local,
 {
 	// the only way for either of the pointers to == nullptr and result in an equal state is if
 	// both pointers are == nullptr; any other way and it's a false;
-	if( (local == nullptr  ^ remote == nullptr) ) {
+	if( (local == nullptr) ^ (remote == nullptr) ) {
 		// We're here because:
 		// 
 		//   ( NOT ( local == nullptr XOR remote == nullptr )) came out to 0
