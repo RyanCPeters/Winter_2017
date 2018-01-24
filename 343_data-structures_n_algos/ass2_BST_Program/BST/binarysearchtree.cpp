@@ -224,28 +224,30 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>*
 	}
 }  // end findNode
 
+// void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType&)) const
 //
-//
-//
+//	This function simply traverses the BinarySearchTree belonging to `this` and 
+//	passes the nodes into the parameter visit (a function reference) which will then
+//	perform some black box action on the value passed into it.
 //
 template<class ItemType>
-void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType&)) const
+void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType& itm)) const
 {
-	stack<BinaryNode<ItemType>*> stk;
-	auto growLeft = [&stk]() {
-		while( stk.top()->getLeftChildPtr() != nullptr )stk.push(stk.top()->getLeftChildPtr());
+	stack<BinaryNode<ItemType>*> trackingStk;
+	auto growLeft = [&trackingStk]() {
+		while( trackingStk.top()->getLeftChildPtr() != nullptr )trackingStk.push(trackingStk.top()->getLeftChildPtr());
 	};
-	stk.push(rootPtr);
-	while( !(stk.empty()) ) {
+	trackingStk.push(rootPtr);
+	while( !(trackingStk.empty()) ) {
 		growLeft();
-		while( !(stk.empty()) && stk.top()->getRightChildPtr() == nullptr ) {
-			visit(static_cast<ItemType>(stk.top()->getItem()));
-			stk.pop();
+		while( !(trackingStk.empty()) && trackingStk.top()->getRightChildPtr() == nullptr ) {
+			visit(static_cast<ItemType>(trackingStk.top()->getItem()));
+			trackingStk.pop();
 		}
-		if( !(stk.empty()) && stk.top()->getRightChildPtr() != nullptr ) {
-			BinaryNode<ItemType>* tmp = stk.top();
-			stk.pop();
-			stk.push(tmp->getRightChildPtr());
+		if( !(trackingStk.empty()) && trackingStk.top()->getRightChildPtr() != nullptr ) {
+			BinaryNode<ItemType>* tmp = trackingStk.top();
+			trackingStk.pop();
+			trackingStk.push(tmp->getRightChildPtr());
 			visit(static_cast<ItemType>(tmp->getItem()));
 			tmp = nullptr;
 			delete(tmp);

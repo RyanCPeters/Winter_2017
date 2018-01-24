@@ -41,7 +41,6 @@ vector<string> getStrings() {
 			++subStrt;
 		}
 	}
-
 	return v;
 }
 
