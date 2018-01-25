@@ -308,7 +308,7 @@ void BinarySearchTree<ItemType>::rebalance()
 template<class ItemType>
 void BinarySearchTree<ItemType>::buildBalancedTree(const int &l, const int mid, const int &r, const ItemType arr[])
 {
-	if(mid >= 0 && mid < numElems  ) this->add(arr[mid]);
+	/*if(mid >= 0 && mid < numElems  )*/ this->add(arr[mid]);
 	if( l <= mid - 1 )buildBalancedTree( l, (l + mid - 1) / 2, mid - 1, arr );
 	if(r >= mid + 1 )buildBalancedTree( mid + 1, (r + mid + 1) / 2, r, arr );	
 }
