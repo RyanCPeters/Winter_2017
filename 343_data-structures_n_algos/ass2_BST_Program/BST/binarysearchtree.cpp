@@ -256,7 +256,8 @@ void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType& itm)
 }  // end inorder
 
    //
-   //
+   //This overload of the inorderTraverse function provides a means to pass a lambda function as
+   // the parameter, instead of a function reference.
    //
    //
 template<class ItemType>
@@ -292,11 +293,11 @@ template<class ItemType>
 void BinarySearchTree<ItemType>::rebalance()
 {
 	ItemType* arr = new ItemType[numElems];
-	int hiBound = numElems,pos = 0;
+	int pos = 0, hiBound = numElems; // we need hiBound to retain the node count after we clear the tree.
 	auto func = [&](const ItemType& itm) {arr[pos++] = itm; };
 	this->inorderTraverse(func);
 	this->clear();
-	this->buildBalancedTree(0, (hiBound-1) / 2, hiBound - 1, arr);
+	this->buildBalancedTree(0, (hiBound -1) / 2, hiBound - 1, arr);
 	delete[] arr;
 }
 
@@ -305,9 +306,9 @@ void BinarySearchTree<ItemType>::rebalance()
 //
 // 
 template<class ItemType>
-void BinarySearchTree<ItemType>::buildBalancedTree(const auto &l, const auto mid, const auto &r, const ItemType arr[])
+void BinarySearchTree<ItemType>::buildBalancedTree(const int &l, const int mid, const int &r, const ItemType arr[])
 {
-	this->add(arr[mid]);
+	if(mid >= 0 && mid < numElems  ) this->add(arr[mid]);
 	if( l <= mid - 1 )buildBalancedTree( l, (l + mid - 1) / 2, mid - 1, arr );
 	if(r >= mid + 1 )buildBalancedTree( mid + 1, (r + mid + 1) / 2, r, arr );	
 }
