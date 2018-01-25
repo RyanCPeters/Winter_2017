@@ -4,6 +4,7 @@
 // some interactive and non-interactive testes to test BinarySearchTree
 
 #include <iostream>
+#include <fstream>
 #include <sstream>
 #include <vector>
 #include <climits>
@@ -12,6 +13,19 @@
 #include "binarynode.h"
 
 using namespace std;
+union StrInt {
+	int8_t smalInt;
+	int16_t medInt;
+	int32_t bigInt;
+	char c;
+	string s;
+
+};
+
+template<typedef T>
+istringstream getVal(T& dest) {
+	StrInt si = dest;
+}
 
 void itemDisplay(const string& anItem) {
 	cout << anItem << " ";
@@ -24,22 +38,26 @@ string getString() {
 	return str;
 }
 
+int getInt() {
+	int num;
+	cout << "Enter an int: ";
+	cin >> num;
+	return num;
+}
+
 vector<int> getInts() {
-	cout << "Enter multiple ints: ";
-	cin.clear();
+	/*cout << "Enter multiple ints: ";
+	cin.clear();*/
 	
 	vector<int> v;
-	int num = cin.peek(); // sanity checking for EOF character
-
-	if( num == EOF ) return v;
+	int num;
 	
-	while( num != EOF && std::isdigit(num) )
-	{
-		cin.get();
-		v.push_back(num);
-		num = cin.peek();
+	ifstream iFile("ManyIntsTestFile.txt");
+	if( iFile.is_open() ) {
+		while( iFile >> num ) {
+			v.push_back(num);
+		}
 	}
-	
 	return v;
 }
 
@@ -134,7 +152,16 @@ void treeMenuString() {
 
 void treeMenuInt() {
 	BinarySearchTree<int> bst;
-	const string menu = "treeMenuInt\n1. Add\n6. Add many\n10. Exit\n>> ";
+	const string menu = "treeMenuInt\n"
+		"1. Add\n"
+		"2. Search\n"
+		"3. Inorder traverse\n"
+		"4. Height & Number of nodes\n"
+		"5. Rebalance\n"
+		"6. Add Multiple\n"
+		"7. Clear tree\n"
+		"6. Add many\n"
+		"10. Exit\n>> ";
 	int choice;
 	int number;
 	cout << menu;
@@ -145,6 +172,21 @@ void treeMenuInt() {
 				cout << "Enter a number: ";
 				cin >> number;
 				cout << (bst.add(number) ? "" : "Not ") << "Added " << number << endl;
+				break;
+			case 2:
+				number = getInt();
+				cout << (bst.contains(number) ? "" : "Not ") << "Found " << number << endl;
+				break;
+			case 3:
+				bst.inorderTraverse(itemDisplay);
+				cout << endl;
+				break;
+			case 4:
+				cout << "Height: " << bst.getHeight() << endl;
+				cout << "Number of nodes: " << bst.getNumberOfNodes() << endl;
+				break;
+			case 5:
+				bst.rebalance();
 				break;
 			case 6:
 				for( const int& val : getInts() ) {
