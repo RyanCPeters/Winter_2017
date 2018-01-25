@@ -13,21 +13,18 @@
 #include "binarynode.h"
 
 using namespace std;
-union StrInt {
-	int8_t smalInt;
-	int16_t medInt;
-	int32_t bigInt;
-	char c;
-	string s;
+//union StrInt {
+//	int8_t smalInt;
+//	int16_t medInt;
+//	int32_t bigInt;
+//	char c;
+//	string s;
+//
+//};
 
-};
-
-template<typedef T>
-istringstream getVal(T& dest) {
-	StrInt si = dest;
-}
-
-void itemDisplay(const string& anItem) {
+//so if you ever need to try and meet up on campus you can
+template<class ItemType>
+void itemDisplay(const ItemType& anItem) {
 	cout << anItem << " ";
 }
 
@@ -45,14 +42,13 @@ int getInt() {
 	return num;
 }
 
-vector<int> getInts() {
+vector<int> getInts(const string& inFileName ) {
 	/*cout << "Enter multiple ints: ";
 	cin.clear();*/
 	
 	vector<int> v;
 	int num;
-	
-	ifstream iFile("ManyIntsTestFile.txt");
+	ifstream iFile(inFileName);
 	if( iFile.is_open() ) {
 		while( iFile >> num ) {
 			v.push_back(num);
@@ -164,6 +160,7 @@ void treeMenuInt() {
 		"10. Exit\n>> ";
 	int choice;
 	int number;
+	string fileName;
 	cout << menu;
 	while (true) {
 		cin >> choice;
@@ -189,7 +186,12 @@ void treeMenuInt() {
 				bst.rebalance();
 				break;
 			case 6:
-				for( const int& val : getInts() ) {
+				cout << "Please enter the name of the input file to use.\n"
+					"The name should have no spaces and the file type should be .txt \n"
+					"\neg., \"many-int-test\"\n>> ";
+				cin.clear();
+				cin >> fileName;
+				for( const int& val : getInts(fileName) ) {
 					cout << (bst.add(val) ? "" : "Not ") << "Added " << val << endl;
 				}
 				break;
