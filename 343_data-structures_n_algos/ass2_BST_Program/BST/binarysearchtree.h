@@ -123,7 +123,7 @@ private:
 	// other parameter that was passed into the operator== overload.
 	bool matchyFunk(BinaryNode<ItemType>* local, BinaryNode<ItemType>* remote) const;
 
-	void buildBalancedTree(const int &hiBound, ItemType arr[]);
+	void buildBalancedTree(const auto &l, const auto mid, const auto &r, const ItemType arr[]);
 };
 
 #include "binarysearchtree.cpp"

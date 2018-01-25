@@ -296,7 +296,8 @@ void BinarySearchTree<ItemType>::rebalance()
 	auto func = [&](const ItemType& itm) {arr[pos++] = itm; };
 	this->inorderTraverse(func);
 	this->clear();
-	this->buildBalancedTree(hiBound, arr);
+	this->buildBalancedTree(0, (hiBound-1) / 2, hiBound - 1, arr);
+	delete[] arr;
 }
 
 //
@@ -304,27 +305,11 @@ void BinarySearchTree<ItemType>::rebalance()
 //
 // 
 template<class ItemType>
-void BinarySearchTree<ItemType>::buildBalancedTree( const int &hiBound, ItemType arr[]) {
-	
-	int mid = hiBound/2, step = mid/2;
+void BinarySearchTree<ItemType>::buildBalancedTree(const auto &l, const auto mid, const auto &r, const ItemType arr[])
+{
 	this->add(arr[mid]);
-
-	while( step > 1 ) {
-		for( unsigned int loidx = mid - step; loidx >= 0 && loidx < mid; loidx -= step ){
-			this->add(arr[loidx]);
-		}
-
-		for( unsigned int hidx = mid + step; hidx < hiBound; hidx += step ) {
-			this->add(arr[hidx]);
-		}
-		step /=2;
-	}
-	step = 2;
-	for( unsigned int loidx = mid - 1; loidx >= 0 && loidx < mid; loidx -= step )this->add(arr[loidx]);
-	for( unsigned int hidx = mid + 1; hidx < hiBound; hidx += step )this->add(arr[hidx]);
-	
-	
-	
+	if( l <= mid - 1 )buildBalancedTree( l, (l + mid - 1) / 2, mid - 1, arr );
+	if(r >= mid + 1 )buildBalancedTree( mid + 1, (r + mid + 1) / 2, r, arr );	
 }
 
 // bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n)
@@ -334,7 +319,7 @@ void BinarySearchTree<ItemType>::buildBalancedTree( const int &hiBound, ItemType
 template<class ItemType>
 bool BinarySearchTree<ItemType>::readTree(ItemType arr[], const int& n)
 { 	
-	buildBalancedTree(n, arr);
+	buildBalancedTree(0, (n-1) / 2, n-1, arr);
 	return true; 
 }
 
