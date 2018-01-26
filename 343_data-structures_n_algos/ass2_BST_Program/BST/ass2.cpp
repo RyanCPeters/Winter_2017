@@ -57,19 +57,18 @@ vector<int> getInts(const string& inFileName ) {
 	return v;
 }
 
-vector<string> getStrings() {
+vector<string> getStrings(vector<string> v) {
 
 	string longString;
 	cout << "Enter multiple strings: ";
 	cin.clear();
 	cin.ignore(INT_MAX, '\n');
 	getline(cin, longString);
-	vector<string> v;
 	
 	for( unsigned int subStrt = 0, subStp = 0; subStrt < longString.size(); ) {
 		if( longString.at(subStrt) != ' ' ) {
 			for( subStp = subStrt; subStp < longString.size() && longString.at(subStp) != ' '; ++subStp );
-			v.push_back(longString.substr(subStrt, subStp-subStrt));
+			v.emplace_back(longString.substr(subStrt, subStp-subStrt));
 			subStrt = subStp;
 		} else {
 			++subStrt;
@@ -89,10 +88,13 @@ void treeMenuString() {
 		"7. Clear tree\n"
 		"8. Create tree from sorted array\n"
 		"10. Exit\n>> ";
-	int choice;
-	string str;
+	
+	
 	cout << menu;
 	while (true) {
+		int choice;
+		string str;
+		vector<string> v;
 		cin >> choice;
 		switch (choice) {
 			case 1:
@@ -115,8 +117,9 @@ void treeMenuString() {
 				bst.rebalance();
 				break;
 			case 6:
-				for (string str : getStrings())
-					cout << (bst.add(str) ? "" : "Not ") << "Added " << str << endl;
+				getStrings(v);
+				for (const string& ele :v )
+					cout << (bst.add(ele) ? "" : "Not ") << "Added " << ele << endl;
 				break;
 			case 7:
 				bst.clear();
@@ -124,7 +127,8 @@ void treeMenuString() {
 			case 8:
 				{
 					bst.clear();
-					vector<string> v{ getStrings() };
+					vector<string> v;
+					v.empl(getStrings());
 					bst.readTree(&v[0], v.size());
 					cout << "Height: " << bst.getHeight() << endl;
 					cout << "Number of nodes: " << bst.getNumberOfNodes() << endl;
