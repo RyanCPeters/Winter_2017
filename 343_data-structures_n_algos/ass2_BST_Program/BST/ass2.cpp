@@ -57,28 +57,34 @@ vector<int> getInts(const string& inFileName ) {
 	return v;
 }
 
-vector<string> getStrings(vector<string> v) {
-
-	string longString;
-	cout << "Enter multiple strings: ";
+void getStrings(vector<string>& v) {
+	// A = 65, Z = 90, a = 97, z = 122;
+	// char c; ((c >= 65 && c <= 90) || (c>=97 && c <= 122))
+	
+	cout << "Please enter the name of the input file to use.\n"
+		"The name should have no spaces and the file type should be .txt \n"
+		"\neg., \"many-int-test.txt\"\n>> ";
 	cin.clear();
 	cin.ignore(INT_MAX, '\n');
-	getline(cin, longString);
-	
-	for( unsigned int subStrt = 0, subStp = 0; subStrt < longString.size(); ) {
-		if( longString.at(subStrt) != ' ' ) {
-			for( subStp = subStrt; subStp < longString.size() && longString.at(subStp) != ' '; ++subStp );
-			v.emplace_back(longString.substr(subStrt, subStp-subStrt));
-			subStrt = subStp;
-		} else {
-			++subStrt;
+	string fileName;
+	getline(cin, fileName);
+	ifstream iFile(fileName);
+	if( iFile.is_open() ) {
+		while( iFile ) {
+			stringstream ss;
+			while( std::isspace(iFile.peek())) 
+				iFile.get();
+			while( std::isalnum(iFile.peek())) 
+				ss << static_cast<char>(iFile.get());
+			if( std::isalnum(ss.peek()) ) v.push_back(ss.str());
+			
 		}
 	}
-	return v;
 }
 
 void treeMenuString() {
 	BinarySearchTree<string> bst;
+	BinarySearchTree<string>* bstPtr;
 	const string menu = "treeMenuString\n"
 		"1. Add\n2. Search\n"
 		"3. Inorder traverse\n"
@@ -87,6 +93,7 @@ void treeMenuString() {
 		"6. Add Multiple\n"
 		"7. Clear tree\n"
 		"8. Create tree from sorted array\n"
+		"9. Create duplicate tree\n"
 		"10. Exit\n>> ";
 	
 	
@@ -117,9 +124,11 @@ void treeMenuString() {
 				bst.rebalance();
 				break;
 			case 6:
+				
 				getStrings(v);
-				for (const string& ele :v )
-					cout << (bst.add(ele) ? "" : "Not ") << "Added " << ele << endl;
+				for (const string& ele :v ) cout << (bst.add(ele) ? "" : "Not ") << "Added " << ele << endl;
+				bst.displaySideways();
+				bst.rebalance();
 				break;
 			case 7:
 				bst.clear();
@@ -127,18 +136,34 @@ void treeMenuString() {
 			case 8:
 				{
 					bst.clear();
-					vector<string> v;
-					v.empl(getStrings());
+					getStrings(v);
 					bst.readTree(&v[0], v.size());
 					cout << "Height: " << bst.getHeight() << endl;
 					cout << "Number of nodes: " << bst.getNumberOfNodes() << endl;
 					break;
 				}
+			
 			case 10:
 				{
 					bst.clear();
 					return;
 				}
+			case 9:
+				if( !bst.isEmpty() ) {
+					bstPtr = new BinarySearchTree<string>(bst);
+					cout << ((bst == *bstPtr) ? "OK" : "ERR") << ": bst == *bstPtr" << endl;
+					cout << ((bst == bstPtr) ? "OK" : "ERR") << ": bst == bstPtr" << endl;
+					cout << "printing bstPtr\n";
+					bstPtr->inorderTraverse(itemDisplay);
+					cout << endl;
+					delete(bstPtr);
+					//delete[] bstPtr;
+					cout << "delete(bstPtr);\n\tDid it work?\n" << "\tHeight: " << bstPtr->getHeight() << endl;
+					cout << "\tNumber of nodes: " << bstPtr->getNumberOfNodes() << endl;
+					cout << "now to print bst to confirm it is unchanged" << endl;
+					break;
+				}
+				cout << "\n\t\tOops! You will need to build an initial reference BST first!\n";
 			default:
 				cout << "Bad input" << endl;
 				cin.clear();
@@ -160,13 +185,13 @@ void treeMenuInt() {
 		"5. Rebalance\n"
 		"6. Add Multiple\n"
 		"7. Clear tree\n"
-		"6. Add many\n"
 		"10. Exit\n>> ";
 	int choice;
-	int number;
-	string fileName;
+	
 	cout << menu;
 	while (true) {
+		int number;
+		string fileName;
 		cin >> choice;
 		switch (choice) {
 			case 1:
@@ -228,8 +253,8 @@ int main() {
 	cout << (bst1.contains("d") ? "OK" : "ERR") << ": bst1 contains d" << endl;
 	cout << (bst1.contains("x") ? "ERR" : "OK") << ": bst1 does not contain x" << endl;
 	cout << (bst1.add("g") ? "ERR" : "OK") << ": adding g second time returns false" << endl;
-	//treeMenuString();
-	treeMenuInt();
+	treeMenuString();
+	//treeMenuInt();
 	cin.get();
 	return 0;
 }

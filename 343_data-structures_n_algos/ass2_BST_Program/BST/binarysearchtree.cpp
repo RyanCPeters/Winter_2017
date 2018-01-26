@@ -74,7 +74,8 @@ BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& b
 			qwayway.pop();
 			if( qwayway.empty() )break;
 			qwayway.push(earMark);
-		} else {
+		}
+		else {
 			if( !(qwayway.front()->isLeaf()) ) {
 				if( qwayway.front()->getLeftChildPtr() != nullptr )qwayway.push(qwayway.front()->getLeftChildPtr());
 				if( qwayway.front()->getRightChildPtr() != nullptr )qwayway.push(qwayway.front()->getRightChildPtr());
@@ -85,7 +86,7 @@ BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& b
 		}
 	} // end while-loop
 
-	delete[] earMark;
+	delete(earMark);
 } // end copy constructor
 
 template<class ItemType>
@@ -111,7 +112,8 @@ bool BinarySearchTree<ItemType>::add(const ItemType& item)
 	if( numElems == 0 ) {
 		treeHeight = numElems = 1;
 		rootPtr->setItem(item);
-	} else {
+	}
+	else {
 		int height = 1; // inits to 1 as that's the starting height at the root.
 
 		BinaryNode<ItemType>* seekPtr = rootPtr;
@@ -125,19 +127,23 @@ bool BinarySearchTree<ItemType>::add(const ItemType& item)
 				if( seekPtr->getRightChildPtr() != nullptr ) {
 					seekPtr = seekPtr->getRightChildPtr();
 					return true;
-				} else {
+				}
+				else {
 					seekPtr->setRightChildPtr(new BinaryNode<ItemType>(item));
 					return false;
 				}
-			} else if( item < seekPtr->getItem() ) {
+			}
+			else if( item < seekPtr->getItem() ) {
 				if( seekPtr->getLeftChildPtr() != nullptr ) {
 					seekPtr = seekPtr->getLeftChildPtr();
 					return true;
-				} else {
+				}
+				else {
 					seekPtr->setLeftChildPtr(new BinaryNode<ItemType>(item));
 					return false;
 				}
-			} else return false;
+			}
+			else return false;
 		};
 
 		while( func() );
@@ -164,7 +170,9 @@ void chainDeletion(BinaryNode<ItemType>* del)
 	delete del;
 }
 
-
+// void BinarySearchTree<ItemType>::clear()
+// calls the private function chainDeletion, which recursively seeks out leaves in the tree and
+// starts to delete the tree on back towards the root.
 template<class ItemType>
 void BinarySearchTree<ItemType>::clear()
 {
@@ -218,7 +226,8 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>*
 	else if( target > subTreePtr->getItem() ) {
 		if( subTreePtr->getRightChildPtr() != nullptr ) return findNode(subTreePtr->getRightChildPtr());
 		else return subTreePtr;
-	} else {
+	}
+	else {
 		if( subTreePtr->getLeftChildPtr() != nullptr ) return findNode(subTreePtr->getLeftChildPtr());
 		else return subTreePtr;
 	}
@@ -297,7 +306,7 @@ void BinarySearchTree<ItemType>::rebalance()
 	auto func = [&](const ItemType& itm) {arr[pos++] = itm; };
 	this->inorderTraverse(func);
 	this->clear();
-	this->buildBalancedTree(0, (hiBound -1) / 2, hiBound - 1, arr);
+	this->buildBalancedTree(0, (hiBound - 1) / 2, hiBound - 1, arr);
 	delete[] arr;
 }
 
@@ -306,11 +315,11 @@ void BinarySearchTree<ItemType>::rebalance()
 //
 // 
 template<class ItemType>
-void BinarySearchTree<ItemType>::buildBalancedTree(const auto &l, const auto& mid, const auto &r, const ItemType arr[])
+void BinarySearchTree<ItemType>::buildBalancedTree(const int &l, const int& mid, const int &r, const ItemType arr[])
 {
 	/*if(mid >= 0 && mid < numElems  )*/ this->add(arr[mid]);
-	if( l <= mid - 1 )buildBalancedTree( l, (l + mid - 1) / 2, mid - 1, arr );
-	if(r >= mid + 1 )buildBalancedTree( mid + 1, (r + mid + 1) / 2, r, arr );	
+	if( l <= mid - 1 )buildBalancedTree(l, (l + mid - 1) / 2, mid - 1, arr);
+	if( r >= mid + 1 )buildBalancedTree(mid + 1, (r + mid + 1) / 2, r, arr);
 }
 
 // bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n)
@@ -319,9 +328,9 @@ void BinarySearchTree<ItemType>::buildBalancedTree(const auto &l, const auto& mi
 // 
 template<class ItemType>
 bool BinarySearchTree<ItemType>::readTree(ItemType arr[], const int& n)
-{ 	
-	buildBalancedTree(0, (n-1) / 2, n-1, arr);
-	return true; 
+{
+	buildBalancedTree(0, (n - 1) / 2, n - 1, arr);
+	return true;
 }
 
 //
@@ -371,6 +380,17 @@ bool BinarySearchTree<ItemType>::operator==(const BinarySearchTree<ItemType>& ot
 	return matchyFunk((this->rootPtr), (other.rootPtr));
 }
 
+//
+//  
+//
+// 
+template<class ItemType>
+bool BinarySearchTree<ItemType>::operator==(const BinarySearchTree<ItemType>* other) const
+{
+	if( this == other || this->rootPtr == other->rootPtr )return true;// first, the easy check against memory addresses
+	return matchyFunk((this->rootPtr), (other->rootPtr)); // if we get here, we gotta compare node by node
+}
+
 // bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local, BinaryNode<ItemType>* remote)
 // 
 // Helper function the performs tail-recursion in search for dissimilarities between this and the
@@ -408,3 +428,11 @@ bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local,
 template<class ItemType>
 bool BinarySearchTree<ItemType>::operator!=(const BinarySearchTree<ItemType>& other) const
 { return !(*this == other); }
+
+//
+//  
+//
+// 
+template<class ItemType>
+bool BinarySearchTree<ItemType>::operator!=(const BinarySearchTree<ItemType>* other) const
+{ return !(*this == *other); }

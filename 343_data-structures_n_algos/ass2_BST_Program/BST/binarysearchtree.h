@@ -90,10 +90,11 @@ public:
 
 	// trees are equal if they have the same structure
 	// AND the same item values at all the nodes
-	bool operator==(const BinarySearchTree<ItemType> &rhs) const;
-
+	bool operator==(const BinarySearchTree<ItemType> &other) const;
+	bool operator==(const BinarySearchTree<ItemType>* other) const;
 	// not == to each other
-	bool operator!=(const BinarySearchTree<ItemType> &rhs) const;
+	bool operator!=(const BinarySearchTree<ItemType> &other) const;
+	bool operator!=(const BinarySearchTree<ItemType>* other) const;
 
 	// dispaly a sideways ascii representation of tree
 	void displaySideways() const;
@@ -123,7 +124,7 @@ private:
 	// other parameter that was passed into the operator== overload.
 	bool matchyFunk(BinaryNode<ItemType>* local, BinaryNode<ItemType>* remote) const;
 
-	void buildBalancedTree(const auto &l, const auto& mid, const auto &r, const ItemType arr[]);
+	void buildBalancedTree(const int &l, const int& mid, const int &r, const ItemType arr[]);
 };
 
 #include "binarysearchtree.cpp"
