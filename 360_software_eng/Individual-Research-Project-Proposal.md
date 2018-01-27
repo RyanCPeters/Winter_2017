@@ -16,7 +16,7 @@ I've heard a lot of people talking about open source code bases as being the way
 
 Currently, there are a stagaring number of "citizen scientists" in the world that are capable of stepping up to the plate and making significant individual contributions towards solving major obsticals to both industry and society. But when everybody is independently racing to the next big solution, we run the risk of missing the mark and instead of creating a common solution we can all support, we get a situation similar to what's seen in the xkcd comic's "Standards" skit.
 
-![xkcd: Standard](https://imgs.xkcd.com/comics/standards.png)"Fortunately, the charging one has been solved now that we've all standardized on mini-USB, or is it micro-USB? Shit."
+![xkcd: Standard](https://imgs.xkcd.com/comics/standards.png "Fortunately, the charging one has been solved now that we've all standardized on mini-USB, or is it micro-USB? Shit.")
 
 In researching this subject, I hope to be able to determine, for myself at least, if I will choose to a part of the open source movement, or if I will try to mitigate its percieved damages.
 
