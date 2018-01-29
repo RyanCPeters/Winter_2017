@@ -23,12 +23,34 @@ private:
 		NodeData* data;						// pointer to data object
 		Node* left;							// left subtree pointer
 		Node* right;						// right subtree pointer
+
+		bool isLeaf() {
+			return left == nullptr && right == nullptr;
+		}
+
+		Node& operator=(const Node* rhs) {
+			*this = *rhs;
+			return *this;
+		}
+
+		Node& operator=(const Node& rhs) {
+			if( this != &rhs ) {
+				data = rhs.data;
+			}
+			return *this;
+		}
+
+		bool operator==(const Node& rhs) {
+			return *data == *(rhs.data);
+		}
 	};
 	Node* root;								// root of the tree
 
 											// utility functions
 	void inorderHelper(/*...*/) const;
 	void sideways(Node*, int) const;			// provided below, helper for displaySideways()
+	void treeDeleter(Node* del);
+	int treeHeight, numElems;
 	
 };
 
@@ -40,6 +62,8 @@ private:
 void BinTree::displaySideways() const {
 	sideways(root, 0);
 }
+
+
 
 //---------------------------- Sideways -------------------------------------
 // Helper method for displaySideways

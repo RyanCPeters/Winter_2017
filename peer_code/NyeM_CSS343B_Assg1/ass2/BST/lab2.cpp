@@ -16,9 +16,43 @@ using namespace std;
 
 const int ARRAYSIZE = 100;
 
-//global function prototypes
-void buildTree(BinTree&, ifstream&);      // 
-void initArray(NodeData*[]);             // initialize array to NULL
+//------------------------------- buildTree ----------------------------------
+// YOU COMMENT
+
+// To build a tree, read strings from a line, terminating when "$$" is
+// encountered. Since there is some work to do before the actual insert that is
+// specific to the client problem, it's best that building a tree is not a 
+// member function. It's a global function. 
+
+void buildTree(BinTree& T, ifstream& infile) {
+	string s;
+
+	for( ;;) {
+		infile >> s;
+		cout << s << ' ';
+		if( s == "$$" ) break;                // at end of one line
+		if( infile.eof() ) break;             // no more lines of data
+		NodeData* ptr = new NodeData(s);     // NodeData constructor takes string
+											 // would do a setData if there were more than a string
+
+		bool success = T.insert(ptr);
+		if( !success )
+			delete ptr;                       // duplicate case, not inserted 
+	}
+}
+
+
+
+//------------------------------- initArray ----------------------------------
+// initialize the array of NodeData* to NULL pointers
+
+void initArray(NodeData* ndArray[]) {
+	for( int i = 0; i < ARRAYSIZE; i++ )
+		ndArray[i] = NULL;
+}
+
+
+
 
 int main() {
 	// create file object infile and open it
@@ -93,37 +127,4 @@ int main() {
 	}
 
 	return 0;
-}
-
-//------------------------------- buildTree ----------------------------------
-// YOU COMMENT
-
-// To build a tree, read strings from a line, terminating when "$$" is
-// encountered. Since there is some work to do before the actual insert that is
-// specific to the client problem, it's best that building a tree is not a 
-// member function. It's a global function. 
-
-void buildTree(BinTree& T, ifstream& infile) {
-	string s;
-
-	for (;;) {
-		infile >> s;
-		cout << s << ' ';
-		if (s == "$$") break;                // at end of one line
-		if (infile.eof()) break;             // no more lines of data
-		NodeData* ptr = new NodeData(s);     // NodeData constructor takes string
-		// would do a setData if there were more than a string
-
-		bool success = T.insert(ptr);
-		if (!success)
-			delete ptr;                       // duplicate case, not inserted 
-	}
-}
-
-//------------------------------- initArray ----------------------------------
-// initialize the array of NodeData* to NULL pointers
-
-void initArray(NodeData* ndArray[]) {
-	for (int i = 0; i < ARRAYSIZE; i++)
-		ndArray[i] = NULL;
 }

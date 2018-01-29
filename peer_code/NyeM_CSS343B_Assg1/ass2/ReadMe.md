@@ -12,10 +12,6 @@ Assignment 2, 9 points (9% of final grade)
 
 ---
 
-[TOC]
-
----
-
 Part 1 (7 pts). Programming
 ---
 
