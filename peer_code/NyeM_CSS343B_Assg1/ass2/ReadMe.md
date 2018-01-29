@@ -67,7 +67,9 @@ Develop the class:
   - The assignment operator (=) to assign one tree to another.
   - The equality and inequality operators (==, !=). Define two trees to be equal if they have the same data and same structure. 
       - For example:
-      
+
+---
+
 ```
 
  T1: b  T2: b  T3: c  T4: b     T1 == T2
@@ -77,6 +79,8 @@ Develop the class:
  a
 
 ```
+
+---
 
 3. Accessors:
   - (a) Overload `operator<<` to display the tree using inorder traversal. 
@@ -106,6 +110,9 @@ Develop the class:
       - The root (recursively) is at (low+high)/2 where low is the lowest subscript of the array range and high is the highest.
       - void arrayToBSTree(NodeData* []);
       - After the call to arrayToBSTree, the array in figure 2 should be filled with `NULL`s and the tree built should look like:
+
+---
+
 ```
                    not
                /         \
@@ -115,6 +122,9 @@ Develop the class:
           \    /  \    /  \    /   \
          eee iii   m ooo   r  tttt  z
 ```
+
+---
+
 ### List of supporting files
 1. __data2.txt__: input data file;
 2. __nodedata.h__ and __nodedata.cpp__: NodeData class;
