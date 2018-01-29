@@ -64,21 +64,26 @@ Develop the class:
   - BinTree::BinTree(const BinTree& bt);
   - BinTree::~BinTree();
 2. Overload operators:
-  - The assignment operator (=) to assign one tree to another.
+  - The assignment operator, `operator=`, to assign one tree to another.
   - The equality and inequality operators (==, !=). Define two trees to be equal if they have the same data and same structure. 
       - For example:
 
 ---
 
 ```
+Given:
 
- T1: b  T2: b  T3: c  T4: b     T1 == T2
-    / \    / \    /      / \    T1 != T3 != T4
-   a   c  a   c  b      c   a   (Note that T4 is not a Bin Search Tree)
-  /
- a
+ T1: b   T2: b   T3: c  T4: b     
+    / \     / \     /      / \    
+   a   c   a   c   b      c   a   
+                  /
+                 a
 
+T1 == T2 
+T1 != T3 != T4
+(Note that T4 is not a Bin Search Tree)
 ```
+
 
 ---
 
