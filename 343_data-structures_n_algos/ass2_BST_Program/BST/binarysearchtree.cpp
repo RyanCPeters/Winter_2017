@@ -312,6 +312,7 @@ void BinarySearchTree<ItemType>::inorderTraverse(std::function<void(const ItemTy
 template<class ItemType>
 void BinarySearchTree<ItemType>::rebalance()
 {
+	if( numElems < 1 )return;
 	ItemType* arr = new ItemType[numElems];
 	int pos = 0, hiBound = numElems; // we need hiBound to retain the node count after we clear the tree.
 	auto func = [&](const ItemType& itm) {arr[pos++] = itm; };
