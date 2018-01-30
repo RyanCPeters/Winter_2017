@@ -47,17 +47,16 @@ Assignment 2: Cryptography
       + `n = p*q -> 17*31 = 527 -> n = 527`
       + `Ø(n) = ((p - 1)*(q - 1)) -> ((17-1)*(31-1)) = 16*30 = 480 -> Ø(n) = 480`
       + given `e = 11;` confirming: `gcd(Ø(n),11) -> gcd(480,11) = 7 -> gcd(11,7) = 4 -> gcd(7,4) = 3 -> gcd(4,3) = 1;`
-      + find d: `(d*e)mod(Ø(n)) ?= 1; (7*d)mod(20) = 1; 0  <= d < 20`
-        * `7*0(mod 20) = 0; 7*1(mod 20) = 7; 7*2(mod 20) = 14; 7*3(mod 20) = 1;`
-        * `d = 3`
-      + given `M = 5;` Encrypt M:
-        * `C = M^e(mod n); C = 5^7(mod 527)`
-          - `-> ((5^3(mod 527))*(5^3(mod 527))*5(mod 527))(mod 527) =  (125(mod 527) * 125(mod 527)*5)(mod 527)` note: `125(mod 527) = ;`
-          - `-> 26*26*5 = 52780` 
-          - `-> C = ;`
+      + find d: `(d*e)mod(Ø(n)) ?= 1; (11*d)mod(527) = 1; 0  <= d < 527`
+        * `11*0(mod 527) = 0; 11*1(mod 527) = 11; 11*2(mod 527) = 21;... 11*48(mod 527) = 1;`
+        * `d = 48`
+      + given `M = 2;` Encrypt M:
+        * `C = M^e(mod n) -> 2^11(mod 527) = 467;`
+          - `-> C = 467;`
       + Thus, decrypting `C` back into `M` becomes:
-        * `M = C^d(mod n); M = 52780^3(mod 527) -> (52780(mod 527)*52780(mod 527)*52780(mod 527))(mod 527) = (14*14*14)(mod 527) -> (((14*14)(mod 527))*(14(mod 527)))(mod 527) = (196(mod 527)*14)(mod 527)` note: `196(mod 527) = 31;` So, `(31*14) = 434; 434(mod 527) = 5 = M`
+        * `M = C^d(mod n); M = 467^48(mod 527) = 256`
 3. In a public‐key system using RSA, you intercept the ciphertext C = 10 sent to a user whose public key is e = 5, n = 35.What is the plaintext M?
+  - 
 4. In an RSA system, the public key of a given user is e = 31, n = 3599.What is the private key of this user?
 5. Consider a Diffie‐Hellman scheme with a common prime q = 11 and a primitive root α =2.
     - If user A has public key YA =9, what is A’s private key XA?
