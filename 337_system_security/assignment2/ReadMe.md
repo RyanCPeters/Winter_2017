@@ -17,8 +17,46 @@ Assignment 2: Cryptography
           - _**Authentication with Bob cheating**_: Bob claims that he received a message x with a valid signature auth(x) from Alice (e.g., “Transfer $1000 from Alice to Bob”) but Alice claims she has never sent it. Can Alice clear this question in either case?
 2. Perform encryption and decryption using the RSA algorithm (Figure 3.10) for the following:
     - `p = 3;` `q = 11;` `e = 7;` `M =5;`
+      + `n = p*q -> 3*11 = 33 -> n = 33`
+      + `Ø(n) = ((p - 1)*(q - 1)) -> ((3-1)*(11-1)) = 2*10 = 20 -> Ø(n) = 20`
+      + given `e = 7;` confirming: `gcd(Ø(n),e) -> gcd(20,7) = 6 -> gcd(7,6) = 1;`
+      + find d: `(e*d)mod(Ø(n)) ?= 1; (7*d)mod(20) = 1; 0  <= d < 20`
+        * `7*0(mod 20) = 0; 7*1(mod 20) = 7; 7*2(mod 20) = 14; 7*3(mod 20) = 1;`
+        * `d = 3`
+      + given `M = 5;` Encrypt M:
+        * `C = M^e(mod n); C = 5^7(mod 33)`
+          - `-> ((5^3(mod 33))*(5^3(mod 33))*5(mod 33))(mod 33) =  (125(mod 33) * 125(mod 33)*5)(mod 33)` note: `125(mod 33) = 26;`
+          - `-> (26*26*5)(mod 33) = 3380(mod 33) = 14` 
+          - `-> C = 14;`
+      + Thus, decrypting `C` back into `M` becomes:
+        * `M = C^d(mod n); M = 14^3(mod 33) -> ((14*14)(mod 33)*14)(mod 33) = (196(mod 33)*14)(mod 33)` note: `196(mod 33) = 31;` So, `(31*14) = 434; 434(mod 33) = 5 = M`
+
     - `p= 11;` `q = 13;` `e= 11;` `M= 7;`
+      + `n = p*q -> 11*13 = 143 -> n = 143`
+      + `Ø(n) = ((p - 1)*(q - 1)) -> ((11-1)*(13-1)) = 10*12 = 120 -> Ø(n) = 120`
+      + given `e = 11;` confirming: `gcd(Ø(n),e) -> gcd(120,11) = 10 -> gcd(11,10) = 1;`
+      + find d: `(e*d)mod(Ø(n)) ?= 1; (11*d)mod(120) = 1; 0  <= d < 120`
+        * `11*0(mod 120) = 0; 11*1(mod 120) = 11; 11*2(mod 120) = 22;...; 11*11(mod 120) = 1;`
+        * `d = 11`
+      + given `M = 7;` Encrypt M:
+        * `C = M^e(mod n); C = 7^11(mod 143) = 106;` used a calculator this time :P
+        * `-> C = 106;`
+      + Thus, decrypting `C` back into `M` becomes:
+        * `M = C^d(mod n); M = 106^11(mod 143) = 7 = M`
     - `p= 17;` `q = 31;` `e = 7;` `M =2;`
+      + `n = p*q -> 17*31 = 527 -> n = 527`
+      + `Ø(n) = ((p - 1)*(q - 1)) -> ((17-1)*(31-1)) = 16*30 = 480 -> Ø(n) = 480`
+      + given `e = 11;` confirming: `gcd(Ø(n),11) -> gcd(480,11) = 7 -> gcd(11,7) = 4 -> gcd(7,4) = 3 -> gcd(4,3) = 1;`
+      + find d: `(d*e)mod(Ø(n)) ?= 1; (7*d)mod(20) = 1; 0  <= d < 20`
+        * `7*0(mod 20) = 0; 7*1(mod 20) = 7; 7*2(mod 20) = 14; 7*3(mod 20) = 1;`
+        * `d = 3`
+      + given `M = 5;` Encrypt M:
+        * `C = M^e(mod n); C = 5^7(mod 527)`
+          - `-> ((5^3(mod 527))*(5^3(mod 527))*5(mod 527))(mod 527) =  (125(mod 527) * 125(mod 527)*5)(mod 527)` note: `125(mod 527) = ;`
+          - `-> 26*26*5 = 52780` 
+          - `-> C = ;`
+      + Thus, decrypting `C` back into `M` becomes:
+        * `M = C^d(mod n); M = 52780^3(mod 527) -> (52780(mod 527)*52780(mod 527)*52780(mod 527))(mod 527) = (14*14*14)(mod 527) -> (((14*14)(mod 527))*(14(mod 527)))(mod 527) = (196(mod 527)*14)(mod 527)` note: `196(mod 527) = 31;` So, `(31*14) = 434; 434(mod 527) = 5 = M`
 3. In a public‐key system using RSA, you intercept the ciphertext C = 10 sent to a user whose public key is e = 5, n = 35.What is the plaintext M?
 4. In an RSA system, the public key of a given user is e = 31, n = 3599.What is the private key of this user?
 5. Consider a Diffie‐Hellman scheme with a common prime q = 11 and a primitive root α =2.
