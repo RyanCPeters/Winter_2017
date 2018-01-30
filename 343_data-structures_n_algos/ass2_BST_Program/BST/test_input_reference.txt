@@ -1,0 +1,10 @@
+alphabet_test_string.txt
+
+g++ -std=c++14 -g -O1 -Wall -Wextra ass2.cpp -o grindAss2
+valgrind --leak-check=full --show-leak-kinds=all ./grindAss2
+
+script output.txt
+g++ -std=c++14 -g -O1 -Wall -Wextra ass2.cpp -o grindAss2
+./hello
+valgrind --leak-check=full --show-leak-kinds=all ./grindAss2
+CTRL-d
