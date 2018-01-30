@@ -44,16 +44,13 @@ public:
 	BinarySearchTree();
 
 	// constructor, tree with root
-	explicit BinarySearchTree(const ItemType& rootItem);
+	BinarySearchTree(const ItemType& rootItem);
 
 	// copy consturctor
 	BinarySearchTree(const BinarySearchTree<ItemType>& bst);
 
 	// destructor
 	virtual ~BinarySearchTree();
-
-	// overloading operator=; assignment operator
-	BinarySearchTree<ItemType> operator=(const BinarySearchTree<ItemType>& otherBST);
 
 	// true if no nodes
 	bool isEmpty() const;
@@ -133,3 +130,4 @@ private:
 #include "binarysearchtree.cpp"
 
 #endif // BINARYSEARCHTREE_H
+
