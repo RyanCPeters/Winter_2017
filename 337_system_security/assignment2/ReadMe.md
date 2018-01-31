@@ -16,19 +16,21 @@ Assignment 2: Cryptography
           - _**Authentication with Bob cheating**_: Bob claims that he received a message x with a valid signature auth(x) from Alice (e.g., “Transfer $1000 from Alice to Bob”) but Alice claims she has never sent it. Can Alice clear this question in either case?
 2. Perform encryption and decryption using the RSA algorithm (Figure 3.10) for the following:
     - `p = 3;` `q = 11;` `e = 7;` `M =5;`
-      + `n = p*q -> 3*11 = 33 -> n = 33`
-      + `Ø(n) = ((p - 1)*(q - 1)) -> ((3-1)*(11-1)) = 2*10 = 20 -> Ø(n) = 20`
-      + given `e = 7;` confirming: `gcd(Ø(n),e) -> gcd(20,7) = 6 -> gcd(7,6) = 1;`
-      + find d: `(e*d)mod(Ø(n)) ?= 1; (7*d)mod(20) = 1; 0  <= d < 20`
-        * `7*0(mod 20) = 0; 7*1(mod 20) = 7; 7*2(mod 20) = 14; 7*3(mod 20) = 1;`
-        * `d = 3`
-      + given `M = 5;` Encrypt M:
-        * `C = M^e(mod n); C = 5^7(mod 33)`
-          - `-> ((5^3(mod 33))*(5^3(mod 33))*5(mod 33))(mod 33) =  (125(mod 33) * 125(mod 33)*5)(mod 33)` note: `125(mod 33) = 26;`
-          - `-> (26*26*5)(mod 33) = 3380(mod 33) = 14` 
-          - `-> C = 14;`
+      + first, define `n` and `Ø(n)`
+          - `n = p*q -> 3*11 = 33 -> n = 33`
+          - `Ø(n) = ((p - 1)*(q - 1)) -> ((3-1)*(11-1)) = 2*10 = 20 -> Ø(n) = 20`
+      + Verify `e`, then define `d`:
+          - given `e = 7;` confirming: `gcd(Ø(n),e) -> gcd(20,7) = 6 -> gcd(7,6) = 1;`
+          - find d: `(e*d)mod(Ø(n)) ?= 1; (7*d)mod(120) = 1; 0  < d < 20`
+              * `7*1(mod 20) = 7; 7*2(mod 20) = 22; 7*3(mod 20) = 1;`
+              * `d = 3`
+      + Given `M`, derive `C`: 
+          * given `M = 5;` Encrypt M:
+              * `C = M^e(mod n); C = 5^7(mod 33) -> (5^3(mod 33)*5^3(mod 33)*5)(mod 33) = (2*3*125(mod 33)))(mod 33);` note: `125(mod 33) = 26;` so `-> (3*52)(mod 33) = (3*19)(mod 33) = 57 mod 33 = 14`
+              * `-> C = 14;`
       + Thus, decrypting `C` back into `M` becomes:
-        * `M = C^d(mod n); M = 14^3(mod 33) -> ((14*14)(mod 33)*14)(mod 33) = (196(mod 33)*14)(mod 33)` note: `196(mod 33) = 31;` So, `(31*14) = 434; 434(mod 33) = 5 = M`
+        * `M = C^d(mod n); M = 14^3(mod 33) -> (14*196 mod 33)(mod 33) = (14*31)(mod 33) = 434 mod 33 = 5;`
+        * Thus, `M = C^d(mod n) = 14^3( mod 33) = 5 = M;`
 
     - `p= 11;` `q = 13;` `e= 11;` `M= 7;`
       + first, define `n` and `Ø(n)`
@@ -36,26 +38,30 @@ Assignment 2: Cryptography
           - `Ø(n) = ((p - 1)*(q - 1)) -> ((11-1)*(13-1)) = 10*12 = 120 -> Ø(n) = 120`
       + Verify `e`, then define `d`:
           - given `e = 11;` confirming: `gcd(Ø(n),e) -> gcd(120,11) = 10 -> gcd(11,10) = 1;`
-          - find d: `(e*d)mod(Ø(n)) ?= 1; (11*d)mod(120) = 1; 0  <= d < 120`
-              * `11*0(mod 120) = 0; 11*1(mod 120) = 11; 11*2(mod 120) = 22;...; 11*11(mod 120) = 1;`
+          - find d: `(e*d)mod(Ø(n)) ?= 1; (11*d)mod(120) = 1; 0  < d < 120`
+              * `11*1(mod 120) = 11; 11*2(mod 120) = 22;...; 11*11(mod 120) = 1;`
               * `d = 11`
       + Given `M`, derive `C`: 
           * given `M = 7;` Encrypt M:
               * `C = M^e(mod n); C = 7^11(mod 143) = 106;` used a calculator this time :P
               * `-> C = 106;`
       + Thus, decrypting `C` back into `M` becomes:
-        * `M = C^d(mod n); M = 106^11(mod 143) = 7 = M`
+        * `M = C^d(mod n) = 106^11(mod 143) = 7 = M`
     - `p= 17;` `q = 31;` `e = 7;` `M =2;`
-      + `n = p*q -> 17*31 = 527 -> n = 527`
-      + `Ø(n) = ((p - 1)*(q - 1)) -> ((17-1)*(31-1)) = 16*30 = 480 -> Ø(n) = 480`
-      + given `e = 11;` confirming: `gcd(Ø(n),11) -> gcd(480,11) = 7 -> gcd(11,7) = 4 -> gcd(7,4) = 3 -> gcd(4,3) = 1;`
-      + find d: `(d*e)mod(Ø(n)) ?= 1; (11*d)mod(527) = 1; 0  <= d < 527`
-        * `11*0(mod 527) = 0; 11*1(mod 527) = 11; 11*2(mod 527) = 21;... 11*48(mod 527) = 1;`
-        * `d = 48`
-      + given `M = 2;` Encrypt M:
-        * `C = M^e(mod n) -> 2^11(mod 527) = 467;`
-          - `-> C = 467;`
+      + first, define `n` and `Ø(n)`
+          - `n = p*q -> 17*31 = 527 -> n = 527`
+          - `Ø(n) = ((p - 1)*(q - 1)) -> ((17-1)*(31-1)) = 16*30 = 480 -> Ø(n) = 480`
+      + Verify `e`, then define `d`:
+          - given `e = 7;` confirming: `gcd(Ø(n),e) -> gcd(480,7) = 4 -> gcd(7,4) = 3 -> gcd(4,3) = 1;`
+          - find d: `(e*d)mod(Ø(n)) ?= 1; (7*d)mod(480) = 1; 0  < d < 480`
+              * `7*1(mod 120) = 7; 7*2(mod 120) = 14;...; 7*69(mod 480) = 3; ...; 7*136;`
+              * `d = 48`
+      + Given `M`, derive `C`: 
+          * given `M = 2;` Encrypt M:
+              * `C = M^e(mod n); C = 2^7(mod 527) = C; 2^7 = 128; 128 mod 527
+              * `-> C = 373;`
       + Thus, decrypting `C` back into `M` becomes:
+        * `M = C^d(mod n) = 106^11(mod 143) = 7 = M`
         * `M = C^d(mod n); M = 467^48(mod 527) = 256`
 3. In a public‐key system using RSA, you intercept the ciphertext C = 10 sent to a user whose public key is e = 5, n = 35.What is the plaintext M?
   - 
