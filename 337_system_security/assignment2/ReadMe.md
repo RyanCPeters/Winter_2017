@@ -7,8 +7,7 @@ Assignment 2: Cryptography
 1. In this problem, we will compare the security services that are provided by Digital Signatures (DS) and Message Authentication Codes (MAC).
   - We assume that Oscar is able to observe all messages send from Alice to Bob and vice versa. 
   - Oscar has no knowledge of any keys but the public one in case of DS. 
-  - State whether and how: 
-      + (i) DS and (ii) MAC protect against each attack. 
+  - State whether and how (i) DS and (ii) MAC protect against each attack: 
       + The value `auth(x)` is computed with a DS or a MAC algorithm, respectively.
           - **_Message Integrity_**: Alice sends a message `x` “Transfer $1000 to Mark” in the clear and also sends `auth(x)` to Bob. Oscar intercepts the message and replaces “Mark” with “Oscar”. Will Bob detect this?
               + (i): auth(x) = 
@@ -32,15 +31,18 @@ Assignment 2: Cryptography
         * `M = C^d(mod n); M = 14^3(mod 33) -> ((14*14)(mod 33)*14)(mod 33) = (196(mod 33)*14)(mod 33)` note: `196(mod 33) = 31;` So, `(31*14) = 434; 434(mod 33) = 5 = M`
 
     - `p= 11;` `q = 13;` `e= 11;` `M= 7;`
-      + `n = p*q -> 11*13 = 143 -> n = 143`
-      + `Ø(n) = ((p - 1)*(q - 1)) -> ((11-1)*(13-1)) = 10*12 = 120 -> Ø(n) = 120`
-      + given `e = 11;` confirming: `gcd(Ø(n),e) -> gcd(120,11) = 10 -> gcd(11,10) = 1;`
-      + find d: `(e*d)mod(Ø(n)) ?= 1; (11*d)mod(120) = 1; 0  <= d < 120`
-        * `11*0(mod 120) = 0; 11*1(mod 120) = 11; 11*2(mod 120) = 22;...; 11*11(mod 120) = 1;`
-        * `d = 11`
-      + given `M = 7;` Encrypt M:
-        * `C = M^e(mod n); C = 7^11(mod 143) = 106;` used a calculator this time :P
-        * `-> C = 106;`
+      + first, define `n` and `Ø(n)`
+          - `n = p*q -> 11*13 = 143 -> n = 143`
+          - `Ø(n) = ((p - 1)*(q - 1)) -> ((11-1)*(13-1)) = 10*12 = 120 -> Ø(n) = 120`
+      + Verify `e`, then define `d`:
+          - given `e = 11;` confirming: `gcd(Ø(n),e) -> gcd(120,11) = 10 -> gcd(11,10) = 1;`
+          - find d: `(e*d)mod(Ø(n)) ?= 1; (11*d)mod(120) = 1; 0  <= d < 120`
+              * `11*0(mod 120) = 0; 11*1(mod 120) = 11; 11*2(mod 120) = 22;...; 11*11(mod 120) = 1;`
+              * `d = 11`
+      + Given `M`, derive `C`: 
+          * given `M = 7;` Encrypt M:
+              * `C = M^e(mod n); C = 7^11(mod 143) = 106;` used a calculator this time :P
+              * `-> C = 106;`
       + Thus, decrypting `C` back into `M` becomes:
         * `M = C^d(mod n); M = 106^11(mod 143) = 7 = M`
     - `p= 17;` `q = 31;` `e = 7;` `M =2;`
@@ -58,6 +60,7 @@ Assignment 2: Cryptography
 3. In a public‐key system using RSA, you intercept the ciphertext C = 10 sent to a user whose public key is e = 5, n = 35.What is the plaintext M?
   - 
 4. In an RSA system, the public key of a given user is e = 31, n = 3599.What is the private key of this user?
-5. Consider a Diffie‐Hellman scheme with a common prime q = 11 and a primitive root α =2.
-    - If user A has public key YA =9, what is A’s private key XA?
-    - If user B has public key YB = 3, what is the shared secret key K?
+  - 
+5. Consider a Diffie‐Hellman scheme with a common prime `q = 11` and a primitive root `α = 2`.
+    - If user `A` has public key `YA = 9`, what is `A`’s private key `XA`?
+    - If user `B` has public key `YB = 3`, what is the shared secret key `K`?
