@@ -11,6 +11,7 @@ Assignment 2: Cryptography
     - _**Authentication with Bob cheating**_ Bob claims that he received a message x with a valid signature auth(x) from Alice (e.g., “Transfer $1000 from Alice to Bob”) but Alice claims she has never sent it. Can Alice clear this question in either case?
 2. Perform encryption and decryption using the RSA algorithm (Figure 3.10) for the following:
     - `p = 3;` `q = 11;` `e = 7;` `M =5;`
+      + $$ d*e = \phi((p-1)*(q-1)) $$
     - `p= 11;` `q = 13;` `e= 11;` `M= 7;`
     - `p= 17;` `q = 31;` `e = 7;` `M =2;`
 3. In a public‐key system using RSA, you intercept the ciphertext C = 10 sent to a user whose public key is e = 5, n = 35.What is the plaintext M?
