@@ -68,15 +68,33 @@ Assignment 2: Cryptography
         * `-> (((2^7)^7)^7(mod 527) -> 128^7 mod 527 = 512; 512^7 mod 527 = 349; 349^7 mod 527 = 2`
         * Thus, `M = C^d(mod n) -> ((128^7 mod 527)^7 mod 527)^7 mod 527 = 2 = M`
         
-3. In a public‐key system using RSA, you intercept the ciphertext C = 10 sent to a user whose public key is e = 5, n = 35.What is the plaintext M?
-  - 
+3. In a public‐key system using RSA, you intercept the ciphertext C = 10 sent to a user whose public key is e = 5, n = 35. What is the plaintext M?
+  - `M = C^d(mod n) - > M = 10^d(mod 35); `
+  - `C = M^e(mod n) -> 10 = M^5(mod 35);` 
+  - `d = e^-1 mod Ø(n) -> d = .2 mod Ø(35);`
+  - `n = p*q;`
+    + Find the prime factors of `35`.
+      * Factors of 35: 1, 5, 7, 35. Prime factors are 5 and 7;
+      * let `p = 5; q = 7`
+      * `Ø(35) = (q-1)(p-1) = 4*6 = 24`
+  - solving for `d`:
+    + `(5*d)mod 24 =? 1; `
+      * `5*1 mod 24 = 5; 5*2 mod 24 = 10; 5*5 mod 24 = 1;`
+      * `-> d = 5;`
+  - solving for `M = C^d(mod n) -> 10^5(mod 35) = 100,000 mod 35 = 5`
+    + `-> M = 5;`
 4. In an RSA system, the public key of a given user is e = 31, n = 3599.What is the private key of this user?
-  - 
+  - find `d`, given `e = 31;` and `n = 3599;`
+    + `Ø(3599) = (q-1)(p-1);`
+      * first identify the factors of `3599 -> 1, 59, 61, 3599`
+        - Now find the paired prime factors of `3599 -> 59 & 61`
+        - let `p = 59;` and let `q = 61;`
+      * thus: `Ø(3599) = (q-1)(p-1) -> (59-1)(61-1) = 58*60 = 3480 = Ø(n)`
+    + Now, find `d`
+      * `-> (d*e)(mod Ø(n)) -> (d*31)(mod 3480) =? 1`
+        - `(31*1)mod 3480 = 31; (31*113)mod 3480 = 23; (31*226)mod 3480 = 46; `
 5. Consider a Diffie‐Hellman scheme with a common prime `q = 11` and a primitive root `α = 2`.
     - If user `A` has public key `YA = 9`, what is `A`’s private key `XA`?
     - If user `B` has public key `YB = 3`, what is the shared secret key `K`?
 
 
-(((2^7)^7)^7)^7
-
-128^7 * 
