@@ -65,7 +65,6 @@ public class Parse_CSS_Hex {
         int charArrSize = 6;
         char charArr[] = new char[charArrSize];
         int red = 0, blue = 0, green = 0, ret = 0;
-
         for (int colorStrIdx = 1, chArIdx = 0; colorStrIdx < stringSize; ++colorStrIdx) {
             char c = colorString.charAt(colorStrIdx);
             switch (stringSize) {
