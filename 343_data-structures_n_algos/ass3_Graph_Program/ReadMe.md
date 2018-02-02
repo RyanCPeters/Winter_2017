@@ -26,8 +26,9 @@ Fixed Jan. 1, 2018: `getEdgeWeight` in `vertex.cpp` had a default value of `= 0`
 The format of the graph files is: 
  
    - an integer indicating the number of edges
-   - followed by a series of lines of the from 
-   - fromVertex and toVertex are strings, edgeWeight is an integer. All the edges are directed and have 0 or larger weights.
+   - followed by a series of lines in the form: 
+     + fromVertex | toVertex | edgeWeight
+     + fromVertex and toVertex are strings, edgeWeight is an integer. All the edges are directed and have 0 or larger weights.
      + The following table contains the data from graph2.txt:
      
 
