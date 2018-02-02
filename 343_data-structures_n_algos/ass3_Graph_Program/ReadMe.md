@@ -1,27 +1,165 @@
-
----
-title: "Ass 3"
-output:
-  html_document
-
----
-
-**DRAFT** -- Some small changes might happen by Feb 1st. Any changes will be highlighted.
+Assignment 3: Graph-Bro'gram ¯\\_(ツ)_/¯
+===
 
 **Due:**  11pm, 11 Feb (end of week 6)
 
-### Graph Program
+Content by: [Yusuf Pisan](http://courses.washington.edu/css343/pisan/)
+---
 
-Implement a Graph class on the template below and test your class for depth-first search, breadth-first search and in djikstra's shortest path.
+formatted to GitHub Flavored Markdown syntax by Ryan Peters
 
-All the public functions for Vertex, Edge and Graph have to be implemented. You can change the private variables and functions as needed. Your program shoulkd compile and run against ass3.cpp provided. You should write your own expanded version of ass3.
+---
+Summary
+---
+IImplement a Graph class on the template below and test your class for depth-first search, breadth-first search and in Djikstra's shortest path.
 
-[vertex.h](code/ass3/vertex.h), [vertex.cpp](code/ass3/vertex.cpp), 
-[edge.h](code/ass3/edge.h), [edge.cpp](code/ass3/edge.cpp), 
-[graph.h](code/ass3/graph.h), [graph.cpp](code/ass3/graph.cpp), 
-[ass3.cpp](code/ass3/ass3.cpp)
+All the public functions for Vertex, Edge and Graph have to be implemented. You can change the private variables and functions as needed. Your program should compile and run against ass3.cpp provided. You should write your own expanded version of ass3.
 
-Sample graph files: [graph0.txt](code/ass3/graph0.txt), [graph1.txt](code/ass3/graph1.txt), [graph2.txt](code/ass3/graph2.txt),
+Fixed: `getEdgeWeight` in `vertex.cpp` had a default value of = 0 for string: 2/1
+
+[vertex.h](./ass3/vertex.h), [vertex.cpp](./ass3/vertex.cpp), 
+[edge.h](./ass3/edge.h), [edge.cpp](./ass3/edge.cpp), 
+[graph.h](./ass3/graph.h), [graph.cpp](./ass3/graph.cpp), 
+[ass3.cpp](./ass3/ass3.cpp)
+
+**Graph file format**  
+The format of the graph files is: 
+ 
+   - an integer indicating the number of edges
+   - followed by a series of lines of the from 
+   - fromVertex and toVertex are strings, edgeWeight is an integer. All the edges are directed and have 0 or larger weights.
+
+     <table>
+       <tr>
+         <th1>fromVertex</th1>
+         <th2>toVertex</th2>
+         <th3>edgeWeight</th3>
+       </tr>
+          <tr1>
+            <td>A</td>
+            <td>B</td>
+            <td>0</td>
+          </tr1>
+          <tr2>
+            <td>A</td>     
+            <td>C</td>     
+            <td>0</td>
+          </tr2>
+          <tr3>
+            <td>A</td>     
+            <td>D</td>     
+            <td>0</td>
+          </tr3>
+          <tr4>
+            <td>B</td>     
+            <td>E</td>     
+            <td>0</td>
+          </tr4>
+          <tr5>
+            <td>B</td>     
+            <td>F</td>     
+            <td>0</td>
+          </tr5>
+          <tr6>
+            <td>C</td>     
+            <td>G</td>     
+            <td>0</td>
+          </tr6>
+          <tr7>
+            <td>D</td>     
+            <td>H</td>     
+            <td>0</td>
+          </tr7>
+          <tr8>
+            <td>D</td>     
+            <td>I</td>     
+            <td>0</td>
+          </tr8>
+          <tr9>
+            <td>F</td>     
+            <td>J</td>     
+            <td>0</td>
+          </tr9>
+          <tr10>
+            <td>G</td>     
+            <td>K</td>     
+            <td>0</td>
+          </tr10>
+          <tr11>
+            <td>G</td>     
+            <td>L</td>     
+            <td>0</td>
+          </tr11>
+          <tr12>
+            <td>H</td>     
+            <td>M</td>     
+            <td>0</td>
+          </tr12>
+          <tr13>
+            <td>I</td>     
+            <td>M</td>     
+            <td>0</td>
+          </tr13>
+          <tr14>
+            <td>I</td>     
+            <td>N</td>     
+            <td>0</td>
+          </tr14>
+          <tr15>
+            <td>O</td>     
+            <td>P</td>     
+            <td>5</td>
+          </tr15>
+          <tr16>
+            <td>O</td>     
+            <td>Q</td>     
+            <td>2</td>
+          </tr16>
+          <tr17>
+            <td>P</td>     
+            <td>R</td>     
+            <td>2</td>
+          </tr17>
+          <tr18>
+            <td>Q</td>     
+            <td>R</td>     
+            <td>1</td>
+          </tr18>
+          <tr19>
+            <td>R</td>     
+            <td>O</td>     
+            <td>1</td>
+          </tr19>
+          <tr20>
+            <td>R</td>     
+            <td>S</td>     
+            <td>3</td>
+          </tr20>
+          <tr21>
+            <td>S</td>     
+            <td>R</td>     
+            <td>1</td>
+          </tr21>
+          <tr22>
+            <td>S</td>     
+            <td>T</td>     
+            <td>2</td>
+          </tr22>
+          <tr23>
+            <td>S</td>     
+            <td>U</td>     
+            <td>3</td>
+          </tr23>
+          <tr24>
+            <td>T</td>     
+            <td>O</td>     
+            <td>8</td>
+          </tr24>
+     </table>
+
+
+Sample graph files: [graph0.txt](./ass3/graph0.txt), [graph1.txt](./ass3/graph1.txt), [graph2.txt](./ass3/graph2.txt)
+
 
 ## Pseudocode
 

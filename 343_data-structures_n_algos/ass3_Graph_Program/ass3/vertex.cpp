@@ -23,7 +23,7 @@ Vertex::Vertex(std::string label)
 
 /** @return  The label of this vertex. */
 std::string Vertex::getLabel() const 
-{}
+{ return ""; }
 
 /** Marks this vertex as visited. */
 void Vertex::visit() 
@@ -63,18 +63,22 @@ int Vertex::getNumberOfNeighbors() const
 { return 0; }
 
 /** Sets current neighbor to first in adjacency list. */
-void Vertex::resetNeighbor() {}
+void Vertex::resetNeighbor() 
+{}
 
 /** Gets this vertex's next neighbor in the adjacency list.
 Neighbors are automatically sorted alphabetically via map
 Returns the vertex label if there are no more neighbors
 @return  The label of the vertex's next neighbor. */
-std::string Vertex::getNextNeighbor() { return "XXX"; }
+std::string Vertex::getNextNeighbor() 
+{ return "XXX"; }
 
 /** Sees whether this vertex is equal to another one.
 Two vertices are equal if they have the same label. */
-bool Vertex::operator==(const Vertex& rightHandItem) const { return true; }
+bool Vertex::operator==(const Vertex& rightHandItem) const 
+{ return true; }
 
 /** Sees whether this vertex is < another one.
 Compares vertexLabel. */
-bool Vertex::operator<(const Vertex& rightHandItem) const { return true; }
+bool Vertex::operator<(const Vertex& rightHandItem) const 
+{ return true; }
