@@ -27,10 +27,12 @@ no pointers to edges created by graph */
 Graph::~Graph() {}
 
 /** return number of vertices */
-int Graph::getNumVertices() const { return 0; }
+int Graph::getNumVertices() const 
+{ return 0; }
 
 /** return number of vertices */
-int Graph::getNumEdges() const { return 0; }
+int Graph::getNumEdges() const 
+{ return 0; }
 
 /** add a new edge between start and end vertex
 if the vertices do not exist, create them
