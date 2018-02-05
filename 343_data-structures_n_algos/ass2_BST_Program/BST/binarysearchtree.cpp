@@ -7,6 +7,9 @@ using namespace std;
 // none of the functions are implemented
 
 
+/// <summary>
+/// Initializes a new instance of the <see cref="BinarySearchTree"/> class.
+/// </summary>
 template<class ItemType>
 BinarySearchTree<ItemType>::BinarySearchTree()
 	:rootPtr(new BinaryNode<ItemType>()), treeHeight(0), numElems(0)
@@ -14,6 +17,9 @@ BinarySearchTree<ItemType>::BinarySearchTree()
 	// ctor
 }
 
+/// <summary>
+/// Finalizes an instance of the <see cref="BinarySearchTree"/> class.
+/// </summary>
 template<class ItemType>
 BinarySearchTree<ItemType>::~BinarySearchTree()
 {
@@ -22,17 +28,28 @@ BinarySearchTree<ItemType>::~BinarySearchTree()
 	delete(rootPtr);
 }
 
+/// <summary>
+/// Initializes a new instance of the <see cref="BinarySearchTree"/> class.
+/// </summary>
+/// <param name="rootItem">The root item.</param>
 template<class ItemType>
 BinarySearchTree<ItemType>::BinarySearchTree(const ItemType& rootItem)
 	:rootPtr(new BinaryNode<ItemType>(rootItem)), treeHeight(1), numElems(1)
 {
 }
 
-// BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& bst) 
-// The copy constructor creates a 1-for-1 copy of the reference pointer bst.
-// 
-// If bst is an empty tree, then we create a basic empty tree in this constructor as well.
-// 
+
+/// <summary>
+///  BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& bst) 
+///
+/// The copy constructor creates a 1-for-1 copy of the reference pointer bst.
+/// 
+/// Initializes a new instance of the <see cref="BinarySearchTree"/> class.
+///
+/// If bst is an empty tree, then we create a basic empty tree in this constructor as well.
+///
+/// </summary>
+/// <param name="bst">The BST.</param>
 template<class ItemType>
 BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& bst)
 {
@@ -90,8 +107,12 @@ BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& b
 	delete(earMark);
 } // end copy constructor
 
-//
-// 
+
+/// <summary>
+/// Operator=s the specified other BST.
+/// </summary>
+/// <param name="otherBST">The other BST.</param>
+/// <returns></returns>
 template<class ItemType>
 BinarySearchTree<ItemType> BinarySearchTree<ItemType>::operator=(const BinarySearchTree<ItemType>& otherBST)
 {
@@ -99,10 +120,20 @@ BinarySearchTree<ItemType> BinarySearchTree<ItemType>::operator=(const BinarySea
 	return BinarySearchTree<ItemType>();
 }
 
+/// <summary>
+/// Determines whether this instance is empty.
+/// </summary>
+/// <returns>
+///   <c>true</c> if this instance is empty; otherwise, <c>false</c>.
+/// </returns>
 template<class ItemType>
 bool BinarySearchTree<ItemType>::isEmpty() const
 { return numElems == 0; }
 
+/// <summary>
+/// Gets the height.
+/// </summary>
+/// <returns></returns>
 template<class ItemType>
 int BinarySearchTree<ItemType>::getHeight() const
 {
@@ -110,12 +141,21 @@ int BinarySearchTree<ItemType>::getHeight() const
 }
 
 
+/// <summary>
+/// Gets the number of nodes.
+/// </summary>
+/// <returns></returns>
 template<class ItemType>
 int BinarySearchTree<ItemType>::getNumberOfNodes() const
 {
 	return numElems;
 }
 
+/// <summary>
+/// Adds the specified item.
+/// </summary>
+/// <param name="item">The item.</param>
+/// <returns></returns>
 template<class ItemType>
 bool BinarySearchTree<ItemType>::add(const ItemType& item)
 {
@@ -172,6 +212,10 @@ bool BinarySearchTree<ItemType>::add(const ItemType& item)
 	return true;
 }
 
+/// <summary>
+/// Chains the deletion.
+/// </summary>
+/// <param name="del">The delete.</param>
 template<class ItemType>
 void chainDeletion(BinaryNode<ItemType>* del)
 {
@@ -180,9 +224,12 @@ void chainDeletion(BinaryNode<ItemType>* del)
 	delete del;
 }
 
-// void BinarySearchTree<ItemType>::clear()
-// calls the private function chainDeletion, which recursively seeks out leaves in the tree and
-// starts to delete the tree on back towards the root.
+/// <summary>
+/// void BinarySearchTree<ItemType>::clear()
+/// calls the private function chainDeletion, which recursively seeks out leaves in the tree and
+/// starts to delete the tree on back towards the root.
+/// Clears this instance.
+/// </summary>
 template<class ItemType>
 void BinarySearchTree<ItemType>::clear()
 {
@@ -193,6 +240,13 @@ void BinarySearchTree<ItemType>::clear()
 
 
 
+/// <summary>
+/// Determines whether [contains] [the specified item].
+/// </summary>
+/// <param name="item">The item.</param>
+/// <returns>
+///   <c>true</c> if [contains] [the specified item]; otherwise, <c>false</c>.
+/// </returns>
 template<class ItemType>
 bool BinarySearchTree<ItemType>::contains(const ItemType& item) const
 {
@@ -214,6 +268,12 @@ bool BinarySearchTree<ItemType>::contains(const ItemType& item) const
 	return itm == item;
 }
 
+/// <summary>
+/// Places the node.
+/// </summary>
+/// <param name="subTreePtr">The sub tree PTR.</param>
+/// <param name="newNodePtr">The new node PTR.</param>
+/// <returns></returns>
 template<class ItemType>
 BinaryNode<ItemType>* BinarySearchTree<ItemType>::placeNode(BinaryNode<ItemType>* subTreePtr,
 															BinaryNode<ItemType>* newNodePtr)
@@ -226,9 +286,16 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::placeNode(BinaryNode<ItemType>
 	return nullptr;
 }  // end placeNode
 
-// BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>* subTreePtr, 
-//                                                            const ItemType& target) const
-// return nullptr if can't find a node containing the given value.
+
+/// <summary>
+/// BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>* subTreePtr, 
+///                                                            const ItemType& target) const
+/// return nullptr if can't find a node containing the given value.
+/// Finds the node.
+/// </summary>
+/// <param name="subTreePtr">The sub tree PTR.</param>
+/// <param name="target">The target.</param>
+/// <returns></returns>
 template<class ItemType>
 BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>* subTreePtr,
 														   const ItemType& target) const
@@ -244,12 +311,17 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>*
 	}
 }  // end findNode
 
-// void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType&)) const
-//
-//	This function simply traverses the BinarySearchTree belonging to `this` and 
-//	passes the nodes into the parameter visit (a function reference) which will then
-//	perform some black box action on the value passed into it.
-//
+
+/// <summary>
+/// void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType&)) const
+///
+///	This function simply traverses the BinarySearchTree belonging to `this` and 
+///	passes the nodes into the parameter visit (a function reference) which will then
+///	perform some black box action on the value passed into it.
+///
+/// Inorders the traverse.
+/// </summary>
+/// <param name="visit">The visit.</param>
 template<class ItemType>
 void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType& itm)) const
 {
@@ -275,11 +347,14 @@ void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType& itm)
 	}
 }  // end inorder
 
-   //
-   // This overload of the inorderTraverse function provides a means to pass a lambda function as
-   // the parameter, instead of a function reference.
-   //
-   //
+   
+   
+/// <summary>
+/// This overload of the inorderTraverse function provides a means to pass a lambda function as
+/// the parameter, instead of a function reference.
+//
+/// </summary>
+/// <param name="func">The function.</param>
 template<class ItemType>
 void BinarySearchTree<ItemType>::inorderTraverse(std::function<void(const ItemType& itm)> func) const
 {
@@ -305,10 +380,9 @@ void BinarySearchTree<ItemType>::inorderTraverse(std::function<void(const ItemTy
 	}
 }  // end inorder
 
-//
-//  
-//
-// 
+/// <summary>
+/// Rebalances this instance.
+/// </summary>
 template<class ItemType>
 void BinarySearchTree<ItemType>::rebalance()
 {
@@ -322,10 +396,13 @@ void BinarySearchTree<ItemType>::rebalance()
 	delete[] arr;
 }
 
-//
-//  
-//
-// 
+/// <summary>
+/// Builds the balanced tree.
+/// </summary>
+/// <param name="l">The l.</param>
+/// <param name="mid">The mid.</param>
+/// <param name="r">The r.</param>
+/// <param name="arr">The arr.</param>
 template<class ItemType>
 void BinarySearchTree<ItemType>::buildBalancedTree(const int &l, const int& mid, const int &r, const ItemType arr[])
 {
@@ -334,10 +411,13 @@ void BinarySearchTree<ItemType>::buildBalancedTree(const int &l, const int& mid,
 	if( r >= mid + 1 )buildBalancedTree(mid + 1, (r + mid + 1) / 2, r, arr);
 }
 
-// bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n)
-// 
-// 
-// 
+/// <summary>
+/// bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n)
+/// Reads the tree.
+/// </summary>
+/// <param name="arr">The arr.</param>
+/// <param name="n">The n.</param>
+/// <returns></returns>
 template<class ItemType>
 bool BinarySearchTree<ItemType>::readTree(ItemType arr[], const int& n)
 {
@@ -345,18 +425,18 @@ bool BinarySearchTree<ItemType>::readTree(ItemType arr[], const int& n)
 	return true;
 }
 
-//
-//  
-//
-// 
+/// <summary>
+/// Displays the sideways.
+/// </summary>
 template<class ItemType>
 void BinarySearchTree<ItemType>::displaySideways() const
 { sideways(rootPtr, 0); }
 
-//
-//  
-//
-// 
+/// <summary>
+/// Sidewayses the specified current.
+/// </summary>
+/// <param name="current">The current.</param>
+/// <param name="level">The level.</param>
 template<class ItemType>
 void BinarySearchTree<ItemType>::sideways(BinaryNode<ItemType>* current, int level) const
 {
@@ -381,10 +461,11 @@ void BinarySearchTree<ItemType>::sideways(BinaryNode<ItemType>* current, int lev
 	}
 }
 
-//
-//  
-//
-// 
+/// <summary>
+/// Operator==s the specified other.
+/// </summary>
+/// <param name="other">The other.</param>
+/// <returns></returns>
 template<class ItemType>
 bool BinarySearchTree<ItemType>::operator==(const BinarySearchTree<ItemType>& other) const
 {
@@ -392,10 +473,11 @@ bool BinarySearchTree<ItemType>::operator==(const BinarySearchTree<ItemType>& ot
 	return matchyFunk((this->rootPtr), (other.rootPtr));
 }
 
-//
-//  
-//
-// 
+/// <summary>
+/// Operator==s the specified other.
+/// </summary>
+/// <param name="other">The other.</param>
+/// <returns></returns>
 template<class ItemType>
 bool BinarySearchTree<ItemType>::operator==(const BinarySearchTree<ItemType>* other) const
 {
@@ -403,10 +485,17 @@ bool BinarySearchTree<ItemType>::operator==(const BinarySearchTree<ItemType>* ot
 	return matchyFunk((this->rootPtr), (other->rootPtr)); // if we get here, we gotta compare node by node
 }
 
-// bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local, BinaryNode<ItemType>* remote)
-// 
-// Helper function the performs tail-recursion in search for dissimilarities between this and the
-// other parameter that was passed into the operator== overload.
+
+/// <summary>
+/// bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local, BinaryNode<ItemType>* remote)
+/// 
+/// Helper function the performs tail-recursion in search for dissimilarities between this and the
+/// other parameter that was passed into the operator== overload.
+/// Matchies the funk.
+/// </summary>
+/// <param name="local">The local.</param>
+/// <param name="remote">The remote.</param>
+/// <returns></returns>
 template<class ItemType>
 bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local,
 											BinaryNode<ItemType>* remote) const
@@ -433,18 +522,20 @@ bool BinarySearchTree<ItemType>::matchyFunk(BinaryNode<ItemType>* local,
 		matchyFunk(local->getRightChildPtr(), remote->getRightChildPtr());
 }
 
-//
-//  
-//
-// 
+/// <summary>
+/// Operator!=s the specified other.
+/// </summary>
+/// <param name="other">The other.</param>
+/// <returns></returns>
 template<class ItemType>
 bool BinarySearchTree<ItemType>::operator!=(const BinarySearchTree<ItemType>& other) const
 { return !(*this == other); }
 
-//
-//  
-//
-// 
+/// <summary>
+/// Operator!=s the specified other.
+/// </summary>
+/// <param name="other">The other.</param>
+/// <returns></returns>
 template<class ItemType>
 bool BinarySearchTree<ItemType>::operator!=(const BinarySearchTree<ItemType>* other) const
 { return !(*this == *other); }
