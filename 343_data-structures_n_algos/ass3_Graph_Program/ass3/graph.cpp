@@ -38,7 +38,7 @@ int Graph::getNumEdges() const
 if the vertices do not exist, create them
 calls Vertex::connect
 a vertex cannot connect to itself
-or have multiple edges to another vertex */
+nor have multiple edges connecting to another singular vertex */
 bool Graph::add(std::string start, std::string end, int edgeWeight) 
 { return true; }
 

@@ -18,7 +18,8 @@
 /** Creates an unvisited vertex, gives it a label, and clears its
 adjacency list.
 NOTE: A vertex must have a unique label that cannot be changed. */
-Vertex::Vertex(std::string label) 
+Vertex::Vertex(std::string label)
+	: vertexLabel(label), visited(false),
 {}
 
 /** @return  The label of this vertex. */
