@@ -17,30 +17,42 @@
 
 class Vertex {
 public:
-	/** Creates an unvisited vertex, gives it a label, and clears its
-	adjacency list.
-	NOTE: A vertex must have a unique label that cannot be changed. */
-	explicit Vertex(std::string label);
+    /**
+     * Creates an unvisited vertex, gives it a label, and clears its
+     * adjacency list.
+	 * NOTE: A vertex must have a unique label that cannot be changed.
+     * @param label A reference value for the string to be used as the label
+     *              of this vertex.
+     */
+	explicit Vertex(const std::string& label);
 
-	/** @return  The label of this vertex. */
+    /**
+     * just needed for deleting the visPtr used in tracking if a vertex is visited.
+     */
+    virtual ~Vertex();
+
+    /** @return  The label of this vertex. */
 	std::string getLabel() const;
 
 	/** Marks this vertex as visited. */
-	void visit();
+	void visit(int* trueRef);
 
 	/** Marks this vertex as not visited. */
 	void unvisit();
 
-	/** Returns the visited status of this vertex.
-	@return  True if the vertex has been visited, otherwise
-	returns false/ */
-	bool isVisited() const;
+
+    /**
+     * Returns the visited status of this vertex.
+     * @param trueRef
+     * @return True if the vertex has been visited, otherwise returns false
+     */
+	bool isVisited(const int* const trueRef) const;
 
 	/** Adds an edge between this vertex and the given vertex.
 	Cannot have multiple connections to the same endVertex
 	Cannot connect back to itself
 	@return  True if the connection is successful. */
-	bool connect(const std::string& endVertex, const int edgeWeight = 0);
+	bool connect(const std::string& endVertex, int edgeWeight = 0);
 
 	/** Removes the edge between this vertex and the given one.
 	@return  True if the removal is successful. */
@@ -78,6 +90,16 @@ private:
 
 	/** True if the vertex is visited */
 	bool visited { false };
+
+    /** Used in conditional checks that compare the memory address pointed to
+     * by this pointer to see if it matches the current traversal's
+     * assigned reference address when checking if this vertex has been visited.
+     *
+     * After graph is traversed and nodes need to be set back to "not visited"
+     * status, the memory address pointed to by all visited nodes is deleted
+     * and reclaimed.
+     */
+    int* visPtr { nullptr };
 
 	/** adjacencyList as an ordered map, in alphabetical order */
 	std::map<std::string, Edge, std::less<std::string>> adjacencyList;

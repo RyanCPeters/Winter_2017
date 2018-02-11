@@ -7,14 +7,22 @@
 // This is 80 characters - Keep all lines under 80 characters                 //
 ////////////////////////////////////////////////////////////////////////////////
 
+/** Edge::Edge(const std::string& end, const int weight = 0): endVertex(end),
+ *                                                        edgeWeight(weight)
+ * constructor with label and weight
+ * @param end
+ * @param weight
+ */
+Edge::Edge(const std::string& end, int weight = 0): endVertex(end),
+                                                          edgeWeight(weight) {}
+/** std::string Edge::getEndVertex() const
+ * return the vertex this edge connects to
+ * @return
+ */
+std::string Edge::getEndVertex() const { return endVertex; }
 
-Edge::Edge() {}
-
-/** constructor with label and weight */
-Edge::Edge(const std::string& end, int weight) {}
-
-/** return the vertex this edge connects to */
-std::string Edge::getEndVertex() const { return "XXX"; }
-
-/** return the weight/cost of travlleing via this edge */
-int Edge::getWeight() const { return 0; }
+/** int Edge::getWeight() const
+ * return the weight/cost of travlleing via this edge
+ * @return
+ */
+int Edge::getWeight() const { return edgeWeight; }

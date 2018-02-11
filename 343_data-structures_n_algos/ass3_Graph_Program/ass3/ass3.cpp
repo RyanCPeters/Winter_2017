@@ -97,7 +97,7 @@ void testGraph0() {
 	cout << isOK(g.getNumVertices(), 3) << "3 vertices" << endl;
 	cout << isOK(g.getNumEdges(), 3) << "3 edges" << endl;
 
-	graphOut.str("");
+	graphOut.str(string());
 	g.depthFirstTraversal("A", graphVisitor);
 	cout << isOK(graphOut.str(), "A B C "s) << "DFS" << endl;
 
