@@ -46,12 +46,11 @@ bool Graph::add(const std::string& start, const std::string& end,
                 const int& edgeWeight)
 {
     auto iter1 = vertices.find(start);
-    auto iter2 = vertices.find(end);
     if(iter1 == vertices.end()){
         vertices.emplace(start,new Vertex(start));
         iter1 = vertices.find(start);
     }
-    if(iter2 == vertices.end()){
+    if(vertices.count(end) == 0){
         vertices.emplace(end, new Vertex(end));
     }
     return iter1->second->connect(end, edgeWeight);
