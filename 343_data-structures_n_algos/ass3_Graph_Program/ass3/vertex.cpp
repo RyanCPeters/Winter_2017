@@ -56,7 +56,7 @@ Cannot connect back to itself
 bool Vertex::connect(const std::string& endVertex, int const edgeWeight)
 {
     if( endVertex == vertexLabel ||
-            adjacencyList.find(endVertex) != adjacencyList.end() ) return false;
+            adjacencyList.find(endVertex) == adjacencyList.end() ) return false;
 
     adjacencyList.emplace( adjacencyList.end(),endVertex,
                            Edge( endVertex, edgeWeight ));
