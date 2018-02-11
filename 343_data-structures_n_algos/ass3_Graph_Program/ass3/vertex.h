@@ -70,19 +70,45 @@ public:
 	/** Sets current neighbor to first in adjacency list. */
 	void resetNeighbor();
 
+    /** Sets current neighbor to last in adjacency list.
+     * Used in depth-first-search that utilizes a stack to track
+     * unvisited nodes.
+     * */
+    void resetReverseNeighbor();
+
 	/** Gets this vertex's next neighbor in the adjacency list.
 	Neighbors are automatically sorted alphabetically via map
 	Returns the vertex label if there are no more neighbors
 	@return  The label of the vertex's next neighbor. */
 	std::string getNextNeighbor();
 
-	/** Sees whether this vertex is equal to another one.
+    /**
+     *
+     * @return
+     */
+    std::string reverseGetNextNeighbor();
+
+    /**
+     *
+     * @return
+     */
+    std::string peekNextNeighbor() const;
+
+    /**
+     *
+     * @return
+     */
+    std::string reversePeekNextNeighbor() const;
+
+    /** Sees whether this vertex is equal to another one.
 	Two vertices are equal if they have the same label. */
 	bool operator==(const Vertex& rightHandItem) const;
 
 	/** Sees whether this vertex is < another one.
 	Compares vertexLabel. */
 	bool operator<(const Vertex& rightHandItem) const;
+
+
 
 private:
 	/** the unique label for the vertex */
@@ -106,6 +132,8 @@ private:
 
 	/** iterator showing which neighbor we are currently at */
 	std::map<std::string, Edge>::iterator currentNeighbor;
+
+    std::map<std::string, Edge>::reverse_iterator reverseCurNeighbor;
 };
 
 #endif  // VERTEX_H

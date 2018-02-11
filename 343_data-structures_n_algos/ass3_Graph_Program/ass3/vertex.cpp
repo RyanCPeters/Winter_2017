@@ -60,6 +60,7 @@ bool Vertex::connect(const std::string& endVertex, int const edgeWeight)
 
     adjacencyList.emplace( adjacencyList.end(),endVertex,
                            Edge( endVertex, edgeWeight ));
+    resetNeighbor();
     return true;
 }
 
@@ -91,6 +92,9 @@ int Vertex::getNumberOfNeighbors() const
 void Vertex::resetNeighbor() 
 { currentNeighbor = adjacencyList.begin(); }
 
+void Vertex::resetReverseNeighbor()
+{ reverseCurNeighbor = adjacencyList.rbegin(); }
+
 /** Gets this vertex's next neighbor in the adjacency list.
 Neighbors are automatically sorted alphabetically via map
 Returns the vertex label if there are no more neighbors
@@ -98,9 +102,23 @@ Returns the vertex label if there are no more neighbors
 std::string Vertex::getNextNeighbor() 
 {
     if(currentNeighbor == adjacencyList.end())return vertexLabel;
-    std::string ret = currentNeighbor->first;
-    ++currentNeighbor;
-    return ret;
+    return (currentNeighbor++)->first;
+}
+
+std::string Vertex::reverseGetNextNeighbor()
+{
+    if (reverseCurNeighbor == adjacencyList.rend())return vertexLabel;
+    return (reverseCurNeighbor++)->first;
+}
+
+std::string Vertex::peekNextNeighbor() const {
+    if (currentNeighbor == adjacencyList.end())return vertexLabel;
+    return currentNeighbor->first;
+}
+
+std::string Vertex::reversePeekNextNeighbor() const {
+    if (reverseCurNeighbor == adjacencyList.rend())return vertexLabel;
+    return reverseCurNeighbor->first;
 }
 
 /** Sees whether this vertex is equal to another one.

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <stack>
 
 #include "graph.h"
 
@@ -91,8 +92,24 @@ call the function visit on each vertex label */
 void Graph::depthFirstTraversal(std::string startLabel,
 								void visit(const std::string&)) 
 {
+
+    int val = 80085;
+    int *trueRef = &val;
     auto iter = vertices.find(startLabel);
-    visit(iter->first);
+    if(iter == vertices.end())return; // this is more of an err state... but
+                                      // we can deal with that later.
+    std::stack<Vertex> stk;
+    stk.push(*(iter->second));
+    std::string curVtx = iter->first;
+    while(curVtx != stk.top().getLabel()){
+        if(!(stk.top().isVisited(trueRef))){// we need to check each adjacent
+            // edge of stk.top() against unvisited nodes in the vertices map.
+            // pushing in reverse alphabetical order the vertices that have
+            // yet to be visited.
+
+        }
+    }
+
 }
 
 /** breadth-first traversal starting from startLabel
