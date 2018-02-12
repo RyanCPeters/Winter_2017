@@ -6,15 +6,15 @@ _Steam Stream_ is a service that provides seamless integration of games in a pla
 
 ##### Be it **live streaming** on _Twitch_
 
-<img src="./twitch.png" width="533" height="300" />
+<img src="./twitch.png" width="533" height="300" title="twitch search results for 'minecraft'" />
 
 ##### **recorded game sessions** on _YouTube Gaming_
 
-<img src="./youtube_gaming.png" width="533" height="300" />
+<img src="./youtube_gaming.png" width="533" height="300" title="YouTube Gaming search results for 'minecraft'" />
 
 ##### or ***both*** on Microsoft's _Mixer_.
 
-<img src="./mixer.png" width="533" height="300" />
+<img src="./mixer.png" width="533" height="300" title="Mixer search results for 'minecraft'" />
 
 ---
 
@@ -25,7 +25,7 @@ _Steam Stream_ offers users an all inclusive service for finding, following and 
 #### No longer do you need to hunt down a decent streaming feed for your favorite games
 _Steam Stream_ integrates your Steam library, wish-list, and the Steam Store with an active feed of top streamer footage relevant to the titles visible in your Steam-app's view portal.
 
-<img src="./steam-stream-example.png" width="533" height="300" />
+<img src="./steam-stream-example.png" width="533" height="300" title="User library game-specific stream feed example"/>
 
 ---
 
@@ -35,14 +35,14 @@ _Steam Stream_ isn't just for stream viewers. In fact, the core set of features 
 
 In the world of video game streaming, it takes more than just being good at playing a game to make for an entertaining streaming session, and while there is a fantastic opportunity for people to make a very comfortable living while doing the things they love (playing games ::smile::) 
 
-<img src="./geeks-makin-munay.png" width="533" height="300" />
+<img src="./geeks-makin-munay.png" width="533" height="300"  title="Aaaawe Yeaaahhhh"/>
 
-First and foremost, the streamer needs to be able to effectively manage their feed and presentation as a unique brand; key to this effort is being able to acquire and manage a quality stream overlay. <img src="./medium-overlay.png" width="533" height="300" />
+First and foremost, the streamer needs to be able to effectively manage their feed and presentation as a unique brand; key to this effort is being able to acquire and manage a quality stream overlay. <img src="./medium-overlay.png" width="533" height="300" title="" />
 
 
 
-"twitch search results for 'minecraft'"
-"YouTube Gaming search results for 'minecraft'"
-"Mixer search results for 'minecraft'"
-"User library game-specific stream feed example"
-"Aaaawe Yeaaahhhh")
+
+
+
+
+
