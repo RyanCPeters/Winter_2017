@@ -16,11 +16,14 @@ _Steam Stream_ is a service that provides seamless integration of games in a pla
 
 ![](./mixer.png "Mixer search results for 'minecraft'")
 
+---
+
 ## Say Hello to your first, and last stop for video game streaming entertainment
 
 _Steam Stream_ offers users an all inclusive service for finding, following and tracking all kinds of video streams for their favorite games.
 
 #### No longer do you need to hunt down a decent streaming feed for your favorite games
-_Steam Stream_ integrates your Steam library, wish-list, and the Steam Store with an active feed of top streamer footage relevant to the titles visible in your steam app's view portal.
+_Steam Stream_ integrates your Steam library, wish-list, and the Steam Store with an active feed of top streamer footage relevant to the titles visible in your Steam-app's view portal.
 
+![](./steam-stream-example.png "User library game-specific stream feed example")
 
