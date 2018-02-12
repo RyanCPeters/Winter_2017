@@ -27,3 +27,14 @@ _Steam Stream_ integrates your Steam library, wish-list, and the Steam Store wit
 
 ![](./steam-stream-example.png "User library game-specific stream feed example")
 
+---
+
+## There's something for everybody when you use Steam Stream
+
+_Steam Stream_ isn't just for stream viewers. In fact, the core set of features for this service are centered around improving the quality of life for stream producers! 
+
+In the world of video game streaming, it takes more than just being good at playing a game to make for an entertaining streaming session, and while there is a fantastic opportunity for people to make a very comfortable living while doing the things they love (playing games ::smile::) 
+
+![](./geeks-makin-munay.png "Aaaawe Yeaaahhhh") 
+
+First and foremost, the streamer needs to be able to effectively manage their feed and presentation as a unique brand; key to this effort is being able to acquire and manage a quality stream overlay. ![](./medium-overlay.png)
