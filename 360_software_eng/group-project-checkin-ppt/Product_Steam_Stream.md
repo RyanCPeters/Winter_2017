@@ -33,7 +33,7 @@ _Steam Stream_ integrates your Steam library, wish-list, and the Steam Store wit
 
 _Steam Stream_ isn't just for stream viewers. In fact, the core set of features for this service are centered around improving the quality of life for stream producers! 
 
-<img src="./geeks-makin-munay.png" width="177" height="100"  title="Aaaawe Yeaaahhhh" align="right"/>
+<img src="./geeks-makin-munay.png" width="355" height="200"  title="Aaaawe Yeaaahhhh" align="right"/>
 In the world of video game streaming, it takes more than just being good at playing a game to make for an entertaining streaming session, and while there is a fantastic opportunity for people to make a very comfortable living while doing the things they love (playing games ::smile::) 
 </br></br></br>
 <img src="./medium-overlay.png" width="533" height="300" title="moderate overlay with excellent branding" align="left" />
