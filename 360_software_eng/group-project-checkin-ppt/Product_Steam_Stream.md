@@ -36,12 +36,13 @@ _Steam Stream_ isn't just for stream viewers. In fact, the core set of features 
 <img src="./geeks-makin-munay.png" width="355" height="200"  title="Aaaawe Yeaaahhhh" align="right"/>
 In the world of video game streaming, it takes more than just being good at playing a game to make for an entertaining streaming session, and while there is a fantastic opportunity for people to make a very comfortable living while doing the things they love (like playing games :smiley:) 
 
-</br></br></br></br></br></br>
+<p>
 <img src="./medium-overlay.png" width="533" height="300" title="moderate overlay with excellent branding" align="left" />
 First and foremost, the streamer needs to be able to effectively manage their feed and presentation as a unique brand; key to this effort is being able to acquire and manage a quality stream overlay. 
-
-</br></br></br></br></br></br></br></br></br></br></br></br>
-Unfortunately, creating an effective overlay isn't something just anybody can do. <img src="./really-bad-overlay.png" width="533" height="300"  title="Classy, tasteful, clear, and unofensive... are all things this " align="right"/>
+</p>
+<p>
+Unfortunately, creating an effective overlay is <strong>not</strong> something just anybody can do. <img src="./really-bad-overlay.png" width="533" height="300"  title="Classy, tasteful, clear, and unofensive... are all things this " align="right"/>
+</p>
 
 
 
