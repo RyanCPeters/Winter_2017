@@ -37,12 +37,12 @@ In the world of video game streaming, it takes more than just being good at play
 
 <img src="./geeks-makin-munay.png" width="533" height="300" />
 
-First and foremost, the streamer needs to be able to effectively manage their feed and presentation as a unique brand; key to this effort is being able to acquire and manage a quality stream overlay. ![](./medium-overlay.png)
+First and foremost, the streamer needs to be able to effectively manage their feed and presentation as a unique brand; key to this effort is being able to acquire and manage a quality stream overlay. <img src="./medium-overlay.png" width="533" height="300" />
 
 
 
-![](./twitch.png "twitch search results for 'minecraft'")
-![](./youtube_gaming.png "YouTube Gaming search results for 'minecraft'")
-![](./mixer.png "Mixer search results for 'minecraft'")
-![](./steam-stream-example.png "User library game-specific stream feed example")
-![](./geeks-makin-munay.png "Aaaawe Yeaaahhhh") 
+"twitch search results for 'minecraft'"
+"YouTube Gaming search results for 'minecraft'"
+"Mixer search results for 'minecraft'"
+"User library game-specific stream feed example"
+"Aaaawe Yeaaahhhh")
