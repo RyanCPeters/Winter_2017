@@ -37,7 +37,7 @@ In the world of video game streaming, it takes more than just being good at play
 
 <img src="./geeks-makin-munay.png" width="177" height="100"  title="Aaaawe Yeaaahhhh" align="right"/>
 
-First and foremost, the streamer needs to be able to effectively manage their feed and presentation as a unique brand; key to this effort is being able to acquire and manage a quality stream overlay. <img src="./medium-overlay.png" width="533" height="300" title="" />
+First and foremost, the streamer needs to be able to effectively manage their feed and presentation as a unique brand; key to this effort is being able to acquire and manage a quality stream overlay. <img src="./medium-overlay.png" width="533" height="300" title="moderate overlay with excellent branding" />
 
 
 
