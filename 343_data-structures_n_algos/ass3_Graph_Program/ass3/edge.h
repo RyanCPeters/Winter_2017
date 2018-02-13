@@ -1,5 +1,5 @@
 /**
-* Used by vertex to keep track of all the vertices connects to
+* Used by vertex to keep track of all the vertices it connects to
 * Each edge has a weight, possibly 0
 * Edge is a simple container class, no interesting functions
 */
@@ -12,10 +12,12 @@
 class Edge {
 public:
 	/** empty edge constructor */
-	Edge();
+	Edge() = default;
 
-	/** constructor with label and weight */
-	Edge(const std::string& end, int weight);
+	/** constructor with label and weight
+	 *
+	 */
+	Edge(const std::string& end, int weight = 0);
 
 	/** return the vertex this edge connects to */
 	std::string getEndVertex() const;

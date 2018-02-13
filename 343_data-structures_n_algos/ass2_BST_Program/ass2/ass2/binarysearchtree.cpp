@@ -1,3 +1,4 @@
+#include "binarysearchtree.h"
 
 using namespace std;
 
@@ -10,13 +11,13 @@ template<class ItemType>
 BinarySearchTree<ItemType>::BinarySearchTree()
 	:rootPtr(new BinaryNode<ItemType>()), treeHeight(0), numElems(0)
 {
-	//ctor
+	// ctor
 }
 
 template<class ItemType>
 BinarySearchTree<ItemType>::~BinarySearchTree()
 {
-	//dtor
+	// dtor
 	this->clear();
 	delete(rootPtr);
 }
@@ -63,7 +64,7 @@ BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& b
 	// the earMark variable will be used to track when qwayway.front() has reached
 	// the next level of nodes in bst.
 	BinaryNode<ItemType> * earMark = new BinaryNode<ItemType>();
-	//earMark->leftPtr = bst.
+	// earMark->leftPtr = bst.
 	std::queue<BinaryNode<ItemType>*> qwayway;
 	qwayway.push(bst.rootPtr);
 	qwayway.push(earMark);
@@ -88,6 +89,15 @@ BinarySearchTree<ItemType>::BinarySearchTree(const BinarySearchTree<ItemType>& b
 
 	delete(earMark);
 } // end copy constructor
+
+//
+// 
+template<class ItemType>
+BinarySearchTree<ItemType> BinarySearchTree<ItemType>::operator=(const BinarySearchTree<ItemType>& otherBST)
+{
+
+	return BinarySearchTree<ItemType>();
+}
 
 template<class ItemType>
 bool BinarySearchTree<ItemType>::isEmpty() const
@@ -216,7 +226,8 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::placeNode(BinaryNode<ItemType>
 	return nullptr;
 }  // end placeNode
 
-// BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>* subTreePtr, const ItemType& target) const
+// BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>* subTreePtr, 
+//                                                            const ItemType& target) const
 // return nullptr if can't find a node containing the given value.
 template<class ItemType>
 BinaryNode<ItemType>* BinarySearchTree<ItemType>::findNode(BinaryNode<ItemType>* subTreePtr,
@@ -265,7 +276,7 @@ void BinarySearchTree<ItemType>::inorderTraverse(void visit(const ItemType& itm)
 }  // end inorder
 
    //
-   //This overload of the inorderTraverse function provides a means to pass a lambda function as
+   // This overload of the inorderTraverse function provides a means to pass a lambda function as
    // the parameter, instead of a function reference.
    //
    //
@@ -301,6 +312,7 @@ void BinarySearchTree<ItemType>::inorderTraverse(std::function<void(const ItemTy
 template<class ItemType>
 void BinarySearchTree<ItemType>::rebalance()
 {
+	if( numElems < 1 )return;
 	ItemType* arr = new ItemType[numElems];
 	int pos = 0, hiBound = numElems; // we need hiBound to retain the node count after we clear the tree.
 	auto func = [&](const ItemType& itm) {arr[pos++] = itm; };
@@ -317,7 +329,7 @@ void BinarySearchTree<ItemType>::rebalance()
 template<class ItemType>
 void BinarySearchTree<ItemType>::buildBalancedTree(const int &l, const int& mid, const int &r, const ItemType arr[])
 {
-	/*if(mid >= 0 && mid < numElems  )*/ this->add(arr[mid]);
+	this->add(arr[mid]);
 	if( l <= mid - 1 )buildBalancedTree(l, (l + mid - 1) / 2, mid - 1, arr);
 	if( r >= mid + 1 )buildBalancedTree(mid + 1, (r + mid + 1) / 2, r, arr);
 }
