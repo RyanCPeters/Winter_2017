@@ -92,9 +92,18 @@ Assignment 2: Cryptography
       * thus: `Ø(3599) = (q-1)(p-1) -> (59-1)(61-1) = 58*60 = 3480 = Ø(n)`
     + Now, find `d`
       * `-> (d*e)(mod Ø(n)) -> (d*31)(mod 3480) =? 1`
-        - `(31*1)mod 3480 = 31; (31*113)mod 3480 = 23; (31*226)mod 3480 = 46; `
+        - `(31*1)mod 3480 = 31; (31*113)mod 3480 = 23; (31*226)mod 3480 = 46; 31*3031 mod 3480;
+        - -> d = 3480`
 5. Consider a Diffie‐Hellman scheme with a common prime `q = 11` and a primitive root `α = 2`.
     - If user `A` has public key `YA = 9`, what is `A`’s private key `XA`?
+      + given that `YA = α`<sup>X<sub>A</sub></sup>` mod q -> 9 = 2`<sup>X<sub>A</sub></sup>` mod 11`;
+        * Solution tactic is to brute force X<sub>A</sub>
+        * let `X`<sub>A</sub> equal integers from 1 to 10 and we get
     - If user `B` has public key `YB = 3`, what is the shared secret key `K`?
 
 
+  A B C D
+A - 
+B
+C
+D  
