@@ -73,7 +73,16 @@ each edge line is in the form of "string string int"
 fromVertex  toVertex    edgeWeight */
 void Graph::readFile(std::string filename) 
 {
-    std::ifstream ifile(filename);
+    std::ifstream ifile;
+    filename = "..\\" + filename;
+    ifile.open(filename);
+    if(!ifile.is_open()){
+        std::cerr << "shits B0rK3d!1!!1!one!! tried to read "
+                "from file but it shit the bed" << std::endl;
+        std::cerr << "\tWe were given the following file name to open: "
+                  << filename << " but we obviosly didn't get it open..."
+                  << std::endl;
+    }
     int len = 0;
     ifile >> len;
     for(int i = 0; i < len; ++i){

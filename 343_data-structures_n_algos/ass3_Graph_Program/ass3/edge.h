@@ -12,12 +12,12 @@
 class Edge {
 public:
 	/** empty edge constructor */
-	Edge() = default;
+	Edge();
 
 	/** constructor with label and weight
 	 *
 	 */
-	Edge(const std::string& end, int weight = 0);
+	Edge(const std::string& end, int weight);
 
 	/** return the vertex this edge connects to */
 	std::string getEndVertex() const;

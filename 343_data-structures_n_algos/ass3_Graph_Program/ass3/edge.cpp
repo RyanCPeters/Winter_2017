@@ -7,6 +7,8 @@
 // This is 80 characters - Keep all lines under 80 characters                 //
 ////////////////////////////////////////////////////////////////////////////////
 
+Edge::Edge() {}
+
 /** Edge::Edge(const std::string& end, const int weight = 0): endVertex(end),
  *                                                        edgeWeight(weight)
  * constructor with label and weight

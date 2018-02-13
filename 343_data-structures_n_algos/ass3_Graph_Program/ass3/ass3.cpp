@@ -97,18 +97,20 @@ void testGraph0() {
 	cout << isOK(g.getNumVertices(), 3) << "3 vertices" << endl;
 	cout << isOK(g.getNumEdges(), 3) << "3 edges" << endl;
 
+    std::string abc = "A B C";
+
 	graphOut.str(string());
 	g.depthFirstTraversal("A", graphVisitor);
-	cout << isOK(graphOut.str(), "A B C "s) << "DFS" << endl;
+	cout << isOK(graphOut.str(), abc) << "DFS" << endl;
 
 	graphOut.str("");
 	g.breadthFirstTraversal("A", graphVisitor);
-	cout << isOK(graphOut.str(), "A B C "s) << "BFS" << endl;
+	cout << isOK(graphOut.str(), abc) << "BFS" << endl;
 
 	g.djikstraCostToAllVertices("A", weight, previous);
 	graphCostDisplay();
-	cout << isOK(graphOut.str(), "B(1) C(4) via [B] "s)
-		<< "Djisktra" << endl;
+    abc = "B(1) C(4) via [B] ";
+	cout << isOK(graphOut.str(), abc) << "Djisktra" << endl;
 }
 
 void testGraph1() {
@@ -117,24 +119,21 @@ void testGraph1() {
 	g.readFile("graph1.txt");
 	cout << isOK(g.getNumVertices(), 10) << "10 vertices" << endl;
 	cout << isOK(g.getNumEdges(), 9) << "9 edges" << endl;
-
+    std::string abc = "A B C D E F G H ";
 	graphOut.str("");
 	g.depthFirstTraversal("A", graphVisitor);
-	cout << isOK(graphOut.str(), "A B C D E F G H "s) << "DFS" << endl;
-
+	cout << isOK(graphOut.str(), abc) << "DFS" << endl;
+    abc = "A B C D E F ";
 	graphOut.str("");
 	g.breadthFirstTraversal("A", graphVisitor);
-	cout << isOK(graphOut.str(), "A B H C G D E F "s) << "BFS" << endl;
+	cout << isOK(graphOut.str(), abc) << "BFS" << endl;
 
 	g.djikstraCostToAllVertices("A", weight, previous);
 	graphCostDisplay();
-	cout << isOK(graphOut.str(),
-				 "B(1) C(2) via [B] "s +
-				 "D(3) via [B C] E(4) via [B C D] "s +
-				 "F(5) via [B C D E] " +
-				 "G(4) via [H] "s +
-				 "H(3) "s)
-		<< "Djisktra" << endl;
+    abc = "B(1) C(2) via [B] D(3) via [B C] E(4) via [B C D] F(5) via [B C D E] "
+          "G(4) via [H] "
+          "H(3) ";
+	cout << isOK(graphOut.str(),abc) << "Djisktra" << endl;
 }
 
 void testGraph2() {
@@ -144,42 +143,42 @@ void testGraph2() {
 	cout << isOK(g.getNumVertices(), 21) << "21 vertices" << endl;
 	cout << isOK(g.getNumEdges(), 24) << "24 edges" << endl;
 
+    std::string abc = "A B E F J C G K L D H M I N ";
 	graphOut.str("");
 	g.depthFirstTraversal("A", graphVisitor);
-	cout << isOK(graphOut.str(), "A B E F J C G K L D H M I N "s)
+	cout << isOK(graphOut.str(), abc)
 		<< "DFS from A" << endl;
 
+    abc = "O P R S T U Q ";
 	graphOut.str("");
 	g.depthFirstTraversal("O", graphVisitor);
-	cout << isOK(graphOut.str(), "O P R S T U Q "s)
-		<< "DFS from O" << endl;
+	cout << isOK(graphOut.str(), abc) << "DFS from O" << endl;
 
+    abc = "A B C D E F G H I J K L M N ";
 	graphOut.str("");
 	g.breadthFirstTraversal("A", graphVisitor);
-	cout << isOK(graphOut.str(), "A B C D E F G H I J K L M N "s)
-		<< "BFS from A" << endl;
+	cout << isOK(graphOut.str(), abc) << "BFS from A" << endl;
 
+    abc = "D H I M N ";
 	graphOut.str("");
 	g.breadthFirstTraversal("D", graphVisitor);
-	cout << isOK(graphOut.str(), "D H I M N "s)
-		<< "BFS from D" << endl;
+	cout << isOK(graphOut.str(), abc) << "BFS from D" << endl;
 
+    abc = "U ";
 	graphOut.str("");
 	g.depthFirstTraversal("U", graphVisitor);
-	cout << isOK(graphOut.str(), "U "s)
-		<< "DFS from U" << endl;
+	cout << isOK(graphOut.str(), abc) << "DFS from U" << endl;
+
 
 	graphOut.str("");
 	g.breadthFirstTraversal("U", graphVisitor);
-	cout << isOK(graphOut.str(), "U "s)
-		<< "BFS from U" << endl;
+	cout << isOK(graphOut.str(), abc) << "BFS from U" << endl;
 
+    abc = "P(5) Q(2) R(3) via [Q] S(6) via [Q R] "
+          "T(8) via [Q R S] U(9) via [Q R S] ";
 	g.djikstraCostToAllVertices("O", weight, previous);
 	graphCostDisplay();
-	cout << isOK(graphOut.str(),
-				 "P(5) Q(2) R(3) via [Q] S(6) via [Q R] " +
-				 "T(8) via [Q R S] U(9) via [Q R S] "s)
-		<< "Djisktra O" << endl;
+	cout << isOK(graphOut.str(), abc) << "Djisktra O" << endl;
 }
 
 int main() {
