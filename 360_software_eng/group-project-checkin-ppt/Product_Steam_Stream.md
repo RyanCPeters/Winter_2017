@@ -6,15 +6,15 @@ _Steam Stream_ is a service that provides seamless integration of games in a pla
 
 ##### Be it **live streaming** on _Twitch_
 
-<img src="./twitch.png" width="533" height="300" title="twitch search results for 'minecraft'" />
+<img src="./twitch.png" width="444" height="250" title="twitch search results for 'minecraft'" />
 
 ##### **recorded game sessions** on _YouTube Gaming_
 
-<img src="./youtube_gaming.png" width="533" height="300" title="YouTube Gaming search results for 'minecraft'" />
+<img src="./youtube_gaming.png" width="444" height="250" title="YouTube Gaming search results for 'minecraft'" />
 
 ##### or ***both*** on Microsoft's _Mixer_.
 
-<img src="./mixer.png" width="533" height="300" title="Mixer search results for 'minecraft'" />
+<img src="./mixer.png" width="444" height="250" title="Mixer search results for 'minecraft'" />
 
 ---
 
