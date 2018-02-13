@@ -4,15 +4,15 @@ Product: **Steam Stream**
 ### In a Nutshell
 _Steam Stream_ is a service that provides seamless integration of games in a player's steam library and Streaming outlets. 
 
-##### Be it **live streaming** on _Twitch_
+Be it **live streaming** on _Twitch_
 
 <img src="./twitch.png" width="444" height="250" title="twitch search results for 'minecraft'" />
 
-##### **recorded game sessions** on _YouTube Gaming_
+**recorded game sessions** on _YouTube Gaming_
 
 <img src="./youtube_gaming.png" width="444" height="250" title="YouTube Gaming search results for 'minecraft'" />
 
-##### or ***both*** on Microsoft's _Mixer_.
+or ***both*** on Microsoft's _Mixer_.
 
 <img src="./mixer.png" width="444" height="250" title="Mixer search results for 'minecraft'" />
 
