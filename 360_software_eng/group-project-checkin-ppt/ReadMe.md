@@ -47,7 +47,7 @@ _Steam Stream_ integrates your Steam library, wish-list, and the Steam Store wit
 <br>
 <div>
   <p>
-    <img src="./medium-overlay.png" width="533" height="300" title="moderate overlay with excellent branding" align="left" />
+    <img src="./medium-overlay.png" width="400" height="225" title="moderate overlay with excellent branding" align="left" />
     <span>
           First and foremost, the streamer needs to be able to effectively manage their feed and presentation as a unique brand; key to this effort is being able to acquire and manage a quality stream overlay. 
     </span>
@@ -56,7 +56,7 @@ _Steam Stream_ integrates your Steam library, wish-list, and the Steam Store wit
 <br>
 <div>
   <p>
-    <img src="./really-bad-overlay.png" width="533" height="300"  title="Classy, tasteful, clear, and unofensive... are all things this " align="right"/>
+    <img src="./really-bad-overlay.png" width="400" height="225"  title="Classy, tasteful, clear, and unofensive... are all things this " align="right"/>
     Unfortunately, creating an effective overlay is <strong>not</strong> something just anybody can do.
   </p>
 </div>
