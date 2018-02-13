@@ -53,7 +53,5 @@ _Steam Stream_ integrates your Steam library, wish-list, and the Steam Store wit
   That is why one of the core features of the new <i>Steam Stream</i> service will be a full suite of overlay templates with a complimentary base package of skins for those templates.
 </p>
 <p>
-  <img src="./overlay-skin1.png" width="266" height="150" align="left"/>
-  <img src="./overlay-skin2.png" width="266" height="150" align="centered + 2em"/>
-  <img src="./overlay-skin3.png" width="266" height="150"align="right"/>
+  <img src="./overlay-skin1.png" width="266" height="150" align="left"/><img src="./overlay-skin2.png" width="266" height="150" align="centered + 2em"/><img src="./overlay-skin3.png" width="266" height="150"align="right"/>
 </p>
