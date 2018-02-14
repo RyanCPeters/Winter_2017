@@ -48,10 +48,12 @@ bool Graph::add(const std::string& start, const std::string& end,
     auto iter1 = vertices.find(start);
     if(iter1 == vertices.end()){
         vertices.emplace(start,new Vertex(start));
+        ++numberOfVertices;
         iter1 = vertices.find(start);
     }
     if(vertices.count(end) == 0){
         vertices.emplace(end, new Vertex(end));
+        ++numberOfVertices;
     }
     return iter1->second->connect(end, edgeWeight);
 
@@ -91,8 +93,10 @@ void Graph::readFile(std::string filename)
         ifile >> start;
         ifile >> end;
         ifile >> weight;
-        add(start,end,weight);
+        if( add(start,end,weight) )++numberOfEdges;
     }
+
+    ifile.close();
 }
 
 /** depth-first traversal starting from startLabel

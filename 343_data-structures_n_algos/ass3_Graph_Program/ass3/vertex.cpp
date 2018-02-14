@@ -16,13 +16,15 @@
      * @param label A reference value for the string to be used as the label
      *              of this vertex.
      */
-Vertex::Vertex(const std::string& label): vertexLabel(label), visited(false)
+Vertex::Vertex(const std::string& label): vertexLabel(label)
 {}
 
 /**
  * just needed for deleting the visPtr used in tracking if a vertex is visited.
  */
 Vertex::~Vertex() {
+    // we set visPtr to nullptr before deleting it because
+    // we aren't trying to modify the control reference from Vertex.
     visPtr = nullptr;
     delete(visPtr);
 }
@@ -55,7 +57,7 @@ Cannot connect back to itself
 @return  True if the connection is successful. */
 bool Vertex::connect(const std::string& endVertex, int const edgeWeight)
 {
-    if( endVertex == vertexLabel || adjacencyList.count(endVertex) == 0 ) {
+    if( endVertex == vertexLabel || adjacencyList.count(endVertex) > 0 ) {
         return false;
     }
     adjacencyList[endVertex] = Edge(endVertex,edgeWeight);

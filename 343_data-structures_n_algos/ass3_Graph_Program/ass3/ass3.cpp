@@ -79,7 +79,7 @@ void graphCostDisplayPath(string vertex) {
 // C(8) via [A B]
 // getting to C has a cost of 8, we can get to C via A->B->C
 void graphCostDisplay() {
-	graphOut.str("");
+    graphOut.str(string());
 	for( auto it : weight ) {
 		int cost = it.second;
 		if( cost == INT_MAX )
@@ -103,7 +103,7 @@ void testGraph0() {
 	g.depthFirstTraversal("A", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "DFS" << endl;
 
-	graphOut.str("");
+    graphOut.str(string());
 	g.breadthFirstTraversal("A", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "BFS" << endl;
 
@@ -120,11 +120,11 @@ void testGraph1() {
 	cout << isOK(g.getNumVertices(), 10) << "10 vertices" << endl;
 	cout << isOK(g.getNumEdges(), 9) << "9 edges" << endl;
     std::string abc = "A B C D E F G H ";
-	graphOut.str("");
+    graphOut.str(string());
 	g.depthFirstTraversal("A", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "DFS" << endl;
     abc = "A B C D E F ";
-	graphOut.str("");
+    graphOut.str(string());
 	g.breadthFirstTraversal("A", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "BFS" << endl;
 
@@ -144,33 +144,33 @@ void testGraph2() {
 	cout << isOK(g.getNumEdges(), 24) << "24 edges" << endl;
 
     std::string abc = "A B E F J C G K L D H M I N ";
-	graphOut.str("");
+    graphOut.str(string());
 	g.depthFirstTraversal("A", graphVisitor);
 	cout << isOK(graphOut.str(), abc)
 		<< "DFS from A" << endl;
 
     abc = "O P R S T U Q ";
-	graphOut.str("");
+    graphOut.str(string());
 	g.depthFirstTraversal("O", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "DFS from O" << endl;
 
     abc = "A B C D E F G H I J K L M N ";
-	graphOut.str("");
+    graphOut.str(string());
 	g.breadthFirstTraversal("A", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "BFS from A" << endl;
 
     abc = "D H I M N ";
-	graphOut.str("");
+    graphOut.str(string());
 	g.breadthFirstTraversal("D", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "BFS from D" << endl;
 
     abc = "U ";
-	graphOut.str("");
+    graphOut.str(string());
 	g.depthFirstTraversal("U", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "DFS from U" << endl;
 
 
-	graphOut.str("");
+    graphOut.str(string());
 	g.breadthFirstTraversal("U", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "BFS from U" << endl;
 
