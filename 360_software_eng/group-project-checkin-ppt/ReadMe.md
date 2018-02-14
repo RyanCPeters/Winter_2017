@@ -57,7 +57,9 @@ _Steam Stream_ integrates your Steam library, wish-list, and the Steam Store wit
 <div>
   <p>
     <img src="./really-bad-overlay.png" width="400" height="225"  title="Classy, tasteful, clear, and unofensive... are all things this " align="right"/>
-    Unfortunately, creating an effective overlay is <strong>not</strong> something just anybody can do.
+    <span>
+          Unfortunately, creating an effective overlay is <strong>not</strong> something just anybody can do.
+    </span>
   </p>
 </div>
 <br>
@@ -70,3 +72,6 @@ _Steam Stream_ integrates your Steam library, wish-list, and the Steam Store wit
     <img src="./overlay-skin1.png" width="200" height="112" align="left"/><img src="./overlay-skin2.png" width="200" height="112" align="centered + 2em"/><img src="./overlay-skin3.png" width="200" height="112" align="right"/>
   </p>
 </div>
+
+
+Add statements about Steam Stream providing a easy to use interface for getting a new stream started in the primary streaming outlets.
