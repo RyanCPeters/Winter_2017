@@ -4,6 +4,15 @@ Assignment4: Wireshark Analysis
 Ryan Peters
 ---
 
+
+---
+Important statements on where I got IP addresses throughout the document 
+---
+
+For the different IP addresses to the various server hosts at the University of Massachusetts I looked on the Internet Protocol Version layer of each communication to the wireshark lab.
+
+![](./images/IPAdress-source.png)
+
 ---
 1 The Basic HTTP GET/response interaction
 ---
@@ -19,7 +28,7 @@ Ryan Peters
 #### Initial client GET request
 
 ```
-30  0.173390    192.168.0.102   gaia.cs.umass.edu   HTTP    488 GET /wireshark-labs/HTTP-wireshark-file1.html HTTP/1.1 
+30  0.173390    192.168.0.102   128.119.245.12   HTTP    488 GET /wireshark-labs/HTTP-wireshark-file1.html HTTP/1.1 
     Internet Protocol Version 4, Src: 192.168.0.102 (192.168.0.102), Dst: gaia.cs.umass.edu (128.119.245.12)
         0100 .... = Version: 4
         .... 0101 = Header Length: 20 bytes (5)
@@ -68,7 +77,7 @@ Ryan Peters
 #### Host server response   
    
 ```        
-32  0.262952    gaia.cs.umass.edu   192.168.0.102   HTTP    540 HTTP/1.1 200 OK  (text/html)
+32  0.262952    128.119.245.12   192.168.0.102   HTTP    540 HTTP/1.1 200 OK  (text/html)
     Internet Protocol Version 4, Src: gaia.cs.umass.edu (128.119.245.12), Dst: 192.168.0.102 (192.168.0.102)
         0100 .... = Version: 4
         .... 0101 = Header Length: 20 bytes (5)
@@ -234,7 +243,7 @@ Ryan Peters
 #### Second client GET request
 
 ```
-235 38.303059   192.168.0.102   gaia.cs.umass.edu   HTTP    600 GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1 
+235 38.303059   192.168.0.102   128.119.245.12   HTTP    600 GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1 
     Hypertext Transfer Protocol
         GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n
             [Expert Info (Chat/Sequence): GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n]
@@ -264,7 +273,7 @@ Ryan Peters
 #### Host server response
 
 ```
-237 38.394623   gaia.cs.umass.edu   192.168.0.102   HTTP    294 HTTP/1.1 304 Not Modified 
+237 38.394623   128.119.245.12   192.168.0.102   HTTP    294 HTTP/1.1 304 Not Modified 
     Hypertext Transfer Protocol
         HTTP/1.1 304 Not Modified\r\n
             [Expert Info (Chat/Sequence): HTTP/1.1 304 Not Modified\r\n]
@@ -315,7 +324,7 @@ Ryan Peters
 #### Initial client GET request
 
 ```
-73  12.181467   192.168.0.102   gaia.cs.umass.edu   HTTP    488 GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1 
+73  12.181467   192.168.0.102   128.119.245.12   HTTP    488 GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1 
     Hypertext Transfer Protocol
         GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1\r\n
             [Expert Info (Chat/Sequence): GET /wireshark-labs/HTTP-wireshark-file3.html HTTP/1.1\r\n]
@@ -342,7 +351,7 @@ Ryan Peters
 #### Host server response
 
 ```
-78  12.265592   gaia.cs.umass.edu   192.168.0.102   HTTP    535 HTTP/1.1 200 OK  (text/html)
+78  12.265592   128.119.245.12   192.168.0.102   HTTP    535 HTTP/1.1 200 OK  (text/html)
     Hypertext Transfer Protocol
     HTTP/1.1 200 OK\r\n
         [Expert Info (Chat/Sequence): HTTP/1.1 200 OK\r\n]
@@ -374,16 +383,35 @@ Ryan Peters
 
 
 12. How many HTTP GET request messages did your browser send? Which packet number in the trace contains the GET message for the Bill of Rights?
-    + I don't think this section of the lab is up to date; I've only got a single `GET` request and the full contents of the returned file came on a single frame.
+    + There was only 1 `GET` request sent, which was on Frame 73.
 13. Which packet number in the trace contains the status code and phrase associated with the response to the HTTP GET request?
-    + 
+    + From line 345 of this document: `Frame 78`
 14. What is the status code and phrase in the response?
-    + 
+    + From line 345 of this document: `200 OK (text/html)`
 15. How many data-containing TCP segments were needed to carry the single HTTP response and the text of the Bill of Rights?
-    + 
+    + It took 4 TCP segments, on frames 73 through 77.
 
 ![](./images/problem3-1.png)
 
+![](./images/problem3-2.png)
+
 ---
 4 HTML Documents with Embedded Objects
+---
+
+
+
+16. How many HTTP GET request messages did your browser send? To which Internet addresses were these GET requests sent?
+    + There were 4 `GET` requests:
+        + first is to UMASS server: dest -> `128.119.245.12`
+        + second is to UMASS server: dest -> `128.119.245.12`
+        + third is to UMASS server: dest -> `128.119.245.90`
+        + fourth is to UMASS server: dest -> `128.119.245.90`
+17. Can you tell whether your browser downloaded the two images serially, or whether they were downloaded from the two web sites in parallel? Explain.
+    + I'm making an assumption based upon the fact that the sequential nature of the carrier TCP segments that the images were downloaded serially, and not in parallel. 
+
+![](./images/problem4-1.png)
+
+---
+5 HTTP Authentication
 ---
