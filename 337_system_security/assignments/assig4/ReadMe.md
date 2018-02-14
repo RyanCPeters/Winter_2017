@@ -9,10 +9,10 @@ Ryan Peters
 ---
 
     
-    | frame # | time | source ip address | dest ip address | protocol | length | info |
-    |:-------:|:----:|:-----------------:|:---------------:|:--------:|:------:|:----:|
-    | 29 | 0.173390 | 192.168.0.102 | 128.119.245.12 | HTTP | 488 | GET /wireshark-labs/HTTP-wireshark-file1.html HTTP/1.1  |
-    | 377 | 24.983861 | 128.119.245.12 | 10.156.9.94 | HTTP | 540 | HTTP/1.1 200 OK  (text/html) |
+| frame # | time | source ip address | dest ip address | protocol | length | info |
+|:-------:|:----:|:-----------------:|:---------------:|:--------:|:------:|:----:|
+| 30 | 0.173390 | 192.168.0.102 | 128.119.245.12 | HTTP | 488 | GET /wireshark-labs/HTTP-wireshark-file1.html HTTP/1.1  |
+| 32 | 0.262952 | 128.119.245.12 | 192.168.0.102 | HTTP | 540 | HTTP/1.1 200 OK  (text/html) |
 
 #### Initial client GET request
 
@@ -130,10 +130,83 @@ Ryan Peters
 6. How many bytes of content are being returned to your browser?
     + From lines 98 of this document: `Content-Length: 128\r\n`
 7. By inspecting the raw data in the packet content window, do you see any headers within the data that are not displayed in the packet-listing window? If so, name one.
-    + 
+    + I checked each hex value in the raw data and found no additional headers.
 
+![](./images/problem1-1.png)
 
+![](./images/problem1-2.png)
 
 ---
 2 The HTTP CONDITIONAL GET/response interaction
 ---
+
+| frame # | time | source ip address | dest ip address | protocol | length | info |
+|:-------:|:----:|:-----------------:|:---------------:|:--------:|:------:|:----:|
+| 67 | 20.044479 | 192.168.0.102 | 128.119.245.12 | HTTP | 488 |  GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1  |
+| 69 | 20.044479 | 128.119.245.12 | 192.168.0.102 | HTTP | 784 | HTTP/1.1 200 OK  (text/html) |
+
+#### Initial client GET request
+
+67  20.044479   192.168.0.102   128.119.245.12  HTTP    488 GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1 
+    Hypertext Transfer Protocol
+        GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n
+            [Expert Info (Chat/Sequence): GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n]
+                [GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n]
+                [Severity level: Chat]
+                [Group: Sequence]
+            Request Method: GET
+            Request URI: /wireshark-labs/HTTP-wireshark-file2.html
+            Request Version: HTTP/1.1
+        Host: gaia.cs.umass.edu\r\n
+        Connection: keep-alive\r\n
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36\r\n
+        Upgrade-Insecure-Requests: 1\r\n
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\r\n
+        DNT: 1\r\n
+        Accept-Encoding: gzip, deflate\r\n
+        Accept-Language: en-US,en;q=0.9\r\n
+        \r\n
+        [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html]
+        [HTTP request 1/2]
+        [Response in frame: 69]
+        [Next request in frame: 71]
+
+#### Host server response
+
+69  20.131291   128.119.245.12  192.168.0.102   HTTP    784 HTTP/1.1 200 OK  (text/html)
+    Hypertext Transfer Protocol
+        HTTP/1.1 200 OK\r\n
+            [Expert Info (Chat/Sequence): HTTP/1.1 200 OK\r\n]
+                [HTTP/1.1 200 OK\r\n]
+                [Severity level: Chat]
+                [Group: Sequence]
+            Request Version: HTTP/1.1
+            Status Code: 200
+            [Status Code Description: OK]
+            Response Phrase: OK
+        Date: Wed, 14 Feb 2018 05:17:35 GMT\r\n
+        Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16 mod_perl/2.0.10 Perl/v5.16.3\r\n
+        Last-Modified: Tue, 13 Feb 2018 06:59:01 GMT\r\n
+        ETag: "173-56512878d0e7b"\r\n
+        Accept-Ranges: bytes\r\n
+        Content-Length: 371\r\n
+            [Content length: 371]
+        Keep-Alive: timeout=5, max=100\r\n
+        Connection: Keep-Alive\r\n
+        Content-Type: text/html; charset=UTF-8\r\n
+        \r\n
+        [HTTP response 1/2]
+        [Time since request: 0.086812000 seconds]
+        [Request in frame: 67]
+        [Next request in frame: 71]
+        [Next response in frame: 72]
+        File Data: 371 bytes
+
+8. Inspect the contents of the first HTTP GET request from your browser to the server. Do you see an “IF-MODIFIED-SINCE” line in the HTTP GET?
+    + 
+9. Inspect the contents of the server response. Did the server explicitly return the contents of the file? How can you tell?
+    + 
+10. Now inspect the contents of the second HTTP GET request from your browser to the server. Do you see an “IF-MODIFIED-SINCE:” line in the HTTP GET? If so, what information follows the “IF-MODIFIED-SINCE:” header?
+    + 
+11. What is the HTTP status code and phrase returned from the server in response to this second HTTP GET? Did the server explicitly return the contents of the file? Explain.
+    + 
