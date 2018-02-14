@@ -1,7 +1,7 @@
 #include <climits>
 
 #include "vertex.h"
-#include "edge.h"
+//#include "edge.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -55,11 +55,10 @@ Cannot connect back to itself
 @return  True if the connection is successful. */
 bool Vertex::connect(const std::string& endVertex, int const edgeWeight)
 {
-    if( endVertex == vertexLabel ||
-            adjacencyList.count(endVertex) == 0 ) return false;
-
-    adjacencyList.emplace( adjacencyList.end(),endVertex,
-                           Edge( endVertex, edgeWeight ));
+    if( endVertex == vertexLabel || adjacencyList.count(endVertex) == 0 ) {
+        return false;
+    }
+    adjacencyList[endVertex] = Edge(endVertex,edgeWeight);
     resetNeighbor();
     return true;
 }
