@@ -415,3 +415,14 @@ For the different IP addresses to the various server hosts at the University of 
 ---
 5 HTTP Authentication
 ---
+
+Almost out of time... Sorry for not including the copy/paste from wireshark's output. I'll also provide the saved captures from this lab.
+
+18. What is the server’s response (status code and phrase) in response to the initial HTTP GET message from your browser?
+    + the server responded with a 401 "unauthorized" 
+19. When your browser’s sends the HTTP GET message for the second time, what new field is included in the HTTP GET message?
+    + `Authorization: Basic d2lyZXNoYXJrLXN0dWRlbnRzOm5ldHdvcms=\r\n     Credentials: wireshark-students:network`
+
+![](./images/problem5-1.png)
+![](./images/problem5-2.png)
+![](./images/problem5-3.png)
