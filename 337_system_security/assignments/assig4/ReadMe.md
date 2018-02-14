@@ -16,6 +16,7 @@ Ryan Peters
 
 #### Initial client GET request
 
+```
 30  0.173390    192.168.0.102   gaia.cs.umass.edu   HTTP    488 GET /wireshark-labs/HTTP-wireshark-file1.html HTTP/1.1 
     Internet Protocol Version 4, Src: 192.168.0.102 (192.168.0.102), Dst: gaia.cs.umass.edu (128.119.245.12)
         0100 .... = Version: 4
@@ -60,10 +61,11 @@ Ryan Peters
         [HTTP request 1/2]
         [Response in frame: 32]
         [Next request in frame: 33]
- 
+``` 
 
-#### Host server response      
-        
+#### Host server response   
+   
+```        
 32  0.262952    gaia.cs.umass.edu   192.168.0.102   HTTP    540 HTTP/1.1 200 OK  (text/html)
     Internet Protocol Version 4, Src: gaia.cs.umass.edu (128.119.245.12), Dst: 192.168.0.102 (192.168.0.102)
         0100 .... = Version: 4
@@ -113,7 +115,7 @@ Ryan Peters
         [Next request in frame: 33]
         [Next response in frame: 34]
         File Data: 128 bytes  
-  
+```  
 
 1. Is your browser running HTTP version 1.0 or 1.1? What version of HTTP is the server running?
     + From line 42 of this document: `Request Version: HTTP/1.1` 
@@ -147,6 +149,7 @@ Ryan Peters
 
 #### Initial client GET request
 
+```
 67  20.044479   192.168.0.102   128.119.245.12  HTTP    488 GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1 
     Hypertext Transfer Protocol
         GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n
@@ -170,9 +173,11 @@ Ryan Peters
         [HTTP request 1/2]
         [Response in frame: 69]
         [Next request in frame: 71]
+```
 
 #### Host server response
 
+```
 69  20.131291   128.119.245.12  192.168.0.102   HTTP    784 HTTP/1.1 200 OK  (text/html)
     Hypertext Transfer Protocol
         HTTP/1.1 200 OK\r\n
@@ -201,6 +206,113 @@ Ryan Peters
         [Next request in frame: 71]
         [Next response in frame: 72]
         File Data: 371 bytes
+```        
+
+```        
+Frame 67: 488 bytes on wire (3904 bits), 488 bytes captured (3904 bits) on interface 0
+    Interface id: 0 ({FD64AF60-9736-499D-A8B7-D801F9CAC277})
+        Interface name: {FD64AF60-9736-499D-A8B7-D801F9CAC277}
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Feb 13, 2018 21:17:37.860709000 Pacific Standard Time
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1518585457.860709000 seconds
+    [Time delta from previous captured frame: 0.000518000 seconds]
+    [Time delta from previous displayed frame: 0.000000000 seconds]
+    [Time since reference or first frame: 20.044479000 seconds]
+    Frame Number: 67
+    Frame Length: 488 bytes (3904 bits)
+    Capture Length: 488 bytes (3904 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:tcp:http]
+    [Coloring Rule Name: HTTP]
+    [Coloring Rule String: http || tcp.port == 80 || http2]
+Ethernet II, Src: Micro-St_16:04:1e (30:9c:23:16:04:1e), Dst: Tp-LinkT_b0:1e:00 (98:de:d0:b0:1e:00)
+    Destination: Tp-LinkT_b0:1e:00 (98:de:d0:b0:1e:00)
+        Address: Tp-LinkT_b0:1e:00 (98:de:d0:b0:1e:00)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: Micro-St_16:04:1e (30:9c:23:16:04:1e)
+        Address: Micro-St_16:04:1e (30:9c:23:16:04:1e)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 192.168.0.102 (192.168.0.102), Dst: gaia.cs.umass.edu (128.119.245.12)
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 474
+    Identification: 0x06dd (1757)
+    Flags: 0x02 (Don't Fragment)
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    Fragment offset: 0
+    Time to live: 128
+    Protocol: TCP (6)
+    Header checksum: 0x0000 [validation disabled]
+    [Header checksum status: Unverified]
+    Source: 192.168.0.102 (192.168.0.102)
+    Destination: gaia.cs.umass.edu (128.119.245.12)
+    [Source GeoIP: Unknown]
+    [Destination GeoIP: Unknown]
+Transmission Control Protocol, Src Port: 57610 (57610), Dst Port: http (80), Seq: 1, Ack: 1, Len: 434
+    Source Port: 57610 (57610)
+    Destination Port: http (80)
+    [Stream index: 4]
+    [TCP Segment Len: 434]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 435    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+        [TCP Flags: ·······AP···]
+    Window size value: 256
+    [Calculated window size: 65536]
+    [Window size scaling factor: 256]
+    Checksum: 0x385f [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.084577000 seconds]
+        [Bytes in flight: 434]
+        [Bytes sent since last PSH flag: 434]
+    TCP payload (434 bytes)
+Hypertext Transfer Protocol
+    GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n]
+            [GET /wireshark-labs/HTTP-wireshark-file2.html HTTP/1.1\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Method: GET
+        Request URI: /wireshark-labs/HTTP-wireshark-file2.html
+        Request Version: HTTP/1.1
+    Host: gaia.cs.umass.edu\r\n
+    Connection: keep-alive\r\n
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36\r\n
+    Upgrade-Insecure-Requests: 1\r\n
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\r\n
+    DNT: 1\r\n
+    Accept-Encoding: gzip, deflate\r\n
+    Accept-Language: en-US,en;q=0.9\r\n
+    \r\n
+    [Full request URI: http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html]
+    [HTTP request 1/2]
+    [Response in frame: 69]
+    [Next request in frame: 71]
+```
 
 8. Inspect the contents of the first HTTP GET request from your browser to the server. Do you see an “IF-MODIFIED-SINCE” line in the HTTP GET?
     + 
