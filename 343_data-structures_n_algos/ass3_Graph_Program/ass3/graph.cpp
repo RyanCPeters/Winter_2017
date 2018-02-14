@@ -104,9 +104,9 @@ call the function visit on each vertex label */
 void Graph::depthFirstTraversal(std::string startLabel,
 								void visit(const std::string&)) 
 {
-
-    int val = 80085;
-    int *trueRef = &val;
+    // We use numberOfVertices%122 in order to generate
+    char val = static_cast<char>(numberOfVertices%122);
+    void *trueRef = &val;
     auto iter = vertices.find(startLabel);
     if(iter == vertices.end())return; // this is more of an err state... but
                                       // we can deal with that later.

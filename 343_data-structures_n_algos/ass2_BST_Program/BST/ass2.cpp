@@ -86,6 +86,7 @@ void treeMenuString() {
 	BinarySearchTree<string> bst;
 	BinarySearchTree<string>* bstPtr;
 	const string menu = "treeMenuString\n"
+        "0. Display tree sideways\n"
 		"1. Add\n2. Search\n"
 		"3. Inorder traverse\n"
 		"4. Height & Number of nodes\n"
@@ -104,6 +105,9 @@ void treeMenuString() {
 		vector<string> v;
 		cin >> choice;
 		switch (choice) {
+            case 0:
+                bst.displaySideways();
+                break;
 			case 1:
 				str = getString();
 				cout << (bst.add(str) ? "" : "Not ") << "Added " << str << endl;
@@ -127,8 +131,8 @@ void treeMenuString() {
 				
 				getStrings(v);
 				for (const string& ele :v ) cout << (bst.add(ele) ? "" : "Not ") << "Added " << ele << endl;
-				bst.displaySideways();
-				bst.rebalance();
+//				bst.displaySideways();
+//				bst.rebalance();
 				break;
 			case 7:
 				bst.clear();
@@ -157,9 +161,9 @@ void treeMenuString() {
 					bstPtr->inorderTraverse(itemDisplay);
 					cout << endl;
 					delete(bstPtr);
-					//delete[] bstPtr;
-					cout << "delete(bstPtr);\n\tDid it work?\n" << "\tHeight: " << bstPtr->getHeight() << endl;
-					cout << "\tNumber of nodes: " << bstPtr->getNumberOfNodes() << endl;
+					cout << "deleted bstPtr" << endl;
+//					cout << "delete(bstPtr);\n\tDid it work?\n" << "\tHeight: " << bstPtr->getHeight() << endl;
+//					cout << "\tNumber of nodes: " << bstPtr->getNumberOfNodes() << endl;
 					cout << "now to print bst to confirm it is unchanged" << endl;
 					break;
 				}
@@ -169,7 +173,7 @@ void treeMenuString() {
 				cin.clear();
 				cin.ignore(INT_MAX, '\n');
 		}
-		bst.displaySideways();
+
 		cout << menu;
 	}
 }
