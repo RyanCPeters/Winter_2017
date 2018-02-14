@@ -26,7 +26,7 @@ Vertex::~Vertex() {
     // we set visPtr to nullptr before deleting it because
     // we aren't trying to modify the control reference from Vertex.
     visPtr = nullptr;
-    delete(visPtr);
+    free(visPtr);
 }
 
 /** @return  The label of this vertex. */
@@ -34,7 +34,7 @@ std::string Vertex::getLabel() const
 { return vertexLabel; }
 
 /** Marks this vertex as visited. */
-void Vertex::visit(int* trueRef)
+void Vertex::visit(void *trueRef)
 { visPtr = trueRef;}
 
 /** Marks this vertex as not visited. */
@@ -48,7 +48,7 @@ void Vertex::unvisit()
  *
  * @return True if the vertex has been visited, otherwise returns false
  */
-bool Vertex::isVisited(const int* const trueRef) const
+bool Vertex::isVisited(const void *const trueRef) const
 { return visPtr == trueRef; }
 
 /** Adds an edge between this vertex and the given vertex.

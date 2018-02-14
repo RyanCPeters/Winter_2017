@@ -35,7 +35,7 @@ public:
 	std::string getLabel() const;
 
 	/** Marks this vertex as visited. */
-	void visit(int* trueRef);
+	void visit(void *trueRef);
 
 	/** Marks this vertex as not visited. */
 	void unvisit();
@@ -46,7 +46,7 @@ public:
      * @param trueRef
      * @return True if the vertex has been visited, otherwise returns false
      */
-	bool isVisited(const int* const trueRef) const;
+	bool isVisited(const void *const trueRef) const;
 
 	/** Adds an edge between this vertex and the given vertex.
 	Cannot have multiple connections to the same endVertex
@@ -125,7 +125,7 @@ private:
      * status, the memory address pointed to by all visited nodes is deleted
      * and reclaimed.
      */
-    int* visPtr { nullptr };
+    void* visPtr { nullptr };
 
 	/** adjacencyList as an ordered map, in alphabetical order */
 	std::map<std::string, Edge, std::less<std::string>> adjacencyList;

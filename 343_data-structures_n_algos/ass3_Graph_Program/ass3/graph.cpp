@@ -45,19 +45,21 @@ nor have multiple edges connecting to another singular vertex */
 bool Graph::add(const std::string& start, const std::string& end,
                 const int& edgeWeight)
 {
-    auto iter1 = vertices.find(start);
-    if(iter1 == vertices.end()){
-        vertices.emplace(start,new Vertex(start));
-        ++numberOfVertices;
-        iter1 = vertices.find(start);
-    }
-    if(vertices.count(end) == 0){
-        vertices.emplace(end, new Vertex(end));
-        ++numberOfVertices;
-    }
-    return iter1->second->connect(end, edgeWeight);
+    // we are going to first create a pointer to the vertex that has the
+    // value store in `start` as its vertexLabel.
+    auto vPtr = findOrCreateVertex(start);
+    // next we ensure that end is stored in the vertices map
+    findOrCreateVertex(end);
 
-}
+    // we now establish the edge connection between the two vertices via that
+    // Vertex pointer we made.
+    return vPtr->connect(end, edgeWeight);
+
+    // we don't need to worry about deleting our pointer, as the data being
+    // stored at its pointed memory address is managed by the vertices map.
+    // vPtr itself will be deleted, non-recursively,  upon the end of the
+    // function's scope.
+} // end of add function (here is where vPtr dies)
 
 /** return weight of the edge between start and end
 returns INT_MAX if not connected or vertices don't exist */
@@ -105,8 +107,7 @@ void Graph::depthFirstTraversal(std::string startLabel,
 								void visit(const std::string&)) 
 {
     // We use numberOfVertices%122 in order to generate
-    char val = static_cast<char>(numberOfVertices%122);
-    void *trueRef = &val;
+    void *trueRef = nullptr;
     auto iter = vertices.find(startLabel);
     if(iter == vertices.end())return; // this is more of an err state... but
                                       // we can deal with that later.
@@ -114,13 +115,15 @@ void Graph::depthFirstTraversal(std::string startLabel,
     stk.push(*(iter->second));
     std::string curVtx = iter->first;
     while(curVtx != stk.top().getLabel()){
-        if(!(stk.top().isVisited(trueRef))){// we need to check each adjacent
-            // edge of stk.top() against unvisited nodes in the vertices map.
-            // pushing in reverse alphabetical order the vertices that have
-            // yet to be visited.
+        // In the following `if` statement we need to check adjacent edges
+        // of stk.top() against unvisited nodes in the vertices map.
+        if(!(stk.top().isVisited(trueRef))){
+            // pushing, in reverse alphabetical order, the vertices that we have
+            // yet to visit.
 
         }
     }
+    free(trueRef);
 
 }
 
@@ -163,4 +166,15 @@ Vertex* Graph::findVertex(const std::string& vertexLabel) const
 
 /** find a vertex, if it does not exist create it and return it */
 Vertex* Graph::findOrCreateVertex(const std::string& vertexLabel) 
-{ return nullptr; }
+{
+    if (vertices.count(vertexLabel) == 0) {
+        ++numberOfVertices;
+        /*in the following return statement, we are building a new Vertex* in
+         * place in the vertices map, then we're getting the iterator for
+         * that new vertex via .first, then we call ->second in order to
+         * return the actual Vertex pointer*/
+        return vertices.emplace( vertexLabel, new Vertex(vertexLabel))
+                         .first->second;
+    }
+    return vertices.find(vertexLabel)->second;
+}
