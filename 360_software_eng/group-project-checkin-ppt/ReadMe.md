@@ -74,4 +74,4 @@ _Steam Stream_ integrates your Steam library, wish-list, and the Steam Store wit
 </div>
 
 
-Add statements about Steam Stream providing a easy to use interface for getting a new stream started in the primary streaming outlets.
+<!--Add statements about Steam Stream providing a easy to use interface for getting a new stream started in the primary streaming outlets.-->
