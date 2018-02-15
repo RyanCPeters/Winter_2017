@@ -232,9 +232,11 @@ void Graph::djikstraCostToAllVertices(
 	std::map<std::string, int>& weight,
 	std::map<std::string, std::string>& previous) {
 
-    startLabel = std::string();
-    weight = {};
-    previous = {};
+//    startLabel = std::string();
+//    weight = {};
+//    previous = {};
+
+    
 }
 
 
