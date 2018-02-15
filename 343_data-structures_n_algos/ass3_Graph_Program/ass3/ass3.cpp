@@ -3,6 +3,10 @@
 #include <map>
 #include <sstream>
 #include <vector>
+#include <iomanip>
+#include <chrono>
+#include <thread>
+
 
 #include "graph.h"
 
@@ -23,13 +27,15 @@ map<string, string> previous;
 // OK or ERR for tests
 template <typename T>
 string isOK(const T& got, const T& expected) {
+    cout << setw(15) << right << "Got [" << got << "]" << endl
+         << setw(15) << right << "expected [" << expected << "]" << endl;
+
+	std::this_thread::sleep_for(std::chrono::milliseconds(50));
 	if( got == expected ) {
-		return "OK: ";
+        return "OK: ";
 	}
-	else {
-		cout << "    Got   " << got << "\n expected " << expected << endl;
-		return "ERR: ";
-	}
+
+    return "ERR: ";
 }
 
 // visitor function - print out the vertex label
@@ -96,39 +102,59 @@ void testGraph0() {
 	g.readFile("graph0.txt");
 	cout << isOK(g.getNumVertices(), 3) << "3 vertices" << endl;
 	cout << isOK(g.getNumEdges(), 3) << "3 edges" << endl;
+    cout.flush();
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
-    std::string abc = "A B C";
+    std::string abc = "A B C ";
 
 	graphOut.str(string());
 	g.depthFirstTraversal("A", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "DFS" << endl;
+    cout.flush();
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
     graphOut.str(string());
 	g.breadthFirstTraversal("A", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "BFS" << endl;
+    cout.flush();
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
 	g.djikstraCostToAllVertices("A", weight, previous);
 	graphCostDisplay();
     abc = "B(1) C(4) via [B] ";
 	cout << isOK(graphOut.str(), abc) << "Djisktra" << endl;
+    cout.flush();
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
 }
 
 void testGraph1() {
 	cout << "testGraph1" << endl;
 	Graph g;
 	g.readFile("graph1.txt");
+    cout.flush();
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
 	cout << isOK(g.getNumVertices(), 10) << "10 vertices" << endl;
 	cout << isOK(g.getNumEdges(), 9) << "9 edges" << endl;
-    std::string abc = "A B C D E F G H ";
+    cout.flush();
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
+    std::string abc = "A B C D E F G H "; // "A B C D E F G H "
     graphOut.str(string());
 	g.depthFirstTraversal("A", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "DFS" << endl;
-    abc = "A B C D E F ";
+    cout.flush();
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
+    abc = "A B H C G D E F "; // "A B H C G D E F "
     graphOut.str(string());
 	g.breadthFirstTraversal("A", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "BFS" << endl;
+    cout.flush();
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
-	g.djikstraCostToAllVertices("A", weight, previous);
+
+    g.djikstraCostToAllVertices("A", weight, previous);
 	graphCostDisplay();
     abc = "B(1) C(2) via [B] D(3) via [B C] E(4) via [B C D] F(5) via [B C D E] "
           "G(4) via [H] "
@@ -137,42 +163,63 @@ void testGraph1() {
 }
 
 void testGraph2() {
+    cout << "testGraph2" << endl;
 	Graph g;
 
 	g.readFile("graph2.txt");
 	cout << isOK(g.getNumVertices(), 21) << "21 vertices" << endl;
 	cout << isOK(g.getNumEdges(), 24) << "24 edges" << endl;
 
-    std::string abc = "A B E F J C G K L D H M I N ";
+    cout.flush();
+	std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
+    std::string abc = "A B E F J C G K L D H M I N ";// "A B E F J C G K L D H M I N "
     graphOut.str(string());
 	g.depthFirstTraversal("A", graphVisitor);
 	cout << isOK(graphOut.str(), abc)
 		<< "DFS from A" << endl;
 
-    abc = "O P R S T U Q ";
+    cout.flush();
+	std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
+    abc = "O P R S T U Q "; //"O P R S T U Q "
     graphOut.str(string());
 	g.depthFirstTraversal("O", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "DFS from O" << endl;
 
-    abc = "A B C D E F G H I J K L M N ";
+    cout.flush();
+	std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
+    abc = "A B C D E F G H I J K L M N ";// "A B C D E F G H I J K L M N "
     graphOut.str(string());
 	g.breadthFirstTraversal("A", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "BFS from A" << endl;
 
-    abc = "D H I M N ";
+    cout.flush();
+	std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
+    abc = "D H I M N "; // "D H I M N "
     graphOut.str(string());
 	g.breadthFirstTraversal("D", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "BFS from D" << endl;
+
+    cout.flush();
+	std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
     abc = "U ";
     graphOut.str(string());
 	g.depthFirstTraversal("U", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "DFS from U" << endl;
 
+    cout.flush();
+	std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
     graphOut.str(string());
 	g.breadthFirstTraversal("U", graphVisitor);
 	cout << isOK(graphOut.str(), abc) << "BFS from U" << endl;
+
+    cout.flush();
+	std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
     abc = "P(5) Q(2) R(3) via [Q] S(6) via [Q R] "
           "T(8) via [Q R S] U(9) via [Q R S] ";
@@ -182,8 +229,21 @@ void testGraph2() {
 }
 
 int main() {
+
+    cout << setfill('~') << setw(80) << left << "." << endl;
+    cout.flush();
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+	cout << endl << setfill(' ');
 	testGraph0();
+    cout << setfill('~') << setw(80) << left << "." << endl;
+    cout.flush();
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    cout << endl << setfill(' ');
 	testGraph1();
+    cout << setfill('~') << setw(80) << left << "." << endl;
+    cout.flush();
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    cout << endl << setfill(' ');
 	testGraph2();
 	return 0;
 }

@@ -1,16 +1,13 @@
-#include <queue>
-#include <climits>
-#include <set>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <stack>
-
+#include <random>
+#include <chrono>
 #include "graph.h"
 
 /**
 * A graph is made up of vertices and edges
 * A vertex can be connected to other vertices via weighted, directed edge
+ *
+ * Assumptions:
+ *  1) Time is linear and there is no spoon
 */
 
 
@@ -20,14 +17,22 @@
 
 
 /** constructor, empty graph */
-Graph::Graph(): numberOfVertices(0), numberOfEdges(0),vertices() {}
+Graph::Graph(): numberOfVertices(0), numberOfEdges(0),vertices() {
+    // creating void pointers that will point to random places in memory. Not
+    // for the data saved in the memory, but to acquire random hex values at
+    // low cost that we will later use as a control reference for marking
+    // visited nodes as we perform different graph traversals.
+    trueRefA = (uint8_t*)this+1;
+    trueRefB = trueRefA+1;
+    return;
+}
 
 /** destructor, delete all vertices and edges
 only vertices stored in map
 no pointers to edges created by graph */
 Graph::~Graph() {
     vertices.clear();
-}
+    }
 
 /** return number of vertices */
 int Graph::getNumVertices() const 
@@ -47,13 +52,18 @@ bool Graph::add(const std::string& start, const std::string& end,
 {
     // we are going to first create a pointer to the vertex that has the
     // value store in `start` as its vertexLabel.
-    auto vPtr = findOrCreateVertex(start);
+    std::shared_ptr<Vertex> vPtr, endPtr;
+    vPtr = findOrCreateVertex(start);
     // next we ensure that end is stored in the vertices map
-    findOrCreateVertex(end);
+    endPtr = findOrCreateVertex(end);
 
     // we now establish the edge connection between the two vertices via that
     // Vertex pointer we made.
-    return vPtr->connect(end, edgeWeight);
+    if(vPtr->connect(endPtr, edgeWeight)){
+        ++numberOfEdges;
+        return true;
+    }
+    return false;
 
     // we don't need to worry about deleting our pointer, as the data being
     // stored at its pointed memory address is managed by the vertices map.
@@ -78,10 +88,10 @@ fromVertex  toVertex    edgeWeight */
 void Graph::readFile(std::string filename) 
 {
     std::ifstream ifile;
-    filename = "..\\" + filename;
+//    filename = ".\\" + filename;
     ifile.open(filename);
     if(!ifile.is_open()){
-        std::cerr << "shits B0rK3d!1!!1!one!! tried to read "
+        std::cerr << "B0rK3d!1!!1!one!! tried to read "
                 "from file but it shit the bed" << std::endl;
         std::cerr << "\tWe were given the following file name to open: "
                   << filename << " but we obviosly didn't get it open..."
@@ -95,10 +105,27 @@ void Graph::readFile(std::string filename)
         ifile >> start;
         ifile >> end;
         ifile >> weight;
-        if( add(start,end,weight) )++numberOfEdges;
+        add(start,end,weight);
     }
-
     ifile.close();
+}
+
+/** used with the private class level member variables trueRefA and trueRefB
+ * in ensuring high probability of unique reference address for each traversal.
+ *
+ * Using code pulled from:
+http://www.cplusplus.com/reference/random/uniform_int_distribution/operator%28%29/
+ *
+ * @return a random number from 1 to 7 that represents the offset that should
+ * be used from the previous memory position.
+ */
+int Graph::generateRandomOffset() {
+
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    std::default_random_engine generator(seed);
+
+    std::uniform_int_distribution<int> distribution(1, 7);
+    return distribution(generator);
 }
 
 /** depth-first traversal starting from startLabel
@@ -106,32 +133,24 @@ call the function visit on each vertex label */
 void Graph::depthFirstTraversal(std::string startLabel,
 								void visit(const std::string&)) 
 {
-    // We use numberOfVertices%122 in order to generate
-    void *trueRef = nullptr;
-    auto iter = vertices.find(startLabel);
-    if(iter == vertices.end())return; // this is more of an err state... but
-                                      // we can deal with that later.
-    std::stack<Vertex> stk;
-    stk.push(*(iter->second));
-    std::string curVtx = iter->first;
-    while(curVtx != stk.top().getLabel()){
-        // In the following `if` statement we need to check adjacent edges
-        // of stk.top() against unvisited nodes in the vertices map.
-        if(!(stk.top().isVisited(trueRef))){
-            // pushing, in reverse alphabetical order, the vertices that we have
-            // yet to visit.
-
-        }
+    if (vertices.count(startLabel) == 0) {
+        // the starting label isn't a part of this graph
+        return; // so break out of function with an empty return.
     }
-    free(trueRef);
-
+    depthFirstTraversalHelper((findVertex(startLabel)), visit);
 }
 
 /** breadth-first traversal starting from startLabel
 call the function visit on each vertex label */
 void Graph::breadthFirstTraversal(std::string startLabel,
 								  void visit(const std::string&)) 
-{}
+{
+    if (vertices.count(startLabel) == 0) {
+        // the starting label isn't a part of this graph
+        return; // so break out of function with an empty return.
+    }
+    breadthFirstTraversalHelper((findVertex(startLabel)), visit);
+}
 
 /** find the lowest cost from startLabel to all vertices that can be reached
 using Djikstra's shortest-path algorithm
@@ -145,36 +164,107 @@ which I am ignoring for readability */
 void Graph::djikstraCostToAllVertices(
 	std::string startLabel,
 	std::map<std::string, int>& weight,
-	std::map<std::string, std::string>& previous) {}
+	std::map<std::string, std::string>& previous) {
+
+    startLabel = std::string();
+    weight = {};
+    previous = {};
+}
 
 /** helper for depthFirstTraversal */
-void Graph::depthFirstTraversalHelper(Vertex* startVertex,
-									  void visit(const std::string&)) 
-{}
+void Graph::depthFirstTraversalHelper(std::weak_ptr<Vertex> startVertex,
+                                      void visit(const std::string &))
+{
+    std::vector<std::weak_ptr<Vertex>> stk;
+    stk.push_back(startVertex);
+
+    // establishing the memory address we'll use later when checking if
+    // vertices have been visited yet
+    trueRefB = trueRefA+ generateRandomOffset();
+    trueRefA += generateRandomOffset();
+    auto* trueRef = trueRefB;
+
+    while (!stk.empty()) {
+        while(!stk.empty() && stk.back().lock()->isVisited(trueRef)){
+            stk.pop_back();
+        }
+        if(stk.empty())break;
+        auto vPtr = stk.back().lock();
+        stk.pop_back();
+        vPtr->visit(trueRef);
+        vPtr->resetReverseNeighbor();
+        std::unique_ptr<std::string> curVtx, nextVLabel;
+        curVtx = std::make_unique<std::string>(vPtr->getLabel());
+        visit(*curVtx);
+        while (*curVtx != vPtr->reversePeekNextNeighbor()) {
+
+            nextVLabel =
+                    std::make_unique<std::string>(
+                            vPtr->reverseGetNextNeighbor());
+
+            std::weak_ptr<Vertex> item = vertices.find(*nextVLabel)->second;
+            if(!(item.lock()->isVisited(trueRef))){
+                stk.push_back(item.lock());
+            }
+        }
+    }
+}
 
 /** helper for breadthFirstTraversal */
-void Graph::breadthFirstTraversalHelper(Vertex*startVertex,
-										void visit(const std::string&)) 
-{}
+void Graph::breadthFirstTraversalHelper(std::shared_ptr<Vertex> startVertex,
+                                        void visit(const std::string &))
+{
+    std::queue<std::weak_ptr<Vertex>> qwayway;
+    qwayway.push(startVertex);
+
+    // establishing the memory address we'll use later when checking if
+    // vertices have been visited yet
+    trueRefB = trueRefA + generateRandomOffset();
+    trueRefA += generateRandomOffset();
+    auto *trueRef = trueRefB;
+
+
+    qwayway.front().lock()->visit(trueRef);
+    auto vPtr = qwayway.front().lock();
+    while (!qwayway.empty()) {
+        vPtr = qwayway.front().lock();
+        qwayway.pop();
+        vPtr->resetNeighbor();
+        std::unique_ptr<std::string> curVtx, nextVLabel;
+        curVtx = std::make_unique<std::string>(vPtr->getLabel());
+        visit(*curVtx);
+        std::string c = *curVtx;
+        while (*curVtx != vPtr->peekNextNeighbor()) {
+            nextVLabel = std::make_unique<std::string>(vPtr->getNextNeighbor());
+
+            std::string d = *nextVLabel;
+            std::weak_ptr<Vertex> item = vertices.find(*nextVLabel)->second;
+            if (!(item.lock()->isVisited(trueRef))) {
+                item.lock()->visit(trueRef);
+                qwayway.push(item.lock());
+            }
+        }
+    }
+}
 
 /** mark all verticies as unvisited */
 void Graph::unvisitVertices() {}
 
 /** find a vertex, if it does not exist return nullptr */
-Vertex* Graph::findVertex(const std::string& vertexLabel) const 
-{ return nullptr; }
+std::shared_ptr<Vertex> Graph::findVertex(const std::string &vertexLabel) const
+{
+    return (vertices.count(vertexLabel) > 0)?
+                vertices.find(vertexLabel)->second : nullptr;
+
+}
 
 /** find a vertex, if it does not exist create it and return it */
-Vertex* Graph::findOrCreateVertex(const std::string& vertexLabel) 
+std::shared_ptr<Vertex> Graph::findOrCreateVertex(
+        const std::string &vertexLabel)
 {
-    if (vertices.count(vertexLabel) == 0) {
-        ++numberOfVertices;
-        /*in the following return statement, we are building a new Vertex* in
-         * place in the vertices map, then we're getting the iterator for
-         * that new vertex via .first, then we call ->second in order to
-         * return the actual Vertex pointer*/
-        return vertices.emplace( vertexLabel, new Vertex(vertexLabel))
-                         .first->second;
-    }
-    return vertices.find(vertexLabel)->second;
+    auto aPair = vertices.emplace(vertexLabel,
+                                std::make_shared<Vertex>(Vertex(vertexLabel)));
+    if(aPair.second)++numberOfVertices;
+    return aPair.first->second;
+
 }

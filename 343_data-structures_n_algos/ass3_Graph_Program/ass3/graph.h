@@ -8,6 +8,13 @@
 
 #include <map>
 #include <string>
+#include <queue>
+#include <climits>
+#include <set>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <memory>
 
 #include "vertex.h"
 #include "edge.h"
@@ -77,25 +84,32 @@ private:
 	/** number of edges in graph */
 	int numberOfEdges;
 
+    uint8_t * trueRefA {nullptr};
+    uint8_t * trueRefB {nullptr};
+
+    /** A helper function used in producing unique offsets for reference
+     * memory addresses on each graph traversal. */
+    int generateRandomOffset();
+
 	/** mapping from vertex label to vertex pointer for quick access */
-	std::map<std::string, Vertex*> vertices;
+	std::map<std::string, std::shared_ptr<Vertex>> vertices;
 
 	/** helper for depthFirstTraversal */
-	void depthFirstTraversalHelper(Vertex* startVertex,
-								   void visit(const std::string&));
+	void depthFirstTraversalHelper(std::weak_ptr<Vertex> startVertex,
+                                   void visit(const std::string &));
 
 	/** helper for breadthFirstTraversal */
-	void breadthFirstTraversalHelper(Vertex*startVertex,
-									 void visit(const std::string&));
+	void breadthFirstTraversalHelper(std::shared_ptr<Vertex> startVertex,
+									 void visit(const std::string &));
 
 	/** mark all verticies as unvisited */
 	void unvisitVertices();
 
 	/** find a vertex, if it does not exist return nullptr */
-	Vertex* findVertex(const std::string& vertexLabel) const;
+	std::shared_ptr<Vertex> findVertex(const std::string &vertexLabel) const;
 
 	/** find a vertex, if it does not exist create it and return it */
-	Vertex* findOrCreateVertex(const std::string& vertexLabel);
+	std::shared_ptr<Vertex> findOrCreateVertex(const std::string &vertexLabel);
 };  // end Graph
 
 #endif  // GRAPH_H

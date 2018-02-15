@@ -8,30 +8,48 @@
 #define EDGE_H
 
 #include <string>
+#include <memory>
 
+template<typename T>
 class Edge {
 public:
 	/** empty edge constructor */
-	Edge();
+	Edge() = default;
 
-	/** constructor with label and weight
-	 *
+	/** Edge::Edge(const std::string& end, const int weight = 0): endVertex(end),
+	 *                                                        edgeWeight(weight)
+	 * constructor with label and weight
+	 * @param end
+	 * @param weight
 	 */
-	Edge(const std::string& end, int weight);
+	Edge(std::shared_ptr<T> end, int weight = 0)
+			: endVertex(std::move(end)), edgeWeight(weight) {}
 
-	/** return the vertex this edge connects to */
-	std::string getEndVertex() const;
+	/** std::string Edge::getEndVertex() const
+	 * return the vertex this edge connects to
+	 * @return
+	 */
+	std::shared_ptr<T> &getEndVertex() const { return endVertex; }
 
-	/** return the weight/cost of travlleing via this edge */
-	int getWeight() const;
+	/** int Edge::getWeight() const
+	 * return the weight/cost of travlleing via this edge
+	 * @return
+	 */
+	int getWeight() const { return edgeWeight; }
 
 private:
 	/** end vertex, cannot be changed */
-	std::string endVertex { "" };
+	std::shared_ptr<T> endVertex { nullptr };
 
 	/** edge weight, cannot be changed */
 	int edgeWeight { 0 };
 };  //  end Edge
+
+
+
+
+
+
 
 
 #endif  // EDGE_H

@@ -1,7 +1,7 @@
 #include <climits>
+#include <memory>
 
 #include "vertex.h"
-//#include "edge.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -55,13 +55,19 @@ bool Vertex::isVisited(const void *const trueRef) const
 Cannot have multiple connections to the same endVertex
 Cannot connect back to itself
 @return  True if the connection is successful. */
-bool Vertex::connect(const std::string& endVertex, int const edgeWeight)
+bool Vertex::connect(std::weak_ptr<Vertex> const endVertex,
+                     int const edgeWeight)
 {
-    if( endVertex == vertexLabel || adjacencyList.count(endVertex) > 0 ) {
+    std::unique_ptr<std::string> endLabel =
+            std::make_unique<std::string>(endVertex.lock()->getLabel());
+
+    if(*endLabel == vertexLabel ||
+            adjacencyList.count(*endLabel) > 0 ) {
         return false;
     }
-    adjacencyList[endVertex] = Edge(endVertex,edgeWeight);
+    adjacencyList[*endLabel] = Edge<Vertex>(endVertex.lock(),edgeWeight);
     resetNeighbor();
+    resetReverseNeighbor();
     return true;
 }
 
@@ -69,9 +75,10 @@ bool Vertex::connect(const std::string& endVertex, int const edgeWeight)
 @return  True if the removal is successful. */
 bool Vertex::disconnect(const std::string& endVertex) 
 {
-    auto iter = adjacencyList.find(endVertex);
-    if(iter == adjacencyList.end())return false;
-    adjacencyList.erase(iter);
+    if (adjacencyList.count(endVertex) == 0)return false;
+    adjacencyList.erase(endVertex);
+    resetNeighbor();
+    resetReverseNeighbor();
     return true;
 }
 
@@ -100,7 +107,7 @@ void Vertex::resetReverseNeighbor()
 Neighbors are automatically sorted alphabetically via map
 Returns the vertex label if there are no more neighbors
 @return  The label of the vertex's next neighbor. */
-std::string Vertex::getNextNeighbor() 
+std::string Vertex::getNextNeighbor()
 {
     if(currentNeighbor == adjacencyList.end())return vertexLabel;
     return (currentNeighbor++)->first;
@@ -124,12 +131,12 @@ std::string Vertex::reversePeekNextNeighbor() const {
 
 /** Sees whether this vertex is equal to another one.
 Two vertices are equal if they have the same label. */
-bool Vertex::operator==(const Vertex& rightHandItem) const 
-{ return rightHandItem.vertexLabel == vertexLabel; }
+bool Vertex::operator==(const std::shared_ptr<Vertex> &rightHandItem) const
+{ return rightHandItem->vertexLabel == vertexLabel; }
 
 /** Sees whether this vertex is < another one.
 Compares vertexLabel. */
-bool Vertex::operator<(const Vertex& rightHandItem) const 
-{ return vertexLabel.compare(rightHandItem.vertexLabel) < 0; }
+bool Vertex::operator<(const std::shared_ptr<Vertex> &rightHandItem) const
+{ return vertexLabel.compare(rightHandItem->vertexLabel) < 0; }
 
 

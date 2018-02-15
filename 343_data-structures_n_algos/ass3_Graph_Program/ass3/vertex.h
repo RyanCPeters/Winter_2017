@@ -12,6 +12,7 @@
 #include <functional>
 #include <map>
 #include <string>
+#include <memory>
 
 #include "edge.h"
 
@@ -52,7 +53,8 @@ public:
 	Cannot have multiple connections to the same endVertex
 	Cannot connect back to itself
 	@return  True if the connection is successful. */
-	bool connect(const std::string& endVertex, int edgeWeight = 0);
+	bool connect(std::weak_ptr<Vertex> endVertex,
+                 const int edgeWeight = 0);
 
 	/** Removes the edge between this vertex and the given one.
 	@return  True if the removal is successful. */
@@ -102,11 +104,11 @@ public:
 
     /** Sees whether this vertex is equal to another one.
 	Two vertices are equal if they have the same label. */
-	bool operator==(const Vertex& rightHandItem) const;
+	bool operator==(const std::shared_ptr<Vertex> &rightHandItem) const;
 
 	/** Sees whether this vertex is < another one.
 	Compares vertexLabel. */
-	bool operator<(const Vertex& rightHandItem) const;
+	bool operator<(const std::shared_ptr<Vertex> &rightHandItem) const;
 
 
 
@@ -125,15 +127,15 @@ private:
      * status, the memory address pointed to by all visited nodes is deleted
      * and reclaimed.
      */
-    void* visPtr { nullptr };
+	void* visPtr;
 
 	/** adjacencyList as an ordered map, in alphabetical order */
-	std::map<std::string, Edge, std::less<std::string>> adjacencyList;
+	std::map<std::string, Edge<Vertex>, std::less<std::string>> adjacencyList;
 
 	/** iterator showing which neighbor we are currently at */
-	std::map<std::string, Edge>::iterator currentNeighbor;
+	std::map<std::string, Edge<Vertex>>::iterator currentNeighbor;
 
-    std::map<std::string, Edge>::reverse_iterator reverseCurNeighbor;
+    std::map<std::string, Edge<Vertex>>::reverse_iterator reverseCurNeighbor;
 };
 
 #endif  // VERTEX_H
