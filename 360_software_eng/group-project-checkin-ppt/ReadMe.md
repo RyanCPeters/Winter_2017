@@ -56,7 +56,7 @@ _Steam Stream_ integrates your Steam library, wish-list, and the Steam Store wit
 <br>
 <div>
   <p>
-    <img src="./really-bad-overlay.png" width="400" height="225"  title="Classy, tasteful, clear, and unofensive... are all things this " align="right"/>
+    <img src="./bad-overlays-happen.png" width="400" height="225"  title="Classy, tasteful, clear, and unofensive... are all things this " align="right"/>
     <span>
           Unfortunately, creating an effective overlay is <strong>not</strong> something just anybody can do.
     </span>
