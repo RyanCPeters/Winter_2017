@@ -69,7 +69,7 @@ _Steam Stream_ integrates your Steam library, wish-list, and the Steam Store wit
   </p>
   <br>
   <p>
-    <img src="./overlay-skin1.png" width="200" height="112" align="left"/><img src="./overlay-skin2.png" width="200" height="112" align="centered + 2em"/><img src="./overlay-skin3.png" width="200" height="112" align="right"/>
+    <img src="./overlay-skin1.png" width="180" height="101" align="left"/><img src="./overlay-skin2.png" width="180" height="101" align="centered + 2em"/><img src="./overlay-skin3.png" width="174" height="101" align="right"/>
   </p>
 </div>
 
