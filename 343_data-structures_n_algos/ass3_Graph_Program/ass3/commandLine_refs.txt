@@ -1,0 +1,2 @@
+g++ -std=c++14 -g -Wall -Wextra vertex.cpp graph.cpp ass3.cpp -o grindass3
+valgrind --leak-check=full --show-leak-kinds=all ./grindass3
