@@ -2,7 +2,7 @@ Product: **Steam Stream**
 ===
 
 ### In a Nutshell
-_Steam Stream_ is a service that provides seamless integration of games in a player's steam library and Streaming outlets. 
+_Steam Stream_ is a service that provides seamless integration of games in a player's steam library and streaming outlets. 
 
 Be it **live streaming** on _Twitch_
 
