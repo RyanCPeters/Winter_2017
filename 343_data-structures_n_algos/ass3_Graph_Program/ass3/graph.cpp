@@ -137,7 +137,41 @@ void Graph::depthFirstTraversal(std::string startLabel,
         // the starting label isn't a part of this graph
         return; // so break out of function with an empty return.
     }
-    depthFirstTraversalHelper((findVertex(startLabel)), visit);
+//    depthFirstTraversalHelper((findVertex(startLabel)), visit);
+    auto startVertex = findVertex(startLabel);
+    std::vector<std::weak_ptr<Vertex>> stk;
+    stk.push_back(startVertex);
+    
+    // establishing the memory address we'll use later when checking if
+    // vertices have been visited yet
+    trueRefB = trueRefA+ generateRandomOffset();
+    trueRefA += generateRandomOffset();
+    auto* trueRef = trueRefB;
+    
+    while (!stk.empty()) {
+        while(!stk.empty() && stk.back().lock()->isVisited(trueRef)){
+            stk.pop_back();
+        }
+        if(stk.empty())break;
+        auto vPtr = stk.back().lock();
+        stk.pop_back();
+        vPtr->visit(trueRef);
+        vPtr->resetReverseNeighbor();
+        std::unique_ptr<std::string> curVtx, nextVLabel;
+        curVtx = std::make_unique<std::string>(vPtr->getLabel());
+        visit(*curVtx);
+        while (*curVtx != vPtr->reversePeekNextNeighbor()) {
+            
+            nextVLabel =
+                    std::make_unique<std::string>(
+                            vPtr->reverseGetNextNeighbor());
+            
+            std::weak_ptr<Vertex> item = vertices.find(*nextVLabel)->second;
+            if(!(item.lock()->isVisited(trueRef))){
+                stk.push_back(item.lock());
+            }
+        }
+    }
 }
 
 /** breadth-first traversal starting from startLabel
@@ -149,7 +183,39 @@ void Graph::breadthFirstTraversal(std::string startLabel,
         // the starting label isn't a part of this graph
         return; // so break out of function with an empty return.
     }
-    breadthFirstTraversalHelper((findVertex(startLabel)), visit);
+//    breadthFirstTraversalHelper((findVertex(startLabel)), visit);
+    auto startVertex = findVertex(startLabel);
+    std::queue<std::weak_ptr<Vertex>> qwayway;
+    qwayway.push(startVertex);
+    
+    // establishing the memory address we'll use later when checking if
+    // vertices have been visited yet
+    trueRefB = trueRefA + generateRandomOffset();
+    trueRefA += generateRandomOffset();
+    auto *trueRef = trueRefB;
+    
+    
+    qwayway.front().lock()->visit(trueRef);
+    auto vPtr = qwayway.front().lock();
+    while (!qwayway.empty()) {
+        vPtr = qwayway.front().lock();
+        qwayway.pop();
+        vPtr->resetNeighbor();
+        std::unique_ptr<std::string> curVtx, nextVLabel;
+        curVtx = std::make_unique<std::string>(vPtr->getLabel());
+        visit(*curVtx);
+        std::string c = *curVtx;
+        while (*curVtx != vPtr->peekNextNeighbor()) {
+            nextVLabel = std::make_unique<std::string>(vPtr->getNextNeighbor());
+            
+            std::string d = *nextVLabel;
+            std::weak_ptr<Vertex> item = vertices.find(*nextVLabel)->second;
+            if (!(item.lock()->isVisited(trueRef))) {
+                item.lock()->visit(trueRef);
+                qwayway.push(item.lock());
+            }
+        }
+    }
 }
 
 /** find the lowest cost from startLabel to all vertices that can be reached
@@ -171,81 +237,7 @@ void Graph::djikstraCostToAllVertices(
     previous = {};
 }
 
-/** helper for depthFirstTraversal */
-void Graph::depthFirstTraversalHelper(std::weak_ptr<Vertex> startVertex,
-                                      void visit(const std::string &))
-{
-    std::vector<std::weak_ptr<Vertex>> stk;
-    stk.push_back(startVertex);
 
-    // establishing the memory address we'll use later when checking if
-    // vertices have been visited yet
-    trueRefB = trueRefA+ generateRandomOffset();
-    trueRefA += generateRandomOffset();
-    auto* trueRef = trueRefB;
-
-    while (!stk.empty()) {
-        while(!stk.empty() && stk.back().lock()->isVisited(trueRef)){
-            stk.pop_back();
-        }
-        if(stk.empty())break;
-        auto vPtr = stk.back().lock();
-        stk.pop_back();
-        vPtr->visit(trueRef);
-        vPtr->resetReverseNeighbor();
-        std::unique_ptr<std::string> curVtx, nextVLabel;
-        curVtx = std::make_unique<std::string>(vPtr->getLabel());
-        visit(*curVtx);
-        while (*curVtx != vPtr->reversePeekNextNeighbor()) {
-
-            nextVLabel =
-                    std::make_unique<std::string>(
-                            vPtr->reverseGetNextNeighbor());
-
-            std::weak_ptr<Vertex> item = vertices.find(*nextVLabel)->second;
-            if(!(item.lock()->isVisited(trueRef))){
-                stk.push_back(item.lock());
-            }
-        }
-    }
-}
-
-/** helper for breadthFirstTraversal */
-void Graph::breadthFirstTraversalHelper(std::shared_ptr<Vertex> startVertex,
-                                        void visit(const std::string &))
-{
-    std::queue<std::weak_ptr<Vertex>> qwayway;
-    qwayway.push(startVertex);
-
-    // establishing the memory address we'll use later when checking if
-    // vertices have been visited yet
-    trueRefB = trueRefA + generateRandomOffset();
-    trueRefA += generateRandomOffset();
-    auto *trueRef = trueRefB;
-
-
-    qwayway.front().lock()->visit(trueRef);
-    auto vPtr = qwayway.front().lock();
-    while (!qwayway.empty()) {
-        vPtr = qwayway.front().lock();
-        qwayway.pop();
-        vPtr->resetNeighbor();
-        std::unique_ptr<std::string> curVtx, nextVLabel;
-        curVtx = std::make_unique<std::string>(vPtr->getLabel());
-        visit(*curVtx);
-        std::string c = *curVtx;
-        while (*curVtx != vPtr->peekNextNeighbor()) {
-            nextVLabel = std::make_unique<std::string>(vPtr->getNextNeighbor());
-
-            std::string d = *nextVLabel;
-            std::weak_ptr<Vertex> item = vertices.find(*nextVLabel)->second;
-            if (!(item.lock()->isVisited(trueRef))) {
-                item.lock()->visit(trueRef);
-                qwayway.push(item.lock());
-            }
-        }
-    }
-}
 
 /** mark all verticies as unvisited */
 void Graph::unvisitVertices() {}

@@ -94,13 +94,13 @@ private:
 	/** mapping from vertex label to vertex pointer for quick access */
 	std::map<std::string, std::shared_ptr<Vertex>> vertices;
 
-	/** helper for depthFirstTraversal */
-	void depthFirstTraversalHelper(std::weak_ptr<Vertex> startVertex,
-                                   void visit(const std::string &));
-
-	/** helper for breadthFirstTraversal */
-	void breadthFirstTraversalHelper(std::shared_ptr<Vertex> startVertex,
-									 void visit(const std::string &));
+//	/** helper for depthFirstTraversal */
+//	void depthFirstTraversalHelper(std::weak_ptr<Vertex> startVertex,
+//                                   void visit(const std::string &));
+//
+//	/** helper for breadthFirstTraversal */
+//	void breadthFirstTraversalHelper(std::shared_ptr<Vertex> startVertex,
+//									 void visit(const std::string &));
 
 	/** mark all verticies as unvisited */
 	void unvisitVertices();
