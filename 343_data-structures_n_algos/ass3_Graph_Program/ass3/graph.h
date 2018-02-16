@@ -78,6 +78,7 @@ public:
 		std::map<std::string, std::string>& previous);
 
 private:
+    const int MY_BIG_INT{2147483647};
 	/** number of vertices in graph */
 	int numberOfVertices;
 

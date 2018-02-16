@@ -236,7 +236,7 @@ void Graph::djikstraCostToAllVertices(
     for(const auto &ele : vertices){
         if(ele.first != startLabel) {
 // a more portable way to get max int_32
-            weight[ele.first] = ~(1<<31);
+            weight[ele.first] = MY_BIG_INT;
             previous[ele.first] = "";
         }
     }
