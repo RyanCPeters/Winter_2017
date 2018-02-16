@@ -233,20 +233,12 @@ void Graph::djikstraCostToAllVertices(
 	std::map<std::string, int>& weight,
 	std::map<std::string, std::string>& previous) {
 
-// this iterator will be used in the logic for assessing cumulative path
-// costs when we traverse the graph in search of the lowest weighted path.
-    std::map<std::string, std::string>::iterator prevIter;
-
-
     for(const auto &ele : vertices){
-        weight[ele.first] = INT_MAX;
-        previous[ele.first] = "";
+        if(ele.first != startLabel) {
+            weight[ele.first] = INT_MAX;
+            previous[ele.first] = "";
+        }
     }
-// having added all vertices to both weight and previous maps, we need to
-// make sure that the propper starting values are assigned to the starting
-// vertex in those maps.
-    weight[startLabel] = 0;
-    previous[startLabel] = "";
 
     /* A note about struct DijkstraData that's being used inside of pQwayway:
      *      This struct contains 2 string pointers and one ine pointer.
@@ -266,38 +258,46 @@ void Graph::djikstraCostToAllVertices(
 
     bool noChangeToWeightMap = false;
 
+
     while(!noChangeToWeightMap) {
         noChangeToWeightMap = true;
-        pQwayway.emplace(DijkstraData(&startLabel));
+        pQwayway.emplace(DijkstraData(startLabel));
         while (!pQwayway.empty()) {
 // vPtr will be used to get the ajacent vertices that we will
 // subsequently be adding to pQwayway.
             auto dijkPtr = pQwayway.top();
             pQwayway.pop();
-            auto vPtr = vertices.find(*(dijkPtr.vert))->second;
+            dijkPtr.weight = weight.find(dijkPtr.vert)->second;
+            auto vPtr = vertices.find(dijkPtr.vert)->second;
             vPtr->resetNeighbor();
             int pathCost;
-            while (vPtr->peekNextNeighbor() != vPtr->getLabel()) {
-// neighborLabelPtr will be used to get the cumulative weight along the path
+            while (vPtr->peekNextNeighbor() != dijkPtr.vert) {
+                pathCost = weight.find(dijkPtr.vert)->second;
+// neighborLabel will be used to get the cumulative weight along the path
 // that has gotten us to the current vertex.
-                std::string neighborLabelPtr = (vPtr->getNextNeighbor());
-                prevIter = previous.find(*(dijkPtr.vert));
-                if(prevIter != previous.end() &&
-                   weight.count(prevIter->second) > 0 &&
-                   vPtr->getEdgeWeight(neighborLabelPtr) > -1 ){
-// we're going to set pathCost to be the sum of the edge from our current
-// vertex location to the next adjacent neighbor plus the cumulative value of
-// this path up to the mapped value for our vertex's "previous" counterpart
-                    pathCost = vPtr->getEdgeWeight(neighborLabelPtr) +
-                               weight.find(prevIter->second)->second;
-                    if(pathCost < weight[neighborLabelPtr]){
-                        noChangeToWeightMap = false;
-                        weight[neighborLabelPtr] = pathCost;
-                        previous[neighborLabelPtr] = vPtr->getLabel();
-                        pQwayway.emplace(DijkstraData(&neighborLabelPtr));
+                std::string neighborLabel = (vPtr->getNextNeighbor());
+                if(neighborLabel == startLabel)continue;
+/*
+ Regarding the following if blocks:
 
-                    }
-
+ we're going to set pathCost to be the sum of the edge from our current
+ vertex location to the next adjacent neighbor plus the cumulative value of
+ this path up to the mapped value for our vertex's "previous" counterpart
+*/
+                if(vPtr->getEdgeWeight(neighborLabel) > -1)
+                    pathCost += getEdgeWeight(dijkPtr.vert, neighborLabel);
+/*
+  Now we begin the fun stuff!
+  Because we are looking for the lowest cost paths to each vertex, we only
+  want to update our maps and priority queue when the newly calculated
+  pathCost is less than the current recorded cost for the destination vertex.
+ */
+                if(pathCost < weight[neighborLabel]){
+                    noChangeToWeightMap = false;
+                    
+                    weight[neighborLabel] = pathCost;
+                    previous[neighborLabel] = dijkPtr.vert;
+                    pQwayway.emplace(DijkstraData(neighborLabel, pathCost));
                 }
             }// closed while(vPtr->nextNeighbor != vPtr->label)
         } // closed while(!pQwaway.empty())

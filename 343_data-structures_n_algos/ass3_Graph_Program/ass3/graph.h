@@ -115,24 +115,24 @@ private:
 
         DijkstraData()= default;
 
-        explicit DijkstraData(std::string* const v = nullptr,
-                              int* const w = 0)
+        explicit DijkstraData(const std::string& v,
+                              int w = 0)
                 : vert(v), weight(w)
         {}
 
-		std::string* vert{nullptr};
-		int* weight {nullptr};
+		std::string vert{""};
+		int weight {0};
 
 		bool operator==(const DijkstraData& rhs)const{
-			return *vert == *(rhs.vert);
+			return vert == (rhs.vert);
 		}
 
 		bool operator<(const DijkstraData& rhs)const{
-			return *weight < *(rhs.weight);
+			return weight < rhs.weight;
 		}
 
 		bool operator>(const DijkstraData& rhs)const{
-			return *weight > *(rhs.weight);
+			return weight > rhs.weight;
 		}
 	};
 };  // end Graph
