@@ -17,55 +17,46 @@
      *              of this vertex.
      */
 Vertex::Vertex(const std::string& label)
-        : vertexLabel(label), visPtr(nullptr)
+        : vertexLabel(label), visitme(0)
 {}
 
 /**
  * just needed for deleting the visPtr used in tracking if a vertex is visited.
  */
 Vertex::~Vertex() {
-    // we set visPtr to nullptr before deleting it because
-    // we aren't trying to modify the control reference from Vertex.
-    visPtr = nullptr;
-    free(visPtr);
+ 
 }
-
+                                         
 /** @return  The label of this vertex. */
 std::string Vertex::getLabel() const 
 { return vertexLabel; }
 
 /** Marks this vertex as visited. */
-void Vertex::visit(void *trueRef)
-{ visPtr = trueRef;}
+void Vertex::visit()
+{ visitme = true; }
 
-/** Marks this vertex as not visited. */
-void Vertex::unvisit() 
-{ visPtr = nullptr; }
+bool Vertex::isVisited() const {
+    return visitme;
+}
 
-/**
- * Returns the visited status of this vertex.
- * @param trueRef The const pointer used by graph class to track if vertices
- *                have been visited during a traversal of the graph data.
- *
- * @return True if the vertex has been visited, otherwise returns false
- */
-bool Vertex::isVisited(const void *const trueRef) const
-{ return visPtr == trueRef; }
+void Vertex::unvisit() {
+    visitme = false;
+}
 
 /** Adds an edge between this vertex and the given vertex.
 Cannot have multiple connections to the same endVertex
 Cannot connect back to itself
 @return  True if the connection is successful. */
-bool Vertex::connect(std::weak_ptr<Vertex> const endVertex,
-                     int const edgeWeight)
+bool Vertex::connect(const Vertex &endVertex,
+                     int edgeWeight)
 {
-    std::string endLabel = (endVertex.lock()->getLabel());
+    std::string endLabel = (endVertex.getLabel());
 
     if(endLabel == vertexLabel ||
             adjacencyList.count(endLabel) > 0 ) {
         return false;
     }
-    adjacencyList[endLabel] = Edge<Vertex>(endVertex.lock(),edgeWeight);
+    adjacencyList[endLabel] = Edge<Vertex>(endVertex,edgeWeight);
     resetNeighbor();
     resetReverseNeighbor();
     return true;
@@ -132,12 +123,12 @@ std::string Vertex::reversePeekNextNeighbor() const {
 
 /** Sees whether this vertex is equal to another one.
 Two vertices are equal if they have the same label. */
-bool Vertex::operator==(const std::shared_ptr<Vertex> &rightHandItem) const
-{ return rightHandItem->vertexLabel == vertexLabel; }
+bool Vertex::operator==(const Vertex &rightHandItem) const
+{ return rightHandItem.vertexLabel == vertexLabel; }
 
 /** Sees whether this vertex is < another one.
 Compares vertexLabel. */
-bool Vertex::operator<(const std::shared_ptr<Vertex> &rightHandItem) const
-{ return vertexLabel.compare(rightHandItem->vertexLabel) < 0; }
+bool Vertex::operator<(const Vertex &rightHandItem) const
+{ return vertexLabel.compare(rightHandItem.vertexLabel) < 0; }
 
 

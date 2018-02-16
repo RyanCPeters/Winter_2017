@@ -15,6 +15,7 @@
 #include <fstream>
 #include <sstream>
 #include <memory>
+#include <utility>
 
 #include "vertex.h"
 #include "edge.h"
@@ -78,64 +79,22 @@ public:
 		std::map<std::string, std::string>& previous);
 
 private:
-    const int MY_BIG_INT{2147483640};
 	/** number of vertices in graph */
 	int numberOfVertices;
 
 	/** number of edges in graph */
 	int numberOfEdges;
-
-    uint8_t * trueRefA {nullptr};
-    uint8_t * trueRefB {nullptr};
-
-    /** A helper function used in producing unique offsets for reference
-     * memory addresses on each graph traversal. */
-    int generateRandomOffset();
-
+	
 	/** mapping from vertex label to vertex pointer for quick access */
 	std::map<std::string, std::shared_ptr<Vertex>> vertices;
-
-//	/** helper for depthFirstTraversal */
-//	void depthFirstTraversalHelper(std::weak_ptr<Vertex> startVertex,
-//                                   void visit(const std::string &));
-//
-//	/** helper for breadthFirstTraversal */
-//	void breadthFirstTraversalHelper(std::shared_ptr<Vertex> startVertex,
-//									 void visit(const std::string &));
-
-	/** mark all verticies as unvisited */
-	void unvisitVertices();
 
 	/** find a vertex, if it does not exist return nullptr */
     Vertex findVertex(const std::string &vertexLabel);
 
 	/** find a vertex, if it does not exist create it and return it */
-    Vertex findOrCreateVertex(const std::string &vertexLabel);
-
-	struct DijkstraData{
-
-        DijkstraData()= default;
-
-        explicit DijkstraData(const std::string& v,
-                              int w = 0)
-                : vert(v), weight(w)
-        {}
-
-		std::string vert{""};
-		int weight {0};
-
-		bool operator==(const DijkstraData& rhs)const{
-			return vert == (rhs.vert);
-		}
-
-		bool operator<(const DijkstraData& rhs)const{
-			return weight < rhs.weight;
-		}
-
-		bool operator>(const DijkstraData& rhs)const{
-			return weight > rhs.weight;
-		}
-	};
+    Vertex * findOrCreateVertex(const std::string &vertexLabel);
+    void unvisitAll();
 };  // end Graph
+
 
 #endif  // GRAPH_H

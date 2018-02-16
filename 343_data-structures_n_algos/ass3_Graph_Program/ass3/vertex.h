@@ -36,25 +36,31 @@ public:
 	std::string getLabel() const;
 
 	/** Marks this vertex as visited. */
-	void visit(void *trueRef);
+	void visit();
 
+    
 	/** Marks this vertex as not visited. */
 	void unvisit();
 
 
-    /**
-     * Returns the visited status of this vertex.
-     * @param trueRef
-     * @return True if the vertex has been visited, otherwise returns false
-     */
-	bool isVisited(const void *const trueRef) const;
+
+	/**
+	 * Returns the visited status of this vertex.
+	 * @param trueRef The const pointer used by graph class to track if vertices
+	 *                have been visited during a traversal of the graph data.
+	 *
+	 * @return True if the vertex has been visited, otherwise returns false
+	 */
+
+	bool isVisited() const;
+	
 
 	/** Adds an edge between this vertex and the given vertex.
 	Cannot have multiple connections to the same endVertex
 	Cannot connect back to itself
 	@return  True if the connection is successful. */
-	bool connect(std::weak_ptr<Vertex> endVertex,
-                 const int edgeWeight = 0);
+	bool connect(const Vertex &endVertex,
+				 int edgeWeight = 0);
 
 	/** Removes the edge between this vertex and the given one.
 	@return  True if the removal is successful. */
@@ -104,11 +110,11 @@ public:
 
     /** Sees whether this vertex is equal to another one.
 	Two vertices are equal if they have the same label. */
-	bool operator==(const std::shared_ptr<Vertex> &rightHandItem) const;
+	bool operator==(const Vertex &rightHandItem) const;
 
 	/** Sees whether this vertex is < another one.
 	Compares vertexLabel. */
-	bool operator<(const std::shared_ptr<Vertex> &rightHandItem) const;
+	bool operator<(const Vertex &rightHandItem) const;
 
 
 
@@ -116,15 +122,11 @@ private:
 	/** the unique label for the vertex */
 	std::string vertexLabel;
 
-    /** Used in conditional checks that compare the memory address pointed to
-     * by this pointer to see if it matches the current traversal's
-     * assigned reference address when checking if this vertex has been visited.
-     *
-     * After graph is traversed and nodes need to be set back to "not visited"
-     * status, the memory address pointed to by all visited nodes is deleted
-     * and reclaimed.
+    /** visitor, the union object defined by unio in the edge.h file, allows
+     * for convenient control of data lifespan without having to go back and
+     * touch each and every vertex.
      */
-	void* visPtr;
+	bool visitme;
 
 	/** adjacencyList as an ordered map, in alphabetical order */
 	std::map<std::string, Edge<Vertex>, std::less<>> adjacencyList;

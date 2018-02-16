@@ -1,7 +1,8 @@
 #include <random>
 #include <chrono>
-#include <climits>
+#include <algorithm>
 #include "graph.h"
+
 
 /**
 * A graph is made up of vertices and edges
@@ -18,15 +19,17 @@
 
 
 /** constructor, empty graph */
-Graph::Graph(): MY_BIG_INT(2147483640), numberOfVertices(0), numberOfEdges(0),vertices() {
-    // creating void pointers that will point to random places in memory. Not
-    // for the data saved in the memory, but to acquire random hex values at
-    // low cost that we will later use as a control reference for marking
-    // visited nodes as we perform different graph traversals.
-    trueRefA = new uint8_t(0);
-    trueRefB = trueRefA+1;
-    delete(trueRefA);
-    
+Graph::Graph()
+        : numberOfVertices(0),
+          numberOfEdges(0),
+          vertices() {
+// by using int (unsigned char) we have a value range between 0 and
+// 65535. So we'll just maintain a class level member variable that
+// increments by one with each traversal, and reset it to 0 again when it
+// reaches 65535. We then pass the trueRef value for a given traversal into the
+// visited vertices, thus marking them as visited for the duration of that
+// traversal. That stored value is then invalidated upon the beginning of the
+// next traversal when trueRef gets incremented again.
 }
 
 /** destructor, delete all vertices and edges
@@ -54,13 +57,14 @@ bool Graph::add(const std::string& start, const std::string& end,
 {
     // we are going to first create a pointer to the vertex that has the
     // value store in `start` as its vertexLabel.
-    auto vPtr = std::make_shared<Vertex>(findOrCreateVertex(start));
+    Vertex* vPtr, *endPtr;
+    vPtr = findOrCreateVertex(start);
     // next we ensure that end is stored in the vertices map
-    auto endPtr = std::make_shared<Vertex>(findOrCreateVertex(end));
+    endPtr = findOrCreateVertex(end);
 
     // we now establish the edge connection between the two vertices via that
     // Vertex pointer we made.
-    if(vPtr->connect(endPtr, edgeWeight)){
+    if(vPtr->connect(*endPtr, edgeWeight)){
         ++numberOfEdges;
         return true;
     }
@@ -111,75 +115,45 @@ void Graph::readFile(std::string filename)
     ifile.close();
 }
 
-/** used with the private class level member variables trueRefA and trueRefB
- * in ensuring high probability of unique reference address for each traversal.
- *
- * Using code pulled from:
-http://www.cplusplus.com/reference/random/uniform_int_distribution/operator%28%29/
- *
- * @return a random number from 1 to 7 that represents the offset that should
- * be used from the previous memory position.
- */
-int Graph::generateRandomOffset() {
-
-    auto seed = std::chrono::system_clock::now().time_since_epoch().count();
-    std::default_random_engine generator(seed);
-
-    std::uniform_int_distribution<int> distribution(1, 7);
-    return distribution(generator);
-}
 
 /** depth-first traversal starting from startLabel
 call the function visit on each vertex label */
 void Graph::depthFirstTraversal(std::string startLabel,
 								void visit(const std::string&)) 
 {
+    unvisitAll();
     if (vertices.count(startLabel) == 0) {
         // the starting label isn't a part of this graph
         return; // so break out of function with an empty return.
     }
 //    depthFirstTraversalHelper((findVertex(startLabel)), visit);
-    auto startVertex = std::make_shared<Vertex>(findVertex(startLabel));
-    std::vector<std::shared_ptr<Vertex>> stk;
+    std::string startVertex = findVertex(startLabel).getLabel();
+    std::vector<std::string> stk;
     stk.push_back(startVertex);
-    
-    // establishing the memory address we'll use later when checking if
-    // vertices have been visited yet
-    trueRefB = trueRefA+ generateRandomOffset();
-    trueRefA += generateRandomOffset();
-    auto* trueRef = trueRefB;
+
     
     while (!stk.empty()) {
-        while(!stk.empty() && stk.back()->isVisited(trueRef)){
-            stk.pop_back();
-        }
-        if(stk.empty())break;
-        auto vPtr = stk.back();
+        auto curVert = vertices.find(stk.back())->second;
         stk.pop_back();
-        vPtr->visit(trueRef);
-        vPtr->resetReverseNeighbor();
-        std::unique_ptr<std::string> curVtx, nextVLabel;
-        curVtx = std::make_unique<std::string>(vPtr->getLabel());
-        visit(*curVtx);
-        while (*curVtx != vPtr->reversePeekNextNeighbor()) {
-            
-            nextVLabel =
-                    std::make_unique<std::string>(
-                            vPtr->reverseGetNextNeighbor());
-            
-            std::shared_ptr<Vertex> item = vertices.find(*nextVLabel)->second;
-            if(!(item->isVisited(trueRef))){
-                stk.push_back(item);
-            }
+        if(curVert->isVisited())continue;
+        curVert->resetReverseNeighbor();
+        visit(curVert->getLabel());
+        curVert->visit();
+        while(curVert->reversePeekNextNeighbor() != curVert->getLabel()){
+            auto neighbor = vertices[curVert->reverseGetNextNeighbor()];
+            if((neighbor->isVisited()))continue;
+            stk.push_back(neighbor->getLabel());
         }
     }
 }
+
 
 /** breadth-first traversal starting from startLabel
 call the function visit on each vertex label */
 void Graph::breadthFirstTraversal(std::string startLabel,
 								  void visit(const std::string&)) 
 {
+    unvisitAll();
     if (vertices.count(startLabel) == 0) {
         // the starting label isn't a part of this graph
         return; // so break out of function with an empty return.
@@ -191,12 +165,9 @@ void Graph::breadthFirstTraversal(std::string startLabel,
     
     // establishing the memory address we'll use later when checking if
     // vertices have been visited yet
-    trueRefB = trueRefA + generateRandomOffset();
-    trueRefA += generateRandomOffset();
-    auto *trueRef = trueRefB;
+
     
-    
-    qwayway.front()->visit(trueRef);
+    qwayway.front()->visit();
     auto vPtr = qwayway.front();
     while (!qwayway.empty()) {
         vPtr = qwayway.front();
@@ -211,13 +182,25 @@ void Graph::breadthFirstTraversal(std::string startLabel,
             
             std::string d = *nextVLabel;
             std::shared_ptr<Vertex> item = vertices.find(*nextVLabel)->second;
-            if (!(item->isVisited(trueRef))) {
-                item->visit(trueRef);
+            if (!(item->isVisited())) {
+                item->visit();
                 qwayway.push(item);
             }
         }
     }
 }
+
+
+/** This struct is for use inside the dijkstra algo, where it will serve
+ * as the comparitor for the priority queue.
+*
+*/
+struct MyGreaterComp {
+    MyGreaterComp() = default;
+    bool operator() (const std::pair<std::string,int>& lhs,
+                     const std::pair<std::string,int>&rhs) const
+    { return lhs.second > rhs.second; }
+};
 
 /** find the lowest cost from startLabel to all vertices that can be reached
 using Djikstra's shortest-path algorithm
@@ -232,51 +215,47 @@ void Graph::djikstraCostToAllVertices(
 	std::string startLabel,
 	std::map<std::string, int>& weight,
 	std::map<std::string, std::string>& previous) {
-
-    for(const auto &ele : vertices){
-        if(ele.first != startLabel) {
-// a more portable way to get max int_32
-            weight[ele.first] = MY_BIG_INT;
-            previous[ele.first] = "";
-        }
-    }
-
-    /* A note about struct DijkstraData that's being used inside of pQwayway:
-     *      This struct contains 2 string pointers and one ine pointer.
-     *
-     *      -- The first string pointer is for the vertex label that will be
-     *      used to map us back to the corresponding Vertex object inside of
-     *      our vertices map.
-     *
-     *      -- The second string pointer tracks the string used as the key
-     *      inside of the map named "previous".
-     *
-     *      -- The int pointer tracks the accumulated weight for a given
-     *      vertex's min cost inside of the map "weight".
-     * */
-    std::priority_queue<DijkstraData,
-            std::vector<DijkstraData>, std::greater<>> pQwayway;
-
+    
+    unvisitAll();
+    int theBigOne = 2147483640, lValueRef = 0;
+    
+//    for(const auto &ele : vertices){
+//        if(ele.first != startLabel) {
+//// a more portable way to get max int_32
+//            weight[ele.first] = theBigOne;
+//            previous[ele.first] = "";
+//        }
+//    }
+    typedef std::pair<std::string,int> aPair;
+// We'll use a vector to emulate a stack and then we'll comense with a dfs
+// traversal of the graph as we update path values¯\_(ツ)_/¯
+    std::priority_queue<aPair,std::vector<aPair>, MyGreaterComp> theQwayway;
+    aPair pairHandler = std::make_pair(startLabel,lValueRef);
     bool noChangeToWeightMap = false;
-
-
     while(!noChangeToWeightMap) {
         noChangeToWeightMap = true;
-        pQwayway.emplace(DijkstraData(startLabel));
-        while (!pQwayway.empty()) {
-// vPtr will be used to get the ajacent vertices that we will
+        theQwayway.push(pairHandler);
+        while (!theQwayway.empty()) {
+// curVert will be used to get the ajacent vertices that we will
 // subsequently be adding to pQwayway.
-            auto dijkPtr = pQwayway.top();
-            pQwayway.pop();
-            dijkPtr.weight = weight.find(dijkPtr.vert)->second;
-            auto vPtr = vertices.find(dijkPtr.vert)->second;
-            vPtr->resetNeighbor();
-            while (vPtr->peekNextNeighbor() != dijkPtr.vert) {
-                int pathCost = weight.find(dijkPtr.vert)->second;
+            auto curPair = theQwayway.top();
+            theQwayway.pop();
+            curPair.second = weight.find(curPair.first)->second;
+            auto curVert = vertices.find(curPair.first)->second;
+            curVert->resetNeighbor();
+            while (curVert->peekNextNeighbor() != curPair.first) {
+                int pathCost = curPair.second;
 // neighborLabel will be used to get the cumulative weight along the path
 // that has gotten us to the current vertex.
-                std::string neighborLabel = (vPtr->getNextNeighbor());
+                std::string neighborLabel = (curVert->getNextNeighbor());
+// sanity check so we don't try to add start point to the end of path
                 if(neighborLabel == startLabel)continue;
+// before we get to far ahead of ourselves, we need to make sure our maps are
+// consistent with what our curPair data says.
+                if(weight.count(neighborLabel) == 0)
+                    weight[neighborLabel] = theBigOne;
+                if(previous.count(neighborLabel) == 0)
+                    previous[neighborLabel] = "";
 /*
  Regarding the following if blocks:
 
@@ -284,8 +263,8 @@ void Graph::djikstraCostToAllVertices(
  vertex location to the next adjacent neighbor plus the cumulative value of
  this path up to the mapped value for our vertex's "previous" counterpart
 */
-                if(vPtr->getEdgeWeight(neighborLabel) > -1)
-                    pathCost += getEdgeWeight(dijkPtr.vert, neighborLabel);
+                if(curVert->getEdgeWeight(neighborLabel) > -1)
+                    pathCost += getEdgeWeight(curPair.first, neighborLabel);
 /*
   Now we begin the fun stuff!
   Because we are looking for the lowest cost paths to each vertex, we only
@@ -294,20 +273,16 @@ void Graph::djikstraCostToAllVertices(
  */
                 if(pathCost < weight[neighborLabel]){
                     noChangeToWeightMap = false;
-                    
+
                     weight[neighborLabel] = pathCost;
-                    previous[neighborLabel] = dijkPtr.vert;
-                    pQwayway.emplace(DijkstraData(neighborLabel, pathCost));
+                    previous[neighborLabel] = curPair.first;
+                    theQwayway.emplace(std::make_pair(neighborLabel, pathCost));
                 }
-            }// closed while(vPtr->nextNeighbor != vPtr->label)
+            }// closed while(curVert->nextNeighbor != curVert->label)
         } // closed while(!pQwaway.empty())
-    }
+    } // closed while(!noChangeToWeightMap)
 }
 
-
-
-/** mark all verticies as unvisited */
-void Graph::unvisitVertices() {}
 
 /** find a vertex, if it does not exist return nullptr */
 Vertex Graph::findVertex(const std::string &vertexLabel)
@@ -317,7 +292,7 @@ Vertex Graph::findVertex(const std::string &vertexLabel)
 }
 
 /** find a vertex, if it does not exist create it and return it */
-Vertex Graph::findOrCreateVertex(
+Vertex * Graph::findOrCreateVertex(
         const std::string &vertexLabel)
 {
     if(vertices.count(vertexLabel) < 1){
@@ -328,6 +303,12 @@ Vertex Graph::findOrCreateVertex(
         ++numberOfVertices;
     }
     
-    return *(vertices[vertexLabel]);
+    return &*vertices[vertexLabel];
 
+}
+
+void Graph::unvisitAll() {
+    
+    for(const auto & ele : vertices)ele.second->unvisit();
+    
 }

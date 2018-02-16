@@ -22,8 +22,9 @@ public:
 	 * @param end
 	 * @param weight
 	 */
-	Edge(std::shared_ptr<T> end, int weight = 0)
-			: endVertex(std::move(end)), edgeWeight(weight) {}
+	Edge(T end, int weight = 0)
+			: endVertex(std::make_shared<T>(std::move(end))), edgeWeight
+			(weight) {}
 
 	/** std::string Edge::getEndVertex() const
 	 * return the vertex this edge connects to
@@ -36,7 +37,7 @@ public:
 	 * @return
 	 */
 	int getWeight() const { return edgeWeight; }
-
+ 
 private:
 	/** end vertex, cannot be changed */
 	std::shared_ptr<T> endVertex { nullptr };
@@ -44,7 +45,6 @@ private:
 	/** edge weight, cannot be changed */
 	int edgeWeight { 0 };
 };  //  end Edge
-
 
 
 
