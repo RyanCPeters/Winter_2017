@@ -16,7 +16,8 @@
      * @param label A reference value for the string to be used as the label
      *              of this vertex.
      */
-Vertex::Vertex(const std::string& label): vertexLabel(label)
+Vertex::Vertex(const std::string& label)
+        : vertexLabel(label), visPtr(nullptr)
 {}
 
 /**
@@ -58,14 +59,13 @@ Cannot connect back to itself
 bool Vertex::connect(std::weak_ptr<Vertex> const endVertex,
                      int const edgeWeight)
 {
-    std::unique_ptr<std::string> endLabel =
-            std::make_unique<std::string>(endVertex.lock()->getLabel());
+    std::string endLabel = (endVertex.lock()->getLabel());
 
-    if(*endLabel == vertexLabel ||
-            adjacencyList.count(*endLabel) > 0 ) {
+    if(endLabel == vertexLabel ||
+            adjacencyList.count(endLabel) > 0 ) {
         return false;
     }
-    adjacencyList[*endLabel] = Edge<Vertex>(endVertex.lock(),edgeWeight);
+    adjacencyList[endLabel] = Edge<Vertex>(endVertex.lock(),edgeWeight);
     resetNeighbor();
     resetReverseNeighbor();
     return true;

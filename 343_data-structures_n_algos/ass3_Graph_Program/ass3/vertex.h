@@ -116,9 +116,6 @@ private:
 	/** the unique label for the vertex */
 	std::string vertexLabel;
 
-	/** True if the vertex is visited */
-	bool visited { false };
-
     /** Used in conditional checks that compare the memory address pointed to
      * by this pointer to see if it matches the current traversal's
      * assigned reference address when checking if this vertex has been visited.

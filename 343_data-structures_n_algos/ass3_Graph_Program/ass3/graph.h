@@ -78,7 +78,7 @@ public:
 		std::map<std::string, std::string>& previous);
 
 private:
-    const int MY_BIG_INT{2147483647};
+    const int MY_BIG_INT{2147483640};
 	/** number of vertices in graph */
 	int numberOfVertices;
 
@@ -107,10 +107,10 @@ private:
 	void unvisitVertices();
 
 	/** find a vertex, if it does not exist return nullptr */
-	std::shared_ptr<Vertex> findVertex(const std::string &vertexLabel) const;
+    Vertex findVertex(const std::string &vertexLabel);
 
 	/** find a vertex, if it does not exist create it and return it */
-	std::shared_ptr<Vertex> findOrCreateVertex(const std::string &vertexLabel);
+    Vertex findOrCreateVertex(const std::string &vertexLabel);
 
 	struct DijkstraData{
 
