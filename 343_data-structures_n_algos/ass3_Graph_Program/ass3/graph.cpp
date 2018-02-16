@@ -1,5 +1,6 @@
 #include <random>
 #include <chrono>
+#include <climits>
 #include "graph.h"
 
 /**
@@ -121,7 +122,7 @@ http://www.cplusplus.com/reference/random/uniform_int_distribution/operator%28%2
  */
 int Graph::generateRandomOffset() {
 
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    auto seed = std::chrono::system_clock::now().time_since_epoch().count();
     std::default_random_engine generator(seed);
 
     std::uniform_int_distribution<int> distribution(1, 7);
@@ -232,11 +233,75 @@ void Graph::djikstraCostToAllVertices(
 	std::map<std::string, int>& weight,
 	std::map<std::string, std::string>& previous) {
 
-//    startLabel = std::string();
-//    weight = {};
-//    previous = {};
+// this iterator will be used in the logic for assessing cumulative path
+// costs when we traverse the graph in search of the lowest weighted path.
+    std::map<std::string, std::string>::iterator prevIter;
 
-    
+
+    for(const auto &ele : vertices){
+        weight[ele.first] = INT_MAX;
+        previous[ele.first] = "";
+    }
+// having added all vertices to both weight and previous maps, we need to
+// make sure that the propper starting values are assigned to the starting
+// vertex in those maps.
+    weight[startLabel] = 0;
+    previous[startLabel] = "";
+
+    /* A note about struct DijkstraData that's being used inside of pQwayway:
+     *      This struct contains 2 string pointers and one ine pointer.
+     *
+     *      -- The first string pointer is for the vertex label that will be
+     *      used to map us back to the corresponding Vertex object inside of
+     *      our vertices map.
+     *
+     *      -- The second string pointer tracks the string used as the key
+     *      inside of the map named "previous".
+     *
+     *      -- The int pointer tracks the accumulated weight for a given
+     *      vertex's min cost inside of the map "weight".
+     * */
+    std::priority_queue<DijkstraData,
+            std::vector<DijkstraData>, std::greater<>> pQwayway;
+
+    bool noChangeToWeightMap = false;
+
+    while(!noChangeToWeightMap) {
+        noChangeToWeightMap = true;
+        pQwayway.emplace(DijkstraData(&startLabel));
+        while (!pQwayway.empty()) {
+// vPtr will be used to get the ajacent vertices that we will
+// subsequently be adding to pQwayway.
+            auto dijkPtr = pQwayway.top();
+            pQwayway.pop();
+            auto vPtr = vertices.find(*(dijkPtr.vert))->second;
+            vPtr->resetNeighbor();
+            int pathCost;
+            while (vPtr->peekNextNeighbor() != vPtr->getLabel()) {
+// neighborLabelPtr will be used to get the cumulative weight along the path
+// that has gotten us to the current vertex.
+                std::string neighborLabelPtr = (vPtr->getNextNeighbor());
+                prevIter = previous.find(*(dijkPtr.vert));
+                if(prevIter != previous.end() &&
+                   weight.count(prevIter->second) > 0 &&
+                   vPtr->getEdgeWeight(neighborLabelPtr) > -1 ){
+// we're going to set pathCost to be the sum of the edge from our current
+// vertex location to the next adjacent neighbor plus the cumulative value of
+// this path up to the mapped value for our vertex's "previous" counterpart
+                    pathCost = vPtr->getEdgeWeight(neighborLabelPtr) +
+                               weight.find(prevIter->second)->second;
+                    if(pathCost < weight[neighborLabelPtr]){
+                        noChangeToWeightMap = false;
+                        weight[neighborLabelPtr] = pathCost;
+                        previous[neighborLabelPtr] = vPtr->getLabel();
+                        pQwayway.emplace(DijkstraData(&neighborLabelPtr));
+
+                    }
+
+                }
+            }// closed while(vPtr->nextNeighbor != vPtr->label)
+        } // closed while(!pQwaway.empty())
+    }
 }
 
 

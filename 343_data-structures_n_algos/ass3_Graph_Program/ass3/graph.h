@@ -110,6 +110,31 @@ private:
 
 	/** find a vertex, if it does not exist create it and return it */
 	std::shared_ptr<Vertex> findOrCreateVertex(const std::string &vertexLabel);
+
+	struct DijkstraData{
+
+        DijkstraData()= default;
+
+        explicit DijkstraData(std::string* const v = nullptr,
+                              int* const w = 0)
+                : vert(v), weight(w)
+        {}
+
+		std::string* vert{nullptr};
+		int* weight {nullptr};
+
+		bool operator==(const DijkstraData& rhs)const{
+			return *vert == *(rhs.vert);
+		}
+
+		bool operator<(const DijkstraData& rhs)const{
+			return *weight < *(rhs.weight);
+		}
+
+		bool operator>(const DijkstraData& rhs)const{
+			return *weight > *(rhs.weight);
+		}
+	};
 };  // end Graph
 
 #endif  // GRAPH_H

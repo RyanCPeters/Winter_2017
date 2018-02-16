@@ -88,7 +88,8 @@ is negative if the .edge does not exist */
 int Vertex::getEdgeWeight(const std::string& endVertex) const
 {
     auto iter = adjacencyList.find(endVertex);
-    return (iter != adjacencyList.end())? iter->second.getWeight(): -1;
+    return (iter != adjacencyList.end() && iter->first != vertexLabel)?
+           iter->second.getWeight():-1;
 }
 
 /** Calculates how many neighbors this vertex has.

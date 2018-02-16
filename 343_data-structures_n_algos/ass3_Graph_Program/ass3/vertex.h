@@ -130,7 +130,7 @@ private:
 	void* visPtr;
 
 	/** adjacencyList as an ordered map, in alphabetical order */
-	std::map<std::string, Edge<Vertex>, std::less<std::string>> adjacencyList;
+	std::map<std::string, Edge<Vertex>, std::less<>> adjacencyList;
 
 	/** iterator showing which neighbor we are currently at */
 	std::map<std::string, Edge<Vertex>>::iterator currentNeighbor;
