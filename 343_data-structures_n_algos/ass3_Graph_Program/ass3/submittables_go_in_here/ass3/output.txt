@@ -1,0 +1,98 @@
+Script started on Fri 16 Feb 2018 10:07:55 AM PST
+g++ -std=c++14 -g -Wall -Wextra vertex.cpp graph.cpp ass3.cpp -o grindass3
+valgrind --leak-check=full --show-leak-kinds=all ./grindass3bash: /home/NETID/rcpeters/.bash_it/bash_it.sh: No such file or directory
+rcpeters@uw1-320-11:~/GitHub_remotes/Winter_UWB_2017/343_data-structures_n_algos/ass3_Graph_Program/ass3$ g++ -std=c++14 -g -Wall -Wextra vertex.cpp graph.cpp ass3.cpp -o grindass3
+[01m[Kass3.cpp:86:37:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kos[m[K’ [-Wunused-parameter]
+ void graphCostDisplay(std::ostream &os) {
+[01;32m[K                                     ^[m[K
+rcpeters@uw1-320-11:~/GitHub_remotes/Winter_UWB_2017/343_data-structures_n_algos/ass3_Graph_Program/ass3$ valgrind --leak-check=full --show-leak-kinds=all ./grindass3
+==28828== Memcheck, a memory error detector
+==28828== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==28828== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==28828== Command: ./grindass3
+==28828== 
+testGraph0
+          Got [3]
+     expected [3]
+OK: 3 vertices
+          Got [3]
+     expected [3]
+OK: 3 edges
+          Got [A B C ]
+     expected [A B C ]
+OK: DFS
+          Got [A B C ]
+     expected [A B C ]
+OK: BFS
+          Got [B(1) C(4) via [B] ]
+     expected [B(1) C(4) via [B] ]
+OK: Djisktra
+testGraph1
+          Got [10]
+     expected [10]
+OK: 10 vertices
+          Got [9]
+     expected [9]
+OK: 9 edges
+          Got [A B C D E F G H ]
+     expected [A B C D E F G H ]
+OK: DFS
+          Got [A B H C G D E F ]
+     expected [A B H C G D E F ]
+OK: BFS
+          Got [B(1) C(4) via [B] G(4) via [H] H(3) ]
+     expected [B(1) C(2) via [B] D(3) via [B C] E(4) via [B C D] F(5) via [B C D E] G(4) via [H] H(3) ]
+ERR: Djisktra
+testGraph2
+          Got [21]
+     expected [21]
+OK: 21 vertices
+          Got [24]
+     expected [24]
+OK: 24 edges
+          Got [A B E F J C G K L D H M I N ]
+     expected [A B E F J C G K L D H M I N ]
+OK: DFS from A
+          Got [O P R S T U Q ]
+     expected [O P R S T U Q ]
+OK: DFS from O
+          Got [A B C D E F G H I J K L M N ]
+     expected [A B C D E F G H I J K L M N ]
+OK: BFS from A
+          Got [D H I M N ]
+     expected [D H I M N ]
+OK: BFS from D
+          Got [U ]
+     expected [U ]
+OK: DFS from U
+          Got [U ]
+     expected [U ]
+OK: BFS from U
+          Got [B(1) C(4) via [B] G(4) via [H] H(3) P(5) Q(2) R(3) via [Q] S(6) via [Q R] T(8) via [Q R S] U(9) via [Q R S] ]
+     expected [P(5) Q(2) R(3) via [Q] S(6) via [Q R] T(8) via [Q R S] U(9) via [Q R S] ]
+ERR: Djisktra O
+==28828== 
+==28828== HEAP SUMMARY:
+==28828==     in use at exit: 72,704 bytes in 1 blocks
+==28828==   total heap usage: 352 allocs, 351 frees, 140,450 bytes allocated
+==28828== 
+==28828== 72,704 bytes in 1 blocks are still reachable in loss record 1 of 1
+==28828==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28828==    by 0x4EC3EFF: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+==28828==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==28828==    by 0x40107CA: call_init (dl-init.c:30)
+==28828==    by 0x40107CA: _dl_init (dl-init.c:120)
+==28828==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==28828== 
+==28828== LEAK SUMMARY:
+==28828==    definitely lost: 0 bytes in 0 blocks
+==28828==    indirectly lost: 0 bytes in 0 blocks
+==28828==      possibly lost: 0 bytes in 0 blocks
+==28828==    still reachable: 72,704 bytes in 1 blocks
+==28828==         suppressed: 0 bytes in 0 blocks
+==28828== 
+==28828== For counts of detected and suppressed errors, rerun with: -v
+==28828== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+rcpeters@uw1-320-11:~/GitHub_remotes/Winter_UWB_2017/343_data-structures_n_algos/ass3_Graph_Program/ass3$ exit
+
+Script done on Fri 16 Feb 2018 10:08:11 AM PST
