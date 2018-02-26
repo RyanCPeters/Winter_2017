@@ -216,16 +216,11 @@ void Graph::djikstraCostToAllVertices(
 	std::map<std::string, int>& weight,
 	std::map<std::string, std::string>& previous) {
     
+    weight.clear();
+    previous.clear();
+    
     unvisitAll();
     int theBigOne = 2147483640, lValueRef = 0;
-    
-//    for(const auto &ele : vertices){
-//        if(ele.first != startLabel) {
-//// a more portable way to get max int_32
-//            weight[ele.first] = theBigOne;
-//            previous[ele.first] = "";
-//        }
-//    }
     typedef std::pair<std::string,int> aPair;
 // We'll use a vector to emulate a stack and then we'll comense with a dfs
 // traversal of the graph as we update path values¯\_(ツ)_/¯

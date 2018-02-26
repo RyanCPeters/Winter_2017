@@ -1,7 +1,670 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
 
+testGraph0
+          Got [3]
+     expected [3]
+OK: 3 vertices
+          Got [3]
+     expected [3]
+OK: 3 edges
+          Got [A B C ]
+     expected [A B C ]
+OK: DFS
+          Got [A B C ]
+     expected [A B C ]
+OK: BFS
+          Got [B(85670641) C(85670644) via [B] ]
+     expected [B(1) C(4) via [B] ]
+ERR: Djisktra
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph1
+          Got [10]
+     expected [10]
+OK: 10 vertices
+          Got [9]
+     expected [9]
+OK: 9 edges
+          Got [A B C D E F G H ]
+     expected [A B C D E F G H ]
+OK: DFS
+          Got [A B H C G D E F ]
+     expected [A B H C G D E F ]
+OK: BFS
+          Got [B(85670641) C(85670642) via [B] D(85670643) via [B C] E(85670644) via [B C D] F(85670645) via [B C D E] G(85670644) via [H] H(85670643) ]
+     expected [B(1) C(2) via [B] D(3) via [B C] E(4) via [B C D] F(5) via [B C D E] G(4) via [H] H(3) ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph2
+          Got [21]
+     expected [21]
+OK: 21 vertices
+          Got [24]
+     expected [24]
+OK: 24 edges
+          Got [A B E F J C G K L D H M I N ]
+     expected [A B E F J C G K L D H M I N ]
+OK: DFS from A
+          Got [O P R S T U Q ]
+     expected [O P R S T U Q ]
+OK: DFS from O
+          Got [A B C D E F G H I J K L M N ]
+     expected [A B C D E F G H I J K L M N ]
+OK: BFS from A
+          Got [D H I M N ]
+     expected [D H I M N ]
+OK: BFS from D
+          Got [U ]
+     expected [U ]
+OK: DFS from U
+          Got [U ]
+     expected [U ]
+OK: BFS from U
+          Got [P(85670645) Q(85670642) R(85670643) via [Q] S(85670646) via [Q R] T(85670648) via [Q R S] U(85670649) via [Q R S] ]
+     expected [P(5) Q(2) R(3) via [Q] S(6) via [Q R] T(8) via [Q R S] U(9) via [Q R S] ]
+ERR: Djisktra O
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
 
+testGraph0
+          Got [3]
+     expected [3]
+OK: 3 vertices
+          Got [3]
+     expected [3]
+OK: 3 edges
+          Got [A B C ]
+     expected [A B C ]
+OK: DFS
+          Got [A B C ]
+     expected [A B C ]
+OK: BFS
+          Got [B(85670641) C(85670644) via [B] ]
+     expected [B(1) C(4) via [B] ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph1
+          Got [10]
+     expected [10]
+OK: 10 vertices
+          Got [9]
+     expected [9]
+OK: 9 edges
+          Got [A B C D E F G H ]
+     expected [A B C D E F G H ]
+OK: DFS
+          Got [A B H C G D E F ]
+     expected [A B H C G D E F ]
+OK: BFS
+          Got [B(85670641) C(85670642) via [B] D(85670643) via [B C] E(85670644) via [B C D] F(85670645) via [B C D E] G(85670644) via [H] H(85670643) ]
+     expected [B(1) C(2) via [B] D(3) via [B C] E(4) via [B C D] F(5) via [B C D E] G(4) via [H] H(3) ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph2
+          Got [21]
+     expected [21]
+OK: 21 vertices
+          Got [24]
+     expected [24]
+OK: 24 edges
+          Got [A B E F J C G K L D H M I N ]
+     expected [A B E F J C G K L D H M I N ]
+OK: DFS from A
+          Got [O P R S T U Q ]
+     expected [O P R S T U Q ]
+OK: DFS from O
+          Got [A B C D E F G H I J K L M N ]
+     expected [A B C D E F G H I J K L M N ]
+OK: BFS from A
+          Got [D H I M N ]
+     expected [D H I M N ]
+OK: BFS from D
+          Got [U ]
+     expected [U ]
+OK: DFS from U
+          Got [U ]
+     expected [U ]
+OK: BFS from U
+          Got [P(85670645) Q(85670642) R(85670643) via [Q] S(85670646) via [Q R] T(85670648) via [Q R S] U(85670649) via [Q R S] ]
+     expected [P(5) Q(2) R(3) via [Q] S(6) via [Q R] T(8) via [Q R S] U(9) via [Q R S] ]
+ERR: Djisktra O
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph0
+          Got [3]
+     expected [3]
+OK: 3 vertices
+          Got [3]
+     expected [3]
+OK: 3 edges
+          Got [A B C ]
+     expected [A B C ]
+OK: DFS
+          Got [A B C ]
+     expected [A B C ]
+OK: BFS
+          Got [B(85670641) C(85670644) via [B] ]
+     expected [B(1) C(4) via [B] ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph1
+          Got [10]
+     expected [10]
+OK: 10 vertices
+          Got [9]
+     expected [9]
+OK: 9 edges
+          Got [A B C D E F G H ]
+     expected [A B C D E F G H ]
+OK: DFS
+          Got [A B H C G D E F ]
+     expected [A B H C G D E F ]
+OK: BFS
+          Got [B(85670641) C(85670642) via [B] D(85670643) via [B C] E(85670644) via [B C D] F(85670645) via [B C D E] G(85670644) via [H] H(85670643) ]
+     expected [B(1) C(2) via [B] D(3) via [B C] E(4) via [B C D] F(5) via [B C D E] G(4) via [H] H(3) ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph2
+          Got [21]
+     expected [21]
+OK: 21 vertices
+          Got [24]
+     expected [24]
+OK: 24 edges
+          Got [A B E F J C G K L D H M I N ]
+     expected [A B E F J C G K L D H M I N ]
+OK: DFS from A
+          Got [O P R S T U Q ]
+     expected [O P R S T U Q ]
+OK: DFS from O
+          Got [A B C D E F G H I J K L M N ]
+     expected [A B C D E F G H I J K L M N ]
+OK: BFS from A
+          Got [D H I M N ]
+     expected [D H I M N ]
+OK: BFS from D
+          Got [U ]
+     expected [U ]
+OK: DFS from U
+          Got [U ]
+     expected [U ]
+OK: BFS from U
+          Got [P(85670645) Q(85670642) R(85670643) via [Q] S(85670646) via [Q R] T(85670648) via [Q R S] U(85670649) via [Q R S] ]
+     expected [P(5) Q(2) R(3) via [Q] S(6) via [Q R] T(8) via [Q R S] U(9) via [Q R S] ]
+ERR: Djisktra O
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph0
+          Got [3]
+     expected [3]
+OK: 3 vertices
+          Got [3]
+     expected [3]
+OK: 3 edges
+          Got [A B C ]
+     expected [A B C ]
+OK: DFS
+          Got [A B C ]
+     expected [A B C ]
+OK: BFS
+          Got [B(85670641) C(85670644) via [B] ]
+     expected [B(1) C(4) via [B] ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph1
+          Got [10]
+     expected [10]
+OK: 10 vertices
+          Got [9]
+     expected [9]
+OK: 9 edges
+          Got [A B C D E F G H ]
+     expected [A B C D E F G H ]
+OK: DFS
+          Got [A B H C G D E F ]
+     expected [A B H C G D E F ]
+OK: BFS
+          Got [B(85670641) C(85670642) via [B] D(85670643) via [B C] E(85670644) via [B C D] F(85670645) via [B C D E] G(85670644) via [H] H(85670643) ]
+     expected [B(1) C(2) via [B] D(3) via [B C] E(4) via [B C D] F(5) via [B C D E] G(4) via [H] H(3) ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph2
+          Got [21]
+     expected [21]
+OK: 21 vertices
+          Got [24]
+     expected [24]
+OK: 24 edges
+          Got [A B E F J C G K L D H M I N ]
+     expected [A B E F J C G K L D H M I N ]
+OK: DFS from A
+          Got [O P R S T U Q ]
+     expected [O P R S T U Q ]
+OK: DFS from O
+          Got [A B C D E F G H I J K L M N ]
+     expected [A B C D E F G H I J K L M N ]
+OK: BFS from A
+          Got [D H I M N ]
+     expected [D H I M N ]
+OK: BFS from D
+          Got [U ]
+     expected [U ]
+OK: DFS from U
+          Got [U ]
+     expected [U ]
+OK: BFS from U
+          Got [P(85670645) Q(85670642) R(85670643) via [Q] S(85670646) via [Q R] T(85670648) via [Q R S] U(85670649) via [Q R S] ]
+     expected [P(5) Q(2) R(3) via [Q] S(6) via [Q R] T(8) via [Q R S] U(9) via [Q R S] ]
+ERR: Djisktra O
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph0
+          Got [3]
+     expected [3]
+OK: 3 vertices
+          Got [3]
+     expected [3]
+OK: 3 edges
+          Got [A B C ]
+     expected [A B C ]
+OK: DFS
+          Got [A B C ]
+     expected [A B C ]
+OK: BFS
+          Got [B(85670641) C(85670644) via [B] ]
+     expected [B(1) C(4) via [B] ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph1
+          Got [10]
+     expected [10]
+OK: 10 vertices
+          Got [9]
+     expected [9]
+OK: 9 edges
+          Got [A B C D E F G H ]
+     expected [A B C D E F G H ]
+OK: DFS
+          Got [A B H C G D E F ]
+     expected [A B H C G D E F ]
+OK: BFS
+          Got [B(85670641) C(85670642) via [B] D(85670643) via [B C] E(85670644) via [B C D] F(85670645) via [B C D E] G(85670644) via [H] H(85670643) ]
+     expected [B(1) C(2) via [B] D(3) via [B C] E(4) via [B C D] F(5) via [B C D E] G(4) via [H] H(3) ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph2
+          Got [21]
+     expected [21]
+OK: 21 vertices
+          Got [24]
+     expected [24]
+OK: 24 edges
+          Got [A B E F J C G K L D H M I N ]
+     expected [A B E F J C G K L D H M I N ]
+OK: DFS from A
+          Got [O P R S T U Q ]
+     expected [O P R S T U Q ]
+OK: DFS from O
+          Got [A B C D E F G H I J K L M N ]
+     expected [A B C D E F G H I J K L M N ]
+OK: BFS from A
+          Got [D H I M N ]
+     expected [D H I M N ]
+OK: BFS from D
+          Got [U ]
+     expected [U ]
+OK: DFS from U
+          Got [U ]
+     expected [U ]
+OK: BFS from U
+          Got [P(85670645) Q(85670642) R(85670643) via [Q] S(85670646) via [Q R] T(85670648) via [Q R S] U(85670649) via [Q R S] ]
+     expected [P(5) Q(2) R(3) via [Q] S(6) via [Q R] T(8) via [Q R S] U(9) via [Q R S] ]
+ERR: Djisktra O
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph0
+          Got [3]
+     expected [3]
+OK: 3 vertices
+          Got [3]
+     expected [3]
+OK: 3 edges
+          Got [A B C ]
+     expected [A B C ]
+OK: DFS
+          Got [A B C ]
+     expected [A B C ]
+OK: BFS
+          Got [B(85670641) C(85670644) via [B] ]
+     expected [B(1) C(4) via [B] ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph1
+          Got [10]
+     expected [10]
+OK: 10 vertices
+          Got [9]
+     expected [9]
+OK: 9 edges
+          Got [A B C D E F G H ]
+     expected [A B C D E F G H ]
+OK: DFS
+          Got [A B H C G D E F ]
+     expected [A B H C G D E F ]
+OK: BFS
+          Got [B(85670641) C(85670642) via [B] D(85670643) via [B C] E(85670644) via [B C D] F(85670645) via [B C D E] G(85670644) via [H] H(85670643) ]
+     expected [B(1) C(2) via [B] D(3) via [B C] E(4) via [B C D] F(5) via [B C D E] G(4) via [H] H(3) ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph2
+          Got [21]
+     expected [21]
+OK: 21 vertices
+          Got [24]
+     expected [24]
+OK: 24 edges
+          Got [A B E F J C G K L D H M I N ]
+     expected [A B E F J C G K L D H M I N ]
+OK: DFS from A
+          Got [O P R S T U Q ]
+     expected [O P R S T U Q ]
+OK: DFS from O
+          Got [A B C D E F G H I J K L M N ]
+     expected [A B C D E F G H I J K L M N ]
+OK: BFS from A
+          Got [D H I M N ]
+     expected [D H I M N ]
+OK: BFS from D
+          Got [U ]
+     expected [U ]
+OK: DFS from U
+          Got [U ]
+     expected [U ]
+OK: BFS from U
+          Got [P(85670645) Q(85670642) R(85670643) via [Q] S(85670646) via [Q R] T(85670648) via [Q R S] U(85670649) via [Q R S] ]
+     expected [P(5) Q(2) R(3) via [Q] S(6) via [Q R] T(8) via [Q R S] U(9) via [Q R S] ]
+ERR: Djisktra O
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph0
+          Got [3]
+     expected [3]
+OK: 3 vertices
+          Got [3]
+     expected [3]
+OK: 3 edges
+          Got [A B C ]
+     expected [A B C ]
+OK: DFS
+          Got [A B C ]
+     expected [A B C ]
+OK: BFS
+          Got [B(85670641) C(85670644) via [B] ]
+     expected [B(1) C(4) via [B] ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph1
+          Got [10]
+     expected [10]
+OK: 10 vertices
+          Got [9]
+     expected [9]
+OK: 9 edges
+          Got [A B C D E F G H ]
+     expected [A B C D E F G H ]
+OK: DFS
+          Got [A B H C G D E F ]
+     expected [A B H C G D E F ]
+OK: BFS
+          Got [B(85670641) C(85670642) via [B] D(85670643) via [B C] E(85670644) via [B C D] F(85670645) via [B C D E] G(85670644) via [H] H(85670643) ]
+     expected [B(1) C(2) via [B] D(3) via [B C] E(4) via [B C D] F(5) via [B C D E] G(4) via [H] H(3) ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph2
+          Got [21]
+     expected [21]
+OK: 21 vertices
+          Got [24]
+     expected [24]
+OK: 24 edges
+          Got [A B E F J C G K L D H M I N ]
+     expected [A B E F J C G K L D H M I N ]
+OK: DFS from A
+          Got [O P R S T U Q ]
+     expected [O P R S T U Q ]
+OK: DFS from O
+          Got [A B C D E F G H I J K L M N ]
+     expected [A B C D E F G H I J K L M N ]
+OK: BFS from A
+          Got [D H I M N ]
+     expected [D H I M N ]
+OK: BFS from D
+          Got [U ]
+     expected [U ]
+OK: DFS from U
+          Got [U ]
+     expected [U ]
+OK: BFS from U
+          Got [P(85670645) Q(85670642) R(85670643) via [Q] S(85670646) via [Q R] T(85670648) via [Q R S] U(85670649) via [Q R S] ]
+     expected [P(5) Q(2) R(3) via [Q] S(6) via [Q R] T(8) via [Q R S] U(9) via [Q R S] ]
+ERR: Djisktra O
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph0
+          Got [3]
+     expected [3]
+OK: 3 vertices
+          Got [3]
+     expected [3]
+OK: 3 edges
+          Got [A B C ]
+     expected [A B C ]
+OK: DFS
+          Got [A B C ]
+     expected [A B C ]
+OK: BFS
+          Got [B(85670641) C(85670644) via [B] ]
+     expected [B(1) C(4) via [B] ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph1
+          Got [10]
+     expected [10]
+OK: 10 vertices
+          Got [9]
+     expected [9]
+OK: 9 edges
+          Got [A B C D E F G H ]
+     expected [A B C D E F G H ]
+OK: DFS
+          Got [A B H C G D E F ]
+     expected [A B H C G D E F ]
+OK: BFS
+          Got [B(85670641) C(85670642) via [B] D(85670643) via [B C] E(85670644) via [B C D] F(85670645) via [B C D E] G(85670644) via [H] H(85670643) ]
+     expected [B(1) C(2) via [B] D(3) via [B C] E(4) via [B C D] F(5) via [B C D E] G(4) via [H] H(3) ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph2
+          Got [21]
+     expected [21]
+OK: 21 vertices
+          Got [24]
+     expected [24]
+OK: 24 edges
+          Got [A B E F J C G K L D H M I N ]
+     expected [A B E F J C G K L D H M I N ]
+OK: DFS from A
+          Got [O P R S T U Q ]
+     expected [O P R S T U Q ]
+OK: DFS from O
+          Got [A B C D E F G H I J K L M N ]
+     expected [A B C D E F G H I J K L M N ]
+OK: BFS from A
+          Got [D H I M N ]
+     expected [D H I M N ]
+OK: BFS from D
+          Got [U ]
+     expected [U ]
+OK: DFS from U
+          Got [U ]
+     expected [U ]
+OK: BFS from U
+          Got [P(85670645) Q(85670642) R(85670643) via [Q] S(85670646) via [Q R] T(85670648) via [Q R S] U(85670649) via [Q R S] ]
+     expected [P(5) Q(2) R(3) via [Q] S(6) via [Q R] T(8) via [Q R S] U(9) via [Q R S] ]
+ERR: Djisktra O
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph0
+          Got [3]
+     expected [3]
+OK: 3 vertices
+          Got [3]
+     expected [3]
+OK: 3 edges
+          Got [A B C ]
+     expected [A B C ]
+OK: DFS
+          Got [A B C ]
+     expected [A B C ]
+OK: BFS
+          Got [B(85670641) C(85670644) via [B] ]
+     expected [B(1) C(4) via [B] ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph1
+          Got [10]
+     expected [10]
+OK: 10 vertices
+          Got [9]
+     expected [9]
+OK: 9 edges
+          Got [A B C D E F G H ]
+     expected [A B C D E F G H ]
+OK: DFS
+          Got [A B H C G D E F ]
+     expected [A B H C G D E F ]
+OK: BFS
+          Got [B(85670641) C(85670642) via [B] D(85670643) via [B C] E(85670644) via [B C D] F(85670645) via [B C D E] G(85670644) via [H] H(85670643) ]
+     expected [B(1) C(2) via [B] D(3) via [B C] E(4) via [B C D] F(5) via [B C D E] G(4) via [H] H(3) ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph2
+          Got [21]
+     expected [21]
+OK: 21 vertices
+          Got [24]
+     expected [24]
+OK: 24 edges
+          Got [A B E F J C G K L D H M I N ]
+     expected [A B E F J C G K L D H M I N ]
+OK: DFS from A
+          Got [O P R S T U Q ]
+     expected [O P R S T U Q ]
+OK: DFS from O
+          Got [A B C D E F G H I J K L M N ]
+     expected [A B C D E F G H I J K L M N ]
+OK: BFS from A
+          Got [D H I M N ]
+     expected [D H I M N ]
+OK: BFS from D
+          Got [U ]
+     expected [U ]
+OK: DFS from U
+          Got [U ]
+     expected [U ]
+OK: BFS from U
+          Got [P(85670645) Q(85670642) R(85670643) via [Q] S(85670646) via [Q R] T(85670648) via [Q R S] U(85670649) via [Q R S] ]
+     expected [P(5) Q(2) R(3) via [Q] S(6) via [Q R] T(8) via [Q R S] U(9) via [Q R S] ]
+ERR: Djisktra O
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph0
+          Got [3]
+     expected [3]
+OK: 3 vertices
+          Got [3]
+     expected [3]
+OK: 3 edges
+          Got [A B C ]
+     expected [A B C ]
+OK: DFS
+          Got [A B C ]
+     expected [A B C ]
+OK: BFS
+          Got [B(85670641) C(85670644) via [B] ]
+     expected [B(1) C(4) via [B] ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph1
+          Got [10]
+     expected [10]
+OK: 10 vertices
+          Got [9]
+     expected [9]
+OK: 9 edges
+          Got [A B C D E F G H ]
+     expected [A B C D E F G H ]
+OK: DFS
+          Got [A B H C G D E F ]
+     expected [A B H C G D E F ]
+OK: BFS
+          Got [B(85670641) C(85670642) via [B] D(85670643) via [B C] E(85670644) via [B C D] F(85670645) via [B C D E] G(85670644) via [H] H(85670643) ]
+     expected [B(1) C(2) via [B] D(3) via [B C] E(4) via [B C D] F(5) via [B C D E] G(4) via [H] H(3) ]
+ERR: Djisktra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+
+testGraph2
+          Got [21]
+     expected [21]
+OK: 21 vertices
+          Got [24]
+     expected [24]
+OK: 24 edges
+          Got [A B E F J C G K L D H M I N ]
+     expected [A B E F J C G K L D H M I N ]
+OK: DFS from A
+          Got [O P R S T U Q ]
+     expected [O P R S T U Q ]
+OK: DFS from O
+          Got [A B C D E F G H I J K L M N ]
+     expected [A B C D E F G H I J K L M N ]
+OK: BFS from A
+          Got [D H I M N ]
+     expected [D H I M N ]
+OK: BFS from D
+          Got [U ]
+     expected [U ]
+OK: DFS from U
+          Got [U ]
+     expected [U ]
+OK: BFS from U
+          Got [P(85670645) Q(85670642) R(85670643) via [Q] S(85670646) via [Q R] T(85670648) via [Q R S] U(85670649) via [Q R S] ]
+     expected [P(5) Q(2) R(3) via [Q] S(6) via [Q R] T(8) via [Q R S] U(9) via [Q R S] ]
+ERR: Djisktra O
 

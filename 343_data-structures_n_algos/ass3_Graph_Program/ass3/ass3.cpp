@@ -231,7 +231,7 @@ int main() {
     std::ofstream oFile("dumpFile.txt", ofstream::trunc);
     
     
-    for(auto i = 0; i < 1; ++i){
+    for(auto i = 0; i < 10; ++i){
 //        oFile << setfill('~') << setw(80) << "." << endl;
 //        oFile << setfill(' ');
 //        justTestGraph2Dijkstra(oFile);
@@ -240,22 +240,22 @@ int main() {
         oFile << std::endl;
         oFile << setfill(' ');
         
-//        testGraph0(oFile);
-        testGraph0(cout);
+        testGraph0(oFile);
+//        testGraph0(cout);
     
         oFile << setfill('~') << setw(80) << "." << endl;
         oFile << std::endl;
         oFile << setfill(' ');
     
-//        testGraph1(oFile);
-        testGraph1(cout);
+        testGraph1(oFile);
+//        testGraph1(cout);
     
         oFile << setfill('~') << setw(80) << "." << endl;
         oFile << std::endl;
         oFile << setfill(' ');
     
-//        testGraph2(oFile);
-        testGraph2(cout);
+        testGraph2(oFile);
+//        testGraph2(cout);
         
         oFile << std::endl;
     }
