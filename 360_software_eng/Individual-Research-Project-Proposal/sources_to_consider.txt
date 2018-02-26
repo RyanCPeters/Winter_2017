@@ -1,0 +1,2 @@
+"The cathedral and bazaar" a talk on open-source development. 
+  - Presents an intuitive anecdotal case for how open-source software can be designed, released, and then expanded.
