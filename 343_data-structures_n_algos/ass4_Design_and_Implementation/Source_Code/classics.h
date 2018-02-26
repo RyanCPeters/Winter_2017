@@ -5,12 +5,11 @@
 #include "director.h"
 #include "movie.h"
 
-class Classics : virtual public Movie {
+class Classics : virtual private Movie, virtual public IMovie {
 public:
-  Classics();
   
   Classics(const std::string &title,
-           const Director &director const DDate &releaseDate,
+           const Director &director, const DDate &releaseDate,
            const Actor &actor, const unsigned long &stock,
            const DiskType &disktype = DVD);
   
@@ -57,26 +56,28 @@ public:
    *      -------------------------------------------------------
    */
   virtual int comparePrimaryCriteria(const Movie &other) const override {
-    dynamic_cast<Classics&>(other);
-    
+    int ret = this->m_prim.release_date.year - other.m_prim.release_date.year;
+    if(ret == 0){
+      ret += this->m_prim.release_date.month - other.m_prim.release_date.month;
+    }
+    return (ret < 0)? -1 : (ret > 0)? 1 : 0;
   }
   
+  /**
+   * see description for comparePrimaryCriteria function.
+   * @param other
+   * @return
+   */
   virtual int compareSecondaryCriteria(const Movie &other) const override {
-    dynamic_cast<Classics&>(other);
-    
-  }
-
-protected:
-  
-  virtual void* getPrimary() const override {
-    return &primary;
-  }
-  
-  virtual void* getSecondary() const override {
-    return &secondary;
+    int ret = this->m_sec.major_actor.compare(other.m_sec.major_actor);
+    return (ret < 0)? -1 : (ret > 0)? 1 : 0;
   }
 
 private:
+  // private ctor to prevent its use
+  Classics();
+  
+  
   Actor m_actor;
   
   Director& primary;

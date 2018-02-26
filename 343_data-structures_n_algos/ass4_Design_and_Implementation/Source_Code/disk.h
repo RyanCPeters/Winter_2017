@@ -83,11 +83,11 @@ protected:
   virtual void print(std::ostream &sout) const;
 
 private:
-  DiskType     m_type;
-  std::string  m_title;
-  MediaType    m_mediaType;
-  DDate        m_releaseDate;
-  unsigned int m_stock;
+  DiskType     d_type;
+  std::string  d_title;
+  MediaType    d_mediaType;
+  DDate        d_releaseDate;
+  unsigned int d_stock;
 };
 
 #endif

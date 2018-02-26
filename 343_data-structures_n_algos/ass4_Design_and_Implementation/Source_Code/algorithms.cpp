@@ -3,6 +3,7 @@
 //
 
 #include "movie.h"
+#include "imovie.h"
 
 using namespace std;
 
@@ -76,7 +77,7 @@ bool movieSorter(const Movie &a, const Movie &b) {
   }
   // We now know that the two movies are of the same type, and compRec = 0;
 //  switch (a.getMovieType()) {
-//    case 'C':static_cast<Classics>(a), dynamic_cast<Classics>(b);
+//    case 'C':dynamic_cast<Classics>(a), dynamic_cast<Classics>(b);
 //      break;
 //    case 'D':dynamic_cast<Drama>(a), dynamic_cast<Drama>(b);
 //      break;

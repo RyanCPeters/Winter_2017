@@ -4,11 +4,14 @@
 
 
 #include "../movie.h"
+#include "../drama.h"
+#include "../classics.h"
+#include "../comedy.h"
 #include "../actor.h"
 
 /*
  *    |-----------------------------------------------------------------------------------------------------------|
- *    | category | stock | Director           | Title                           | (MajorActor-date)(D), else: year|
+ *    | type     | stock | Director           | Title                           | (MajorActor-date)(D), else: year|
  *    |----------|-------|--------------------|---------------------------------|---------------------------------|
  * A  | C        | 10    | Michael Curtiz     | Casablanca                      | Ingrid Bergman 8 1942 |
  * B  | C        | 10    | Michael Curtiz     | Casablanca                      | Humphrey Bogart 8 1942 |

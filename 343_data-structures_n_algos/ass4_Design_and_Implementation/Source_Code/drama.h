@@ -4,27 +4,27 @@
 #include "director.h"
 #include "disk.h"
 #include "movie.h"
+#include "imovie.h"
 
-class Drama : virtual public Movie {
+class Drama : virtual private Movie, virtual public IMovie {
 public:
-  Drama():m_type(MovieType::DRAMA),m_director(Director()),primary(m_director){};
   
   Drama(std::string &title, const Director &actor, const unsigned int &stock,
         const DDate &releaseDate, const DiskType &diskType = DVD);
   
-  Drama &operator=(const Drama &);
+  virtual Drama &operator=(const Drama &);
   
-  bool operator==(const Drama &) const;
+  virtual bool operator==(const Drama &) const;
   
-  bool operator!=(const Drama &) const;
+  virtual bool operator!=(const Drama &) const;
   
-  bool operator<(const Drama &) const;
+  virtual bool operator<(const Drama &) const;
   
-  bool operator>(const Drama &) const;
+  virtual bool operator>(const Drama &) const;
   
-  friend std::ostream &operator<<(std::ostream &sout, const Drama &);
+  virtual friend std::ostream &operator<<(std::ostream &sout, const Drama &);
   
-  ~Drama();
+  virtual ~Drama();
   
   
   /**
@@ -54,9 +54,8 @@ public:
    *      -------------------------------------------------------
    */
   virtual int comparePrimaryCriteria(const Movie &other) const override {
-    Drama* dPtr = &dynamic_cast<Drama&>(other);
-    Director* prim = dynamic_cast<Director*>(dPtr->getPrimary());
-    return(this->primary < *prim )? -1: (this->primary == *prim )?0:1;
+    int ret = this->m_prim.director.compare(other.m_prim.director);
+    return (ret < 0)? -1 : (ret > 0)? 1 : 0;
   }
   
   /**
@@ -65,26 +64,14 @@ public:
    * @return
    */
   virtual int compareSecondaryCriteria(const Movie &other) const override {
-    Drama* dPtr = &dynamic_cast<Drama&>(other);
-    Director* sec = dynamic_cast<Director*>(dPtr->getSecondary());
-    return(this->primary < *sec )? -1: (this->primary == *sec )?0:1;
-    
+    int ret = this->m_sec.title.compare(other.m_sec.title);
+    return (ret < 0)? -1 : (ret > 0)? 1 : 0;
   }
-
-protected:
-  
-  virtual void* getPrimary() const override {
-    return &primary;
-  }
-  
-  virtual void* getSecondary() const override {
-    return &secondary;
-  }
-
 
 private:
-  Director& primary;
-  std::string secondary;
+  
+  // making the empty ctor private to prevent
+  Drama();
   
 };
 

@@ -8,7 +8,7 @@
  * enum PersonType is used to ensure that we can assess a Person's type from
  * any point of reference.
  */
-enum class PersonType : char {DIRECTOR, ACTOR};
+enum class PersonType : char {DIRECTOR = 'd', ACTOR = 'a'};
 
 
 /**
@@ -27,11 +27,11 @@ public:
          const PersonType& pType)
       :m_fristName(firstName), m_lastName(lastName),m_type(pType){};
   
-  virtual const std::string &getFirstName() {return m_fristName;};
+  virtual const std::string &getFirstName() const {return m_fristName;};
   
-  virtual const std::string &getLastName() {return m_lastName;};
+  virtual const std::string &getLastName() const {return m_lastName;};
   
-  virtual const PersonType& getType() {return m_type;};
+  virtual const PersonType& getType() const {return m_type;};
   
   virtual bool operator==(const Person &) const = 0;
   

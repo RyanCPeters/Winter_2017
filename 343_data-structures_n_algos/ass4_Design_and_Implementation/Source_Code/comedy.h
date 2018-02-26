@@ -4,15 +4,14 @@
 #include "director.h"
 #include "movie.h"
 
-class Comedy : virtual public Movie {
+class Comedy : virtual private Movie, virtual public IMovie {
 public:
   Comedy();
   
   Comedy(std::string &title, const Director &actor, const unsigned long &stock,
          const DDate &releaseDate, const DiskType &diskType = DVD);
   
-  Comedy &opeartor =
-  (const Comedy&);
+  Comedy &operator=(const Comedy&);
   
   bool operator==(const Comedy &) const;
   
@@ -51,31 +50,28 @@ public:
    *      |   ‘F’     | Title              |  Year released     |
    *      -------------------------------------------------------
    */
-  virtual int comparePrimaryCriteria(const Movie &other) const override{
-    dynamic_cast<Comedy&>(other);
-    
+  virtual int comparePrimaryCriteria(const Movie &other) const override {
+    int ret = this->m_prim.director.compare(other.m_prim.director);
+    return (ret < 0)? -1 : (ret > 0)? 1 : 0;
   }
   
-  virtual int compareSecondaryCriteria(const Movie &other) const override{
-    dynamic_cast<Comedy&>(other);
-    
+  /**
+   * see description for comparePrimaryCriteria function.
+   * @param other
+   * @return
+   */
+  virtual int compareSecondaryCriteria(const Movie &other) const override {
+    int ret = this->m_sec.title.compare(other.m_sec.title);
+    return (ret < 0)? -1 : (ret > 0)? 1 : 0;
   }
 
-protected:
-  
-  virtual void* getPrimary() const override {
-    return &primary;
-  }
-  
-  virtual void* getSecondary() const override {
-    return &secondary;
-  }
-
-
-private:
-  Director& primary;
-  std::string secondary;
   
 };
+
+Comedy::Comedy(std::string &title, const Director &actor,
+               const unsigned long &stock, const DDate &releaseDate,
+               const DiskType &diskType):m_title(title),  {
+  
+}
 
 #endif
