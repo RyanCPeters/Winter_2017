@@ -42,6 +42,19 @@ public:
    * !!!!! Important Note !!!!!!!
    * To use these functions, the caller should first type-check other to be
    * of the same derived class as *this.
+   *
+   *      -------------------------------------------------------
+   *      |Movie type | Primary criteria   | Secondary criteria |
+   *      |-----------|--------------------|--------------------|
+   *      |   ‘C’     | Release date       |  Major actor       |
+   *      |   ‘D’     | Director           |  Title             |
+   *      |   ‘F’     | Title              |  Year released     |
+   *      -------------------------------------------------------
+   *
+   * @param other The Movie object reference against which *this is to be
+   * compared.
+   *
+   * @return
    */
   virtual int comparePrimaryCriteria(const Movie &other) const = 0;
   

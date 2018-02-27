@@ -15,7 +15,6 @@ class Movie;
 
 // release date
 struct DDate {
-  uint8_t      day{0};
   uint8_t      month{0};
   unsigned int year{0};
 };
