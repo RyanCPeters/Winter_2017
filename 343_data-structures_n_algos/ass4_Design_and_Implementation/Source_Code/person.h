@@ -23,13 +23,24 @@ class Person {
 public:
   Person();
   
-  Person(const std::string &firstName, const std::string &lastName,
+  Person(std::string firstName,
+         std::string lastName,
          const PersonType& pType)
-      :m_fristName(firstName), m_lastName(lastName),m_type(pType){};
+                            :m_firstName(std::move(firstName)),
+                             m_lastName(std::move(lastName)),
+                             m_type(pType){};
   
-  virtual const std::string &getFirstName() const {return m_fristName;};
+  virtual const std::string &getFirstName() const {return m_firstName;};
   
   virtual const std::string &getLastName() const {return m_lastName;};
+  
+  virtual const std::string &getFullName() const {
+    return m_firstName + " " + m_lastName;
+  };
+  
+  virtual const std::string &getFullNameReversed() const {
+    return m_lastName + " " + m_firstName;
+  };
   
   virtual const PersonType& getType() const {return m_type;};
   
@@ -63,12 +74,12 @@ protected:
    * @param last  std::string of person's last name
    */
   void setName( const std::string& first, const std::string& last){
-    m_fristName = first;
+    m_firstName = first;
     m_lastName = last;
   }
   
 private:
-  std::string m_fristName;
+  std::string m_firstName;
   std::string m_lastName;
   PersonType m_type;
 };
