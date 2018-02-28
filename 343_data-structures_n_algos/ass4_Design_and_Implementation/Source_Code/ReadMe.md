@@ -95,7 +95,13 @@ The model needs to store both sensitive customer information, and non-sensitive 
         + Factors to consider for the future:
           * We will probably want to create a struct or inner class as a means to track media types and their associated stock counts.
           * This means that both `int m_stock` and `MediaEnum m_media` will both be affected by this change, and as a result we will want a way to manage multiple distinct stock counts per inventory object.
-- 
+
+##### This concludes the abstract definition of assig4's model component.
+
+---
+step 2: define the view and controller components
+---
+
       
          
 
