@@ -42,13 +42,13 @@ First, I will need to make note of what state elements the model will need to ho
             - `F` labels are for Comedies, because F for Funny :P
             - `D` labels are for Dramas.
             - `C` labels are for Classics.
-        + The **fifth token** in the line, the string `Sleepless in Seattle`, denotes the primary sorting criteria reference according to the genre indicated by the fourth token, which directly precedes this one.
+        + The **fifth token** in the line, the std::string literal `Sleepless in Seattle`, denotes the primary sorting criteria reference according to the genre indicated by the **fourth token**, which directly precedes this one.
         + The **sixth token** in the line, the int `1993`, denotes the secondary sorting reference according to the genre indicated by the fourth token.
   + Store inventory will be built via inputs contained in the data4movies.txt file.
     * data4movies.txt format:
-      - C, 10, Victor Fleming, The Wizard of Oz, Judy Garland 7 1939
-      - F, 10, Nora Ephron, Sleepless in Seattle, 1993
-      - D, 10, Barry Levinson, Good Morning Vietnam, 1988
+      - `C, 10, Victor Fleming, The Wizard of Oz, Judy Garland 7 1939`
+      - `F, 10, Nora Ephron, Sleepless in Seattle, 1993`
+      - `D, 10, Barry Levinson, Good Morning Vietnam, 1988`
         + where:
           * the **first token**, the char `C || F || D`, denote the genre of the movie.
           * the **second token**, the int `10`, denotes the initial inventory stock to be added for this movie. 
