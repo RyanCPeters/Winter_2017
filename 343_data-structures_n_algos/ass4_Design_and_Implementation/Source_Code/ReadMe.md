@@ -75,7 +75,7 @@ The model needs to store both sensitive customer information, and non-sensitive 
         + `int* m_date;         // this int pointer allows us to conveniently store a movies year of release, followed by the conditionally needed month of release.`
         + `std::string* m_majorActor; // the major actor(s). This member variable is a string pointer for the sake of making it easier to handle situations where a movie has multiple major actors attributed to it. Each index of the pointer contains an individual actor's full name.`
 
-##### In short:      
+### In short:      
 - The model will need to maintain inventory objects which represent each unique movie title that the store owns. 
   + These objects may be publicly observable with no consequence; however, they should not be publicly mutable.
   + Within each of those inventory objects, the model will maintain the following state members:
@@ -96,7 +96,7 @@ The model needs to store both sensitive customer information, and non-sensitive 
           * We will probably want to create a struct or inner class as a means to track media types and their associated stock counts.
           * This means that both `int m_stock` and `MediaEnum m_media` will both be affected by this change, and as a result we will want a way to manage multiple distinct stock counts per inventory object.
 
-##### This concludes the abstract definition of assig4's model component.
+### This concludes the abstract definition of assig4's model component.
 
 ---
 step 2: define the view and controller components
