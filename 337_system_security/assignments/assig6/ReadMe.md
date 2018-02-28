@@ -2,7 +2,7 @@ ReadMe.md
 
 Ryan Peters
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---
 
 #### Question #1 
 
@@ -22,7 +22,7 @@ Trip-wire disadvantages:
 - Only checks where instructed to check, thus not securing entirety of system.
 - Requires read-only media protection of the checksum lest attackers perve that as well, rendering all detection attempts useless.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---
 
 #### Question #2 from our assignment
 
@@ -53,7 +53,7 @@ Assumptions:
 - While CV is in memory, it's an active executable.
   + Under these assumptions, D can catch CV. As D is essentially acting in the same way that CV would check a targeted executable file if it's already infected.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---
 
 #### Question #3 from our assignment
 
@@ -73,7 +73,7 @@ Problem statement:
 
   - A logic bomb!! 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---
 
 #### Question #4
 
@@ -94,7 +94,7 @@ Threats that are created to the user computer while plug in the memory stick?
   + The user could “check the memory stick” in a controlled environment. For example a live-boot Linux or emulation environment.
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---
 
 #### Question #5
 
@@ -121,7 +121,7 @@ Should you grant these permissions and proceed to install it?
 - Yesh! Because who cares if your phone is infected? You got candy to crush!!
   + Actually, you should stop the install and investigate alternative download mirrors and reviews on those mirrors to see if there are any known threats at the used sites.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---
 
 #### Question #6
 
@@ -152,7 +152,7 @@ Which would block the use of backdoors on the system?
 
 - The firewall!
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---
 
 #### Question #7
 
