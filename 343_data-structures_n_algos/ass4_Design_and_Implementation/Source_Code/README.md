@@ -8,14 +8,13 @@ ReadMe.md
 
 I am not particularly happy with the assig4 design from part 1; it seemed to have come about more by accident than intention. 
 
-Thus, I intend to fix that by applying the Model-View-Controller (MVC -- according to how I understand it) design template to the specifications of the project.
+Thus, I intend to fix that by applying the **Model-View-Controller (MVC)** -- according to how I understand it -- design template to the specifications of the project.
 
 ---
 Step 1: Establish the model
 ---
 
 First, I will need to make note of what state elements the model will need to hold. Then I will use that information to determine how best to set up the hash table used for tracking those state members.
-
 
 1. The model needs to store both sensitive customer information, and non-sensitive store inventory information.
   + Customer info to be stored:
@@ -25,6 +24,8 @@ First, I will need to make note of what state elements the model will need to ho
       - where: 
         + the first 4 integer digits are a unique user ID pin
         + The following 2 strings represent the first, then last, names.
+    * `int c_pin; // the 4 digit int value unique to this customer, used to identify them in inventory manipulation.`
+    * `std::string c_name; // just a string containing the user's first and last name. No I can see to split them.`
   + Store inventory will be manipulated via commands as demonstrated in the data4commands.txt file.
     * data4commands.txt format:
       - `B 2000 D F Sleepless in Seattle, 1993`
