@@ -1,0 +1,76 @@
+List the types of attacks on a personal computer that each of a (host-based) personal firewall, and anti-virus software, can help you protect against.
+
+1. Trojan: One of the most complicated threats having ability to replicate itselt.
+
+2. Virus: Most popular and well-known, traditional threat ,actually malicious program to destroy PCs.
+
+3. Worms: Most harmless threat, having ability to replicate, spread very fast and usehard disk space.
+
+4. Spyware: It’s a malware designed to steal data from one’s PC, having ability to track of activity of user and send it secretly.
+
+5. Scareware: It’s a program to scare user by showing the notification that load of virus in his PC , and tempt him to buy a bogus anti-virus software.
+
+6. Keylogger: It’s a sub-function of Trojan to keep track of every keystroke.
+
+7. Adware:It force the PC to pop of a lot of advertisement.
+
+8. Backdoor: It’s a method to bypass regular authentication processes and to enter in someone’s PC secretly.
+
+9. Wabbits: It’s a type of harmless self-replicating threat, helps in DDOS attack.
+
+10. Exploit: Its programmed to attack certain vulnerabilities.
+
+11. Botnet. It is installed by a Bot-Master to take control of all the computer bots via the Botnet infection
+
+12. Dialer: Its dials international number secretly without the knowledge of user.
+
+13. Dropper: It downloads malicious programs secretly.
+
+14. Fake AV: They are fake anti-virus, harm the PCs.
+
+15. Phishing: It tricks user to enter username, password in fake websites which looks same as the real one.
+
+16. Cookies: Cookies is not really a Malware. It is just something used by most websites to store something into your computer.
+
+17. Bluesnarfing: Unauthorized access to mobile phones via bluetooth.
+
+18. Bluejacking: Send SMS from a mobile phone to another via bluetooth.
+
+19. DDoS: Sends loads of traffic in a network.
+
+20. Boot Sector Virus: Virus to remove all bootable drives.
+
+21. Browser Hijackers: takes control of browsers and steals data from browsing.
+
+22. Virus Document: A document file containing virus mostly attached with some mails.
+
+23. Mousetrapping: Force browser to go to a particular website, make it the homepage.
+
+25. Obfuscated Spam: Spam mail
+
+26. Pharming : Its like phishing where DNS is compromised.
+
+27. Crimeware: Hacked will commit a cyber crime and make another one blamed by using trojan.
+
+28. SQL Injection: Unauthorized access to data by SQL queries.
+
+Which of these countermeasures would help block the spread of macro viruses spread using email attachments?
+
+There are several methods you can use to prevent your computer system from becoming infected by a macro virus. Two of these methods include:
+
+Using digital signatures: Digital signatures are extraordinary compared to other methods for shielding your PC from Macro viruses . Digital signatures are will character the wellspring of a download or a creator of a document so you know whether the records you're downloading and running on your PC are from trusty source and whether the documents have been messed with. It's shrewd to utilize or empower the same number of the security includes on your PC that you can. Digital signature will help you to block malicious email attachments.
+Checking for regular updates: Frequently updating your security programs on your PC will better shield you from new sorts of macro infections being made.
+Don’t open mails from spam folder: We should not open mails which are stored in spam folder and from unknown sender and having zip/rar/exe files attached.
+              Thus, we can block macro viruses which are spread through mail attachments.
+
+Which would block the use of backdoors on the system?
+
+By using a good firewall can block backdoor programs.
+Cloud Security Alliance with robust network monitoring prevents from backdoor attacks in system.
+3. We should be choosy about using open source tools and applications.
+
+4. By using a good antivirus program to monitor networks of your system continuously.
+
+5. By using a strong anti malware program.
+
+This all can block the use of backdoor on a system.

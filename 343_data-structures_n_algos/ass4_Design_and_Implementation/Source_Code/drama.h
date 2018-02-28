@@ -9,7 +9,7 @@
 class Drama : virtual private Movie, virtual public IMovie {
 public:
   
-  Drama(std::string &title, const Director &actor, const unsigned int &stock,
+  Drama(std::string &title, const Director &dir, const unsigned int &stock,
         const DDate &releaseDate, const DiskType &diskType = DVD);
   
   virtual Drama &operator=(const Drama &);
@@ -52,6 +52,11 @@ public:
    *      |   ‘D’     | Director           |  Title             |
    *      |   ‘F’     | Title              |  Year released     |
    *      -------------------------------------------------------
+   *
+   * @param other The Movie object reference against which *this is to be
+   * compared.
+   *
+   * @return
    */
   virtual int comparePrimaryCriteria(const Movie &other) const override {
     int ret = this->m_prim.director.compare(other.m_prim.director);
