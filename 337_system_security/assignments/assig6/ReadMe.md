@@ -24,7 +24,7 @@ Trip-wire disadvantages:
 
 ---
 
-#### Question #2 from our assignment
+#### Question #2
 
 Problem statement:
 The question arises as to whether it is possible to develop a program that can analyze a piece of software to determine if it is a virus. Consider that we have a program `D` that is supposed to be able to do that. That is, for any program `P`, if we run `D (P)`, the result returned is TRUE (P is a virus) or FALSE (P is not a virus). Now consider the following program:
@@ -55,7 +55,7 @@ Assumptions:
 
 ---
 
-#### Question #3 from our assignment
+#### Question #3
 
 Problem statement:
 
