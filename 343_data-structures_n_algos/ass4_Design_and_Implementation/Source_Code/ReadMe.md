@@ -25,7 +25,7 @@ First, I will need to make note of what state elements the model will need to ho
         + the first 4 integer digits are a unique user ID pin
         + The following 2 strings represent the first, then last, names.
     * `int c_pin; // the 4 digit int value unique to this customer, used to identify them in inventory manipulation.`
-    * `std::string c_name; // just a string containing the user's first and last name. No I can see to split them.`
+    * `std::string c_name; // just a string containing the user's first and last name. No need to split them as far as I can see.`
   + Store inventory will be manipulated via commands as demonstrated in the data4commands.txt file.
     * data4commands.txt format:
       - `B 2000 D F Sleepless in Seattle, 1993`
