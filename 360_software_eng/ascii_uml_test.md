@@ -100,7 +100,7 @@ Could we also differentiate between "extension" and "realization" ("implements")
 
 Could. [<-- is this shit a typo?][]
 
-```
+```UML
   +-------+         +-----------+
   | Base  |         | Interface |
   +---^---+         +-----^-----+
@@ -112,65 +112,117 @@ Could. [<-- is this shit a typo?][]
  | Derived |      | Implementation |
  +---------+      +----------------+
 ```
+
 This makes me think that an Emacs interface to Wiki would be nice, so that you could use things like picture-mode. Wiki's formatting is simple enough that you don't really need Netscape to get around. But I suppose copy-and-paste is ok. -- LukeGorrie
+
 A good UML drawing tool is needed first. There might be hope with DIA.
+
 Why not a white-board that you (and everyone) can scribble on?
+
 DaveCarlson is working on such an animal now I believe.
+
 What it really means is extending Wiki to allow drawings. Give me a piece of chalk and an eraser - make it impossible to make the lines straight or to spend any time making it pretty. Maybe it should allow me to type text instead of having to hand-draw every letter, but that's about as fancy as it should get.
+
 Take a look at jave.de (http://www.jave.de/) ASCII JAVA very cool. -- DennisDaniels
+
 Those restrictions would cause a drawing tool to harmonize with WikiNature.
-If we were using COM, you could just embed a drawing straight into the page...
+
+_If we were using COM, you could just embed a drawing straight into the page..._
+
 It's fun having a COM booster around. How are you going to make it work when I use the Wiki pages from my Linux box? I lean towards applets as maybe sorta kinda having a better chance of working on more browsers. The only problem is that applets are so... well... applety.
-An applet a day keeps the browser away.
-COM has been ported to Linux, Solaris, DEC Unix.
-Oh, I read wiki from my Palm. Is there a COM port for Palm? I know you can get Java on your Palm - I've written programs for it.
-COM is ported, but is ActiveX/OLE? Don't embedding interfaces rely on definitions from the Win32 API? Ie: embedding is implemented by passing an HWND (window handle) to the embedded component. Also, the problem with using Automation (on any platform) to launch a diagramming tool is that there are no standardized interfaces for displaying diagrams, so wiki users would be tied in to one diagramming application.
--- NatPryce
+
+_An applet a day keeps the browser away._
+
+_COM has been ported to Linux, Solaris, DEC Unix._
+
+_Oh, I read wiki from my Palm. Is there a COM port for Palm? I know you can get Java on your Palm - I've written programs for it._
+
+COM is ported, but is ActiveX/OLE? Don't embedding interfaces rely on definitions from the Win32 API? Ie: embedding is implemented by passing an HWND (window handle) to the embedded component. Also, the problem with using Automation (on any platform) to launch a diagramming tool is that there are no standardized interfaces for displaying diagrams, so wiki users would be tied in to one diagramming application. -- NatPryce
+
 ArgoUml produces SVG UML diagrams. Check it out! -- DennisDaniels
-XML would certainly facilitate the other efforts to get WIKI into a docbook.dtd format. There are native XML browsers. X-Smiles for example.
--- DennisDaniels
-Ideally, Wiki would use XML as its markup, and allow SVG to be embedded with wiki pages, and browsers would recognize the SVG namespace and render it appropriately. However, I think we may have to wait a few years before browsers that can handle XML in this way are in common use.
+
+XML would certainly facilitate the other efforts to get WIKI into a docbook.dtd format. There are native XML browsers. X-Smiles for example. -- DennisDaniels
+
+---
+
+Ideally, Wiki would use XML as its markup, and allow SVG to be embedded with wiki pages, and browsers would recognize the SVG namespace and render it appropriately. However, I think we may have to wait a few years before browsers that can handle XML in this way are in common use. 
+
 -- NatPryce
-Yes, a VisualWiki would be nice.
+
+_Yes, a VisualWiki would be nice._
+
+---
+
 I also like the suggestion I've seen recommended for handwritten italics: Enclose the italicized text in slashes. For example ...
+
+```UML
     +----------------------+
     | /AbstractClass/      |
     +----------------------+
     | ConcreteMethod ()    |
     | /AbstractMethod ()/  |
     +----------------------+
+```
 
 -- JimWeirich
+
 You can use Wiki markup in preformatted text:
+
+```UML
     +----------------------+
     |   AbstractClass      |
     +----------------------+
     | ConcreteMethod ()    |
     | AbstractMethod ()    |
     +----------------------+
+```
 
 How about underlining to indicate class-scope features?
-Oh, you want to _underline_?
-Plain text type setting conventions use _underscores_ to signify italics, not underlines.
+
+_Oh, you want to \_underline\_?_
+
+Plain text type setting conventions use \_underscores\_ to signify italics, not underlines.
 We can use the alternative UML notation for statics, $.
-I've added some UmlAsciiArtExamples and UmlAsciiArtTips. This is Wiki: please improve them if you can. -- DavidPrice
+
+---
+
+I've added some UmlAsciiArtExamples and UmlAsciiArtTips. This is Wiki: please improve them if you can.  -- DavidPrice
+
+---
+
 My two cents: Someone out there should create a UML font (I do not have a good font editor) and then have wiki change uml:inherit_up to that font and make the font publicly available (this enables anyone then with a font-selectable notepad to create UML diagrams. This could include such characters as uml:inherit_down uml:vert_bar, uml:horz_bar, uml:compose_up, uml:compose_down, uml:thin_whitespace, uml:med_whitespace, uml:wide_whitespace, .... Where the whitespace characters are used to clean up the alignment.
+
+---
+
 see http://cedet.sourceforge.net/cogre.shtml for a connected graph editor for emacs, also does some UML drawing. -- ShaeErisson
+
+---
+
 see http://moinmoin.wikiwikiweb.de/SB for a very simple ASCII UML wiki tool how do you run it? does not seem to say
+
+---
+
 There should be an AbbreviatedUmlAscii format that allows "diagrams" to be made, sent discussed more easily something like
+
+```UML
   Package_i
     Class_i1
       [attrib_i11,attrib_i12,....method_i11(),method_i12()...]*i2#
     Class_i2
       [attrib_i21,attrib_i22,....method_i21(),method_i22()...]*i1
+```
 
-Where "*ij(sym)" denotes lines/arrow between classes ie ">" for association, "#" for inheritance, "@" for composition etc as above. The class with no (sym) means start of line, the one with (sym) means end of line/arrow. Just a very simple tree even leave out types and parameters in the [attrib...method] list but enough to give the essence of the diagram in ascii, but more than just a plain tree. This is for the ClassDiagram perhaps a similar convention would work for UseCases that should be enough to communicate uml with ascii quickly over a wiki, for instance. No need for other "tools" to generate from it just interpret it as is.
+Where `*ij(sym)`` denotes lines/arrow between classes ie `>` for association, `#` for inheritance, `@` for composition etc as above. The class with no (sym) means start of line, the one with (sym) means end of line/arrow. Just a very simple tree even leave out types and parameters in the [attrib...method] list but enough to give the essence of the diagram in ascii, but more than just a plain tree. This is for the ClassDiagram perhaps a similar convention would work for UseCases that should be enough to communicate uml with ascii quickly over a wiki, for instance. No need for other "tools" to generate from it just interpret it as is.
+
 See also AsciiArtGuiShorthand which I discovered after writing this but still looks too verbose to me and is specific to GUIs.
+
+```UML
 Abbreviated UseCaseDiagram
   UseCase1*2>
     [Actor1,Actor2...]
   UseCase2*1
     [Actor1,Actori,Actorj,..]
+```
 
 I chose Actors as the leaves because if UseCase s are the leaves, relations between them have to be repeated. Actors might have to be repeated this way but that is easier than the relations.
 Abreviated SequenceDiagram
