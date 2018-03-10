@@ -1,13 +1,25 @@
 
 Uml Ascii Art
-Wiki pages might often benefit from illustrating a design using UnifiedModelingLanguage. Unfortunately, it's hard to include graphical diagrams in Wiki: you can make a GIF and embed a link to it, but the next person can't easily edit it, so you lose some of the WikiNature.
-Check out jave.de. He has some diagram clipart that could be used for UML. We need to come to an agreement on standards though.
+===
+Wiki pages might often benefit from illustrating a design using UnifiedModelingLanguage. Unfortunately, it's hard to include graphical diagrams in Wiki; you can make a GIF and embed a link to it, but the next person can't easily edit it, so you lose some of the WikiNature.
+
+Check out [jave.de](jave.de). He has some diagram clipart that could be used for UML. We need to come to an agreement on standards though.
+
 SilverTejp is software with an ASCII UML class diagram interpreter.
+
 Wiki best supports ASCII text. Therefore, a good UmlAsciiArt convention might be useful. Especially if the diagrams are already vector, for example SVG.
+
 Unfortunately, all ASCII art is compromise, and this goes especially for UmlAsciiArt. This page is offered as a place for considering possible conventions. Hopefully we'll come to a consensus and document it here, even if the consensus is just "don't bother".
-Unfortunately, the TabMunging problem has not been solved.
+
+Unfortunately, the [TabMunging](http://wiki.c2.com/?TabMunging) problem has not been solved.
+
 Let's bother!
-Limiting ourselves initially to class diagrams, the biggest problem is the arrowheads. Trying to represent the official glyphs is unworkable (show me a good upwards-pointing inheritance arrow!). So instead, we must choose our own arrowheads. Here's one possibility:
+
+---
+
+Limiting ourselves initially to class diagrams, the biggest problem is the arrowheads. Trying to represent the official glyphs is unworkable (show me a good upwards-pointing inheritance arrow!). So instead, we must choose our own arrowheads. 
+
+Here's one possibility:
 
 ```UML
  Association:   ^   Aggregation:    O   Composition:    @   Inheritance:    #
@@ -18,6 +30,7 @@ Limiting ourselves initially to class diagrams, the biggest problem is the arrow
 ```
 
 As an experiment, here's the DesignPatterns CompositePattern structure in the above form of UmlAsciiArt:
+
 ```UML
  +--------+       +---------------------+ *
  | Client |------>| Component           |<-----------------------------+
@@ -42,13 +55,19 @@ As an experiment, here's the DesignPatterns CompositePattern structure in the ab
 ```
 
 It's a pity that something as important as inheritance gets such a lousy arrowhead. Improvements encouraged! -- DavidPrice
-"show me a good upwards-pointing inheritance arrow"...
-    .
-   /_\   :-)
-    |
 
+"show me a good upwards-pointing inheritance arrow"...
+
+```UML
+       .
+      /_\   :-)
+       |
+```
 Rather nice. But it doesn't work in the other directions. On the other hand, my inheritance arrows almost always point upwards. Maybe we should adopt this?
+
 Other directions...
+
+```UML
   ---|>
 
   <|---
@@ -56,9 +75,13 @@ Other directions...
     _|_
     \ /
      '
+```
 
 Or are there Unicode glyphs that we can use?
+
 Why not the following?
+
+```UML
        A
        |
        |
@@ -67,11 +90,17 @@ Why not the following?
        |
        _
        V
+```
 
-Then it no longer fits the topic of the title (ASCII Art).
+### Then it no longer fits the topic of the title (ASCII Art).
+
 Could we also differentiate between "extension" and "realization" ("implements") inheritance? It would also be nice if it fits into AbbreviatedUmlAscii (below) easily. Perhaps # and % or some similar pairing?
--- StevenCummings
-Could.
+
+-- [StevenCummings](http://wiki.c2.com/?StevenCummings) 
+
+Could. [<-- is this shit a typo?][]
+
+```
   +-------+         +-----------+
   | Base  |         | Interface |
   +---^---+         +-----^-----+
@@ -82,7 +111,7 @@ Could.
  +---------+      +----------------+
  | Derived |      | Implementation |
  +---------+      +----------------+
-
+```
 This makes me think that an Emacs interface to Wiki would be nice, so that you could use things like picture-mode. Wiki's formatting is simple enough that you don't really need Netscape to get around. But I suppose copy-and-paste is ok. -- LukeGorrie
 A good UML drawing tool is needed first. There might be hope with DIA.
 Why not a white-board that you (and everyone) can scribble on?
