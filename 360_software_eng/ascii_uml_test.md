@@ -1,5 +1,5 @@
 
-Uml Ascii Art
+[Uml Ascii Art](http://wiki.c2.com/?UmlAsciiArt/)
 ===
 Wiki pages might often benefit from illustrating a design using UnifiedModelingLanguage. Unfortunately, it's hard to include graphical diagrams in Wiki; you can make a GIF and embed a link to it, but the next person can't easily edit it, so you lose some of the WikiNature.
 
