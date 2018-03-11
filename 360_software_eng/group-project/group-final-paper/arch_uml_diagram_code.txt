@@ -23,8 +23,8 @@
   - stateful
   - user media library : List<string>
   |
-  * gameDataAssembler() : 
-  -- *void(User_specific_game_meta-data)
+  * gameDataAssembler() 
+..  : void(User_specific_game_meta-data)
 ]
 
 [<domain> <<service>> Workshop
@@ -35,7 +35,7 @@
 //end workshop:
 [<domain> <<service>> Steam Store Marketplace
   |
-  + Game Specific Market Pages
+  + Game-Specific Market Pages
 ]
 //end Steam Store Marketplace service:
 
@@ -59,7 +59,7 @@
   |
   - stateless
   |
-  * quantization(): byte stream
+  * qunatize_outStream() : byte stream
 ]
 //The_following_choice_blocks_are_based_upon_pre-selected_user_preferences:
 [<choice>make clip?]
@@ -86,11 +86,11 @@
 [<><<system>>User Account Hosted Model]<->[<><<service>> Steam Store Marketplace]
     
 // define Steam Stream's non steam app based connections:
-[<domain> <<interface>> API For Third Party Services| 
+[<domain> <<interface>> API For Third-Party Services| 
 ]
 //end API for Third Party Services:
-[<><<service>> Steam Stream] --:> *slight hand waving* [<><<interface>> API For Third Party Services]
+[<><<service>> Steam Stream] --:> *slight hand waving* [<><<interface>> API For Third-Party Services]
 // defining external entities
-[<><<interface>> API For Third Party Services] --:> [<externals>Mixer]
-[<><<interface>> API For Third Party Services] --:> [<externals>Twitch]
-[<><<interface>> API For Third Party Services] --:> [<externals>YoutubeGaming]
+[<><<interface>> API For Third-Party Services] --:> [<externals>Mixer]
+[<><<interface>> API For Third-Party Services] --:> [<externals>Twitch]
+[<><<interface>> API For Third-Party Services] --:> [<externals>YoutubeGaming]
