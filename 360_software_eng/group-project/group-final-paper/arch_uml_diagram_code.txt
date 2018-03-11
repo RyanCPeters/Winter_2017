@@ -15,7 +15,7 @@
   |
   - stateless
   |
-  - ofuscated Valve owned Steam functionality
+  - obfuscated Valve owned Steam functionality
 ] 
 
 [<domain><<system>>User Account Hosted Model
@@ -41,15 +41,18 @@
 
 [<domain> <<service>> Steam Stream
   |
-  - stateful|
+  - stateful
+  |
 [<feature>Clip Process
   |
-  - stateful|
+  - stateful
+  |
   * ioformatter(): tar or zip (user defined)
 ]
 [<feature>Video Process
   |
-  - stateful|
+  - stateful
+  |
   * feed_synch(): ioByteBuffer
 ]
 [<feature>Stream Process
