@@ -1,0 +1,93 @@
+#title: Architectural_UML_Diagram
+#.domain: fill=#fff
+#fill: #eee
+#.feature: fill=#eee
+#stroke: #203030 
+#edgeMargin: 1
+#fontSize:20
+#spacing: 0
+#padding: 10
+#gutter: 10
+#direction: down 
+#.externals: fill=#fff dashed
+
+[<domain> <<interface>> Steam Application
+  |
+  - stateless
+  |
+  - ofuscated Valve owned Steam functionality
+] 
+
+[<domain><<system>>User Account Hosted Model
+  |
+  - stateful
+  - user media library : List<string>
+  |
+  * gameDataAssembler() : 
+  -- *void(User_specific_game_meta-data)
+]
+
+[<domain> <<service>> Workshop
+  |
+  + Custom Overlays
+  + Custom Skins
+]    
+//end workshop:
+[<domain> <<service>> Steam Store Marketplace
+  |
+  + Game Specific Market Pages
+]
+//end Steam Store Marketplace service:
+
+[<domain> <<service>> Steam Stream
+  |
+  - stateful|
+[<feature>Clip Process
+  |
+  - stateful|
+  * ioformatter(): tar or zip (user defined)
+]
+[<feature>Video Process
+  |
+  - stateful|
+  * feed_synch(): ioByteBuffer
+]
+[<feature>Stream Process
+  |
+  - stateless
+  |
+  * quantization(): byte stream
+]
+//The_following_choice_blocks_are_based_upon_pre-selected_user_preferences:
+[<choice>make clip?]
+[<choice>stream clip?]
+//Define decision logic relationships:
+[<start>user input] input -> [<>Video Process]
+[<>Stream Process] -> [<end> return to user]
+[<>Clip Process] -> [<>stream clip?]
+[<>stream clip?] -> yes[<>Stream Process]
+[<>Video Process] -> [<> make clip?]
+[<> make clip?] -> no [<> Stream Process]
+[<> make clip?] -> yes [<> Clip Process ]
+[<>stream clip?] no -> output [<end> return to user]
+]
+//end Steam stream service:
+
+// define steam app connections:
+[<actor>Steam User Account]--:>[<><<interface>> Steam Application]
+[<><<interface>> Steam Application] -> User video feed[<><<service>> Steam Stream]
+[<><<interface>> Steam Application]<->[<><<system>>User Account Hosted Model]
+
+
+[<><<system>>User Account Hosted Model]<->[<><<service>> Workshop]
+[<><<system>>User Account Hosted Model]<->[<><<service>> Steam Store Marketplace]
+    
+// define Steam Stream's non steam app based connections:
+[<domain> <<interface>> API For Third Party Services| 
+]
+//end API for Third Party Services:
+[<><<service>> Steam Stream] --:> *slight hand waving* [<><<interface>> API For Third Party Services]
+// defining external entities
+[<><<interface>> API For Third Party Services] --:> [<externals>Mixer]
+[<><<interface>> API For Third Party Services] --:> [<externals>Twitch]
+[<><<interface>> API For Third Party Services] --:> [<externals>YoutubeGaming]

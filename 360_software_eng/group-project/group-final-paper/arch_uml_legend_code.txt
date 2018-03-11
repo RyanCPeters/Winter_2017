@@ -1,0 +1,56 @@
+#title: Architectural_UML_Legend
+#.domain: fill=#fff
+#fill: #eee
+#.feature: fill=#eee
+#stroke: #203030 
+#edgeMargin: 1
+#fontSize:20
+#spacing: 0
+#padding: 10
+#gutter: 10
+#direction: down 
+#.externals: fill=#fff dashed
+
+[<domain> Legend ||
+Reader's visual-aid symbols:
+-- indentation flag ( -- )
+-- Article delimiter ( :: )
+--  Used to indicate a new article, or sub article,
+--  is beginning.
+|
+Access-privilege symbols:
+--:: Special note: 
+--   Access Priveledges, the following 
+--   list of symbols, immediately 
+--   precede the item they describe.
+-- 
+--   And their scope of influence ends 
+--   with the conclusion of that item's
+--   definition.
+-- 
+--:: Private to enclosing service ( - ) 
+--     Inaccessible to anything outside of 
+--     enclosing container's scope.
+--
+--:: Shared with other services  ( * )
+--     But hidden from user
+--
+--:: Accessible by whole system ( + )
+--     Visible and interactive to user
+|
+Abstracted statements:
+:: session
+--:: A session, or service session, is considered 
+--   to be any single, continuous connection
+--   between the Steam User Account and the Steam 
+--   Application interface.
+--
+:: stateful 
+--:: Denotes that session specific information is
+--   saved/stored and persists beyond the given 
+--   service session.
+--
+:: stateless 
+--:: There is no session-specific information saved
+--   beyond the current service session.
+]
