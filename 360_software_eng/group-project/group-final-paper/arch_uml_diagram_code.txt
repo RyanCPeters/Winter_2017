@@ -59,7 +59,7 @@
   |
   - stateless
   |
-  * qunatize_outStream() : byte stream
+  * quantize_outStream() : byte stream
 ]
 //The_following_choice_blocks_are_based_upon_pre-selected_user_preferences:
 [<choice>make clip?]
