@@ -1,4 +1,0 @@
-ToolSet: w64 5.0@C:\MinGW-Nov-29-17\mingw64
-Options: 
-
-Options:

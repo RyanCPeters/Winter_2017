@@ -1,3 +1,0 @@
-C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/cmake-build-debug/CMakeFiles/ass1_Turtle_Program.dir
-C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Peter/GitHub_remotes/Winter_UWB_2017/css_343/ass1_Turtle_Program/cmake-build-debug/CMakeFiles/rebuild_cache.dir
