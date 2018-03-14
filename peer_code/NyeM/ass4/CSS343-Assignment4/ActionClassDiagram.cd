@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
+  <Class Name="Action">
+    <Position X="7.75" Y="3.75" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAABAAAAAAQAAAEAAAAIECAAAAAAAIAQ=</HashCode>
+      <FileName>action.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActionDictionary">
+    <Position X="11.25" Y="3.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAQAAAAAAACAAABAAAAAAAAABAAgA=</HashCode>
+      <FileName>actiondictionary.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BorrowMovie">
+    <Position X="2" Y="15.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAACAAAABAAAAA=</HashCode>
+      <FileName>borrowmovie.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerAction">
+    <Position X="5.25" Y="7.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEEAAAQAAAAAAAAAAAAAQAAEAAAAAIACEAAAAAAIAA=</HashCode>
+      <FileName>customeraction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DisplayInventory">
+    <Position X="11.75" Y="7.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAUAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>displayinventory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DisplayTransactionHistory">
+    <Position X="8" Y="11.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAACAAQAAAAAAA=</HashCode>
+      <FileName>displaytransactionhistory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieAction">
+    <Position X="3.5" Y="11.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgBAAAAAAAAAAQAAAAEQAAIACAAAAAAEIAA=</HashCode>
+      <FileName>movieaction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReturnMovie">
+    <Position X="5" Y="15.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAQAAAAAAAAAACAAgAAAAAAA=</HashCode>
+      <FileName>returnmovie.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

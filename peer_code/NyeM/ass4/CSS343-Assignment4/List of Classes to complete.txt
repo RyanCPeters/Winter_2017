@@ -1,0 +1,85 @@
+
+Group Number 7:
+
+Total Number of Classes: 32
+
+
+List of Classes:
+
+	- LinkedStructure (abstract):	(!!!BRADY!!!) - Done
+	
+		- Stack: is a linkedStructure	(!!!BRADY!!!) - Done
+		
+
+	- Inventory: Movie Manager, Customer Manager, Action Dictionary (constructor with 2 file names) (!!!DANIEL!!!)
+	
+		- Manager (abstract): storedData, Parser, HashFct	(!!!DANIEL!!!)
+	
+			- Movie Manager: Movie[][], Parser, HashFct[][]	(!!!DANIEL!!!)
+		
+			- Customer Manager: Customer[], Customer Parser
+	
+			- Action Dictionary: Set (no hashing), Action Parser(included in class)	(!!!BRADY!!!) - Working
+		
+	
+			- Stored Data (abstract):	(!!!Brady!!!) - Done
+
+				- Movie: is a storedData, has Attributes	(!!!DANIEL!!!)
+				
+					- Comedy: is a Movie, has a Stock, Director, Title, Year it Released	(!!!DANIEL!!!)
+						
+					- Drama: is a Movie, has a Stock, Director, Title, Year it Released	(!!!DANIEL!!!)
+					
+					- Classical: is a Movie, has a Stock, Director, Title, Major Actor (together) release date_released,
+					
+					- Movie Attribute (abstract)	(!!!DANIEL!!!)
+						
+						- Title: is an Attribute	(!!!DANIEL!!!)
+						
+						- Director: is an Attribute	(!!!DANIEL!!!)
+						
+						- Stock: is an Attribute			(!!!MITCH!!!)
+						
+						- Major Actor: is an Attribute			(!!!MITCH!!!)
+						
+						- Year It Released: is an Attribute		(!!!MITCH!!!)
+						
+						- Release Date: is a Year It Released		(!!!MITCH!!!)
+						
+					- DVD: is a movie, has Title, release year, and price. (!!!SEAN!!!) - Working
+					
+				- Media: is a stroedData, has DVD (!!!SEAN!!!) - Working
+		
+				- Customer: is a storedData			
+					
+					-TransactionHistory: 	(!!!BRADY!!!) - Done
+		
+				- Action (abstract): (!!!BRADY!!!) - Done
+					
+					- MovieAction: is an action	(!!!BRADY!!!) - Done
+					
+						- ReturnMovie: is a movieAction		(!!!BRADY!!!) - Done
+						
+						- BorrowMovie: is a movieAction		(!!!BRADY!!!) - Done
+						
+						- DisplayInventory: is a movieAction	(!!!BRADY!!!) - Done
+				
+					
+					- CustomerAction: is an action		(!!!BRADY!!!) - Done
+					
+						- DisplayTransactionHistory: is a customerAction	(!!!BRADY!!!) - Done
+			
+	
+			- Parser (abstract):							(!!!MITCH!!!)
+	
+				- Movie Parser: is a Parser					(!!!MITCH!!!)
+	
+				- Customer Parser: is a parser					(!!!MITCH!!!)
+	
+				- Action Parser: is a parser (included in Action Dictionary)
+	
+	
+	
+	
+	
+
