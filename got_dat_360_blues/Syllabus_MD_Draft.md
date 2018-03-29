@@ -54,9 +54,9 @@ The following table represents the official UW conversion of standard letter gra
 
 | A Range | B Range | C Range | D Range |
 |:-------:|:-------:|:-------:|:-------:|
-| Letter | A A- | B+ B B- | C+ C C- | D+ D D | 
-| Min Decimal | 3.9 3.5 | 3.2 2.9 2.5 | 2.2 1.9 1.5 | 1.2 0.9 0.7 |
-| Min 100-pt | 95 90 | 85 82 78 | 75 72 68 | 65 62 60 |
+| Letter | A : A- | B+ : B : B- | C+ : C : C- | D+ : D : D | 
+| Min Decimal | 3.9 : 3.5 | 3.2 : 2.9 : 2.5 | 2.2 : 1.9 : 1.5 | 1.2 : 0.9 : 0.7 |
+| Min 100-pt | 95 : 90 | 85 : 82 : 78 | 75 : 72 : 68 | 65 : 62 : 60 |
 
 
 Expectations:
