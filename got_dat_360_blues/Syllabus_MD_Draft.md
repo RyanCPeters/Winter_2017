@@ -52,8 +52,8 @@ The overall course grade will be based on a 100-pt scale. The official decimal c
 The following table represents the official UW conversion of standard letter grades to the UW decimal grade scale and the conversion to the 100-pt scale used in this class:
 
 
-| | A Range|| B Range||| C Range||| D Range|||
-|:-------:|:-------:|:-------:|:-------:|
+| . | A Range|| B Range||| C Range||| D Range|||
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Letter | A | A- | B+ | B | B- | C+ | C | C- | D+ | D | D | 
 | Min Decimal | 3.9 | 3.5 | 3.2 | 2.9 | 2.5 | 2.2 | 1.9 | 1.5 | 1.2 | 0.9 | 0.7 |
 | Min 100-pt | 95 | 90 | 85 | 82 | 78 | 75 | 72 | 68 | 65 | 62 | 60 |
