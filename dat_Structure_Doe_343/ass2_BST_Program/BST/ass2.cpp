@@ -42,6 +42,8 @@ int getInt() {
 	return num;
 }
 
+string
+
 vector<int> getInts(const string& inFileName ) {
 	/*cout << "Enter multiple ints: ";
 	cin.clear();*/
